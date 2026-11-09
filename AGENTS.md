@@ -28,3 +28,7 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- The sales page lives in `src/routes/index.tsx`; its CSS is the original page CSS kept unlayered in `src/styles.css` (overrides Tailwind preflight) — keep page styles there, not as utility classes.
+- Editable business settings (checkout link, optional FAQ/footer texts) live only in `src/config.ts`; empty values hide the related item.
