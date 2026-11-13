@@ -16,8 +16,8 @@ import bpy
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 OUT = os.path.join(ROOT, "renders", "cena01")
-FONT_BOLD = os.path.join(ROOT, "assets", "fontes", "Montserrat-ExtraBold.ttf")
-FONT_REG = os.path.join(ROOT, "assets", "fontes", "Montserrat-Medium.ttf")
+FONT_BOLD = os.path.join(ROOT, "assets", "fontes", "Poppins-ExtraBold.ttf")
+FONT_REG = os.path.join(ROOT, "assets", "fontes", "Poppins-Medium.ttf")
 
 argv = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
 PREVIEW = "--preview" in argv
