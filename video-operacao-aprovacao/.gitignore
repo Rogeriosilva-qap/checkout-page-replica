@@ -1,0 +1,5 @@
+# sequências de quadros, arquivos .blend e intermediários (regeneráveis pelos scripts)
+renders/*/cena0*_[0-9]*.png
+renders/*/*.blend
+renders/*/*.blend1
+output/tmp/

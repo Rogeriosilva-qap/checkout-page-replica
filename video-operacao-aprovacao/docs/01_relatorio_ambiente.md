@@ -34,3 +34,12 @@ Os scripts em `scripts/` são Python puro para o Blender. Para rodá-los aqui:
 blender -b -P scripts/cena01_gancho.py -- --preview
 ```
 Esse comando renderiza a prévia da cena 1 em `renders/cena01/`.
+
+## Atualização — 13/11/2026 (após a autorização)
+| Item | Resultado |
+|---|---|
+| `bpy` | ✅ 5.3.0 instalado num venv da sessão (temporário: some quando o container é reciclado) |
+| Motor | ✅ Cycles em CPU (Intel Xeon 2,1 GHz, 4 núcleos). CUDA e HIP ausentes, como esperado |
+| Fonte | ✅ Poppins ExtraBold/Medium (SIL OFL) em `assets/fontes/` |
+| Tempo medido | Cerca de 8 s por quadro na prévia (540×960, 16 amostras) |
+| Transformação de cor | Khronos PBR Neutral (o AgX deixava o vermelho rosado) |

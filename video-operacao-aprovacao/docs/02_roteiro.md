@@ -7,7 +7,7 @@ Legenda: **[TELA]** = texto 3D ou sobreposição · **[VO]** = narração.
 
 ## Cena 1 — Gancho · 0:00–0:07 (q. 1–210)
 **[VO]** "Você quer entrar para a polícia? Muita gente aguarda um novo concurso da PMGO. Mas edital e data só valem quando forem oficiais."
-**[TELA]** `VOCÊ QUER ENTRAR PARA A POLÍCIA?` → `NOVO CONCURSO PMGO?` + linha menor: `Edital e data: só com confirmação oficial.`
+**[TELA]** `QUER ENTRAR PARA A POLÍCIA?` → `NOVO CONCURSO PMGO?` + linha menor: `Edital e data: só com confirmação oficial.`
 > Regra: não afirmar publicação nem data do edital.
 
 ## Cena 2 — Problema · 0:07–0:15 (q. 211–450)

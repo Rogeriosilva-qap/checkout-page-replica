@@ -73,7 +73,7 @@ def text(name, body, loc, size, material, font=None, extrude=0.012):
     cu.body = body
     cu.align_x, cu.align_y = "CENTER", "CENTER"
     cu.size, cu.extrude = size, extrude
-    cu.bevel_depth, cu.bevel_resolution = extrude * 0.25, 2
+    cu.bevel_depth, cu.bevel_resolution = min(extrude * 0.2, 0.002), 2
     if font:
         cu.font = font
     o = bpy.data.objects.new(name, cu)
@@ -122,83 +122,83 @@ scene.cycles.samples = 16 if PREVIEW else 64
 scene.cycles.use_denoising = True
 scene.render.image_settings.file_format = "PNG"
 scene.render.filepath = os.path.join(OUT, "cena01_")
-try:
-    scene.view_settings.view_transform = "AgX"
-    scene.view_settings.look = "AgX - Medium High Contrast"
-except TypeError:
-    pass  # nomes de "look" variam entre versões; mantém o padrão
+# Khronos PBR Neutral preserva o vermelho da marca (AgX puxava para rosa)
+for vt, look in (("Khronos PBR Neutral", "None"), ("AgX", "AgX - Medium High Contrast")):
+    try:
+        scene.view_settings.view_transform = vt
+        scene.view_settings.look = look
+        break
+    except TypeError:
+        continue
 
 world = bpy.data.worlds.new("Mundo")
 scene.world = world
 world.use_nodes = True
 world.node_tree.nodes["Background"].inputs["Color"].default_value = (*NAVY_BG, 1)
-world.node_tree.nodes["Background"].inputs["Strength"].default_value = 0.6
+world.node_tree.nodes["Background"].inputs["Strength"].default_value = 0.4
 
 # materiais
-m_desk = mat("Mesa", NAVY, rough=0.35, coat=0.3)
-m_wall = mat("Fundo", NAVY_BG, rough=0.9)
+m_desk = mat("Mesa", (0.0025, 0.006, 0.02), rough=0.62, coat=0.0)
+m_wall = mat("Fundo", (0.006, 0.012, 0.035), rough=0.85)
 m_book1 = mat("LivroMarinho", NAVY, rough=0.75)
 m_book2 = mat("LivroBranco", WHITE, rough=0.8)
-m_book3 = mat("LivroVermelho", RED, rough=0.7)
+m_book3 = mat("LivroVermelho", RED, rough=0.65)
 m_pages = mat("Paginas", (0.80, 0.77, 0.70), rough=0.9)
 m_phone = mat("Celular", (0.01, 0.01, 0.012), rough=0.25, metal=0.6)
-m_screen = mat("Tela", (0.05, 0.09, 0.20), rough=0.2, emit=1.5)
-m_title = mat("Titulo", WHITE, rough=0.35, coat=0.5)
-m_red = mat("Acento", RED, rough=0.3, emit=0.6)
-m_sub = mat("Subtitulo", (0.55, 0.60, 0.70), rough=0.5)
+m_screen = mat("Tela", (0.05, 0.09, 0.20), rough=0.2, emit=2.0)
+m_title = mat("Titulo", WHITE, rough=0.4, coat=0.3)
+m_red = mat("Acento", RED, rough=0.35, emit=0.15)
+m_sub = mat("Subtitulo", (0.70, 0.74, 0.82), rough=0.5)
 
-# set: mesa + parede de fundo
-box("Mesa", (4.0, 2.0, 0.06), (0, 0.4, 0.72), m_desk, bevel=0.01)
-box("Parede", (8.0, 0.1, 6.0), (0, 2.6, 2.0), m_wall, bevel=0)
+# set: mesa profunda (preenche o terço inferior) + parede de fundo
+box("Mesa", (6.0, 5.0, 0.06), (0, -0.2, 0.72), m_desk, bevel=0.01)
+box("Parede", (10.0, 0.1, 7.0), (0, 2.7, 2.5), m_wall, bevel=0)
 
-# pilha de livros (sem nenhum título ou marca)
-y0, x0, top = 0.35, -0.55, 0.75
+# pilha de livros em primeiro plano (sem títulos nem marcas)
+y0, x0, top = -0.55, -0.32, 0.75
 for i, (w, d, h, m, rot) in enumerate([
-    (0.42, 0.30, 0.05, m_book1, 4),
-    (0.40, 0.28, 0.04, m_book2, -3),
-    (0.38, 0.27, 0.045, m_book3, 7),
+    (0.50, 0.36, 0.06, m_book1, 6),
+    (0.47, 0.33, 0.05, m_book2, -4),
+    (0.45, 0.32, 0.055, m_book3, 9),
 ]):
-    b = box(f"Livro{i}", (w, d, h), (x0, y0, top + h / 2), m)
-    b.rotation_euler.z = math.radians(rot)
-    p = box(f"Paginas{i}", (w - 0.02, d - 0.01, h * 0.8), (x0 + 0.01, y0, top + h / 2), m_pages, bevel=0.002)
-    p.rotation_euler.z = math.radians(rot)
+    bk = box(f"Livro{i}", (w, d, h), (x0, y0, top + h / 2), m)
+    bk.rotation_euler.z = math.radians(rot)
+    pg = box(f"Paginas{i}", (w - 0.02, d - 0.012, h * 0.8), (x0 + 0.012, y0, top + h / 2), m_pages, bevel=0.002)
+    pg.rotation_euler.z = math.radians(rot)
     top += h
 
 # celular deitado com a tela acesa
-phone = box("Celular", (0.08, 0.16, 0.009), (0.48, 0.25, 0.755), m_phone, bevel=0.008)
-phone.rotation_euler.z = math.radians(-18)
-scr = box("Tela", (0.072, 0.15, 0.001), (0.48, 0.25, 0.7605), m_screen, bevel=0)
-scr.rotation_euler.z = math.radians(-18)
+phone = box("Celular", (0.08, 0.165, 0.009), (0.40, -0.70, 0.755), m_phone, bevel=0.008)
+phone.rotation_euler.z = math.radians(-22)
+scr = box("Tela", (0.072, 0.155, 0.001), (0.40, -0.70, 0.7605), m_screen, bevel=0)
+scr.rotation_euler.z = math.radians(-22)
 
-# textos (área segura: dentro do quadro central)
+# textos grandes, dentro da área segura (y 250–1500 px)
 fb, fr = load_font(FONT_BOLD), load_font(FONT_REG)
-t1 = text("T1", "VOCÊ QUER ENTRAR\nPARA A POLÍCIA?", (0, 1.1, 1.85), 0.20, m_title, fb)
-bar = box("FioVermelho", (0.9, 0.01, 0.012), (0, 1.1, 1.55), m_red, bevel=0.002)
-t2 = text("T2", "NOVO CONCURSO\nPMGO?", (0, 1.1, 1.28), 0.17, m_title, fb)
-t3 = text("T3", "Edital e data: só com confirmação oficial.", (0, 1.1, 1.06), 0.055, m_sub, fr, extrude=0.003)
+t1 = text("T1", "QUER ENTRAR\nPARA A POLÍCIA?", (0, 1.1, 2.80), 0.33, m_title, fb, extrude=0.012)
+bar = box("FioVermelho", (0.8, 0.012, 0.03), (0, 1.1, 2.24), m_red, bevel=0.004)
+t2 = text("T2", "NOVO CONCURSO\nPMGO?", (0, 1.1, 1.78), 0.30, m_title, fb, extrude=0.012)
+t3 = text("T3", "Edital e data: só com\nconfirmação oficial.", (0, 1.1, 1.22), 0.12, m_sub, fr, extrude=0.004)
 
-reveal(t1, 20)
-reveal(bar, 32, rise=0.0)
-# T1 sai suavemente para ceder espaço; T2 entra no lugar
-t1.keyframe_insert("location", frame=100)
-t1.location.z += 0.12
-t1.keyframe_insert("location", frame=112)
-ease_keys(t1)
-reveal(t2, 110)
-reveal(t3, 140, rise=0.03)
+reveal(t1, 15)
+reveal(bar, 40, rise=0.0)
+reveal(t2, 95)
+reveal(t3, 130, rise=0.03)
 
-# luzes
+# luzes (nenhuma visível para a câmera)
 def area(name, loc, rot, energy, size, color):
     d = bpy.data.lights.new(name, "AREA")
     d.energy, d.size, d.color = energy, size, color
     o = bpy.data.objects.new(name, d)
     scene.collection.objects.link(o)
-    o.location, o.rotation_euler = loc, [math.radians(a) for a in rot]
+    o.location, o.rotation_euler = loc, [math.radians(v) for v in rot]
+    o.visible_camera = False
     return o
 
-area("Key", (-2.0, -1.5, 3.0), (50, 0, -45), 450, 1.5, (1.0, 0.93, 0.85))   # ~4500 K
-area("Rim", (1.8, 2.2, 2.6), (-60, 0, 150), 600, 1.0, (0.65, 0.78, 1.0))   # contraluz frio
-area("Fill", (1.5, -2.5, 1.2), (75, 0, 30), 60, 3.0, (0.85, 0.9, 1.0))
+area("Key", (-2.2, -2.0, 3.2), (50, 0, -45), 500, 1.8, (1.0, 0.93, 0.85))   # ~4500 K
+area("Rim", (1.6, 1.4, 1.6), (-75, 0, 160), 250, 1.0, (0.65, 0.78, 1.0))    # contraluz fria nos objetos
+area("Halo", (0, 1.9, 2.4), (90, 0, 0), 60, 3.0, (0.35, 0.5, 1.0))        # brilho marinho na parede
+area("Fill", (1.8, -3.0, 1.4), (75, 0, 30), 30, 3.0, (0.85, 0.9, 1.0))
 
 # câmera: dolly-in lento + puxada de foco (livros -> título)
 cam_data = bpy.data.cameras.new("Cam")
@@ -211,7 +211,7 @@ scene.camera = cam
 
 target = bpy.data.objects.new("Alvo", None)
 scene.collection.objects.link(target)
-target.location = (0, 0.9, 1.3)
+target.location = (0, 1.1, 1.75)
 track = cam.constraints.new("TRACK_TO")
 track.target, track.track_axis, track.up_axis = target, "TRACK_NEGATIVE_Z", "UP_Y"
 
@@ -219,15 +219,15 @@ focus = bpy.data.objects.new("Foco", None)
 scene.collection.objects.link(focus)
 cam_data.dof.focus_object = focus
 
-cam.location = (0, -3.6, 1.55)
+cam.location = (0, -3.7, 1.50)
 cam.keyframe_insert("location", frame=F_START)
 cam.location = (0, -3.0, 1.45)
 cam.keyframe_insert("location", frame=F_END)
-focus.location = (-0.55, 0.35, 0.85)
+focus.location = (-0.32, -0.55, 0.85)
 focus.keyframe_insert("location", frame=1)
 focus.keyframe_insert("location", frame=10)
-focus.location = (0, 1.1, 1.6)
-focus.keyframe_insert("location", frame=30)
+focus.location = (0, 1.1, 2.3)
+focus.keyframe_insert("location", frame=35)
 ease_keys(cam)
 ease_keys(focus)
 
