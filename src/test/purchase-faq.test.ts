@@ -15,6 +15,11 @@ describe("Confirmed purchase information", () => {
     expect(CONFIG.checkoutUrl).toBe("https://pay.kirvano.com/28b35434-3fbf-4f7e-914d-ae6212e77484");
   });
 
+  it("shows the confirmed full price of R$ 97,00 anchored against the R$ 47,00 launch price", () => {
+    expect(CONFIG.listPriceText).toBe("R$ 97,00");
+    expect(CONFIG.launchPriceText).toBe("R$ 47,00");
+  });
+
   it("omits unconfirmed delivery instructions", () => {
     expect(getPurchaseFaq({ ...empty, deliveryText: "  " })).toEqual([]);
     expect(getPurchaseFaq({ ...empty, deliveryText: "Confirmed delivery" }).map(item => item.answer)).toEqual(["Confirmed delivery"]);

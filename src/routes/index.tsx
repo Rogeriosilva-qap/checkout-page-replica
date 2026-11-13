@@ -42,6 +42,20 @@ export const Route = createFileRoute("/")({
           "@graph": [
             { "@type": "Organization", name: "Operação Aprovação", url: "https://operacaoaprovacaoebooks.com.br/", email: "operacaoaprovacao.edu@gmail.com" },
             { "@type": "WebSite", name: "Operação Aprovação", url: "https://operacaoaprovacaoebooks.com.br/", inLanguage: "pt-BR" },
+            {
+              "@type": "Product",
+              name: "IA para Concursos Policiais",
+              description:
+                "E-book digital em PDF com 60 modelos de prompt para transformar o edital em questões, revisões e plano de estudo com IA.",
+              brand: { "@type": "Brand", name: "Operação Aprovação" },
+              offers: {
+                "@type": "Offer",
+                price: "47.00",
+                priceCurrency: "BRL",
+                availability: "https://schema.org/InStock",
+                url: "https://operacaoaprovacaoebooks.com.br/",
+              },
+            },
           ],
         }),
       },
@@ -223,10 +237,15 @@ function Index() {
               </p>
               <p className="price">
                 <span className="label">Preço de lançamento · pagamento único</span>
-                <span className="value">R$ 47,00</span>
+                {CONFIG.listPriceText && (
+                  <span className="was">
+                    De <s>{CONFIG.listPriceText}</s>
+                  </span>
+                )}
+                <span className="value">{CONFIG.launchPriceText}</span>
               </p>
               <CheckoutButton cta="hero" id="cta-hero" className="btn btn-block" linkRef={heroRef}>
-                Quero o e-book por R$ 47,00
+                Quero o e-book por {CONFIG.launchPriceText}
               </CheckoutButton>
               <Button asChild variant="link" className="sample-link"><a href="#modelo-p35">Ver um prompt na prática</a></Button>
               <ul className="badges" aria-label="Resumo da oferta">
@@ -697,10 +716,15 @@ function Index() {
               </ul>
               <p className="price">
                 <span className="label">Preço de lançamento · pagamento único</span>
-                <span className="value">R$ 47,00</span>
+                {CONFIG.listPriceText && (
+                  <span className="was">
+                    De <s>{CONFIG.listPriceText}</s>
+                  </span>
+                )}
+                <span className="value">{CONFIG.launchPriceText}</span>
               </p>
               <CheckoutButton cta="oferta" id="cta-offer" className="btn btn-block">
-                Quero o e-book por R$ 47,00
+                Quero o e-book por {CONFIG.launchPriceText}
               </CheckoutButton>
               {CONFIG.guaranteeDays > 0 && (
                 <div className="guarantee">
@@ -799,10 +823,15 @@ function Index() {
             </p>
             <p className="price">
               <span className="label">Preço de lançamento · pagamento único</span>
-              <span className="value">R$ 47,00</span>
+              {CONFIG.listPriceText && (
+                <span className="was">
+                  De <s>{CONFIG.listPriceText}</s>
+                </span>
+              )}
+              <span className="value">{CONFIG.launchPriceText}</span>
             </p>
             <CheckoutButton cta="final" id="cta-final" linkRef={finalRef}>
-              Quero o e-book por R$ 47,00
+              Quero o e-book por {CONFIG.launchPriceText}
             </CheckoutButton>
           </div>
         </section>
@@ -841,7 +870,15 @@ function Index() {
 
       <div className={barOn ? "buybar show" : "buybar"} id="buybar" aria-hidden={barOn ? "false" : "true"}>
         <span className="p">
-          R$ 47,00<small>E-book em PDF</small>
+          {CONFIG.launchPriceText}
+          <small>
+            {CONFIG.listPriceText && (
+              <>
+                <s>{CONFIG.listPriceText}</s> ·{" "}
+              </>
+            )}
+            E-book em PDF
+          </small>
         </span>
         <CheckoutButton cta="barra" tabIndex={barOn ? 0 : -1} withMessage={false}>
           Quero o e-book

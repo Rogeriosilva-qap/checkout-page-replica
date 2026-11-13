@@ -381,3 +381,9 @@ footer a{overflow-wrap:anywhere}
 .star-label{font-weight:600}
 .star-input{display:flex;gap:4px}
 .star-input button{background:none;border:0;padding:4px;cursor:pointer;min-width:40px;min-height:40px}
+
+/* Ancoragem de preço: valor cheio riscado ao lado do preço de lançamento */
+.price .was{display:block;font-size:1rem;color:#C9C9CF;margin:0 0 2px}
+.price .was s{color:#9C9CA4;text-decoration-thickness:1.5px;text-underline-offset:2px}
+.final .price .was,.final .price .was s{color:#C6C6CD}
+.buybar .p small s{color:var(--muted)}

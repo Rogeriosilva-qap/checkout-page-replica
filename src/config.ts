@@ -4,6 +4,8 @@
    ========================================================= */
 export const CONFIG = {
   checkoutUrl: "https://pay.kirvano.com/28b35434-3fbf-4f7e-914d-ae6212e77484", // URL do checkout (ex.: link da plataforma de pagamento). OBRIGATÓRIO para vender.
+  listPriceText: "R$ 97,00", // Preço cheio confirmado do e-book, exibido riscado ao lado do preço de lançamento. Deixe "" para ocultar.
+  launchPriceText: "R$ 47,00", // Preço de lançamento cobrado agora.
   deliveryText: "O material será entregue pela plataforma, com acesso por login e senha. Você também receberá um link via mensagem para acessar o material.",
   accessSupportText: "Se tiver dificuldade para acessar o material, fale com nosso suporte pelo e-mail operacaoaprovacao.edu@gmail.com.",
   refundText: "", // Canal, passos, prazo e condições de reembolso confirmados para esta compra.
