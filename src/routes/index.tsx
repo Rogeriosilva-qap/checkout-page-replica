@@ -12,6 +12,7 @@ import pag30 from "@/assets/pagina-30.jpg.asset.json";
 import pag05 from "@/assets/pagina-05.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "IA para Concursos Policiais · E-book da Operação Aprovação" },
@@ -29,6 +30,21 @@ export const Route = createFileRoute("/")({
           "60 modelos de prompt organizados por tarefa, 3 demonstrações completas e um passo a passo para conferir as respostas. R$ 47,00.",
       },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: "https://operacaoaprovacaoebooks.com.br/" },
+      { property: "og:site_name", content: "Operação Aprovação" },
+    ],
+    links: [{ rel: "canonical", href: "https://operacaoaprovacaoebooks.com.br/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            { "@type": "Organization", name: "Operação Aprovação", url: "https://operacaoaprovacaoebooks.com.br/", email: "operacaoaprovacao.edu@gmail.com" },
+            { "@type": "WebSite", name: "Operação Aprovação", url: "https://operacaoaprovacaoebooks.com.br/", inLanguage: "pt-BR" },
+          ],
+        }),
+      },
     ],
   }),
   component: Index,

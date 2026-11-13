@@ -36,3 +36,5 @@ use the editor.
 - Purchase FAQ entries are filtered through `getPurchaseFaq` in the business configuration; this keeps unconfirmed delivery, access support and refund information out of the public page.
 - Visitor comments and newsletter opt-ins use public write-only server functions with shared Zod validation, same-origin checks and honeypots; private tables have no visitor read grants to protect submitted data.
 - Newsletter forms store explicit consent only; marketing delivery requires a dedicated marketing email service rather than Lovable app emails.
+
+- Sitemap is router-derived (src/lib/sitemap.ts + src/routes/sitemap[.]xml.ts); every route must set staticData.sitemap so new pages make an explicit indexing decision.
