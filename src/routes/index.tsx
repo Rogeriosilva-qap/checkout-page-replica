@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode, type RefObject } from "react";
 
-import { CONFIG } from "@/config";
+import { CONFIG, getPurchaseFaq } from "@/config";
+import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo-operacao-aprovacao.png.asset.json";
 import capa from "@/assets/capa-ebook.jpg.asset.json";
 import pag14 from "@/assets/pagina-14.jpg.asset.json";
@@ -59,7 +60,7 @@ function CheckoutButton({ cta, id, className = "btn", tabIndex, withMessage = tr
   const [msg, setMsg] = useState("");
   return (
     <>
-      <a
+      <Button asChild><a
         ref={linkRef}
         className={className}
         href={CONFIG.checkoutUrl || "#"}
@@ -77,7 +78,7 @@ function CheckoutButton({ cta, id, className = "btn", tabIndex, withMessage = tr
         }}
       >
         {children}
-      </a>
+      </a></Button>
       {withMessage && (
         <p className={msg ? "checkout-msg show" : "checkout-msg"} role="status">
           {msg}
@@ -198,20 +199,19 @@ function Index() {
           <div className="hero">
             <div className="hero-text">
               <span className="kind">E-book digital em PDF</span>
-              <h1>Pare de brigar com a IA. Faça ela trabalhar pela sua aprovação.</h1>
+              <h1>Use IA para transformar seu edital em questões, revisões e um plano de estudo.</h1>
               <p className="lead">
-                Você já tem o material. Com 60 modelos prontos, você transforma cada página em questões, revisões e um plano que cabe na sua rotina — e aprende a conferir tudo na fonte.
-              </p>
-              <p className="for">
-                Feito para quem estuda para PM, PC, Polícia Penal e GCM — mesmo que você nunca tenha usado IA para estudar.
+                O e-book <strong>IA para Concursos Policiais</strong> reúne 60 modelos de prompt para quem estuda para PM, PC, Polícia Penal ou GCM. Aprenda a adaptar os comandos ao seu concurso e a conferir as respostas na fonte antes de usá-las no estudo.
+                {" "}Use a IA como um “professor” de apoio sempre que desejar: para explicar um trecho, tirar dúvidas e treinar — sem deixar de conferir as respostas.
               </p>
               <p className="price">
                 <span className="label">Preço de lançamento · pagamento único</span>
                 <span className="value">R$ 47,00</span>
               </p>
               <CheckoutButton cta="hero" id="cta-hero" className="btn btn-block" linkRef={heroRef}>
-                Quero estudar com método
+                Quero o e-book por R$ 47,00
               </CheckoutButton>
+              <Button asChild variant="link" className="sample-link"><a href="#modelo-p35">Ver um prompt na prática</a></Button>
               <p className="micro">
                 Você recebe um arquivo PDF de 70 páginas, com sumário e links internos para consultar pelo celular.
               </p>
@@ -336,10 +336,10 @@ function Index() {
             </p>
 
             <h3 className="demo-sub">Um dos 60 modelos, como aparece no e-book</h3>
-            <div className="card">
+            <div className="card prompt-sample" id="modelo-p35" role="group" aria-labelledby="titulo-p35">
               <div className="card-head">
                 <span className="code">P35</span>
-                <span className="t">Certo ou errado, um item por vez</span>
+                <h3 className="t" id="titulo-p35">Certo ou errado, um item por vez</h3>
               </div>
               <div className="card-body">
                 <p>
@@ -356,9 +356,9 @@ function Index() {
                   }
                   <span className="f">[cole aqui]</span>
                 </div>
-                <button className="copy" type="button" onClick={copyModel}>
+                <Button className="copy" type="button" onClick={copyModel}>
                   Copiar este modelo
-                </button>
+                </Button>
                 <span className="note" role="status" aria-live="polite">
                   {copyStatus}
                 </span>
@@ -642,7 +642,7 @@ function Index() {
                 <span className="value">R$ 47,00</span>
               </p>
               <CheckoutButton cta="oferta" id="cta-offer" className="btn btn-block">
-                Quero estudar com método
+                Quero o e-book por R$ 47,00
               </CheckoutButton>
               {CONFIG.guaranteeText && <p className="micro">{CONFIG.guaranteeText}</p>}
             </div>
@@ -710,12 +710,12 @@ function Index() {
                 conferência é uma etapa do método, com exemplos de como localizar um erro e corrigi-lo pela fonte.
               </p>
             </details>
-            {CONFIG.deliveryText && (
-              <details>
-                <summary>Como recebo o material?</summary>
-                <p>{CONFIG.deliveryText}</p>
+            {getPurchaseFaq().map(({ question, answer }) => (
+              <details key={question}>
+                <summary>{question}</summary>
+                <p>{answer}</p>
               </details>
-            )}
+            ))}
             {CONFIG.supportText && (
               <details>
                 <summary>Existe suporte, atualização ou garantia?</summary>
@@ -737,7 +737,7 @@ function Index() {
               <span className="value">R$ 47,00</span>
             </p>
             <CheckoutButton cta="final" id="cta-final" linkRef={finalRef}>
-              Quero estudar com método
+              Quero o e-book por R$ 47,00
             </CheckoutButton>
           </div>
         </section>

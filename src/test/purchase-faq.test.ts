@@ -1,0 +1,25 @@
+import { describe, expect, it } from "vitest";
+import { CONFIG, getPurchaseFaq } from "@/config";
+
+const empty = { deliveryText: "", accessSupportText: "", refundText: "" };
+
+describe("Confirmed purchase information", () => {
+  it("preserves the configured Kirvano purchase destination", () => {
+    expect(CONFIG.checkoutUrl).toBe("https://pay.kirvano.com/28b35434-3fbf-4f7e-914d-ae6212e77484");
+  });
+
+  it("omits unconfirmed delivery instructions", () => {
+    expect(getPurchaseFaq({ ...empty, deliveryText: "  " })).toEqual([]);
+    expect(getPurchaseFaq({ ...empty, deliveryText: "Confirmed delivery" }).map(item => item.answer)).toEqual(["Confirmed delivery"]);
+  });
+
+  it("omits unconfirmed access support channels", () => {
+    expect(getPurchaseFaq({ ...empty, accessSupportText: "  " })).toEqual([]);
+    expect(getPurchaseFaq({ ...empty, accessSupportText: "Confirmed support" }).map(item => item.answer)).toEqual(["Confirmed support"]);
+  });
+
+  it("omits unconfirmed refund procedures and conditions", () => {
+    expect(getPurchaseFaq({ ...empty, refundText: "  " })).toEqual([]);
+    expect(getPurchaseFaq({ ...empty, refundText: "Confirmed refund" }).map(item => item.answer)).toEqual(["Confirmed refund"]);
+  });
+});

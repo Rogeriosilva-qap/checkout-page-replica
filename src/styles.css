@@ -313,3 +313,25 @@ section>.wrap>h2::before{content:"";display:block;width:44px;height:4px;border-r
 .final p,.final .price .label{color:#D6D6DB}
 .faq details{border-radius:12px}
 .buybar{backdrop-filter:blur(10px)}
+
+/* Clareza da oferta e acesso direto à amostra, preservando a identidade. */
+:root{--sample-link:var(--paper);--sample-focus:var(--red)}
+.hero h1{font-size:2.5rem;letter-spacing:0}
+.hero .lead{font-size:1.0625rem;line-height:1.5}
+.sample-link{display:block;width:fit-content;margin:14px 0 0;color:var(--sample-link);text-underline-offset:4px;min-height:44px;padding:8px 0;font-weight:600}
+.sample-link:hover{color:var(--sample-link);text-decoration-thickness:2px}
+.sample-link:focus-visible{outline-color:var(--sample-focus)}
+.prompt-sample{scroll-margin-top:20px}
+.prompt-sample .copy{color:var(--ink);height:auto}
+.prompt-sample .card-head .t{margin:0;font-size:1rem;line-height:1.4;letter-spacing:0;align-self:center}
+@media (max-width:859px){
+  .brand{padding-top:12px}
+  .hero{padding-top:20px;gap:20px}
+  .hero h1{font-size:1.75rem}
+  .hero .kind{margin-bottom:10px;letter-spacing:0}
+  .hero .lead{margin-bottom:16px}
+  .hero .price{margin-bottom:12px}
+  .hero .btn{font-size:1rem;padding:14px 12px}
+  .hero .micro{margin-top:8px}
+  .cover{margin:0}
+}

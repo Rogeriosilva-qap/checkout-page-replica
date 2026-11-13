@@ -33,3 +33,4 @@ use the editor.
 - The sales page lives in `src/routes/index.tsx`; its CSS is the original page CSS kept unlayered in `src/styles.css` (overrides Tailwind preflight) — keep page styles there, not as utility classes.
 - Page visual overrides ("Tático & Premium") are appended at the end of `src/styles.css` after the original CSS so they win the cascade.
 - Editable business settings (checkout link, optional FAQ/footer texts) live only in `src/config.ts`; empty values hide the related item.
+- Purchase FAQ entries are filtered through `getPurchaseFaq` in the business configuration; this keeps unconfirmed delivery, access support and refund information out of the public page.
