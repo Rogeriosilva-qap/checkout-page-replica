@@ -84,6 +84,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "IA para Concursos Policiais · E-book da Operação Aprovação" },
       { name: "description", content: "E-book digital com 60 modelos de prompt para estudar para concursos policiais com IA." },
+      { name: "google-site-verification", content: "RwwweWmMXxRSXsn7a2Tldag4waBdIdiCWWKMQLO4Yq4" },
       { name: "theme-color", content: "#1F1F23" },
       { name: "color-scheme", content: "light" },
       { property: "og:locale", content: "pt_BR" },
