@@ -53,7 +53,7 @@ sc.cycles.use_denoising = True
 sc.cycles.max_bounces = 6
 sc.cycles.caustics_reflective = sc.cycles.caustics_refractive = False
 sc.render.image_settings.file_format = "PNG"
-sc.render.filepath = os.path.join(OUT, "seq", "abertura_q")   # sequência animada
+sc.render.filepath = os.path.join(OUT, "seq" if PREVIEW else "seq_final", "abertura_q")   # sequência animada
 for vt, look in (("AgX", "AgX - Medium High Contrast"), ("Khronos PBR Neutral", "None")):
     try:
         sc.view_settings.view_transform = vt
@@ -284,8 +284,9 @@ t0 = time.time()
 if STILL is not None:
     sc.frame_set(STILL)
     sc.camera = cam_rua if STILL < F_CUT else cam_est
-    sc.render.filepath = os.path.join(OUT, f"abertura_q{STILL:04d}.png")
+    sc.render.filepath = os.path.join(OUT, f"abertura_{'q' if PREVIEW else 'f'}{STILL:04d}.png")
     bpy.ops.render.render(write_still=True)
 else:
+    sc.render.use_overwrite = PREVIEW          # final: retomável, pula quadros já salvos
     bpy.ops.render.render(animation=True)
 print(f"ABERTURA: render em {time.time() - t0:.1f}s → {OUT}")
