@@ -5,3 +5,4 @@ renders/**/*.blend1
 output/tmp/
 blender/*.blend1
 __pycache__/
+renders/**/seq/

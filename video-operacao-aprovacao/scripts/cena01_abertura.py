@@ -53,7 +53,7 @@ sc.cycles.use_denoising = True
 sc.cycles.max_bounces = 6
 sc.cycles.caustics_reflective = sc.cycles.caustics_refractive = False
 sc.render.image_settings.file_format = "PNG"
-sc.render.filepath = os.path.join(OUT, "abertura_q")
+sc.render.filepath = os.path.join(OUT, "seq", "abertura_q")   # sequência animada
 for vt, look in (("AgX", "AgX - Medium High Contrast"), ("Khronos PBR Neutral", "None")):
     try:
         sc.view_settings.view_transform = vt
