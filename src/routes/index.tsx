@@ -3,6 +3,7 @@ import { useEffect, useRef, useState, type ReactNode, type RefObject } from "rea
 
 import { CONFIG, getPurchaseFaq } from "@/config";
 import { Button } from "@/components/ui/button";
+import { VisitorForms } from "@/components/visitor-forms";
 import logo from "@/assets/logo-operacao-aprovacao.png.asset.json";
 import capa from "@/assets/capa-ebook.jpg.asset.json";
 import pag14 from "@/assets/pagina-14.jpg.asset.json";
@@ -718,7 +719,7 @@ function Index() {
             ))}
             {CONFIG.supportText && (
               <details>
-                <summary>Existe suporte, atualização ou garantia?</summary>
+                <summary>O e-book tem garantia?</summary>
                 <p>{CONFIG.supportText}</p>
               </details>
             )}
@@ -741,6 +742,7 @@ function Index() {
             </CheckoutButton>
           </div>
         </section>
+        <VisitorForms />
       </main>
 
       <footer>
@@ -769,7 +771,7 @@ function Index() {
               <a href={CONFIG.privacyUrl}>Política de privacidade</a>
             </p>
           )}
-          {CONFIG.contactText && <p>{CONFIG.contactText}</p>}
+          {CONFIG.contactText && <p>{CONFIG.supportEmail ? <a href={`mailto:${CONFIG.supportEmail}`}>{CONFIG.contactText}</a> : CONFIG.contactText}</p>}
         </div>
       </footer>
 

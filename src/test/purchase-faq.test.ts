@@ -4,6 +4,13 @@ import { CONFIG, getPurchaseFaq } from "@/config";
 const empty = { deliveryText: "", accessSupportText: "", refundText: "" };
 
 describe("Confirmed purchase information", () => {
+  it("uses the confirmed seven-day guarantee", () => {
+    expect(CONFIG.guaranteeDays).toBe(7);
+  });
+
+  it("uses the official support email", () => {
+    expect(CONFIG.supportEmail).toBe("operacaoaprovacao.edu@gmail.com");
+  });
   it("preserves the configured Kirvano purchase destination", () => {
     expect(CONFIG.checkoutUrl).toBe("https://pay.kirvano.com/28b35434-3fbf-4f7e-914d-ae6212e77484");
   });

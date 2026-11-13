@@ -1,4 +1,7 @@
 # Revisão da página de vendas
+- [x] Incluir entrega confirmada, e-mail oficial e garantia de 7 dias, sem inventar prazo ou procedimento de reembolso.
+- [x] Implementar envio real de comentários privados e cadastro consentido para novidades.
+- [x] Testar formulários no celular e computador e confirmar registros no Lovable Cloud.
 - [x] Clarear a primeira tela e os três botões principais, preservando marca e checkout.
 - [x] Ligar a primeira tela ao cartão P35, mantendo cópia e quatro prévias.
 - [x] Mostrar somente informações confirmadas; entrega, atendimento e reembolso permanecem ocultos porque não foram fornecidos.

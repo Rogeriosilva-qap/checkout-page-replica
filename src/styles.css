@@ -335,3 +335,19 @@ section>.wrap>h2::before{content:"";display:block;width:44px;height:4px;border-r
   .hero .micro{margin-top:8px}
   .cover{margin:0}
 }
+
+.visitor-section{background:var(--paper);border-top:1px solid var(--line)}
+.visitor-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.visitor-grid h2{display:flex;gap:12px;align-items:center;font-size:1.5rem;letter-spacing:0}
+.visitor-grid h2 svg{color:var(--red);width:24px;height:24px;flex-shrink:0}
+.visitor-form{display:flex;flex-direction:column;gap:10px;margin-top:20px;position:relative}
+.visitor-form>label{font-weight:600}
+.visitor-form input:not([type=checkbox]),.visitor-form textarea{width:100%;min-height:48px;border:1px solid var(--line);border-radius:6px;padding:12px;background:var(--paper);color:var(--ink);font:inherit}
+.visitor-form textarea{resize:vertical}
+.visitor-form .consent-label{display:flex;align-items:flex-start;gap:10px;font-size:1rem;font-weight:400;margin:8px 0;line-height:1.45}
+.consent-label input{width:18px;height:18px;flex-shrink:0;margin-top:3px;accent-color:var(--red)}
+.visitor-form .btn{align-self:flex-start;height:auto;white-space:normal;font-size:1rem}
+.form-status{min-height:26px;margin:0;color:var(--muted);font-size:1rem}
+.form-trap{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);pointer-events:none}
+footer a{overflow-wrap:anywhere}
+@media(max-width:699px){.visitor-grid{grid-template-columns:1fr;gap:28px}.visitor-form .btn{width:100%}}
