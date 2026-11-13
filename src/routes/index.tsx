@@ -864,6 +864,11 @@ function Index() {
               <a href={CONFIG.privacyUrl}>Política de privacidade</a>
             </p>
           )}
+          <p>
+            <button type="button" className="cookie-link" onClick={() => window.dispatchEvent(new Event("open-cookie-settings"))}>
+              Preferências de cookies
+            </button>
+          </p>
           {CONFIG.contactText && <p>{CONFIG.supportEmail ? <a href={`mailto:${CONFIG.supportEmail}`}>{CONFIG.contactText}</a> : CONFIG.contactText}</p>}
         </div>
       </footer>

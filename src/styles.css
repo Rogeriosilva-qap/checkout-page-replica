@@ -393,3 +393,21 @@ footer a{overflow-wrap:anywhere}
 .stars svg{display:inline-block;flex-shrink:0}
 .testimonials{grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));align-items:start}
 .testimonials:has(> .testimonial:only-child){max-width:560px}
+
+/* ===== Aviso de cookies ===== */
+.cookie-panel{position:fixed;left:16px;right:16px;bottom:16px;z-index:60;max-width:560px;margin-left:auto;background:var(--ink);color:#fff;border:1px solid rgba(255,255,255,.12);border-top:3px solid var(--red);border-radius:14px;padding:18px 20px;box-shadow:0 18px 40px rgba(0,0,0,.35);font-family:var(--body);font-size:15px;line-height:1.5;outline:none}
+.cookie-panel h2{font-family:var(--head);font-size:17px;margin:0 0 6px;color:#fff}
+.cookie-panel p{margin:0 0 12px;color:rgba(255,255,255,.85)}
+.cookie-panel a{color:#fff;text-decoration:underline}
+.cookie-options{display:grid;gap:8px;margin-bottom:12px}
+.cookie-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 12px;background:rgba(255,255,255,.06);border-radius:10px;cursor:pointer}
+.cookie-row b{display:block}
+.cookie-row span{display:block;font-size:13.5px;color:rgba(255,255,255,.7)}
+.cookie-row em{font-style:normal;font-size:12.5px;color:rgba(255,255,255,.6);white-space:nowrap}
+.cookie-row input{width:20px;height:20px;accent-color:var(--red);flex:none}
+.cookie-note{font-size:13.5px}
+.cookie-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.cookie-btn{font:600 14px var(--body);padding:11px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.25);background:#fff;color:var(--ink);cursor:pointer}
+.cookie-btn.ghost{grid-column:1/-1;background:transparent;color:#fff}
+.cookie-link{background:none;border:0;padding:0;color:inherit;text-decoration:underline;font:inherit;cursor:pointer}
+@media (max-width:640px){.cookie-panel{bottom:84px;font-size:14px}}
