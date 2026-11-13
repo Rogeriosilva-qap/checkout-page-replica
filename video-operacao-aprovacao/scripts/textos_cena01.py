@@ -16,10 +16,10 @@ FPS = 30
 
 # (texto, fonte, tamanho, cor, y, entra_s, sai_s)
 TEXTOS = [
-    ("SEU SONHO É", BOLD, 100, "white", 240, 0.30, 4.20),
-    ("ENTRAR PARA", BOLD, 100, "white", 392, 0.40, 4.20),
-    ("A PMGO?", BOLD, 116, "0xE01A1A", 522, 0.55, 4.20),
-    ("Novo concurso em discussão", MED, 48, "0xE4E7EE", 735, 1.20, 4.20),
+    ("SEU SONHO É", BOLD, 100, "white", 200, 0.30, 4.20),
+    ("ENTRAR PARA", BOLD, 100, "white", 338, 0.40, 4.20),
+    ("A PMGO?", BOLD, 116, "0xE01A1A", 462, 0.55, 4.20),
+    ("Novo concurso em discussão", MED, 48, "0xE4E7EE", 640, 1.20, 4.20),
 ]
 FADE_IN, FADE_OUT, RISE = 0.35, 0.30, 18
 
@@ -51,7 +51,7 @@ def filtro(T):
             f"x=(w-text_w)/2:y='{yy}':alpha='{alpha(T, a, b)}':"
             f"shadowcolor=black@0.55:shadowx=0:shadowy=4")
     # fio vermelho entre título e texto secundário
-    parts.append(f"drawbox=x=(iw-140)/2:y=700:w=140:h=8:color=0xE01A1A@1:t=fill:enable='between({T},1.0,4.2)'")
+    parts.append(f"drawbox=x=(iw-140)/2:y=612:w=140:h=8:color=0xE01A1A@1:t=fill:enable='between({T},1.0,4.2)'")
     return ",".join(parts)
 
 

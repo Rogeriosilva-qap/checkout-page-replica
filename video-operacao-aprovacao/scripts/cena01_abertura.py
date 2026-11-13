@@ -12,6 +12,7 @@ Linha do tempo
 
 Uso (bpy):  python scripts/cena01_abertura.py -- --preview --still 105
             python scripts/cena01_abertura.py -- --preview          (210 quadros, só com aprovação)
+v4: objetos refinados (viatura PBR, rodas instanciadas, poças, cidade em camadas, estudo detalhado).
 Saídas: renders/cena01/abertura_qNNNN.png · blender/cena01_abertura.blend
 """
 import math
@@ -91,19 +92,39 @@ for i, x in enumerate(range(-60, 61, 6)):
     L.box(f"Faixa{i}", (3.0, 0.12, 0.004), (x, 1.9, 0.002), paint, bev=0, coll=C_RUA)
 L.box("FaixaBorda", (140, 0.12, 0.004), (0, -3.95, 0.002), paint, bev=0, coll=C_RUA)
 
+# poças: instâncias de uma única malha (posições pensadas para refletir giroflex e faróis)
+for i, (px, py, sx, sy, rz) in enumerate(((6.2, -2.1, 2.6, 1.6, 10), (3.7, -0.9, 1.8, 1.1, -20),
+                                          (1.0, -3.0, 1.6, 0.9, 35), (-1.2, -2.4, 2.2, 1.2, 5),
+                                          (9.5, 0.8, 2.0, 1.0, 0), (-4.0, 1.0, 2.5, 1.3, 15))):
+    L.instancia_poca(f"Poca{i}", (px, py), (sx, sy), rz, coll=C_RUA)
+
 for i, x in enumerate((-26, -14, -2, 10, 22, 34)):
     L.poste(f"Poste{i}", (x, 6.6, 0), arm_dir=-1, coll=C_RUA, energy=380)
 
-for i in range(14):
-    w, d, h = random.uniform(7, 12), random.uniform(6, 9), random.uniform(9, 28)
-    L.predio(f"Predio{i}", (-60 + i * 9.5 + random.uniform(-1, 1), 16 + random.uniform(0, 6)), (w, d, h),
-             seed=i * 3.7, coll=C_RUA)
+# prédios em três camadas de profundidade: frente baixa, meio, fundo alto e quase apagado
+roof_m = L.principled("Cobertura", (0.008, 0.008, 0.01), rough=0.8)
+k = 0
+for y0, jit, (hmin, hmax), win in ((14, 3, (6, 14), dict(lit=0.68, dim=0.28)),
+                                  (23, 4, (14, 30), dict(lit=0.74, dim=0.20)),
+                                  (35, 5, (24, 46), dict(lit=0.84, dim=0.10))):
+    x = -64.0
+    while x < 64:
+        w, d, h = random.uniform(6, 13), random.uniform(5, 10), random.uniform(hmin, hmax)
+        yy = y0 + random.uniform(0, jit)
+        L.predio(f"Predio{k}", (x + w / 2, yy), (w, d, h), seed=k * 3.7, coll=C_RUA,
+                 scale=random.uniform(2.6, 3.8), **win)
+        if random.random() < 0.5:   # casa de máquinas / caixa d'água: varia a silhueta
+            rw = random.uniform(1.5, 3.5)
+            L.box(f"Cobertura{k}", (rw, rw, random.uniform(1.5, 3.0)), (x + w / 2 + random.uniform(-1, 1), yy, h + 1.0),
+                  roof_m, bev=0, coll=C_RUA)
+        x += w + random.uniform(0.5, 3.0)
+        k += 1
 
-for i, (y, s) in enumerate(((10.5, 0.12), (14.0, 0.14))):
-    bpy.ops.mesh.primitive_plane_add(size=1, location=(0, y, 6), rotation=(math.radians(90), 0, 0))
+for i, (y, s) in enumerate(((11.0, 0.10), (19.0, 0.16), (30.0, 0.24))):
+    bpy.ops.mesh.primitive_plane_add(size=1, location=(0, y, 8), rotation=(math.radians(90), 0, 0))
     hz = bpy.context.active_object
     hz.name = f"Nevoa{i}"
-    hz.scale = (140, 12, 1)
+    hz.scale = (160, 16, 1)
     hz.data.materials.append(L.haze_material(f"Nevoa{i}", (0.25, 0.35, 0.7), s))
     hz.visible_shadow = False
     L.to_coll(hz, C_RUA)
@@ -118,10 +139,11 @@ lr = L.light("GiroflexLuzV", "POINT", (-0.3, -0.45, 1.75), (0, 0, 0), 10, (1.0, 
 lb = L.light("GiroflexLuzA", "POINT", (-0.3, 0.45, 1.75), (0, 0, 0), 10, (0.1, 0.25, 1.0), size=0.1, coll=C_CARRO)
 L.animate_lightbar("Viatura", F_START, F_CUT, period=36, lo=1.2, hi=5.0, light_red=lr, light_blue=lb)
 for s in (1, -1):
-    L.light(f"FarolLuz{s}", "SPOT", (2.4, s * 0.62, 0.66), (0, 90, 0), 250, (1.0, 0.94, 0.85), size=0.08,
+    L.light(f"FarolLuz{s}", "SPOT", (2.4, s * 0.62, 0.66), (0, 90, 0), 70, (1.0, 0.94, 0.85), size=0.08,
             spot=(55, 0.4), coll=C_CARRO)
-L.light("PreenchimentoRua", "AREA", (3.5, -9.0, 4.0), (60, 0, 20), 10, (0.55, 0.65, 1.0), size=3.0, spread=60,
-        coll=C_CARRO)
+side = L.light("LuzLateral", "AREA", (1.5, -7.5, 2.2), (72, 0, 8), 25, (0.78, 0.84, 1.0), size=5.0, spread=70,
+               coll=C_CARRO)   # luz lateral suave que revela a carroceria
+L.key_energy(side, ((F_START, 25), (60, 45), (120, 80)))
 rim = L.light("RecorteViatura", "AREA", (-0.6, 5.2, 1.6), (-80, 0, 0), 120, (0.70, 0.80, 1.0), size=3.0,
               spread=50, coll=C_CARRO)
 L.key_energy(rim, ((F_START, 120), (60, 160), (120, 520)))  # silhueta ganha força no movimento lateral
@@ -171,16 +193,18 @@ L.box("CaixilhoV", (0.04, 0.05, 1.0), (X + 0.35, 1.72, 1.55), frame_m, bev=0.004
 L.box("CaixilhoH", (1.3, 0.05, 0.04), (X + 0.35, 1.72, 1.55), frame_m, bev=0.004, coll=C_ESTUDO)
 
 # livro de legislação (sem título renderizado), notebook e apoio
-law_cover = L.cover_material("CapaLegislacao", (0.055, 0.003, 0.003), rough=0.5)
-law = L.livro("LivroLegislacao", 0.26, 0.19, 0.075, law_cover, (X - 0.22, -0.02, 0.7625 + 0.0375), 168, coll=C_ESTUDO)
-L.marcadores(law, 0.26, 0.19, 0.075, coll=C_ESTUDO)   # lombada para trás, marcadores para a câmera
+law_cover = L.cover_material("CapaLegislacao", (0.085, 0.006, 0.005), rough=0.45, leather=True)
+law = L.livro("LivroLegislacao", 0.25, 0.18, 0.07, law_cover, (X - 0.21, -0.02, 0.7625 + 0.035), -20,
+              coll=C_ESTUDO, gold=True)   # lombada com frisos dourados voltada para a câmera
+L.marcadores(law, 0.25, 0.18, 0.07, n=8, coll=C_ESTUDO, side="head")
+L.caderno("Caderno", (X - 0.02, -0.25, 0.7625), 6, coll=C_ESTUDO)
 L.livro("LivroApoio", 0.24, 0.17, 0.04, L.cover_material("CapaApoio", (0.01, 0.012, 0.02)),
         (X - 0.20, 0.17, 0.7625 + 0.02), 8, coll=C_ESTUDO)
 L.notebook("Notebook", (X + 0.18, 0.10, 0.7625), -14, coll=C_ESTUDO)
 mug = L.principled("Caneca", (0.02, 0.02, 0.025), rough=0.35, coat=0.6)
 L.cylinder("Caneca", 0.04, 0.10, (X - 0.52, 0.22, 0.8125), mug, verts=32, bev=0.004, coll=C_ESTUDO)
 pen = L.principled("Caneta", (0.6, 0.02, 0.015), rough=0.3, coat=0.5)
-L.cylinder("Caneta", 0.005, 0.14, (X - 0.02, -0.14, 0.767), pen, rot=(0, math.pi / 2, math.radians(25)),
+L.cylinder("Caneta", 0.005, 0.14, (X + 0.06, -0.22, 0.7765), pen, rot=(0, math.pi / 2, math.radians(25)),
            verts=12, coll=C_ESTUDO)
 # estante à esquerda (fundo) com lombadas desfocadas
 shelf_m = L.principled("Estante", (0.015, 0.012, 0.011), rough=0.6)
@@ -195,8 +219,12 @@ L.box("CortinaEstante", (0.24, 0.04, 2.4), (X - 0.514, -1.211, 1.2), shelf_m, be
     math.radians(-17.5)
 
 # luzes do estudo (acendem depois do corte)
-lamp = L.light("Luminaria", "AREA", (X - 0.35, -0.05, 1.35), (0, 0, 0), 0, L.WARM, size=0.25, spread=90, coll=C_ESTUDO)
-L.key_energy(lamp, ((F_CUT, 3), (F_CUT + 16, 28), (F_END, 30)))
+lamp = L.light("Luminaria", "AREA", (X - 0.20, -0.30, 1.32), (22, 0, -10), 0, L.WARM, size=0.22, spread=55,
+               coll=C_ESTUDO)   # luz direcionada sobre livro, caderno e notebook
+L.key_energy(lamp, ((F_CUT, 2), (F_CUT + 16, 11), (F_END, 12)))
+winrim = L.light("RecorteJanela", "AREA", (X + 0.05, 0.95, 1.20), (-62, 0, 0), 0, (0.6, 0.72, 1.0), size=0.8,
+                 spread=50, coll=C_ESTUDO)
+L.key_energy(winrim, ((F_CUT, 0), (F_CUT + 20, 9)))
 fill = L.light("PreenchimentoFrio", "AREA", (X + 0.9, -1.2, 1.6), (60, 0, 40), 0, (0.6, 0.72, 1.0), size=1.0,
                coll=C_ESTUDO)
 L.key_energy(fill, ((F_CUT, 0), (F_CUT + 20, 6)))
@@ -205,9 +233,11 @@ rimS = L.light("RecorteEstudo", "AREA", (X + 0.2, 1.3, 1.3), (-60, 0, 0), 0, (1.
 L.key_energy(rimS, ((F_CUT, 0), (F_CUT + 25, 10)))
 desk_items = bpy.data.collections.new("RecebeRecorteEstudo")
 for o in C_ESTUDO.objects:
-    if o.type == "MESH" and o.name.split("_")[0] in ("LivroLegislacao", "LivroApoio", "Notebook", "Caneca", "Caneta"):
+    if o.type == "MESH" and o.name.split("_")[0] in ("LivroLegislacao", "LivroApoio", "Notebook", "Caneca", "Caneta",
+                                                     "Caderno"):
         desk_items.objects.link(o)
 rimS.light_linking.receiver_collection = desk_items
+winrim.light_linking.receiver_collection = desk_items
 
 # ------------------------------------------------------------------ CÂMERAS
 def make_cam(name, lens, fstop):
