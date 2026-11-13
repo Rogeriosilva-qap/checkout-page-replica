@@ -3,3 +3,5 @@ renders/**/cena0*_[0-9]*.png
 renders/**/*.blend
 renders/**/*.blend1
 output/tmp/
+blender/*.blend1
+__pycache__/

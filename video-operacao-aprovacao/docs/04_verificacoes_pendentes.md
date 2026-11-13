@@ -3,7 +3,7 @@
 | # | Item | Status | Fonte |
 |---|---|---|---|
 | 1 | Texto literal do **art. 25, caput, do CP** | 🟡 Parcial. Bate com o e-book (p. 32), que o conferiu em 05/11/2026 na reprodução do TJDFT. **Ainda falta o Planalto**: o próprio e-book recomenda isso, e o Planalto e o TJDFT estão bloqueados na rede deste ambiente | planalto.gov.br/ccivil_03/decreto-lei/del2848compilado.htm |
-| 2 | Concurso PMGO (edital, data) | Não será afirmado; o texto diz apenas "aguarda" | — |
+| 2 | Concurso PMGO: "novo concurso em discussão" (cena 1 v3) | 🟡 Só fontes secundárias (13/11/2026): sites de cursos falam em concurso "em planejamento/estudos" e pedido de até 180 vagas para oficiais; **sem edital publicado e sem data**. O vídeo não afirma edital nem data. Conferir em fonte oficial (DOE-GO, PMGO, SSP-GO) antes de publicar | direcaoconcursos.com.br · grancursosonline.com.br · concursos.estrategia.com |
 | 3 | Método Fonte → Pedido → Conferência → Treino → Revisão | ✅ Confirmado (e-book, p. 2 e Figura 1, p. 6) | PDF |
 | 4 | 60 prompts, 3 demonstrações, 70 páginas | ✅ Confirmado (e-book, p. 1; PDF com 70 p.) | PDF |
 | 5 | Preço R$ 47,00 | ✅ Página de vendas (`src/config.ts`) | repositório |

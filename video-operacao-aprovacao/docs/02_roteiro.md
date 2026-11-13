@@ -5,10 +5,18 @@ Legenda: **[TELA]** = texto 3D ou sobreposição · **[VO]** = narração.
 
 ---
 
-## Cena 1 — Gancho · 0:00–0:07 (q. 1–210)
-**[VO]** "Você quer entrar para a polícia? Muita gente aguarda um novo concurso da PMGO. Mas edital e data só valem quando forem oficiais."
-**[TELA]** `QUER ENTRAR PARA A POLÍCIA?` → `NOVO CONCURSO PMGO?` + linha menor: `Edital e data: só com confirmação oficial.`
-> Regra: não afirmar publicação nem data do edital.
+## Cena 1 — Abertura cinematográfica · 0:00–0:07 (q. 1–210) · v3
+*Script: `scripts/cena01_abertura.py` · projeto: `blender/cena01_abertura.blend` · textos: `scripts/textos_cena01.py` (camada 2D)*
+**[VO]** "Sonha em entrar para a PMGO? Um novo concurso está em discussão. E você, já começou a estudar?"
+**[TELA]** `SEU SONHO É / ENTRAR PARA / A PMGO?` (0,3–4,2 s) · secundário `Novo concurso em discussão` (1,2–4,2 s)
+**[IMAGEM]**
+- 0–2 s: câmera rente ao asfalto molhado aproxima-se da viatura genérica, sem brasões nem inscrições
+- 2–4 s: movimento lateral revela a silhueta
+- 4–4,6 s: um poste em primeiro plano cobre a tela; corte
+- 4,6–5,5 s: a lateral de uma estante desliza e revela a mesa; a luminária acende
+- 5,5–7 s: livro de legislação, com marcadores de página, e notebook
+> "Em discussão" tem só fontes secundárias (sites de cursos preparatórios, out./nov. 2026). Conferir com fonte oficial antes de publicar. Ver `04_verificacoes_pendentes.md`.
+> Versões anteriores (livros + título com feixe vermelho): `renders/cena01/backup_v1/` e `backup_v2/`.
 
 ## Cena 2 — Problema · 0:07–0:15 (q. 211–450)
 **[VO]** "Muita gente já estuda com inteligência artificial. O risco é copiar a resposta sem conferir. A IA pode errar, e com muita confiança."
