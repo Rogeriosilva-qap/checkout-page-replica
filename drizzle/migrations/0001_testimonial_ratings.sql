@@ -1,0 +1,2 @@
+ALTER TABLE public.comment_submissions ADD COLUMN rating smallint NOT NULL DEFAULT 5 CHECK (rating BETWEEN 1 AND 5);
+ALTER TABLE public.comment_submissions ADD COLUMN approved boolean NOT NULL DEFAULT false;

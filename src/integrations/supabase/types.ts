@@ -16,22 +16,28 @@ export type Database = {
     Tables: {
       comment_submissions: {
         Row: {
+          approved: boolean
           created_at: string
           id: string
           message: string
           name: string
+          rating: number
         }
         Insert: {
+          approved?: boolean
           created_at?: string
           id?: string
           message: string
           name: string
+          rating?: number
         }
         Update: {
+          approved?: boolean
           created_at?: string
           id?: string
           message?: string
           name?: string
+          rating?: number
         }
         Relationships: []
       }

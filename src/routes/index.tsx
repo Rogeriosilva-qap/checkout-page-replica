@@ -229,6 +229,12 @@ function Index() {
                 Quero o e-book por R$ 47,00
               </CheckoutButton>
               <Button asChild variant="link" className="sample-link"><a href="#modelo-p35">Ver um prompt na prática</a></Button>
+              <ul className="badges" aria-label="Resumo da oferta">
+                <li>Acesso pela plataforma, no celular e no PC</li>
+                <li>Garantia de 7 dias</li>
+                <li>60 modelos prontos</li>
+                <li>PDF de 70 páginas</li>
+              </ul>
               <p className="micro">
                 Você recebe um arquivo PDF de 70 páginas, com sumário e links internos para consultar pelo celular.
               </p>
@@ -365,6 +371,11 @@ function Index() {
                 <p>
                   <b>Forneça:</b> o texto estudado.
                 </p>
+                <ol className="howto">
+                  <li>Copie o modelo abaixo.</li>
+                  <li>Cole no ChatGPT, Claude, Gemini ou NotebookLM, junto com um trecho da sua matéria.</li>
+                  <li>Responda C ou E e confira a justificativa no próprio texto.</li>
+                </ol>
                 <div className="cmd" id="p35" ref={cmdRef}>
                   {"Crie "}
                   <span className="f">[10]</span>
@@ -642,6 +653,35 @@ function Index() {
           </div>
         </section>
 
+        <section className="bonus" aria-labelledby="t-bonus">
+          <div className="wrap">
+            <h2 id="t-bonus">Bônus inclusos na sua compra</h2>
+            <p className="narrow">Além dos 60 modelos, você leva materiais de apoio para colocar o método em prática desde o primeiro dia.</p>
+            <div className="bonus-grid">
+              <article className="bonus-card featured">
+                <span className="bonus-tag">Bônus exclusivo</span>
+                <h3>Configurar NotebookLM</h3>
+                <p>Passo a passo para montar seu caderno de estudo no NotebookLM com edital, lei seca e apostilas, e fazer perguntas que a IA responde a partir das fontes que você enviou.</p>
+              </article>
+              <article className="bonus-card">
+                <span className="bonus-tag">Bônus 1</span>
+                <h3>Roteiro de 7 dias</h3>
+                <p>Objetivo, atividade, tempo estimado e critério de conferência para cada dia da primeira semana.</p>
+              </article>
+              <article className="bonus-card">
+                <span className="bonus-tag">Bônus 2</span>
+                <h3>Checklist de conferência</h3>
+                <p>Uma lista prática para checar números, prazos e exceções na fonte antes de memorizar.</p>
+              </article>
+              <article className="bonus-card">
+                <span className="bonus-tag">Bônus 3</span>
+                <h3>Índice por necessidade</h3>
+                <p>12 situações comuns, cada uma com o código e a página do modelo indicado.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
         <section className="offer" id="oferta" aria-labelledby="t-off" ref={offerRef}>
           <div className="wrap">
             <div className="offer-box">
@@ -653,6 +693,7 @@ function Index() {
                 <li>Três demonstrações completas e seis figuras didáticas.</li>
                 <li>Índice por necessidade, roteiro de 7 dias e checklist de conferência.</li>
                 <li>Sumário e links internos para consulta no celular.</li>
+                <li><strong>Bônus exclusivo:</strong> Configurar NotebookLM.</li>
               </ul>
               <p className="price">
                 <span className="label">Preço de lançamento · pagamento único</span>
@@ -661,7 +702,14 @@ function Index() {
               <CheckoutButton cta="oferta" id="cta-offer" className="btn btn-block">
                 Quero o e-book por R$ 47,00
               </CheckoutButton>
-              {CONFIG.guaranteeText && <p className="micro">{CONFIG.guaranteeText}</p>}
+              {CONFIG.guaranteeDays > 0 && (
+                <div className="guarantee">
+                  <span className="shield" aria-hidden="true">{CONFIG.guaranteeDays}</span>
+                  <p>
+                    <strong>Garantia de {CONFIG.guaranteeDays} dias.</strong> Leia, teste os modelos no seu estudo e decida com calma.
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </section>

@@ -351,3 +351,33 @@ section>.wrap>h2::before{content:"";display:block;width:44px;height:4px;border-r
 .form-trap{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);pointer-events:none}
 footer a{overflow-wrap:anywhere}
 @media(max-width:699px){.visitor-grid{grid-template-columns:1fr;gap:28px}.visitor-form .btn{width:100%}}
+
+/* Badges, bônus, garantia e depoimentos */
+.badges{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.badges li{font-size:.9rem;font-weight:600;padding:6px 12px;border-radius:999px;border:1px solid rgba(200,16,46,.55);background:rgba(200,16,46,.12);color:inherit}
+.badges li::before{content:"✓ ";color:var(--red);font-weight:800}
+.howto{margin:8px 0 12px;padding-left:1.3em}
+.howto li{margin:.25em 0}
+.bonus{background:var(--ink);color:#f4f4f5}
+.bonus h2,.bonus h3{color:#fff}
+.bonus .narrow{color:#d4d4d8}
+.bonus-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:24px}
+.bonus-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:20px}
+.bonus-card p{margin:.4em 0 0;color:#d4d4d8;font-size:1rem}
+.bonus-card h3{margin:.5em 0 0;font-size:1.15rem}
+.bonus-card.featured{border-color:var(--red);background:linear-gradient(160deg,rgba(200,16,46,.28),rgba(255,255,255,.04));box-shadow:0 10px 30px rgba(200,16,46,.25)}
+.bonus-tag{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--red);color:#fff;padding:3px 10px;border-radius:999px}
+@media(max-width:899px){.bonus-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:599px){.bonus-grid{grid-template-columns:1fr}}
+.guarantee{display:flex;align-items:center;gap:14px;margin-top:18px;padding:14px;border:1px dashed rgba(255,255,255,.35);border-radius:12px}
+.guarantee p{margin:0;font-size:1rem}
+.shield{flex-shrink:0;width:52px;height:58px;display:grid;place-items:center;font:800 1.4rem Poppins,sans-serif;color:#fff;background:var(--red);clip-path:polygon(50% 0,100% 15%,100% 55%,50% 100%,0 55%,0 15%)}
+.testimonials{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;margin:20px 0 48px}
+.testimonial{margin:0;background:var(--mist);border-radius:12px;padding:18px}
+.testimonial blockquote{margin:8px 0;font-style:italic}
+.testimonial figcaption{font-weight:700}
+.stars svg,.star-input svg{width:22px;height:22px;color:#d4d4d8}
+.stars svg.on,.star-input svg.on{color:#F5B301;fill:#F5B301}
+.star-label{font-weight:600}
+.star-input{display:flex;gap:4px}
+.star-input button{background:none;border:0;padding:4px;cursor:pointer;min-width:40px;min-height:40px}
