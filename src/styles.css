@@ -387,3 +387,9 @@ footer a{overflow-wrap:anywhere}
 .price .was s{color:#9C9CA4;text-decoration-thickness:1.5px;text-underline-offset:2px}
 .final .price .was,.final .price .was s{color:#C6C6CD}
 .buybar .p small s{color:var(--muted)}
+
+/* Depoimentos: estrelas em linha e grade que se reorganiza conforme novos itens */
+.stars{display:inline-flex;flex-direction:row;align-items:center;gap:2px}
+.stars svg{display:inline-block;flex-shrink:0}
+.testimonials{grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));align-items:start}
+.testimonials:has(> .testimonial:only-child){max-width:560px}
