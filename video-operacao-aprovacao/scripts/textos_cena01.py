@@ -43,7 +43,7 @@ def degrade():
 
 def filtro(T):
     parts = [f"[0:v]scale=1080:1920:flags=lanczos[b];[1:v]format=rgba[g];"
-             f"[b][g]overlay=0:0:format=auto:enable='lt({T},4.2)'"]
+             f"[b][g]overlay=0:0:format=auto:shortest=1:enable='lt({T},4.2)'"]
     for txt, font, size, color, y, a, b in TEXTOS:
         yy = f"{y}+{RISE}*(1-min(1,max(0,({T}-{a})/{FADE_IN})))"
         parts.append(
