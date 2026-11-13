@@ -16,7 +16,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "E-book digital com 60 modelos de prompt para transformar seu material de concurso em questões, revisões e plano de estudo com IA, conferindo as respostas nas fontes. Para PM, PC, Polícia Penal e GCM. R$ 69,90.",
+          "E-book digital com 60 modelos de prompt para transformar seu material de concurso em questões, revisões e plano de estudo com IA, conferindo as respostas nas fontes. Para PM, PC, Polícia Penal e GCM. R$ 47,00.",
       },
       { property: "og:type", content: "product" },
       { property: "og:locale", content: "pt_BR" },
@@ -24,7 +24,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "60 modelos de prompt organizados por tarefa, 3 demonstrações completas e um passo a passo para conferir as respostas. R$ 69,90.",
+          "60 modelos de prompt organizados por tarefa, 3 demonstrações completas e um passo a passo para conferir as respostas. R$ 47,00.",
       },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -68,7 +68,7 @@ function CheckoutButton({ cta, id, className = "btn", tabIndex, withMessage = tr
         id={id}
         tabIndex={tabIndex}
         onClick={(e) => {
-          track("checkout_click", { cta, price: 69.9, currency: "BRL" });
+          track("checkout_click", { cta, price: 47, currency: "BRL" });
           if (!CONFIG.checkoutUrl) {
             e.preventDefault();
             console.warn("Checkout não configurado: preencha CONFIG.checkoutUrl.");
@@ -198,20 +198,19 @@ function Index() {
           <div className="hero">
             <div className="hero-text">
               <span className="kind">E-book digital em PDF</span>
-              <h1>Transforme seu material de concurso em questões, revisões e um plano de estudo com IA</h1>
+              <h1>Pare de brigar com a IA. Faça ela trabalhar pela sua aprovação.</h1>
               <p className="lead">
-                60 modelos de pedido organizados por tarefa, com instruções de uso e um passo a passo para conferir cada
-                resposta na fonte.
+                Você já tem o material. Com 60 modelos prontos, você transforma cada página em questões, revisões e um plano que cabe na sua rotina — e aprende a conferir tudo na fonte.
               </p>
               <p className="for">
-                Para candidatos a PM, PC, Polícia Penal e GCM, inclusive quem nunca usou IA para estudar.
+                Feito para quem estuda para PM, PC, Polícia Penal e GCM — mesmo que você nunca tenha usado IA para estudar.
               </p>
               <p className="price">
-                <span className="label">Preço de lançamento</span>
-                <span className="value">R$ 69,90</span>
+                <span className="label">Preço de lançamento · pagamento único</span>
+                <span className="value">R$ 47,00</span>
               </p>
               <CheckoutButton cta="hero" id="cta-hero" className="btn btn-block" linkRef={heroRef}>
-                Quero o e-book por R$ 69,90
+                Quero estudar com método
               </CheckoutButton>
               <p className="micro">
                 Você recebe um arquivo PDF de 70 páginas, com sumário e links internos para consultar pelo celular.
@@ -241,9 +240,9 @@ function Index() {
       <main id="conteudo">
         <section className="problems" aria-labelledby="t-prob">
           <div className="wrap">
-            <h2 id="t-prob">Se você já usa IA para estudar, talvez reconheça estas situações</h2>
+            <h2 id="t-prob">Se você já tentou estudar com IA, provavelmente já passou por isso</h2>
             <p className="narrow">
-              Na maioria das vezes, o problema não é falta de esforço. O pedido não diz à ferramenta o que entregar, e
+              A gente sabe: não é falta de vontade. Você estuda depois do trabalho, cansado, e ainda perde tempo com respostas que não ajudam. O pedido não diz à ferramenta o que entregar, e
               ninguém explicou como conferir o que ela respondeu.
             </p>
             <div className="plist">
@@ -639,11 +638,11 @@ function Index() {
                 <li>Sumário e links internos para consulta no celular.</li>
               </ul>
               <p className="price">
-                <span className="label">Preço de lançamento</span>
-                <span className="value">R$ 69,90</span>
+                <span className="label">Preço de lançamento · pagamento único</span>
+                <span className="value">R$ 47,00</span>
               </p>
               <CheckoutButton cta="oferta" id="cta-offer" className="btn btn-block">
-                Quero o e-book por R$ 69,90
+                Quero estudar com método
               </CheckoutButton>
               {CONFIG.guaranteeText && <p className="micro">{CONFIG.guaranteeText}</p>}
             </div>
@@ -728,17 +727,17 @@ function Index() {
 
         <section className="final" aria-labelledby="t-fin">
           <div className="wrap narrow">
-            <h2 id="t-fin">Estude com IA sabendo o que pedir e como conferir</h2>
+            <h2 id="t-fin">Sua próxima sessão de estudo pode render muito mais</h2>
             <p>
               Se você quer transformar o material que já tem em questões, revisões e um plano possível, o e-book reúne os
-              modelos, os exemplos e o passo a passo. Você pode avaliar as amostras desta página e decidir com calma.
+              modelos, os exemplos e o passo a passo. Sem pressa: veja as amostras desta página e decida com calma. Se fizer sentido para você, estaremos juntos nessa missão.
             </p>
             <p className="price">
-              <span className="label">Preço de lançamento</span>
-              <span className="value">R$ 69,90</span>
+              <span className="label">Preço de lançamento · pagamento único</span>
+              <span className="value">R$ 47,00</span>
             </p>
             <CheckoutButton cta="final" id="cta-final" linkRef={finalRef}>
-              Quero o e-book por R$ 69,90
+              Quero estudar com método
             </CheckoutButton>
           </div>
         </section>
@@ -776,7 +775,7 @@ function Index() {
 
       <div className={barOn ? "buybar show" : "buybar"} id="buybar" aria-hidden={barOn ? "false" : "true"}>
         <span className="p">
-          R$ 69,90<small>E-book em PDF</small>
+          R$ 47,00<small>E-book em PDF</small>
         </span>
         <CheckoutButton cta="barra" tabIndex={barOn ? 0 : -1} withMessage={false}>
           Quero o e-book

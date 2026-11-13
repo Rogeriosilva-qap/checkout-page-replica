@@ -280,3 +280,36 @@ footer p{margin:0 0 .7em}
 body.bar-on{padding-bottom:78px}
 @media (min-width:860px){.buybar{display:none}body.bar-on{padding-bottom:0}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* ===== Tático & Premium: camada visual moderna ===== */
+body{background:#F6F6F7}
+.top{position:relative;overflow:hidden;border-top:0;
+  background:radial-gradient(900px 500px at 85% 20%,rgba(200,16,46,.28),transparent 60%),
+  linear-gradient(180deg,#141417 0%,var(--ink) 100%)}
+.top::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+  background-size:44px 44px;mask-image:linear-gradient(180deg,#000,transparent 85%)}
+.top::after{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,var(--red),#ff3b55,var(--red))}
+.top .wrap{position:relative}
+.hero h1{font-size:clamp(2rem,6.4vw,3.2rem);letter-spacing:-.02em}
+.hero .kind{background:rgba(200,16,46,.15);border-color:rgba(200,16,46,.55);color:#FFD5DB;font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:.78rem;padding:5px 14px}
+.cover img{border-radius:10px;transform:perspective(900px) rotateY(-8deg);box-shadow:0 30px 60px -10px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.08),0 0 80px rgba(200,16,46,.25)}
+.price .value{font-size:2.8rem;letter-spacing:-.02em}
+.btn{border-radius:12px;background:linear-gradient(180deg,#E01535,var(--red));box-shadow:0 12px 28px -10px rgba(200,16,46,.7),inset 0 1px 0 rgba(255,255,255,.2);transition:transform .2s,box-shadow .2s}
+.btn:hover{background:linear-gradient(180deg,#C8102E,#A80E27);transform:translateY(-2px);box-shadow:0 18px 34px -10px rgba(200,16,46,.8)}
+.gains li::before{border-radius:50%;box-shadow:0 0 0 4px rgba(200,16,46,.2)}
+section h2{letter-spacing:-.015em}
+section>.wrap>h2::before{content:"";display:block;width:44px;height:4px;border-radius:4px;background:var(--red);margin-bottom:14px}
+.problems{background:#F6F6F7}
+.plist article,.fit article,.shot,.card{border-radius:16px;border-color:#E6E6EA;box-shadow:0 1px 2px rgba(0,0,0,.04),0 10px 30px -18px rgba(31,31,35,.25);transition:transform .25s,box-shadow .25s}
+.plist article:hover,.shot:hover{transform:translateY(-3px);box-shadow:0 20px 40px -20px rgba(31,31,35,.35)}
+.plist article{border-left:4px solid var(--red)}
+.offer{background:linear-gradient(180deg,#F6F6F7,#fff)}
+.offer-box{border-radius:20px!important;border:0!important;background:var(--ink)!important;color:#fff;box-shadow:0 40px 80px -30px rgba(31,31,35,.6),0 0 0 1px rgba(200,16,46,.4)!important}
+.offer-box h2,.offer-box li{color:#fff}
+.offer-box .price .label,.offer-box .micro{color:#C9C9CF}
+.final{background:radial-gradient(700px 300px at 50% 0%,rgba(200,16,46,.25),transparent 70%),var(--ink)!important;color:#fff}
+.final h2,.final .price .value{color:#fff}
+.final p,.final .price .label{color:#D6D6DB}
+.faq details{border-radius:12px}
+.buybar{backdrop-filter:blur(10px)}
