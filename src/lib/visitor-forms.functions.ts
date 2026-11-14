@@ -32,9 +32,9 @@ export const subscribeNewsletter = createServerFn({ method: "POST" })
 export const listTestimonials = createServerFn({ method: "GET" }).handler(async () => {
   const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
   const { data } = await supabaseAdmin.from("comment_submissions")
-    .select("id, name, message, rating, avatar")
+    .select("id, name, message, rating, avatar, reply")
     .eq("approved", true)
     .order("created_at", { ascending: false })
     .limit(12);
-  return (data ?? []) as { id: string; name: string; message: string; rating: number; avatar: string | null }[];
+  return (data ?? []) as { id: string; name: string; message: string; rating: number; avatar: string | null; reply: string | null }[];
 });

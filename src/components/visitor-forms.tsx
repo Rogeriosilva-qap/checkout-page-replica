@@ -1,6 +1,6 @@
-import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import { useServerFn } from "@tanstack/react-start";
-import { Star, Mail, Camera, Target } from "lucide-react";
+import { Star, Mail, Camera, Target, ChevronLeft, ChevronRight, BadgeCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { commentSchema, newsletterSchema } from "@/lib/visitor-forms.schemas";
 import { listTestimonials, submitComment, subscribeNewsletter } from "@/lib/visitor-forms.functions";
@@ -15,7 +15,9 @@ export function VisitorForms() {
   const [rating, setRating] = useState(5);
   const [avatar, setAvatar] = useState("");
   const fetchTestimonials = useServerFn(listTestimonials);
-  const [items, setItems] = useState<{ id: string; name: string; message: string; rating: number; avatar: string | null }[]>([]);
+  const [items, setItems] = useState<{ id: string; name: string; message: string; rating: number; avatar: string | null; reply: string | null }[]>([]);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const slide = (dir: number) => { const el = trackRef.current; if (el) el.scrollBy({ left: dir * el.clientWidth * 0.9, behavior: "smooth" }); };
   useEffect(() => { fetchTestimonials().then(setItems).catch(() => {}); }, [fetchTestimonials]);
 
   async function sendComment(event: FormEvent<HTMLFormElement>) {
@@ -57,14 +59,19 @@ export function VisitorForms() {
       {items.length > 0 && (
         <div className="wrap">
           <h2 id="t-depo">O que dizem os leitores</h2>
-          <div className="testimonials">
+          <div className="carousel">
+            <button type="button" className="car-nav prev" aria-label="Depoimento anterior" onClick={() => slide(-1)}><ChevronLeft aria-hidden="true" /></button>
+            <div className="testimonials car-track" ref={trackRef}>
             {items.map((t) => (
               <figure className="testimonial" key={t.id}>
                 <Stars value={t.rating} />
                 <blockquote>“{t.message}”</blockquote>
                 <figcaption className="who"><span className="avatar">{t.avatar ? <img src={t.avatar} alt="" /> : <span aria-hidden="true">{t.name.trim().charAt(0).toUpperCase()}</span>}</span>{t.name}</figcaption>
+                {t.reply && <div className="reply"><strong><BadgeCheck aria-hidden="true" />Resposta da Operação Aprovação</strong><p>{t.reply}</p></div>}
               </figure>
             ))}
+            </div>
+            <button type="button" className="car-nav next" aria-label="Próximo depoimento" onClick={() => slide(1)}><ChevronRight aria-hidden="true" /></button>
           </div>
         </div>
       )}

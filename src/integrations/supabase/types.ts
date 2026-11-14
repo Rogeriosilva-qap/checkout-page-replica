@@ -23,6 +23,7 @@ export type Database = {
           message: string
           name: string
           rating: number
+          reply: string | null
         }
         Insert: {
           approved?: boolean
@@ -32,6 +33,7 @@ export type Database = {
           message: string
           name: string
           rating?: number
+          reply?: string | null
         }
         Update: {
           approved?: boolean
@@ -41,6 +43,7 @@ export type Database = {
           message?: string
           name?: string
           rating?: number
+          reply?: string | null
         }
         Relationships: []
       }

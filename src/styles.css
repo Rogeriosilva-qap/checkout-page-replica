@@ -484,3 +484,31 @@ footer a{overflow-wrap:anywhere}
 .sim-tag svg{width:16px;height:16px}
 .sim-note{font-weight:600;color:#fff!important}
 .sim-form{background:#fff;color:var(--ink);border-radius:16px;padding:20px}
+
+/* Simulados: destaque animado e profissional */
+.simulados .sim-grid{position:relative;border-radius:20px;padding:clamp(20px,4vw,36px);background:linear-gradient(var(--ink),var(--ink)) padding-box,linear-gradient(120deg,rgba(200,16,46,.9),rgba(255,255,255,.15),rgba(200,16,46,.9)) border-box;border:2px solid transparent;background-size:100% 100%,250% 250%;animation:sim-border 6s linear infinite,sim-glow 3.2s ease-in-out infinite;color:#fff}
+.simulados .sim-grid h2{color:#fff}.simulados .sim-grid>div p{color:#D6D6DB}
+.simulados .sim-tag{animation:sim-pulse 2.2s ease-in-out infinite}
+.simulados .sim-tag svg{animation:sim-spin 4s linear infinite}
+@keyframes sim-border{to{background-position:0 0,250% 0}}
+@keyframes sim-glow{0%,100%{box-shadow:0 10px 30px rgba(200,16,46,.15)}50%{box-shadow:0 14px 44px rgba(200,16,46,.38)}}
+@keyframes sim-pulse{0%,100%{box-shadow:0 0 0 0 rgba(200,16,46,.55)}60%{box-shadow:0 0 0 10px rgba(200,16,46,0)}}
+@keyframes sim-spin{to{transform:rotate(360deg)}}
+/* Depoimentos em carrossel */
+.carousel{position:relative}
+.testimonials.car-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 2px 12px}
+.car-track::-webkit-scrollbar{display:none}
+.car-track .testimonial{flex:0 0 min(86%,340px);scroll-snap-align:start;margin:0;max-width:none}
+.car-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:40px;height:40px;border-radius:50%;border:0;background:var(--ink);color:#fff;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.25)}
+.car-nav:hover{background:var(--red)}.car-nav.prev{left:-12px}.car-nav.next{right:-12px}
+.car-nav svg{display:block;width:20px;height:20px}
+.reply{margin-top:12px;padding:10px 12px;border-left:3px solid var(--red);background:rgba(200,16,46,.06);border-radius:8px;font-size:.95rem}
+.reply strong{display:flex;align-items:center;gap:6px;font-family:var(--head);font-size:.85rem}
+.reply strong svg{display:inline-block;width:16px;height:16px;color:var(--red)}
+.reply p{margin:4px 0 0}
+/* Botão flutuante do WhatsApp */
+.wa-float{position:fixed;left:20px;bottom:20px;z-index:60;display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff!important;text-decoration:none;font-family:var(--head);font-weight:600;padding:12px 16px;border-radius:999px;box-shadow:0 10px 26px rgba(0,0,0,.25);animation:wa-pop 2.8s ease-in-out infinite}
+.wa-float svg{display:block;width:26px;height:26px}
+@keyframes wa-pop{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+@media (max-width:859px){.wa-float{bottom:90px;left:auto;right:16px;padding:12px}.wa-float span{display:none}}
+@media(prefers-reduced-motion:reduce){.simulados .sim-grid,.simulados .sim-tag,.simulados .sim-tag svg,.wa-float{animation:none}}

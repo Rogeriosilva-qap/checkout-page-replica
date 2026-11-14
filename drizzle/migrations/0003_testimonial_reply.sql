@@ -1,0 +1,1 @@
+ALTER TABLE public.comment_submissions ADD COLUMN reply text;
