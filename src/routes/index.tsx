@@ -3,7 +3,7 @@ import { useEffect, useRef, useState, type ReactNode, type RefObject } from "rea
 
 import { CONFIG, getPurchaseFaq } from "@/config";
 import { Button } from "@/components/ui/button";
-import { VisitorForms } from "@/components/visitor-forms";
+import { VisitorForms, SimuladosSignup } from "@/components/visitor-forms";
 import logo from "@/assets/logo-operacao-aprovacao.png.asset.json";
 import capa from "@/assets/capa-ebook.jpg.asset.json";
 import pag14 from "@/assets/pagina-14.jpg.asset.json";
@@ -869,6 +869,7 @@ function Index() {
             </CheckoutButton>
           </div>
         </section>
+        <SimuladosSignup />
         <VisitorForms />
       </main>
 

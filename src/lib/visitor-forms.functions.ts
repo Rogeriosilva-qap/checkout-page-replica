@@ -15,7 +15,7 @@ export const submitComment = createServerFn({ method: "POST" })
   .handler(async ({ data }) => {
     if (!isSameOrigin()) return { ok: false };
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-    const { error } = await supabaseAdmin.from("comment_submissions").insert({ name: data.name, message: data.message, rating: data.rating });
+    const { error } = await supabaseAdmin.from("comment_submissions").insert({ name: data.name, message: data.message, rating: data.rating, avatar: data.avatar ?? null });
     return { ok: !error };
   });
 
@@ -24,7 +24,7 @@ export const subscribeNewsletter = createServerFn({ method: "POST" })
   .handler(async ({ data }) => {
     if (!isSameOrigin()) return { ok: false };
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-    const { error } = await supabaseAdmin.from("newsletter_subscriptions").insert({ email: data.email, consent: data.consent });
+    const { error } = await supabaseAdmin.from("newsletter_subscriptions").insert({ email: data.email, consent: data.consent, consent_version: data.topic });
     // The same response prevents revealing whether an address was already registered.
     return { ok: !error || error.code === "23505" };
   });
@@ -32,9 +32,9 @@ export const subscribeNewsletter = createServerFn({ method: "POST" })
 export const listTestimonials = createServerFn({ method: "GET" }).handler(async () => {
   const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
   const { data } = await supabaseAdmin.from("comment_submissions")
-    .select("id, name, message, rating")
+    .select("id, name, message, rating, avatar")
     .eq("approved", true)
     .order("created_at", { ascending: false })
     .limit(12);
-  return (data ?? []) as { id: string; name: string; message: string; rating: number }[];
+  return (data ?? []) as { id: string; name: string; message: string; rating: number; avatar: string | null }[];
 });

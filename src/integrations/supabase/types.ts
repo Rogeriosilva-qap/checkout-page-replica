@@ -17,6 +17,7 @@ export type Database = {
       comment_submissions: {
         Row: {
           approved: boolean
+          avatar: string | null
           created_at: string
           id: string
           message: string
@@ -25,6 +26,7 @@ export type Database = {
         }
         Insert: {
           approved?: boolean
+          avatar?: string | null
           created_at?: string
           id?: string
           message: string
@@ -33,6 +35,7 @@ export type Database = {
         }
         Update: {
           approved?: boolean
+          avatar?: string | null
           created_at?: string
           id?: string
           message?: string

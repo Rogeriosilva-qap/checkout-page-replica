@@ -1,0 +1,2 @@
+ALTER TABLE public.comment_submissions ADD COLUMN avatar text;
+ALTER TABLE public.comment_submissions ADD CONSTRAINT comment_avatar_size CHECK (avatar IS NULL OR (length(avatar) <= 80000 AND avatar LIKE 'data:image/jpeg;base64,%'));
