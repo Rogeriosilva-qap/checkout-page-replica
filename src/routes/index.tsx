@@ -11,7 +11,7 @@ import pag33 from "@/assets/pagina-33.jpg.asset.json";
 import pag30 from "@/assets/pagina-30.jpg.asset.json";
 import pag05 from "@/assets/pagina-05.jpg.asset.json";
 import bibliotecaProtegida from "@/assets/biblioteca-protegida.jpg.asset.json";
-import { FileText, LockKeyhole, ArrowRight } from "lucide-react";
+import { FileText, LockKeyhole, ArrowRight, Zap } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   staticData: { sitemap: true },
@@ -285,12 +285,12 @@ function Index() {
         <section className="quick-library" aria-labelledby="t-library">
           <div className="wrap library-layout">
             <div className="library-copy">
-              <span className="library-eyebrow">Dois formatos. O mesmo método.</span>
+              <span className="library-eyebrow library-speed-label"><Zap aria-hidden="true" /> Menos procura. Mais agilidade.</span>
               <h2 id="t-library">Aprenda com calma. Consulte em segundos.</h2>
-              <p>Quer ir direto ao comando? Você não precisa percorrer as 70 páginas toda vez que for estudar.</p>
+              <p className="library-speed-message">Quer ir direto ao comando? <strong>Você não precisa ler as 70 páginas para consultar os prompts.</strong> A biblioteca resumida vem em um PDF separado, para encontrar o que precisa e seguir com o estudo.</p>
               <ul className="library-formats">
                 <li><FileText aria-hidden="true" /><div><strong>{CONFIG.includedPdfs.complete.title} · {CONFIG.includedPdfs.complete.pages} páginas</strong><span>Para aprender o método, conferir as respostas e acompanhar as demonstrações.</span></div></li>
-                <li><FileText aria-hidden="true" /><div><strong>{CONFIG.includedPdfs.quick.title} · PDF separado</strong><span>Para acessar os comandos resumidos de forma rápida no dia a dia. Já inclusa na compra.</span></div></li>
+                <li className="library-quick-format"><Zap aria-hidden="true" /><div><strong>{CONFIG.includedPdfs.quick.title} · PDF separado</strong><span>Abra, encontre o comando e adapte ao seu estudo. <b>Consulta rápida, já inclusa na compra.</b></span></div></li>
               </ul>
             </div>
             <div className="library-preview">

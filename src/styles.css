@@ -435,3 +435,14 @@ footer a{overflow-wrap:anywhere}
 .library-preview .btn svg{width:20px;height:20px;flex-shrink:0}
 .library-preview .library-included{text-align:center;font-size:.9rem;margin:14px 0 0}
 @media(max-width:859px){.library-layout{grid-template-columns:1fr;gap:28px}.library-preview{padding:20px}.library-lock{font-size:.8rem}.quick-library{padding:36px 0}}
+
+/* Agilidade da biblioteca, com os mesmos acentos da marca. */
+.quick-library{border-top:4px solid var(--red);background:var(--mist)}
+.library-speed-label{display:flex;align-items:center;gap:8px;font-size:.95rem}
+.library-speed-label svg{width:24px;height:24px;flex-shrink:0;fill:var(--red-soft);color:var(--red)}
+.library-copy>.library-speed-message{color:var(--ink);font-size:1.1rem;line-height:1.65}
+.library-speed-message strong{color:var(--red-text)}
+.library-formats .library-quick-format{border-left:4px solid var(--red);padding:16px;background:var(--red-soft);border-radius:0 8px 8px 0}
+.library-quick-format>svg{width:30px;height:30px;fill:var(--red);color:var(--red)}
+.library-quick-format b{display:block;margin-top:6px;color:var(--red-text)}
+.library-preview{background:var(--paper)}
