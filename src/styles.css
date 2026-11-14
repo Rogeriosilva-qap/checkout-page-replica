@@ -512,3 +512,9 @@ footer a{overflow-wrap:anywhere}
 @keyframes wa-pop{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
 @media (max-width:859px){.wa-float{bottom:90px;left:auto;right:16px;padding:12px}.wa-float span{display:none}}
 @media(prefers-reduced-motion:reduce){.simulados .sim-grid,.simulados .sim-tag,.simulados .sim-tag svg,.wa-float{animation:none}}
+/* Correções de largura no celular */
+.avatar-btn{position:relative;overflow:hidden}
+html,body{overflow-x:clip}
+@media (max-width:859px){.car-nav.prev{left:-6px}.car-nav.next{right:-6px}.car-track .testimonial{flex-basis:84%}}
+@media (max-width:859px){.carousel{padding-bottom:52px}.car-nav{top:auto;bottom:0;transform:none}.car-nav.prev{left:calc(50% - 48px)}.car-nav.next{right:calc(50% - 48px)}}
+.cookie-panel{z-index:70}
