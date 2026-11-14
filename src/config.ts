@@ -20,6 +20,8 @@ export const CONFIG = {
   termsUrl: "", // Link dos termos de uso
   privacyUrl: "", // Link da política de privacidade
   contactText: "Suporte: operacaoaprovacao.edu@gmail.com",
+  whatsappNumber: "5562992810711", // País + DDD + número, apenas dígitos. Deixe "" para ocultar.
+  whatsappText: "(62) 9 9281-0711",
 };
 
 // Respostas comerciais sem confirmação nunca entram na FAQ pública.

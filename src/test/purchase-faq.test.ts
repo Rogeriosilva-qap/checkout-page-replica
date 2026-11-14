@@ -15,6 +15,9 @@ describe("Confirmed purchase information", () => {
   it("uses the official support email", () => {
     expect(CONFIG.supportEmail).toBe("operacaoaprovacao.edu@gmail.com");
   });
+  it("uses the provided WhatsApp number with Brazil country code", () => {
+    expect(CONFIG.whatsappNumber).toBe("5562992810711");
+  });
   it("preserves the configured Kirvano purchase destination", () => {
     expect(CONFIG.checkoutUrl).toBe("https://pay.kirvano.com/28b35434-3fbf-4f7e-914d-ae6212e77484");
   });

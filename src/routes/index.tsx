@@ -904,6 +904,9 @@ function Index() {
             </button>
           </p>
           {CONFIG.contactText && <p>{CONFIG.supportEmail ? <a href={`mailto:${CONFIG.supportEmail}`}>{CONFIG.contactText}</a> : CONFIG.contactText}</p>}
+          {CONFIG.whatsappNumber && (
+            <p><a href={`https://wa.me/${CONFIG.whatsappNumber}`} target="_blank" rel="noopener noreferrer">WhatsApp: {CONFIG.whatsappText}</a></p>
+          )}
         </div>
       </footer>
 
