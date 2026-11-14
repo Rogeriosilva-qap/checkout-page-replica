@@ -446,3 +446,15 @@ footer a{overflow-wrap:anywhere}
 .library-quick-format>svg{width:30px;height:30px;fill:var(--red);color:var(--red)}
 .library-quick-format b{display:block;margin-top:6px;color:var(--red-text)}
 .library-preview{background:var(--paper)}
+
+/* Movimento leve apenas nos dois destaques da biblioteca. */
+.library-quick-format>svg{transform-origin:center;animation:library-zap 4s ease-in-out infinite}
+.library-formats .library-quick-format{transition:transform .25s ease,border-color .25s ease}
+.library-formats .library-quick-format:hover{transform:translateY(-3px)}
+.library-preview .btn{animation:library-cta 4s ease-in-out infinite;transition:transform .25s ease}
+.library-preview .btn>svg:last-child{animation:library-arrow 4s ease-in-out infinite}
+.library-preview .btn:hover,.library-preview .btn:focus-visible{animation:none;transform:translateY(-2px)}
+@keyframes library-zap{0%,15%,35%,100%{transform:scale(1) rotate(0)}22%{transform:scale(1.15) rotate(-8deg)}28%{transform:scale(1.08) rotate(5deg)}}
+@keyframes library-cta{0%,15%,40%,100%{transform:translateY(0)}25%{transform:translateY(-3px)}}
+@keyframes library-arrow{0%,15%,40%,100%{transform:translateX(0)}25%{transform:translateX(4px)}}
+@media(prefers-reduced-motion:reduce){.library-quick-format>svg,.library-preview .btn,.library-preview .btn>svg:last-child{animation:none}.library-formats .library-quick-format:hover,.library-preview .btn:hover,.library-preview .btn:focus-visible{transform:none}}
