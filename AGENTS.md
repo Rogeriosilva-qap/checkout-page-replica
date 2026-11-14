@@ -38,3 +38,4 @@ use the editor.
 - Newsletter forms store explicit consent only; marketing delivery requires a dedicated marketing email service rather than Lovable app emails.
 
 - Sitemap is router-derived (src/lib/sitemap.ts + src/routes/sitemap[.]xml.ts); every route must set staticData.sitemap so new pages make an explicit indexing decision.
+- Cookie consent goes through src/lib/consent.ts (skill module, BR added to consent regions) and the banner in src/components/cookie-consent.tsx; never read consent storage keys directly.
