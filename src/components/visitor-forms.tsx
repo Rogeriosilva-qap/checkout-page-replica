@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { useServerFn } from "@tanstack/react-start";
-import { Star, Mail, Camera, Target, ChevronLeft, ChevronRight, BadgeCheck } from "lucide-react";
+import { Star, Mail, Camera, Target, ChevronLeft, ChevronRight, BadgeCheck, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { commentSchema, newsletterSchema } from "@/lib/visitor-forms.schemas";
 import { listTestimonials, submitComment, subscribeNewsletter } from "@/lib/visitor-forms.functions";
@@ -140,6 +140,7 @@ async function shrinkPhoto(file: File): Promise<string> {
 export function SimuladosSignup() {
   const subscribe = useServerFn(subscribeNewsletter);
   const [status, setStatus] = useState("");
+  const [done, setDone] = useState(false);
   const [busy, setBusy] = useState(false);
   async function send(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -147,11 +148,12 @@ export function SimuladosSignup() {
     const form = event.currentTarget;
     const v = new FormData(form);
     const parsed = newsletterSchema.safeParse({ email: v.get("email"), consent: v.get("consent") === "on", website: v.get("website"), topic: "simulados-v1" });
-    if (!parsed.success) { setStatus(parsed.error.issues[0]?.message ?? "Confira os campos."); return; }
-    setBusy(true); setStatus("");
+    if (!parsed.success) { setDone(false); setStatus(parsed.error.issues[0]?.message ?? "Confira os campos."); return; }
+    setBusy(true); setStatus(""); setDone(false);
     try {
       const r = await subscribe({ data: parsed.data });
-      setStatus(r.ok ? "Pronto! Você será avisado em primeira mão quando a plataforma abrir." : "Não foi possível cadastrar. Tente novamente.");
+      setDone(r.ok);
+      setStatus(r.ok ? "Cadastro confirmado! Você será avisado em primeira mão quando a plataforma abrir." : "Não foi possível cadastrar. Tente novamente.");
       if (r.ok) form.reset();
     } catch { setStatus("Não foi possível cadastrar. Tente novamente."); }
     finally { setBusy(false); }
@@ -171,7 +173,7 @@ export function SimuladosSignup() {
           <label className="consent-label"><input name="consent" type="checkbox" required />Quero receber por e-mail o aviso de lançamento da plataforma de simulados e novidades da Operação Aprovação.</label>
           <div className="form-trap" aria-hidden="true"><label>Website<input name="website" tabIndex={-1} autoComplete="off" /></label></div>
           <Button className="btn" type="submit" disabled={busy}>{busy ? "Cadastrando…" : "Quero ser avisado"}</Button>
-          <p className="form-status" role="status" aria-live="polite">{status}</p>
+          <p className={done ? "form-status form-status-ok" : "form-status"} role="status" aria-live="polite">{done && <CheckCircle2 aria-hidden="true" />}{status}</p>
         </form>
       </div>
     </section>

@@ -518,3 +518,8 @@ html,body{overflow-x:clip}
 @media (max-width:859px){.car-nav.prev{left:-6px}.car-nav.next{right:-6px}.car-track .testimonial{flex-basis:84%}}
 @media (max-width:859px){.carousel{padding-bottom:52px}.car-nav{top:auto;bottom:0;transform:none}.car-nav.prev{left:calc(50% - 48px)}.car-nav.next{right:calc(50% - 48px)}}
 .cookie-panel{z-index:70}
+/* Confirmação de cadastro em destaque */
+.form-status-ok{display:flex;align-items:center;gap:10px;margin-top:12px;padding:12px 14px;border-radius:12px;background:linear-gradient(135deg,#0E7A3D,#0A5C2E);color:#fff;font-weight:600;font-size:1.02rem;line-height:1.35;border:1px solid rgba(255,255,255,.25);box-shadow:0 6px 18px rgba(10,92,46,.45);animation:status-pop .35s ease-out}
+.form-status-ok svg{flex:none;width:22px;height:22px;color:#7BF1A8}
+@keyframes status-pop{from{opacity:0;transform:translateY(6px) scale(.97)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.form-status-ok{animation:none}}
