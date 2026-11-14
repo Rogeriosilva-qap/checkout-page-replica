@@ -4,6 +4,10 @@ import { CONFIG, getPurchaseFaq } from "@/config";
 const empty = { deliveryText: "", accessSupportText: "", refundText: "" };
 
 describe("Confirmed purchase information", () => {
+  it("includes the complete 70-page PDF and the separate quick-reference prompt library", () => {
+    expect(CONFIG.includedPdfs.complete.pages).toBe(70);
+    expect(CONFIG.includedPdfs.quick.included).toBe(true);
+  });
   it("uses the confirmed seven-day guarantee", () => {
     expect(CONFIG.guaranteeDays).toBe(7);
   });

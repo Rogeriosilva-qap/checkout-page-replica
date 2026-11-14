@@ -1,4 +1,7 @@
 # Revisão da página de vendas
+- [x] Destacar os dois PDFs no topo, na oferta e na FAQ.
+- [x] Incluir captura censurada da biblioteca com cadeado e acesso à compra, sem publicar os prompts.
+- [x] Verificar a prévia em celular e desktop e preservar demonstrações existentes.
 - [x] Incluir entrega confirmada, e-mail oficial e garantia de 7 dias, sem inventar prazo ou procedimento de reembolso.
 - [x] Implementar envio real de comentários privados e cadastro consentido para novidades.
 - [x] Testar formulários no celular e computador e confirmar registros no Lovable Cloud.

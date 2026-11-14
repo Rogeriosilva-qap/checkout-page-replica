@@ -10,6 +10,8 @@ import pag14 from "@/assets/pagina-14.jpg.asset.json";
 import pag33 from "@/assets/pagina-33.jpg.asset.json";
 import pag30 from "@/assets/pagina-30.jpg.asset.json";
 import pag05 from "@/assets/pagina-05.jpg.asset.json";
+import bibliotecaProtegida from "@/assets/biblioteca-protegida.jpg.asset.json";
+import { FileText, LockKeyhole, ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   staticData: { sitemap: true },
@@ -252,10 +254,10 @@ function Index() {
                 <li>Acesso pela plataforma, no celular e no PC</li>
                 <li>Garantia de 7 dias</li>
                 <li>60 modelos prontos</li>
-                <li>PDF de 70 páginas</li>
+                <li>2 PDFs: completo + consulta rápida</li>
               </ul>
               <p className="micro">
-                Você recebe um arquivo PDF de 70 páginas, com sumário e links internos para consultar pelo celular.
+                <strong>Dois PDFs na mesma compra:</strong> o e-book completo de {CONFIG.includedPdfs.complete.pages} páginas para aprender o método e a biblioteca resumida de prompts para consultar rápido, sem percorrer o livro inteiro.
               </p>
             </div>
             <figure className="cover">
@@ -280,6 +282,32 @@ function Index() {
       </header>
 
       <main id="conteudo">
+        <section className="quick-library" aria-labelledby="t-library">
+          <div className="wrap library-layout">
+            <div className="library-copy">
+              <span className="library-eyebrow">Dois formatos. O mesmo método.</span>
+              <h2 id="t-library">Aprenda com calma. Consulte em segundos.</h2>
+              <p>Quer ir direto ao comando? Você não precisa percorrer as 70 páginas toda vez que for estudar.</p>
+              <ul className="library-formats">
+                <li><FileText aria-hidden="true" /><div><strong>{CONFIG.includedPdfs.complete.title} · {CONFIG.includedPdfs.complete.pages} páginas</strong><span>Para aprender o método, conferir as respostas e acompanhar as demonstrações.</span></div></li>
+                <li><FileText aria-hidden="true" /><div><strong>{CONFIG.includedPdfs.quick.title} · PDF separado</strong><span>Para acessar os comandos resumidos de forma rápida no dia a dia. Já inclusa na compra.</span></div></li>
+              </ul>
+            </div>
+            <div className="library-preview">
+              <span className="library-eyebrow">Uma amostra da biblioteca</span>
+              <figure className="locked-document">
+                <img src={bibliotecaProtegida.url} width={874} height={233} alt="Captura da biblioteca resumida com o conteúdo do prompt ocultado." loading="lazy" />
+                <span className="library-lock"><LockKeyhole aria-hidden="true" /><span>Conteúdo reservado aos compradores</span></span>
+              </figure>
+              <h3>Seus comandos, sempre à mão.</h3>
+              <p>A biblioteca completa acompanha o e-book. O acesso ao material é entregue pela plataforma após a compra.</p>
+              <CheckoutButton cta="biblioteca" className="btn btn-block">
+                <LockKeyhole aria-hidden="true" /> Desbloquear a biblioteca <ArrowRight aria-hidden="true" />
+              </CheckoutButton>
+              <p className="library-included">Inclusa no valor de {CONFIG.launchPriceText} · pagamento único</p>
+            </div>
+          </div>
+        </section>
         <section className="problems" aria-labelledby="t-prob">
           <div className="wrap">
             <h2 id="t-prob">Se você já tentou estudar com IA, provavelmente já passou por isso</h2>
@@ -706,7 +734,8 @@ function Index() {
             <div className="offer-box">
               <h2 id="t-off">IA para Concursos Policiais</h2>
               <ul>
-                <li>E-book digital em PDF, 70 páginas.</li>
+                <li>{CONFIG.includedPdfs.complete.title} em PDF, {CONFIG.includedPdfs.complete.pages} páginas.</li>
+                <li><strong>PDF separado:</strong> {CONFIG.includedPdfs.quick.title} para consulta rápida, incluso na compra.</li>
                 <li>60 modelos de prompt com indicação de uso.</li>
                 <li>Método em cinco etapas, com critério para avançar.</li>
                 <li>Três demonstrações completas e seis figuras didáticas.</li>
@@ -746,7 +775,12 @@ function Index() {
               <p>
                 Um e-book em PDF com 70 páginas: o método, as três demonstrações, os 60 modelos de prompt, o índice por
                 necessidade, o roteiro de 7 dias e o checklist de conferência.
+                {" "}Você também recebe a biblioteca resumida de prompts em um PDF separado, inclusa na mesma compra, para acessar os comandos rapidamente sem percorrer o e-book completo.
               </p>
+            </details>
+            <details>
+              <summary>Preciso ler as 70 páginas para começar a usar os prompts?</summary>
+              <p>Você pode consultar os comandos diretamente na biblioteca resumida, que vem em um PDF separado. Use o e-book completo para entender o método e aprender a conferir as respostas da IA antes de usá-las no estudo.</p>
             </details>
             <details>
               <summary>É um curso ou um e-book?</summary>

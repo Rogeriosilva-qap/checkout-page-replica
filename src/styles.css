@@ -411,3 +411,27 @@ footer a{overflow-wrap:anywhere}
 .cookie-btn.ghost{grid-column:1/-1;background:transparent;color:#fff}
 .cookie-link{background:none;border:0;padding:0;color:inherit;text-decoration:underline;font:inherit;cursor:pointer}
 @media (max-width:640px){.cookie-panel{bottom:84px;font-size:14px}}
+
+/* Biblioteca rápida: somente a captura previamente censurada é pública. */
+.quick-library{background:var(--paper);border-bottom:1px solid var(--line)}
+.library-layout{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
+.library-eyebrow{display:block;color:var(--red-text);font-weight:700;font-size:.85rem;margin-bottom:12px}
+.library-copy h2{letter-spacing:0}
+.library-copy>p{color:var(--muted)}
+.library-formats{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:20px}
+.library-formats li{display:flex;gap:14px;align-items:flex-start}
+.library-formats svg{width:24px;height:24px;flex-shrink:0;color:var(--red);margin-top:4px}
+.library-formats strong,.library-formats span{display:block}
+.library-formats span{color:var(--muted);margin-top:4px}
+.library-preview{border:1px solid var(--line);border-radius:8px;padding:24px;background:var(--mist)}
+.locked-document{margin:0 0 20px;position:relative;overflow:hidden;border:1px solid var(--line);border-radius:4px;background:var(--paper)}
+.locked-document img{width:100%;aspect-ratio:874/233;object-fit:cover}
+.library-lock{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:10px;color:var(--ink);font-weight:700;padding:34px 16px 0;font-size:.85rem}
+.library-lock svg{width:28px;height:28px;flex-shrink:0;color:var(--red)}
+.library-lock span{max-width:180px;line-height:1.3;background:var(--mist)}
+.library-preview h3{letter-spacing:0}
+.library-preview>p{color:var(--muted);font-size:1rem}
+.library-preview .btn{height:auto;gap:10px;white-space:normal;font-size:.95rem;border-radius:8px;padding:14px 12px}
+.library-preview .btn svg{width:20px;height:20px;flex-shrink:0}
+.library-preview .library-included{text-align:center;font-size:.9rem;margin:14px 0 0}
+@media(max-width:859px){.library-layout{grid-template-columns:1fr;gap:28px}.library-preview{padding:20px}.library-lock{font-size:.8rem}.quick-library{padding:36px 0}}
