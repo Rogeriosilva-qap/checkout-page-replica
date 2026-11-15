@@ -4,6 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
   type ErrorComponentProps,
@@ -135,12 +136,13 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const isAdvertorial = useRouterState({ select: (state) => state.location.pathname.replace(/\/$/, "") === "/ia-para-concursos" });
 
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
-      <CookieConsent />
+      {!isAdvertorial && <CookieConsent />}
     </QueryClientProvider>
   );
 }

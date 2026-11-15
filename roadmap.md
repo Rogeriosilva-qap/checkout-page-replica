@@ -1,4 +1,5 @@
 # Revisão da página de vendas
+- [x] Criar advertorial isolado em /ia-para-concursos com texto fiel, placeholders, metadados e tabela móvel; verificar cópia, seleção e links sem alterar a home.
 - [x] Clarear a demonstração sobre estudar com ChatGPT para concursos policiais, preservando oferta e biblioteca paga; verificar cópia, prévias e navegação em celular e desktop.
 - [x] Destacar os dois PDFs no topo, na oferta e na FAQ.
 - [x] Incluir captura censurada da biblioteca com cadeado e acesso à compra, sem publicar os prompts.

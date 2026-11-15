@@ -523,3 +523,74 @@ html,body{overflow-x:clip}
 .form-status-ok svg{flex:none;width:22px;height:22px;color:#7BF1A8}
 @keyframes status-pop{from{opacity:0;transform:translateY(6px) scale(.97)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.form-status-ok{animation:none}}
+
+/* Standalone advertorial: every token and selector is isolated from the sales page. */
+.advertorial{
+  --grafite:#23262b;--grafite-2:#3a3e45;--vermelho:#c8102e;--vermelho-esc:#a10d25;--fundo:#fbfaf7;--papel:#ffffff;--linha:#e3e0d9;--suave:#f2efe8;--texto:#1f2226;--cinza:#5b6068;
+  --ad-photo-stripe:#ece8df;--ad-photo-alt:#e5e0d5;--ad-bad:#f3e3e5;--ad-good:#e4ece6;--ad-success:#1f5a33;--ad-prompt:#f7f5f0;--ad-dashed:#b9b3a6;--ad-chat:#f4f2ed;--ad-student:#eef1f5;--ad-highlight:#fde7ea;--ad-cover-end:#111;--ad-footer:#f3f1ec;
+  --ad-ui:"Inter",sans-serif;--ad-body:"Literata",Georgia,serif;
+  min-height:100dvh;background:var(--fundo);color:var(--texto);font-family:var(--ad-body);font-size:18.5px;line-height:1.68;letter-spacing:0;
+}
+body:has(.advertorial){background:var(--fundo,#fbfaf7);padding-bottom:0}
+.advertorial p{margin:1em 0}
+.advertorial a{color:inherit;text-decoration:underline}
+.advertorial strong,.advertorial b{font-weight:700}
+.advertorial h1,.advertorial h2,.advertorial h3{letter-spacing:0;text-wrap:wrap}
+.advertorial .selo{background:var(--grafite);color:var(--papel);font-family:var(--ad-ui);text-align:center;padding:10px 16px;font-size:14px}
+.advertorial .selo strong{font-weight:800;font-size:15px}
+.advertorial .selo span{display:block;opacity:.85;font-size:13px;margin-top:2px}
+.advertorial .marca{max-width:720px;margin:0 auto;padding:16px 20px 0;font-family:var(--ad-ui);font-weight:800;font-size:15px;color:var(--grafite);display:flex;align-items:center;gap:8px}
+.advertorial .marca i{display:inline-block;width:10px;height:22px;background:var(--vermelho);border-radius:2px;flex-shrink:0}
+.advertorial .marca small{font-weight:600;color:var(--cinza);font-size:13px}
+.advertorial main{max-width:720px;margin:0 auto;padding:8px 20px 40px}
+.advertorial h1{font-family:var(--ad-ui);font-weight:800;font-size:28px;line-height:1.15;color:var(--grafite);margin:18px 0 12px}
+.advertorial .sub{font-size:20px;line-height:1.5;color:var(--grafite-2);margin:0 0 16px}
+.advertorial .autoria{font-family:var(--ad-ui);font-size:14px;color:var(--cinza);border-top:1px solid var(--linha);border-bottom:1px solid var(--linha);padding:10px 0;margin-bottom:22px}
+.advertorial h2{font-family:var(--ad-ui);font-weight:700;font-size:24px;line-height:1.25;color:var(--grafite);margin:40px 0 12px;padding-left:12px;border-left:5px solid var(--vermelho)}
+.advertorial h3{font-family:var(--ad-ui);font-weight:700;font-size:18px;line-height:1.68;color:var(--grafite);margin:24px 0 8px}
+.advertorial .foto{background:repeating-linear-gradient(135deg,var(--ad-photo-stripe) 0 12px,var(--ad-photo-alt) 12px 24px);border-radius:10px;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;font-family:var(--ad-ui);font-size:14px}
+.advertorial .legenda{font-family:var(--ad-ui);font-size:13px;color:var(--cinza)}
+.advertorial .rotulo{display:inline-block;font-family:var(--ad-ui);font-size:12px;font-weight:700;text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-bottom:8px}
+.advertorial .rotulo.ruim{background:var(--ad-bad);color:var(--vermelho-esc)}
+.advertorial .rotulo.bom{background:var(--ad-good);color:var(--ad-success)}
+.advertorial .rotulo.ilus{background:var(--suave);color:var(--grafite-2)}
+.advertorial .caixa{background:var(--papel);border:1px solid var(--linha);border-radius:10px;padding:16px 18px;margin:0 0 20px}
+.advertorial pre.prompt{white-space:pre-wrap;overflow-wrap:break-word;user-select:text;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:15px;line-height:1.6;background:var(--ad-prompt);border:1px solid var(--linha);border-left:4px solid var(--grafite);border-radius:8px;padding:14px 16px;margin:1em 0}
+.advertorial pre.generic-prompt{margin:0}
+.advertorial .copiar{display:block;font-family:var(--ad-ui);font-weight:700;font-size:16px;background:var(--grafite);color:var(--papel);border:0;border-radius:8px;padding:12px 18px;width:100%;height:auto;min-height:48px;box-shadow:none;line-height:normal;white-space:normal}
+.advertorial .copiar.ok{background:var(--ad-success)}
+.advertorial .trecho{font-style:italic;background:var(--papel);border:1px dashed var(--ad-dashed);border-radius:8px;padding:12px 14px}
+.advertorial .chat{font-family:var(--ad-ui);font-size:15.5px}
+.advertorial .chat .msg{border-radius:8px;padding:10px 12px;margin:0 0 10px}
+.advertorial .chat .ia{background:var(--ad-chat)}
+.advertorial .chat .aluno{background:var(--ad-student);margin-left:18%}
+.advertorial .chat .quem{display:block;font-size:12px;font-weight:700;text-transform:uppercase;color:var(--cinza)}
+.advertorial ol{list-style:decimal;padding-left:40px;margin:1em 0}
+.advertorial table{width:100%;border-collapse:collapse;font-family:var(--ad-ui);font-size:15px;background:var(--papel);user-select:text}
+.advertorial th,.advertorial td{border:1px solid var(--linha);padding:10px;text-align:left;vertical-align:top}
+.advertorial th{background:var(--grafite);color:var(--papel);font-weight:700}
+.advertorial td mark{background:var(--ad-highlight);color:var(--vermelho-esc);padding:0 3px;border-radius:3px}
+.advertorial .produto{display:grid;grid-template-columns:1fr;gap:18px;background:var(--papel);border:1px solid var(--linha);border-radius:12px;padding:18px}
+.advertorial .capa{display:flex;flex-direction:column;align-items:center;justify-content:center;aspect-ratio:3/4;border-radius:6px;background:linear-gradient(160deg,var(--grafite),var(--ad-cover-end));color:var(--papel);text-align:center;padding:14px;font-family:var(--ad-ui);font-size:13px;max-width:220px;width:100%;margin:0 auto}
+.advertorial .capa strong{margin-top:12px}
+.advertorial .usos{list-style:none;padding:0;margin:1em 0}
+.advertorial .usos li{padding:8px 0 8px 30px;position:relative;border-bottom:1px solid var(--suave)}
+.advertorial .usos li::before{content:"";position:absolute;left:4px;top:15px;width:14px;height:14px;border-radius:3px;background:var(--vermelho)}
+.advertorial .cta{display:block;text-align:center;text-decoration:none;font-family:var(--ad-ui);font-weight:800;font-size:17px;background:var(--vermelho);color:var(--papel);border-radius:10px;padding:16px 18px;margin:18px 0 8px;height:auto;white-space:normal;line-height:1.68;box-shadow:none}
+.advertorial .cta:hover{background:var(--vermelho-esc)}
+.advertorial .cta-nota{font-family:var(--ad-ui);font-size:13px;color:var(--cinza);text-align:center}
+.advertorial .aviso{font-family:var(--ad-ui);font-size:14.5px;background:var(--suave);border-radius:8px;padding:14px 16px}
+.advertorial footer{border-top:1px solid var(--linha);background:var(--ad-footer);font-family:var(--ad-ui);font-size:13.5px;color:var(--cinza);padding:0}
+.advertorial footer div{max-width:720px;margin:0 auto;padding:22px 20px 30px}
+.advertorial footer a{overflow-wrap:anywhere}
+.advertorial :focus-visible{outline:3px solid var(--grafite);outline-offset:3px}
+.advertorial-copy-buffer{position:fixed;left:-9999px;top:0;opacity:0}
+@media (max-width:480px){.advertorial .marca small{display:none}}
+@media (max-width:560px){
+  .advertorial table,.advertorial thead,.advertorial tbody,.advertorial tr,.advertorial th,.advertorial td{display:block}
+  .advertorial thead{display:none}
+  .advertorial tr{border:1px solid var(--linha);border-radius:8px;margin-bottom:12px}
+  .advertorial td{border:0;border-bottom:1px solid var(--linha)}
+  .advertorial td::before{content:attr(data-col);display:block;font-size:12px;font-weight:700;text-transform:uppercase;color:var(--cinza)}
+}
+@media (min-width:620px){.advertorial .produto{grid-template-columns:200px 1fr}.advertorial h1{font-size:40px}}
