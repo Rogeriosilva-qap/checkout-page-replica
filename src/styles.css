@@ -548,7 +548,7 @@ body:has(.advertorial){background:var(--fundo,#fbfaf7);padding-bottom:0}
 .advertorial .autoria{font-family:var(--ad-ui);font-size:14px;color:var(--cinza);border-top:1px solid var(--linha);border-bottom:1px solid var(--linha);padding:10px 0;margin-bottom:22px}
 .advertorial h2{font-family:var(--ad-ui);font-weight:700;font-size:24px;line-height:1.25;color:var(--grafite);margin:40px 0 12px;padding-left:12px;border-left:5px solid var(--vermelho)}
 .advertorial h3{font-family:var(--ad-ui);font-weight:700;font-size:18px;line-height:1.68;color:var(--grafite);margin:24px 0 8px}
-.advertorial .foto{background:repeating-linear-gradient(135deg,var(--ad-photo-stripe) 0 12px,var(--ad-photo-alt) 12px 24px);border-radius:10px;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;font-family:var(--ad-ui);font-size:14px}
+.advertorial .foto{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:10px}
 .advertorial .legenda{font-family:var(--ad-ui);font-size:13px;color:var(--cinza)}
 .advertorial .rotulo{display:inline-block;font-family:var(--ad-ui);font-size:12px;font-weight:700;text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-bottom:8px}
 .advertorial .rotulo.ruim{background:var(--ad-bad);color:var(--vermelho-esc)}

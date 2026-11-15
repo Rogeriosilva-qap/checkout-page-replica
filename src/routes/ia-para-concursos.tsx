@@ -5,6 +5,7 @@ import { copyAdvertorialPrompt } from "@/lib/copy-advertorial-prompt";
 import { CONFIG } from "@/config";
 import capa from "@/assets/capa-ebook.jpg.asset.json";
 import logo from "@/assets/logo-operacao-aprovacao.png.asset.json";
+import foto from "@/assets/foto-editorial-estudo.jpg.asset.json";
 
 const capaImageUrl = capa.url.startsWith("http") ? capa.url : `https://operacaoaprovacaoebooks.com.br${capa.url}`;
 
@@ -79,7 +80,7 @@ function Advertorial() {
       <h1>Como usar IA para resumir leis e criar questões de concursos policiais</h1>
       <p className="sub">Veja como montar um pedido com base no seu próprio material, treinar uma questão por vez e saber onde procurar a informação para conferir a resposta da IA.</p>
       <div className="autoria">Publicado por <b>Operação Aprovação</b>, anunciante deste conteúdo · Leitura de cerca de 6 minutos</div>
-      <div className="foto" role="img" aria-label="Espaço reservado para fotografia">Espaço para fotografia editorial:<br />pessoa estudando à noite, com notebook e caderno aberto</div>
+      <img className="foto" src={foto.url} alt="Jovem estudando à noite com notebook, caderno e marca-texto" />
       <p className="legenda">Imagem ilustrativa.</p>
       <p>Você chega do trabalho, já passa das nove da noite e ainda faltam dois artigos do edital para revisar. Abre a lei, cola tudo na IA e escreve: “resume isso pra mim”.</p>
       <p>A resposta vem rápida, mas não ajuda tanto. São parágrafos longos, que repetem o texto com outras palavras. Às vezes aparece uma informação que não estava no trecho que você colou, porque a ferramenta completou com o que “sabe” de outras fontes. E, se você pede questões, o gabarito vem logo embaixo, antes que você tenha tentado responder.</p>
