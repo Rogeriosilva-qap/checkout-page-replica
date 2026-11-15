@@ -21,7 +21,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "E-book digital com 60 modelos de prompt para transformar seu material de concurso em questões, revisões e plano de estudo com IA, conferindo as respostas nas fontes. Para PM, PC, Polícia Penal e GCM. R$ 47,00.",
+          "Veja como usar ChatGPT para estudar para concursos policiais com um prompt gratuito e conferência na fonte. E-book com 60 modelos de prompt para PM, PC, Polícia Penal e GCM. R$ 47,00.",
       },
       { property: "og:type", content: "product" },
       { property: "og:locale", content: "pt_BR" },
@@ -360,8 +360,20 @@ function Index() {
 
         <section aria-labelledby="t-demo">
           <div className="wrap">
-            <h2 id="t-demo">A diferença entre pedir e pedir com um modelo</h2>
-            <p className="source">Trecho reproduzido do capítulo 3 do e-book.</p>
+            <h2 id="t-demo">Como usar ChatGPT para estudar para concursos policiais</h2>
+            <p className="intro narrow">
+              Comece por um assunto do seu edital, forneça um trecho confiável e transforme a leitura em treino.
+              O ChatGPT pode ajudar a explicar a matéria e criar exercícios, mas a resposta precisa ser conferida
+              antes de virar revisão. Veja como fazer isso com o exemplo gratuito abaixo.
+            </p>
+            <ol className="howto">
+              <li><strong>Escolha o assunto.</strong> Consulte o edital de PM, PC, Polícia Penal ou GCM e separe um trecho curto da lei atualizada em fonte oficial ou do seu material de estudo. Não envie dados pessoais.</li>
+              <li><strong>Defina o treino.</strong> Abra uma conversa no ChatGPT e diga o que precisa: uma explicação, questões ou revisão. Informe o concurso, seu nível e o formato da resposta.</li>
+              <li><strong>Responda antes de ver o gabarito.</strong> No modelo P35 abaixo, a IA apresenta um item por vez e espera sua resposta C ou E.</li>
+              <li><strong>Confira e revise.</strong> Compare a justificativa com o trecho original, registre seus erros e retome o assunto. Complete o treino com questões reais e gabarito oficial da banca.</li>
+            </ol>
+            <h3 className="demo-sub">A diferença entre pedir e pedir com um modelo</h3>
+            <p className="source">Exemplo do capítulo 3 do e-book: legítima defesa, em Direito Penal.</p>
             <div className="compare">
               <div className="req vague">
                 <h3>Pedido genérico</h3>
@@ -405,7 +417,8 @@ function Index() {
               reduz o espaço para erros, mas não os elimina. Por isso o livro ensina a conferir.
             </p>
 
-            <h3 className="demo-sub">Um dos 60 modelos, como aparece no e-book</h3>
+            <h3 className="demo-sub">Experimente no ChatGPT: um prompt gratuito para treinar</h3>
+            <p>Este é o P35, um dos 60 modelos do e-book, já disponível nesta demonstração. Os demais continuam na biblioteca reservada aos compradores.</p>
             <div className="card prompt-sample" id="modelo-p35" role="group" aria-labelledby="titulo-p35">
               <div className="card-head">
                 <span className="code">P35</span>
@@ -419,9 +432,9 @@ function Index() {
                   <b>Forneça:</b> o texto estudado.
                 </p>
                 <ol className="howto">
-                  <li>Copie o modelo abaixo.</li>
-                  <li>Cole no ChatGPT, Claude, Gemini ou NotebookLM, junto com um trecho da sua matéria.</li>
-                  <li>Responda C ou E e confira a justificativa no próprio texto.</li>
+                  <li>Copie o modelo abaixo e cole em uma conversa no ChatGPT. Ele também pode ser usado no Claude, Gemini ou NotebookLM.</li>
+                  <li>Substitua [10] pela quantidade de itens e [cole aqui] pelo trecho que você quer estudar, removendo os colchetes. Para experimentar, use o art. 25 mostrado acima.</li>
+                  <li>Envie o pedido, aguarde o primeiro item e responda C ou E sem consultar. Depois, confira o gabarito e o trecho citado na fonte original.</li>
                 </ol>
                 <div className="cmd" id="p35" ref={cmdRef}>
                   {"Crie "}
@@ -444,7 +457,19 @@ function Index() {
               seu material.
             </p>
 
-            <h3 className="demo-sub">E como o livro ensina a conferir</h3>
+            <h3 className="demo-sub">Como fica o treino, na prática?</h3>
+            <p>
+              Com o art. 25 como material, um item ilustrativo seria: “A legítima defesa permite repelir injusta
+              agressão atual ou iminente, a direito próprio ou de outra pessoa.” Você responde <strong>C</strong>.
+              A justificativa deve apontar a expressão <strong>“atual ou iminente, a direito seu ou de outrem”</strong>.
+              Só depois da sua resposta vem a correção e o próximo item.
+            </p>
+            <p className="note">
+              Exemplo criado para explicar o formato, não uma resposta real do ChatGPT. Os itens gerados podem variar
+              e não são questões oficiais de concurso.
+            </p>
+
+            <h3 className="demo-sub">Como conferir se o ChatGPT errou?</h3>
             <p>
               Na Demonstração A, uma resposta ilustrativa traz um erro colocado de propósito. O exercício é encontrá-lo
               comparando palavra por palavra com o texto da lei.
@@ -471,6 +496,11 @@ function Index() {
             </div>
             <p className="note">
               Exemplo ilustrativo do e-book, criado para fins didáticos. Não é resultado de teste de uma ferramenta.
+            </p>
+            <p className="narrow">
+              Se uma palavra, prazo ou exceção não estiver na fonte, não memorize a resposta como correta.
+              Volte ao texto oficial atualizado e tire a dúvida com seu material ou professor. A IA é um apoio ao
+              estudo: não substitui o edital, a legislação nem o gabarito da banca, e não garante aprovação.
             </p>
           </div>
         </section>
