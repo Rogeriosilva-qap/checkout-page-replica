@@ -594,3 +594,7 @@ body:has(.advertorial){background:var(--fundo,#fbfaf7);padding-bottom:0}
   .advertorial td::before{content:attr(data-col);display:block;font-size:12px;font-weight:700;text-transform:uppercase;color:var(--cinza)}
 }
 @media (min-width:620px){.advertorial .produto{grid-template-columns:200px 1fr}.advertorial h1{font-size:40px}}
+
+/* Capa real e preço de lançamento no advertorial */
+.advertorial img.capa{display:block;background:none;border:none;aspect-ratio:auto;padding:0;max-width:220px;width:100%;height:auto;border-radius:6px;box-shadow:0 14px 34px rgba(0,0,0,.16);margin:0 auto}
+.advertorial .preco-lancamento{font-family:var(--ad-ui);font-size:15px;color:var(--grafite);text-align:center;margin:18px 0 10px}

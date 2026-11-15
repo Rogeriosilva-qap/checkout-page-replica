@@ -2,6 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { copyAdvertorialPrompt } from "@/lib/copy-advertorial-prompt";
+import { CONFIG } from "@/config";
+import capa from "@/assets/capa-ebook.jpg.asset.json";
+
+const capaImageUrl = capa.url.startsWith("http") ? capa.url : `https://operacaoaprovacaoebooks.com.br${capa.url}`;
 
 export const Route = createFileRoute("/ia-para-concursos")({
   staticData: { sitemap: true },
@@ -15,6 +19,8 @@ export const Route = createFileRoute("/ia-para-concursos")({
       { property: "og:locale", content: "pt_BR" },
       { property: "og:url", content: "https://operacaoaprovacaoebooks.com.br/ia-para-concursos" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image", content: capaImageUrl },
+      { name: "twitter:image", content: capaImageUrl },
     ],
     links: [
       { rel: "canonical", href: "https://operacaoaprovacaoebooks.com.br/ia-para-concursos" },
@@ -125,7 +131,7 @@ function Advertorial() {
       <h2 id="ebook">Para repetir o processo em outras tarefas</h2>
       <p>Os dois modelos acima resolvem duas situações. No dia a dia de estudo aparecem muitas outras, e montar um pedido bem estruturado do zero toda noite toma tempo. Foi para isso que a Operação Aprovação reuniu esses modelos em um guia.</p>
       <div className="produto">
-        <div className="capa" role="img" aria-label="Espaço reservado para a capa do e-book"><span>Espaço para a capa real do e-book</span><strong>IA para Concursos Policiais</strong><span>Operação Aprovação</span></div>
+        <img className="capa" src={capa.url} alt="Capa do e-book IA para Concursos Policiais, da Operação Aprovação" loading="lazy" width={220} height={330} />
         <div>
           <h3>E-book IA para Concursos Policiais</h3>
           <p>Feito para quem se prepara para <strong>PM, Polícia Civil, Polícia Penal e Guarda Municipal</strong> e quer transformar os materiais que já tem em treino. Reúne <strong>60 modelos de prompts</strong> e orientações para conferir as respostas na fonte.</p>
@@ -137,6 +143,7 @@ function Advertorial() {
           <p>A ferramenta de IA gratuita responde ao que você pede; o guia entrega os pedidos já montados para cada tarefa, com a etapa de conferência incluída.</p>
         </div>
       </div>
+      {CONFIG.launchPriceText.trim() && <p className="preco-lancamento">Preço de lançamento: {CONFIG.launchPriceText}.</p>}
       <OfferLink />
       <p className="cta-nota">Você será levado à página de vendas da Operação Aprovação.</p>
       <p className="aviso"><strong>Importante:</strong> o e-book é um material de apoio ao estudo e não garante aprovação. Ferramentas de IA podem cometer erros; confira sempre as informações na lei publicada no site oficial e no edital do seu concurso. A Operação Aprovação não tem vínculo com bancas organizadoras nem com as corporações citadas.</p>
@@ -147,6 +154,8 @@ function Advertorial() {
     <footer><div>
       <p><strong>Conteúdo publicitário.</strong> Este artigo foi produzido e pago pela Operação Aprovação para divulgar o e-book IA para Concursos Policiais.</p>
       <p>Anunciante: Operação Aprovação · <a href="https://operacaoaprovacaoebooks.com.br/">operacaoaprovacaoebooks.com.br</a></p>
+      <p>CNPJ 70.147.280/0001-40</p>
+      <p>Contato: <a href={`mailto:${CONFIG.supportEmail}`}>{CONFIG.supportEmail}</a> · WhatsApp <a href={`https://wa.me/${CONFIG.whatsappNumber}`}>{CONFIG.whatsappText}</a></p>
     </div></footer>
   </div>;
 }
