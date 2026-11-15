@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { copyAdvertorialPrompt } from "@/lib/copy-advertorial-prompt";
 import { CONFIG } from "@/config";
 import capa from "@/assets/capa-ebook.jpg.asset.json";
+import logo from "@/assets/logo-operacao-aprovacao.png.asset.json";
 
 const capaImageUrl = capa.url.startsWith("http") ? capa.url : `https://operacaoaprovacaoebooks.com.br${capa.url}`;
 
@@ -73,7 +74,7 @@ function OfferLink() {
 function Advertorial() {
   return <div className="advertorial">
     <div className="selo"><strong>CONTEÚDO PUBLICITÁRIO</strong><span>Anunciante: Operação Aprovação</span></div>
-    <div className="marca"><i aria-hidden="true" />Operação Aprovação <small>· Estudos para Segurança Pública</small></div>
+    <div className="marca"><img src={logo.url} alt="Logo Operação Aprovação" height={40} />Operação Aprovação <small>· Estudos para Segurança Pública</small></div>
     <main><article>
       <h1>Como usar IA para resumir leis e criar questões de concursos policiais</h1>
       <p className="sub">Veja como montar um pedido com base no seu próprio material, treinar uma questão por vez e saber onde procurar a informação para conferir a resposta da IA.</p>
@@ -92,6 +93,7 @@ function Advertorial() {
       <p>Este modelo prende a IA ao texto que você colar, pede <strong>uma questão por vez</strong>, espera a sua resposta e só depois mostra o gabarito com o trecho que o sustenta. Troque o que está entre colchetes.</p>
       <CopyPrompt id="prompt-questoes" text={questionsPrompt} />
       <p className="legenda">Funciona em ferramentas de IA de conversa, inclusive nas versões gratuitas. Os resultados variam conforme a ferramenta.</p>
+      <p>No e-book, essa mesma lógica aparece no modelo P35, “Certo ou errado, um item por vez”, um dos 60 modelos do guia.</p>
 
       <h3>Como fica na prática</h3>
       <p>Para não reproduzir um texto legal sem conferência, o exemplo abaixo usa um <strong>trecho fictício</strong>, criado só para esta demonstração. A conversa também é <strong>ilustrativa</strong>.</p>
@@ -134,7 +136,7 @@ function Advertorial() {
         <img className="capa" src={capa.url} alt="Capa do e-book IA para Concursos Policiais, da Operação Aprovação" loading="lazy" width={220} height={330} />
         <div>
           <h3>E-book IA para Concursos Policiais</h3>
-          <p>Feito para quem se prepara para <strong>PM, Polícia Civil, Polícia Penal e Guarda Municipal</strong> e quer transformar os materiais que já tem em treino. Reúne <strong>60 modelos de prompts</strong> e orientações para conferir as respostas na fonte.</p>
+          <p>Feito para quem se prepara para <strong>PM, Polícia Civil, Polícia Penal e Guarda Municipal</strong> e quer transformar os materiais que já tem em treino. São 70 páginas com <strong>60 modelos de prompts</strong> e orientações para conferir as respostas na fonte.</p>
           <ul className="usos">
             <li><strong>Criar questões</strong> a partir de leis, apostilas e trechos do edital.</li>
             <li><strong>Estruturar revisões</strong> do conteúdo que você já estudou.</li>
