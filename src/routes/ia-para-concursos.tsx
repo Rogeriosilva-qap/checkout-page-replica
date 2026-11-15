@@ -75,6 +75,10 @@ function OfferLink() {
 function Advertorial() {
   return <div className="advertorial">
     <div className="selo"><strong>CONTEÚDO PUBLICITÁRIO</strong><span>Anunciante: Operação Aprovação</span></div>
+    <nav className="topnav" aria-label="Escolha onde continuar">
+      <a className="topnav-item" href="https://operacaoaprovacaoebooks.com.br/">Acessar o e-book</a>
+      <span className="topnav-item ativo" aria-current="page">Ficar no blog</span>
+    </nav>
     <div className="marca"><img src={logo.url} alt="Logo Operação Aprovação" height={40} />Operação Aprovação <small>· Estudos para Segurança Pública</small></div>
     <main><article>
       <h1>Como usar IA para resumir leis e criar questões de concursos policiais</h1>

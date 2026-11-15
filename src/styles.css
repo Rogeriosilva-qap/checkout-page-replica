@@ -599,3 +599,10 @@ body:has(.advertorial){background:var(--fundo,#fbfaf7);padding-bottom:0}
 .advertorial img.capa{display:block;background:none;border:none;aspect-ratio:auto;padding:0;max-width:220px;width:100%;height:auto;border-radius:6px;box-shadow:0 14px 34px rgba(0,0,0,.16);margin:0 auto}
 .advertorial .marca img{height:40px;width:auto;display:block}
 .advertorial .preco-lancamento{font-family:var(--ad-ui);font-size:15px;color:var(--grafite);text-align:center;margin:18px 0 10px}
+
+/* Advertorial: barra de navegação superior (e-book / blog) */
+.advertorial .topnav{display:flex;gap:8px;max-width:720px;margin:14px auto 0;padding:0 16px}
+.advertorial .topnav-item{flex:1;display:flex;align-items:center;justify-content:center;padding:12px 10px;border-radius:10px;font-family:var(--ad-ui);font-size:15px;font-weight:700;text-align:center;text-decoration:none;border:1.5px solid var(--grafite);color:var(--grafite);background:#fff;transition:transform .15s ease,box-shadow .15s ease}
+.advertorial a.topnav-item:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(35,38,43,.14)}
+.advertorial .topnav-item.ativo{background:var(--grafite);color:#fff;border-color:var(--grafite);cursor:default}
+@media (max-width:480px){.advertorial .topnav{flex-direction:column;gap:6px;margin-top:10px}.advertorial .topnav-item{padding:11px 10px;font-size:14px}}
