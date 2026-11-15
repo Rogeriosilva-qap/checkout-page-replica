@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ExplicarQuestaoRouteImport } from './routes/explicar-questao'
 import { Route as IaParaConcursosRouteImport } from './routes/ia-para-concursos'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExplicarQuestaoRoute = ExplicarQuestaoRouteImport.update({
+  id: '/explicar-questao',
+  path: '/explicar-questao',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IaParaConcursosRoute = IaParaConcursosRouteImport.update({
@@ -31,30 +37,39 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/explicar-questao': typeof ExplicarQuestaoRoute
   '/ia-para-concursos': typeof IaParaConcursosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/explicar-questao': typeof ExplicarQuestaoRoute
   '/ia-para-concursos': typeof IaParaConcursosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/explicar-questao': typeof ExplicarQuestaoRoute
   '/ia-para-concursos': typeof IaParaConcursosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/ia-para-concursos' | '/sitemap.xml'
+  fullPaths: '/' | '/explicar-questao' | '/ia-para-concursos' | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/ia-para-concursos' | '/sitemap.xml'
-  id: '__root__' | '/' | '/ia-para-concursos' | '/sitemap.xml'
+  to: '/' | '/explicar-questao' | '/ia-para-concursos' | '/sitemap.xml'
+  id:
+    | '__root__'
+    | '/'
+    | '/explicar-questao'
+    | '/ia-para-concursos'
+    | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ExplicarQuestaoRoute: typeof ExplicarQuestaoRoute
   IaParaConcursosRoute: typeof IaParaConcursosRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
@@ -66,6 +81,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/explicar-questao': {
+      id: '/explicar-questao'
+      path: '/explicar-questao'
+      fullPath: '/explicar-questao'
+      preLoaderRoute: typeof ExplicarQuestaoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/ia-para-concursos': {
@@ -87,6 +109,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ExplicarQuestaoRoute: ExplicarQuestaoRoute,
   IaParaConcursosRoute: IaParaConcursosRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }

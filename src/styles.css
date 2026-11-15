@@ -606,3 +606,33 @@ body:has(.advertorial){background:var(--fundo,#fbfaf7);padding-bottom:0}
 .advertorial a.topnav-item:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(35,38,43,.14)}
 .advertorial .topnav-item.ativo{background:var(--grafite);color:#fff;border-color:var(--grafite);cursor:default}
 @media (max-width:480px){.advertorial .topnav{flex-direction:column;gap:6px;margin-top:10px}.advertorial .topnav-item{padding:11px 10px;font-size:14px}}
+
+/* Ferramenta /explicar-questao — Tático & Premium */
+.explainer{min-height:100vh;display:flex;flex-direction:column;background:radial-gradient(900px 480px at 50% -120px,rgba(200,16,46,.22),transparent 70%),var(--ink);color:#f4f2ee;font-family:"Source Sans 3",system-ui,sans-serif}
+.explainer-top{padding:18px 20px;border-bottom:1px solid rgba(255,255,255,.08)}
+.explainer-brand{font-family:Poppins,system-ui,sans-serif;font-weight:700;font-size:17px;color:#f4f2ee;text-decoration:none}
+.explainer-brand small{color:rgba(244,242,238,.55);font-weight:400}
+.explainer-main{flex:1;width:100%;max-width:760px;margin:0 auto;padding:36px 20px 48px}
+.explainer-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:Poppins,system-ui,sans-serif;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#ff6b81;background:rgba(200,16,46,.14);border:1px solid rgba(200,16,46,.4);border-radius:999px;padding:6px 14px;margin:0 0 16px}
+.explainer h1{font-family:Poppins,system-ui,sans-serif;font-size:clamp(26px,5vw,38px);font-weight:800;line-height:1.15;margin:0 0 12px}
+.explainer-sub{font-size:17px;line-height:1.55;color:rgba(244,242,238,.78);margin:0 0 26px}
+.explainer-form{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:18px}
+.explainer-form label{display:block;font-family:Poppins,system-ui,sans-serif;font-weight:600;font-size:14px;margin-bottom:8px;color:#f4f2ee}
+.explainer-form textarea{width:100%;box-sizing:border-box;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.14);border-radius:10px;color:#f4f2ee;font-family:"Source Sans 3",system-ui,sans-serif;font-size:15px;line-height:1.5;padding:12px 14px;resize:vertical}
+.explainer-form textarea:focus{outline:2px solid var(--red);outline-offset:1px;border-color:var(--red)}
+.explainer-form textarea::placeholder{color:rgba(244,242,238,.35)}
+.explainer-form-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px;flex-wrap:wrap}
+.explainer-count{font-size:13px;color:rgba(244,242,238,.5)}
+.explainer-submit{background:linear-gradient(135deg,#e01434,var(--red));color:#fff;font-family:Poppins,system-ui,sans-serif;font-weight:700;border:none;border-radius:10px;padding:12px 22px;font-size:15px}
+.explainer-submit:disabled{opacity:.55;cursor:not-allowed}
+.explainer-spin{animation:explainer-rotate 1s linear infinite;vertical-align:-3px;margin-right:6px}
+@keyframes explainer-rotate{to{transform:rotate(360deg)}}
+.explainer-error{margin-top:16px;background:rgba(200,16,46,.16);border:1px solid rgba(200,16,46,.5);border-radius:10px;padding:12px 16px;font-size:15px}
+.explainer-result{margin-top:28px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-left:4px solid var(--red);border-radius:14px;padding:22px}
+.explainer-result h2{display:flex;align-items:center;gap:10px;font-family:Poppins,system-ui,sans-serif;font-size:20px;font-weight:700;margin:0 0 14px}
+.explainer-answer{white-space:pre-wrap;font-size:16px;line-height:1.65;color:rgba(244,242,238,.92)}
+.explainer-disclaimer{display:flex;align-items:flex-start;gap:8px;margin:18px 0 0;font-size:13.5px;line-height:1.5;color:rgba(244,242,238,.6);border-top:1px solid rgba(255,255,255,.08);padding-top:14px}
+.explainer-disclaimer svg{flex:none;margin-top:2px;color:#ff6b81}
+.explainer-footer{padding:20px;text-align:center;border-top:1px solid rgba(255,255,255,.08);font-size:14px;color:rgba(244,242,238,.6)}
+.explainer-footer a{color:#ff6b81}
+@media (prefers-reduced-motion:reduce){.explainer-spin{animation:none}}
