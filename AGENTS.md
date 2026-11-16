@@ -37,6 +37,7 @@ use the editor.
 - Visitor comments and newsletter opt-ins use public write-only server functions with shared Zod validation, same-origin checks and honeypots; private tables have no visitor read grants to protect submitted data.
 - Newsletter forms store explicit consent only; marketing delivery requires a dedicated marketing email service rather than Lovable app emails.
 - The question explainer requires a saved private lead and an HttpOnly receipt checked server-side before calling AI; optional marketing consent must not block tool access or send the email to AI.
+- Free explanation usage is claimed atomically by normalized email through a service-role-only database function before AI generation; never reset usage on re-registration or retry after generation failure, to prevent duplicate spend.
 
 - Sitemap is router-derived (src/lib/sitemap.ts + src/routes/sitemap[.]xml.ts); every route must set staticData.sitemap so new pages make an explicit indexing decision.
 - Cookie consent goes through src/lib/consent.ts (skill module, BR added to consent regions) and the banner in src/components/cookie-consent.tsx; never read consent storage keys directly.

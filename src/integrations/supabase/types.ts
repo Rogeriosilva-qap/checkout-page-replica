@@ -71,6 +71,21 @@ export type Database = {
         }
         Relationships: []
       }
+      question_explanation_usage: {
+        Row: {
+          created_at: string
+          email: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+        }
+        Relationships: []
+      }
       question_leads: {
         Row: {
           consent_version: string
@@ -100,7 +115,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      claim_question_explanation: {
+        Args: { p_lead_id: string }
+        Returns: boolean
+      }
     }
     Enums: {
       [_ in never]: never

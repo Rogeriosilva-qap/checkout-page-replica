@@ -6,6 +6,9 @@ import { Button } from "@/components/ui/button";
 import { explainQuestion } from "@/lib/explicar-questao.functions";
 import { registerQuestionLead } from "@/lib/question-leads.functions";
 import { questionLeadSchema, questionSchema } from "@/lib/question-leads.schemas";
+import { QUESTION_LIMIT_MESSAGE } from "@/lib/question-quota";
+import { CONFIG } from "@/config";
+import cover from "@/assets/capa-ebook.jpg.asset.json";
 
 export const Route = createFileRoute("/explicar-questao")({
   staticData: { sitemap: true },
@@ -39,6 +42,7 @@ function ExplicarQuestao() {
   const [explanation, setExplanation] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [limited, setLimited] = useState(false);
 
   async function captureEmail(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -49,7 +53,7 @@ function ExplicarQuestao() {
     setRegistering(true); setError("");
     try {
       const result = await registerLead({ data: parsed.data });
-      if (result.ok) setUnlocked(true);
+      if (result.ok) { setUnlocked(true); setLimited(result.limited); if (result.limited) setError(QUESTION_LIMIT_MESSAGE); }
       else setError("Não foi possível cadastrar seu e-mail. Tente novamente.");
     } catch { setError("Não foi possível cadastrar seu e-mail. Tente novamente."); }
     finally { setRegistering(false); }
@@ -57,7 +61,7 @@ function ExplicarQuestao() {
 
   async function submit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (loading || !unlocked) return;
+    if (loading || !unlocked || limited) return;
     const parsed = questionSchema.safeParse({ question });
     if (!parsed.success) { setError(parsed.error.issues[0]?.message ?? "Confira a questão."); return; }
     setError("");
@@ -65,8 +69,8 @@ function ExplicarQuestao() {
     setLoading(true);
     try {
       const result = await runExplain({ data: parsed.data });
-      if (result.ok) setExplanation(result.explanation);
-      else setError(result.message);
+      if (result.ok) { setExplanation(result.explanation); setLimited(true); }
+      else { setError(result.message); if (result.limited) setLimited(true); }
     } catch {
       setError("Cole a questão completa, com enunciado e alternativas, e tente de novo.");
     } finally {
@@ -87,13 +91,14 @@ function ExplicarQuestao() {
 
         {!unlocked ? <form className="explainer-form explainer-lead" onSubmit={captureEmail}>
           <h2><Mail size={22} aria-hidden="true" /> Libere sua explicação gratuita</h2>
+          <p className="explainer-lead-privacy">Uma explicação gratuita por e-mail. Use sua tentativa com uma questão completa.</p>
           <label htmlFor="lead-email">Seu e-mail</label>
           <input id="lead-email" name="email" type="email" autoComplete="email" maxLength={255} required placeholder="voce@exemplo.com" />
           <label className="explainer-lead-consent"><input type="checkbox" name="marketingConsent" /> Quero receber dicas de estudo e novidades de materiais da Operação Aprovação por e-mail (opcional).</label>
           <p className="explainer-lead-privacy">Usamos seu e-mail para registrar seu acesso à ferramenta. Novidades somente se você autorizar. <Link to="/politica-de-privacidade">Política de Privacidade</Link></p>
           <div className="form-trap" aria-hidden="true"><label>Website<input name="website" tabIndex={-1} autoComplete="off" /></label></div>
           <Button type="submit" className="explainer-submit" disabled={registering}>{registering ? <><LoaderCircle className="explainer-spin" size={18} aria-hidden="true" /> Cadastrando…</> : "Continuar para a questão"}</Button>
-        </form> : <>
+        </form> : !limited && <>
         <p className="explainer-unlocked" role="status"><CheckCircle2 size={20} aria-hidden="true" /> Acesso liberado! Envie sua questão.</p>
         <form className="explainer-form" onSubmit={submit}>
           <label htmlFor="questao">Questão da prova</label>
@@ -125,6 +130,17 @@ function ExplicarQuestao() {
             <p className="explainer-disclaimer"><ShieldAlert size={15} aria-hidden="true" /> A IA pode errar. Confira sempre o tema, o artigo e o prazo na lei seca, no edital ou na sua apostila antes de memorizar.</p>
           </section>
         )}
+        {limited && <section className="explainer-offer" aria-labelledby="ebook-next">
+          <img src={cover.url} alt="Capa do e-book IA para Concursos Policiais" width={130} height={184} />
+          <div>
+            <p className="explainer-offer-tag">Sua próxima etapa de estudo</p>
+            <h2 id="ebook-next">IA para Concursos Policiais</h2>
+            <p>Continue estudando com 60 prompts para criar questões, revisões e um plano de estudo na IA que você usa.</p>
+            <p>E-book completo de 70 páginas + biblioteca resumida para consulta rápida. O e-book ensina os comandos; não libera novas explicações nesta ferramenta.</p>
+            <p className="explainer-offer-price"><s>{CONFIG.listPriceText}</s> <strong>{CONFIG.launchPriceText}</strong> · pagamento único</p>
+            <Button asChild className="explainer-submit"><Link to="/">Conhecer o e-book por {CONFIG.launchPriceText}</Link></Button>
+          </div>
+        </section>}
       </main>
       <footer className="explainer-footer">
         <p>Operação Aprovação · <Link to="/">Conhecer o e-book IA para Concursos Policiais</Link></p>

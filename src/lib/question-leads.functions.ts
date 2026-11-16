@@ -8,13 +8,15 @@ export const registerQuestionLead = createServerFn({ method: "POST" })
     const request = getRequest();
     const origin = new URL(request.url).origin;
     const fetchSite = request.headers.get("sec-fetch-site");
-    if (request.headers.get("origin") !== origin || (fetchSite && fetchSite !== "same-origin")) return { ok: false };
+    if (request.headers.get("origin") !== origin || (fetchSite && fetchSite !== "same-origin")) return { ok: false, limited: false };
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
     const { data: lead, error } = await supabaseAdmin.from("question_leads")
       .insert({ email: data.email, marketing_consent: data.marketingConsent })
       .select("id").single();
-    if (error || !lead) return { ok: false };
+    if (error || !lead) return { ok: false, limited: false };
+    const { data: usage, error: usageError } = await supabaseAdmin.from("question_explanation_usage").select("email").eq("email", data.email).maybeSingle();
+    if (usageError) return { ok: false, limited: false };
     // An opaque, HttpOnly receipt proves capture succeeded; no address goes to the AI.
     setCookie("question-lead", lead.id, { httpOnly: true, secure: new URL(request.url).protocol === "https:", sameSite: "strict", path: "/", maxAge: 86400 });
-    return { ok: true };
+    return { ok: true, limited: Boolean(usage) };
   });
