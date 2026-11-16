@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useState } from "react";
-import { BookOpenCheck, LoaderCircle, ShieldAlert, Sparkles } from "lucide-react";
+import { ArrowLeft, BookOpenCheck, LoaderCircle, ShieldAlert, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { explainQuestion } from "@/lib/explicar-questao.functions";
 
@@ -55,6 +55,7 @@ function ExplicarQuestao() {
   return (
     <div className="explainer">
       <header className="explainer-top">
+        <Link to="/" className="explainer-back"><ArrowLeft size={18} aria-hidden="true" /> Voltar</Link>
         <Link to="/" className="explainer-brand">Operação Aprovação <small>· Estudos para Segurança Pública</small></Link>
       </header>
       <main className="explainer-main">

@@ -643,3 +643,8 @@ body:has(.advertorial){background:var(--fundo,#fbfaf7);padding-bottom:0}
 .topnav-site-item:hover{border-color:var(--red);color:#fff}
 .topnav-site-item.ativo{background:var(--red);border-color:var(--red);color:#fff;cursor:default}
 @media (max-width:560px){.topnav-site{gap:8px}.topnav-site-item{font-size:.8rem;padding:7px 13px}}
+
+/* Botão voltar da ferramenta de explicar questões */
+.explainer-top{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.explainer-back{display:inline-flex;align-items:center;gap:6px;font-family:Poppins,system-ui,sans-serif;font-weight:600;font-size:14px;color:#f4f2ee;text-decoration:none;padding:8px 14px;border:1px solid rgba(255,255,255,.22);border-radius:999px;transition:border-color .2s,color .2s}
+.explainer-back:hover{border-color:#C8102E;color:#ff6b81}
