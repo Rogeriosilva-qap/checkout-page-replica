@@ -1,14 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
-import { getRequest } from "@tanstack/react-start/server";
+import { getCookie, getRequest } from "@tanstack/react-start/server";
 import { z } from "zod";
-
-const questionSchema = z.object({
-  question: z
-    .string()
-    .trim()
-    .min(20, "Cole a questão completa, com enunciado e alternativas.")
-    .max(4000, "A questão ficou longa demais; envie apenas o enunciado e as alternativas."),
-});
+import { questionSchema } from "./question-leads.schemas";
 
 function isSameOrigin(request: Request) {
   const origin = request.headers.get("origin");
@@ -24,6 +17,11 @@ export const explainQuestion = createServerFn({ method: "POST" })
     const request = getRequest();
     if (!isSameOrigin(request)) return { ok: false, message: "Não foi possível enviar. Recarregue a página e tente de novo." };
     try {
+      const leadId = z.string().uuid().safeParse(getCookie("question-lead"));
+      if (!leadId.success) return { ok: false, message: "Informe seu e-mail primeiro para liberar a explicação." };
+      const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+      const { data: lead, error } = await supabaseAdmin.from("question_leads").select("id").eq("id", leadId.data).maybeSingle();
+      if (error || !lead) return { ok: false, message: "Cadastre seu e-mail novamente para continuar." };
       const { explainQuestion: run } = await import("./explicar-questao.server");
       const explanation = await run(request, data.question);
       return { ok: true, explanation };

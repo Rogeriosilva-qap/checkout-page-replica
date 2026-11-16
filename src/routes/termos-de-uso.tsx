@@ -11,6 +11,7 @@ export const Route = createFileRoute("/termos-de-uso")({
       { property: "og:title", content: "Termos de Uso | Operação Aprovação" },
       { property: "og:description", content: "Condições de uso do site e de compra do e-book IA para Concursos Policiais." },
       { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
       { property: "og:url", content: "https://operacaoaprovacaoebooks.com.br/termos-de-uso" },
     ],
     links: [

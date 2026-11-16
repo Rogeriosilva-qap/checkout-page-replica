@@ -1,4 +1,5 @@
 # Revisão da página de vendas
+- [x] Captar e-mail antes da explicação, guardar autorização opcional e verificar cadastro real e resposta em celular e desktop.
 - [x] Reescrever o advertorial /ia-para-concursos com o ângulo "erro que a maioria comete ao usar ChatGPT" para o Taboola; botão leva à página de vendas; testar celular e desktop.
 - [x] Criar advertorial isolado em /ia-para-concursos com texto fiel, placeholders, metadados e tabela móvel; verificar cópia, seleção e links sem alterar a home.
 - [x] Adicionar barra superior no advertorial com "Acessar o e-book" (home) e "Ficar no blog" (ativo); testar em 390px.

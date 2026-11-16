@@ -11,6 +11,7 @@ export const Route = createFileRoute("/politica-de-privacidade")({
       { property: "og:title", content: "Política de Privacidade | Operação Aprovação" },
       { property: "og:description", content: "Como coletamos, usamos e protegemos os dados dos visitantes e clientes." },
       { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
       { property: "og:url", content: "https://operacaoaprovacaoebooks.com.br/politica-de-privacidade" },
     ],
     links: [
@@ -37,6 +38,7 @@ function PoliticaDePrivacidade() {
       <ul>
         <li><strong>Comentários e depoimentos:</strong> nome, mensagem, nota (de 1 a 5 estrelas) e, se você quiser, uma foto de perfil. Os depoimentos só aparecem no site depois de aprovados por nós.</li>
         <li><strong>Cadastro para novidades e lista de espera:</strong> seu e-mail, com consentimento registrado no momento do envio.</li>
+        <li><strong>Ferramenta de explicar questões:</strong> seu e-mail para registrar o acesso gratuito, a data do cadastro e sua escolha opcional de receber dicas e novidades. Recusar novidades não impede o uso da ferramenta. A questão enviada é processada pelo serviço de IA da Lovable para gerar a explicação; seu e-mail não é enviado à IA. Evite incluir dados pessoais no texto da questão.</li>
         <li><strong>Contato por e-mail ou WhatsApp:</strong> o conteúdo da conversa e os dados que você escolher informar.</li>
       </ul>
       <p>Esses dados são usados para responder você, exibir depoimentos autorizados e enviar as novidades que você pediu para receber. Você pode pedir a exclusão a qualquer momento pelo e-mail {CONFIG.supportEmail}.</p>
@@ -54,7 +56,7 @@ function PoliticaDePrivacidade() {
       <h2>6. Com quem compartilhamos</h2>
       <ul>
         <li><strong>Plataforma de pagamento (Kirvano):</strong> para processar a compra e entregar o material.</li>
-        <li><strong>Lovable:</strong> hospedagem do site e estatísticas de visitação descritas no item 4.</li>
+        <li><strong>Lovable:</strong> hospedagem, armazenamento privado dos cadastros, processamento das questões pela IA e estatísticas de visitação descritas no item 4.</li>
         <li><strong>Google:</strong> medição de publicidade descrita no item 5, somente após o seu consentimento.</li>
       </ul>
       <p>Não vendemos nem alugamos dados pessoais.</p>
