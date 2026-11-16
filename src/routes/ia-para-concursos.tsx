@@ -13,10 +13,10 @@ export const Route = createFileRoute("/ia-para-concursos")({
   staticData: { sitemap: true },
   head: () => ({
     meta: [
-      { title: "Como usar IA para resumir leis e criar questões de concursos policiais | Operação Aprovação" },
-      { name: "description", content: "Conteúdo publicitário da Operação Aprovação. Veja como montar um pedido à IA com base no seu próprio material, treinar uma questão por vez e conferir a resposta na fonte." },
-      { property: "og:title", content: "Como usar IA para criar questões de concursos policiais com o seu próprio material" },
-      { property: "og:description", content: "Conteúdo publicitário. Um modelo de pedido para copiar, um exemplo comentado e um quadro para conferir a resposta da IA na fonte." },
+      { title: "Concurseiros policiais estão usando o ChatGPT do jeito errado | Operação Aprovação" },
+      { name: "description", content: "Conteúdo publicitário da Operação Aprovação. O problema não é a ferramenta, é o pedido: veja o erro que a maioria dos candidatos comete ao usar IA e o ajuste que transforma a IA em tutor de estudos." },
+      { property: "og:title", content: "O erro que a maioria comete ao usar ChatGPT para estudar para concursos policiais" },
+      { property: "og:description", content: "Conteúdo publicitário. Três sintomas do pedido genérico, um modelo de pedido estruturado para copiar e o ritual de conferência na fonte oficial." },
       { property: "og:type", content: "article" },
       { property: "og:locale", content: "pt_BR" },
       { property: "og:url", content: "https://operacaoaprovacaoebooks.com.br/ia-para-concursos" },
@@ -43,12 +43,6 @@ Regras:
 
 Texto para estudo:
 [cole aqui o artigo de lei, o trecho do edital ou a página da sua apostila]`;
-const studyPrompt = `Abaixo está o conteúdo programático do edital de [concurso]. Hoje tenho [ex.: 40 minutos] para estudar. Já estudei: [liste os tópicos].
-
-Com base SOMENTE nessa lista, sugira UMA tarefa para hoje que caiba nesse tempo, dizendo qual tópico, o que fazer (ler, revisar ou resolver questões) e por quê. Não invente tópicos que não estejam no edital.
-
-Conteúdo programático:
-[cole aqui o trecho do edital]`;
 
 function CopyPrompt({ id, text }: { id: string; text: string }) {
   const pre = useRef<HTMLPreElement>(null);
@@ -81,47 +75,51 @@ function Advertorial() {
     </nav>
     <div className="marca"><img src={logo.url} alt="Logo Operação Aprovação" height={40} />Operação Aprovação <small>· Estudos para Segurança Pública</small></div>
     <main><article>
-      <h1>Como usar IA para resumir leis e criar questões de concursos policiais</h1>
-      <p className="sub">Veja como montar um pedido com base no seu próprio material, treinar uma questão por vez e saber onde procurar a informação para conferir a resposta da IA.</p>
-      <div className="autoria">Publicado por <b>Operação Aprovação</b>, anunciante deste conteúdo · Leitura de cerca de 6 minutos</div>
+      <h1>Concurseiros de carreiras policiais estão usando o ChatGPT do jeito errado — e isso pode estar custando pontos na prova</h1>
+      <p className="sub">Especialistas em preparação alertam: o problema não é a ferramenta, é o pedido. Veja o erro que 9 em cada 10 candidatos cometem — e o ajuste simples que transforma a IA em um tutor de estudos.</p>
+      <div className="autoria">Publicado por <b>Operação Aprovação</b>, anunciante deste conteúdo · Leitura de cerca de 5 minutos</div>
       <img className="foto" src={foto.url} alt="Jovem estudando à noite com notebook, caderno e marca-texto" />
       <p className="legenda">Imagem ilustrativa.</p>
-      <p>Você chega do trabalho, já passa das nove da noite e ainda faltam dois artigos do edital para revisar. Abre a lei, cola tudo na IA e escreve: “resume isso pra mim”.</p>
-      <p>A resposta vem rápida, mas não ajuda tanto. São parágrafos longos, que repetem o texto com outras palavras. Às vezes aparece uma informação que não estava no trecho que você colou, porque a ferramenta completou com o que “sabe” de outras fontes. E, se você pede questões, o gabarito vem logo embaixo, antes que você tenha tentado responder.</p>
-      <p>O problema quase nunca está na ferramenta, e sim no pedido. A seguir, você vê a diferença na prática e leva um modelo pronto para copiar.</p>
+      <p>Você chega do trabalho, já passa das nove da noite e ainda faltam dois artigos do edital para revisar. Abre o ChatGPT, cola a lei inteira e escreve: “resume isso pra mim e faz umas questões”.</p>
+      <p>A resposta vem rápida. E é aí que mora o perigo.</p>
 
-      <h2 id="exemplo">O pedido genérico e o pedido estruturado</h2>
+      <h2 id="erro">O erro que quase todo candidato comete</h2>
+      <p>Quando o pedido é genérico, a IA preenche as lacunas por conta própria. Ela não sabe qual é a sua banca, não sabe qual trecho da lei você colou — e, pior: <strong>completa a resposta com informações de outras fontes, que podem estar desatualizadas ou simplesmente erradas.</strong></p>
+      <p>Os três sintomas mais comuns:</p>
+      <ol>
+        <li><strong>O gabarito aparece antes de você pensar.</strong> Você pede questões e a resposta vem logo embaixo. Resultado: você “reconhece” a resposta em vez de lembrar dela — e na prova, sem a tela, o conteúdo não vem.</li>
+        <li><strong>Números e prazos trocados.</strong> A IA afirma “20%” onde a lei diz “25%”. Diz “48 horas” onde o prazo é outro. Em banca de certo/errado, um número trocado é um item perdido — e um item errado anula um certo.</li>
+        <li><strong>Falsa sensação de progresso.</strong> Parágrafos bonitos que repetem a lei com outras palavras. Você lê, concorda com a cabeça… e não fixa nada.</li>
+      </ol>
+      <p>Se você já estudou assim, não é culpa sua. A ferramenta foi feita para responder qualquer coisa — cabe a você prendê-la ao que realmente importa.</p>
+
+      <h2 id="ajuste">O ajuste: prender a IA ao seu material</h2>
+      <p>Candidatos organizados fazem diferente. Em vez de um pedido genérico, eles entregam <strong>regras claras</strong>: use somente o texto colado, crie uma questão por vez, espere a minha resposta antes de mostrar o gabarito e indique o trecho exato que sustenta a resposta.</p>
       <span className="rotulo ruim">Pedido genérico</span>
       <div className="caixa"><pre className="prompt generic-prompt">Resume essa lei e faz umas questões pra eu estudar.</pre></div>
-      <p>Esse pedido não diz qual material usar, quantas questões criar, em que formato nem quando mostrar a resposta. A IA preenche essas lacunas por conta própria.</p>
       <span className="rotulo bom">Pedido estruturado</span>
       <p>Este modelo prende a IA ao texto que você colar, pede <strong>uma questão por vez</strong>, espera a sua resposta e só depois mostra o gabarito com o trecho que o sustenta. Troque o que está entre colchetes.</p>
       <CopyPrompt id="prompt-questoes" text={questionsPrompt} />
       <p className="legenda">Funciona em ferramentas de IA de conversa, inclusive nas versões gratuitas. Os resultados variam conforme a ferramenta.</p>
-      <p>No e-book, essa mesma lógica aparece no modelo P35, “Certo ou errado, um item por vez”, um dos 60 modelos do guia.</p>
-      <div className="ferramenta-gratis">
-        <p><strong>Quer testar agora?</strong> Cole uma questão da sua prova na ferramenta gratuita da Operação Aprovação e veja a explicação do raciocínio, com os pontos para conferir na fonte.</p>
-        <Link to="/explicar-questao" className="ferramenta-link">Explicar uma questão gratuitamente →</Link>
-      </div>
-
-      <h3>Como fica na prática</h3>
-      <p>Para não reproduzir um texto legal sem conferência, o exemplo abaixo usa um <strong>trecho fictício</strong>, criado só para esta demonstração. A conversa também é <strong>ilustrativa</strong>.</p>
-      <span className="rotulo ilus">Trecho de estudo fictício: não é texto de lei</span>
-      <p className="trecho">“Regimento da Escola de Formação Exemplo, art. 12. Será desligado do curso o aluno que faltar a mais de 25% das aulas práticas, salvo se apresentar justificativa médica em até 48 horas após a falta.”</p>
-      <span className="rotulo ilus">Conversa ilustrativa</span>
+      <p>Veja a diferença na prática. Com um pedido estruturado, a conversa fica assim:</p>
+      <span className="rotulo ilus">Conversa ilustrativa, com trecho fictício criado para demonstração</span>
       <div className="caixa chat">
         <div className="msg ia"><span className="quem">IA</span>Questão 1 (certo ou errado): Segundo o texto, o aluno que faltar a mais de 25% das aulas práticas será desligado em qualquer situação.<br /><em>Aguardo sua resposta.</em></div>
         <div className="msg aluno"><span className="quem">Você</span>Certo.</div>
         <div className="msg ia"><span className="quem">IA</span>Você errou. Gabarito: <strong>errado</strong>. O texto prevê uma exceção: “salvo se apresentar justificativa médica em até 48 horas após a falta”.<br />Escreva “próxima” para continuar.</div>
       </div>
-      <p>Repare em duas coisas: você precisou pensar antes de ver a resposta, e a IA apontou de onde tirou o gabarito. É esse trecho que você vai conferir.</p>
+      <p>Repare em duas coisas: você precisou <strong>pensar antes de ver a resposta</strong>, e a IA <strong>apontou de onde tirou o gabarito</strong>. É esse trecho que você vai conferir na fonte oficial.</p>
+      <div className="ferramenta-gratis">
+        <p><strong>Quer testar agora?</strong> Cole uma questão da sua prova na ferramenta gratuita da Operação Aprovação e veja a explicação do raciocínio, com os pontos para conferir na fonte.</p>
+        <Link to="/explicar-questao" className="ferramenta-link">Explicar uma questão gratuitamente →</Link>
+      </div>
 
-      <h2 id="conferir">Como conferir a resposta da IA</h2>
-      <p>A IA pode errar um número, trocar uma palavra ou esquecer uma exceção, mesmo quando o pedido está bem feito. Por isso, a última etapa é sempre sua: abrir a fonte e comparar.</p>
+      <h2 id="fonte">A regra de ouro: a última palavra é da fonte</h2>
+      <p>Mesmo com um bom pedido, a IA pode errar. Por isso, candidatos que usam a ferramenta a favor — e não contra si — seguem um ritual de três passos:</p>
       <ol>
-        <li><strong>Abra o texto original.</strong> Para leis, use o site oficial do governo (no caso de leis federais, o Portal da Legislação do Planalto). Para regras do concurso, use o edital publicado pela banca.</li>
-        <li><strong>Procure a expressão-chave.</strong> Use a busca do navegador (Ctrl+F ou “Localizar na página” no celular) com a palavra mais específica da resposta.</li>
-        <li><strong>Compare número, prazo e exceção.</strong> São os pontos em que mais aparecem diferenças.</li>
+        <li><strong>Abrir o texto original.</strong> Para leis federais, o Portal da Legislação do Planalto; para regras do concurso, o edital publicado pela banca.</li>
+        <li><strong>Buscar a palavra mais específica da resposta.</strong> Use a busca do navegador (Ctrl+F ou “Localizar na página” no celular).</li>
+        <li><strong>Comparar número, prazo e exceção.</strong> Os três pontos onde as bancas mais armam pegadinhas.</li>
       </ol>
       <span className="rotulo ilus">Quadro ilustrativo, com base no trecho fictício</span>
       <table>
@@ -132,29 +130,25 @@ function Advertorial() {
           <tr><td data-col="O que a IA afirmou">“Qualquer justificativa evita o desligamento.”</td><td data-col="O que diz o texto original">“<mark>justificativa médica</mark>”</td><td data-col="Correção">Só a justificativa médica é aceita.</td></tr>
         </tbody>
       </table>
-      <p>Se a resposta da IA e o texto original não baterem, vale o texto original. Corrija sua anotação e siga para a próxima questão.</p>
+      <p>Se a IA e a fonte divergirem, vale a fonte. Sempre.</p>
 
-      <h2 id="pouco-tempo">Pouco tempo? Use o edital para definir a próxima tarefa</h2>
-      <p>Nos dias mais corridos, a dúvida costuma ser outra: por onde começar. O mesmo princípio vale aqui. Em vez de pedir “um cronograma”, entregue o conteúdo programático e o tempo que você tem.</p>
-      <CopyPrompt id="prompt-edital" text={studyPrompt} />
-      <p className="legenda">Confira sempre a lista de tópicos no edital oficial publicado pela banca.</p>
-
-      <h2 id="ebook">Para repetir o processo em outras tarefas</h2>
-      <p>Os dois modelos acima resolvem duas situações. No dia a dia de estudo aparecem muitas outras, e montar um pedido bem estruturado do zero toda noite toma tempo. Foi para isso que a Operação Aprovação reuniu esses modelos em um guia.</p>
+      <h2 id="ebook">“Mas montar esse pedido toda noite dá trabalho…”</h2>
+      <p>Dá mesmo. Criar um comando bem estruturado do zero, para cada tipo de tarefa — criar questões, resumir lei seca, montar revisão, planejar a semana — toma um tempo que quem trabalha e estuda não tem.</p>
+      <p>Foi para resolver isso que a equipe da Operação Aprovação compilou os comandos prontos em um guia.</p>
       <div className="produto">
         <img className="capa" src={capa.url} alt="Capa do e-book IA para Concursos Policiais, da Operação Aprovação" loading="lazy" width={220} height={330} />
         <div>
           <h3>E-book IA para Concursos Policiais</h3>
-          <p>Feito para quem se prepara para <strong>PM, Polícia Civil, Polícia Penal e Guarda Municipal</strong> e quer transformar os materiais que já tem em treino. São 70 páginas com <strong>60 modelos de prompts</strong> e orientações para conferir as respostas na fonte.</p>
+          <p>Feito para quem se prepara para <strong>PM, Polícia Civil, Polícia Penal e Guarda Municipal</strong>. São 70 páginas com <strong>60 modelos de prompts</strong> — cada um já com a etapa de conferência na fonte incluída.</p>
           <ul className="usos">
             <li><strong>Criar questões</strong> a partir de leis, apostilas e trechos do edital.</li>
             <li><strong>Estruturar revisões</strong> do conteúdo que você já estudou.</li>
             <li><strong>Reorganizar o plano de estudo</strong> conforme o edital e o seu tempo.</li>
           </ul>
-          <p>A ferramenta de IA gratuita responde ao que você pede; o guia entrega os pedidos já montados para cada tarefa, com a etapa de conferência incluída.</p>
+          <p>E para quem não quer ler as 70 páginas, a compra inclui também o <strong>PDF resumido da biblioteca de prompts</strong>, para consulta rápida.</p>
         </div>
       </div>
-      {CONFIG.launchPriceText.trim() && <p className="preco-lancamento">Preço de lançamento: {CONFIG.launchPriceText}.</p>}
+      {CONFIG.launchPriceText.trim() && <p className="preco-lancamento">Preço de lançamento: {CONFIG.listPriceText.trim() && <>de <s>{CONFIG.listPriceText}</s> por</>} <strong>{CONFIG.launchPriceText}</strong> (pagamento único, com garantia de {CONFIG.guaranteeDays} dias).</p>}
       <OfferLink />
       <p className="cta-nota">Você será levado à página de vendas da Operação Aprovação.</p>
       <p className="aviso"><strong>Importante:</strong> o e-book é um material de apoio ao estudo e não garante aprovação. Ferramentas de IA podem cometer erros; confira sempre as informações na lei publicada no site oficial e no edital do seu concurso. A Operação Aprovação não tem vínculo com bancas organizadoras nem com as corporações citadas.</p>
@@ -167,6 +161,11 @@ function Advertorial() {
       <p>Anunciante: Operação Aprovação · <a href="https://operacaoaprovacaoebooks.com.br/">operacaoaprovacaoebooks.com.br</a></p>
       <p>CNPJ 70.147.280/0001-40</p>
       <p>Contato: <a href={`mailto:${CONFIG.supportEmail}`}>{CONFIG.supportEmail}</a> · WhatsApp <a href={`https://wa.me/${CONFIG.whatsappNumber}`}>{CONFIG.whatsappText}</a></p>
+      {(CONFIG.termsUrl.trim() || CONFIG.privacyUrl.trim()) && <p>
+        {CONFIG.termsUrl.trim() && <a href={CONFIG.termsUrl}>Termos de uso</a>}
+        {CONFIG.termsUrl.trim() && CONFIG.privacyUrl.trim() && " · "}
+        {CONFIG.privacyUrl.trim() && <a href={CONFIG.privacyUrl}>Política de privacidade</a>}
+      </p>}
     </div></footer>
   </div>;
 }
