@@ -183,6 +183,7 @@ function Index() {
   const offerRef = useRef<HTMLElement>(null);
   const finalRef = useRef<HTMLAnchorElement>(null);
   const [barOn, setBarOn] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     if (!("IntersectionObserver" in window)) return;
@@ -215,6 +216,13 @@ function Index() {
     return () => document.body.classList.remove("bar-on");
   }, [barOn]);
 
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setMenuOpen(false); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [menuOpen]);
+
   return (
     <>
       <a className="skip" href="#conteudo">
@@ -223,16 +231,31 @@ function Index() {
 
       <header className="top">
         <div className="wrap">
-          <div className="brand">
-            <img src={logo.url} alt="" width={52} height={52} />
-            <span>
-              Operação Aprovação<small>Estudos para Segurança Pública</small>
-            </span>
+          <div className="topbar-row">
+            <div className="brand">
+              <img src={logo.url} alt="" width={52} height={52} />
+              <span>
+                Operação Aprovação<small>Estudos para Segurança Pública</small>
+              </span>
+            </div>
+            <button
+              type="button"
+              className={menuOpen ? "menu-toggle aberto" : "menu-toggle"}
+              aria-expanded={menuOpen}
+              aria-controls="menu-site"
+              aria-label={menuOpen ? "Fechar menu de páginas" : "Abrir menu de páginas"}
+              onClick={() => setMenuOpen((v) => !v)}
+            >
+              <span /><span /><span />
+            </button>
           </div>
-          <nav className="topnav-site" aria-label="Páginas da Operação Aprovação">
-            <span className="topnav-site-item ativo" aria-current="page">E-book</span>
-            <Link className="topnav-site-item" to="/ia-para-concursos">Blog</Link>
-            <Link className="topnav-site-item" to="/explicar-questao">Explicar questão</Link>
+          {menuOpen && <button type="button" className="menu-backdrop" aria-hidden="true" tabIndex={-1} onClick={() => setMenuOpen(false)} />}
+          <nav id="menu-site" className={menuOpen ? "menu-site aberto" : "menu-site"} aria-label="Páginas da Operação Aprovação">
+            <span className="menu-site-item ativo" aria-current="page">E-book</span>
+            <Link className="menu-site-item" to="/ia-para-concursos" onClick={() => setMenuOpen(false)}>Blog</Link>
+            <Link className="menu-site-item" to="/explicar-questao" onClick={() => setMenuOpen(false)}>Explicar questão</Link>
+            <Link className="menu-site-item" to="/termos-de-uso" onClick={() => setMenuOpen(false)}>Termos de uso</Link>
+            <Link className="menu-site-item" to="/politica-de-privacidade" onClick={() => setMenuOpen(false)}>Política de privacidade</Link>
           </nav>
           <div className="hero">
             <div className="hero-text">
