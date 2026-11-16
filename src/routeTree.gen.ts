@@ -12,7 +12,9 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ExplicarQuestaoRouteImport } from './routes/explicar-questao'
 import { Route as IaParaConcursosRouteImport } from './routes/ia-para-concursos'
+import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as TermosDeUsoRouteImport } from './routes/termos-de-uso'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -29,9 +31,19 @@ const IaParaConcursosRoute = IaParaConcursosRouteImport.update({
   path: '/ia-para-concursos',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PoliticaDePrivacidadeRoute = PoliticaDePrivacidadeRouteImport.update({
+  id: '/politica-de-privacidade',
+  path: '/politica-de-privacidade',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermosDeUsoRoute = TermosDeUsoRouteImport.update({
+  id: '/termos-de-uso',
+  path: '/termos-de-uso',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -39,39 +51,61 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/explicar-questao': typeof ExplicarQuestaoRoute
   '/ia-para-concursos': typeof IaParaConcursosRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/termos-de-uso': typeof TermosDeUsoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/explicar-questao': typeof ExplicarQuestaoRoute
   '/ia-para-concursos': typeof IaParaConcursosRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/termos-de-uso': typeof TermosDeUsoRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/explicar-questao': typeof ExplicarQuestaoRoute
   '/ia-para-concursos': typeof IaParaConcursosRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/termos-de-uso': typeof TermosDeUsoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/explicar-questao' | '/ia-para-concursos' | '/sitemap.xml'
+  fullPaths:
+    | '/'
+    | '/explicar-questao'
+    | '/ia-para-concursos'
+    | '/politica-de-privacidade'
+    | '/sitemap.xml'
+    | '/termos-de-uso'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/explicar-questao' | '/ia-para-concursos' | '/sitemap.xml'
+  to:
+    | '/'
+    | '/explicar-questao'
+    | '/ia-para-concursos'
+    | '/politica-de-privacidade'
+    | '/sitemap.xml'
+    | '/termos-de-uso'
   id:
     | '__root__'
     | '/'
     | '/explicar-questao'
     | '/ia-para-concursos'
+    | '/politica-de-privacidade'
     | '/sitemap.xml'
+    | '/termos-de-uso'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ExplicarQuestaoRoute: typeof ExplicarQuestaoRoute
   IaParaConcursosRoute: typeof IaParaConcursosRoute
+  PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TermosDeUsoRoute: typeof TermosDeUsoRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -97,11 +131,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IaParaConcursosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/politica-de-privacidade': {
+      id: '/politica-de-privacidade'
+      path: '/politica-de-privacidade'
+      fullPath: '/politica-de-privacidade'
+      preLoaderRoute: typeof PoliticaDePrivacidadeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/termos-de-uso': {
+      id: '/termos-de-uso'
+      path: '/termos-de-uso'
+      fullPath: '/termos-de-uso'
+      preLoaderRoute: typeof TermosDeUsoRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -111,7 +159,9 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ExplicarQuestaoRoute: ExplicarQuestaoRoute,
   IaParaConcursosRoute: IaParaConcursosRoute,
+  PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TermosDeUsoRoute: TermosDeUsoRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -925,6 +925,7 @@ function Index() {
           <p>
             <b className="foot-brand">Operação Aprovação</b> · Estudos para Segurança Pública
           </p>
+          <p>CNPJ 70.147.280/0001-40</p>
           <p>
             Divulgação: Silvaa+ no TikTok,{" "}
             <a href="https://www.tiktok.com/@r_silvaa19" rel="noopener">

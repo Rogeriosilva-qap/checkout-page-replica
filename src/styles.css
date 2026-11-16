@@ -664,3 +664,28 @@ body:has(.advertorial){background:var(--fundo,#fbfaf7);padding-bottom:0}
 .advertorial .ferramenta-gratis p{margin:0 0 10px}
 .advertorial .ferramenta-link{display:inline-block;font-family:var(--ad-ui);font-weight:700;font-size:15px;color:#c8102e;text-decoration:none;border-bottom:2px solid #c8102e;padding-bottom:1px}
 .advertorial .ferramenta-link:hover{color:#8f0b21;border-color:#8f0b21}
+
+/* Páginas legais (termos e privacidade): mesma linguagem editorial do advertorial, isolada da página de vendas. */
+.legal{
+  --grafite:#23262b;--grafite-2:#3a3e45;--vermelho:#c8102e;--vermelho-esc:#a10d25;--fundo:#fbfaf7;--papel:#ffffff;--linha:#e3e0d9;--texto:#1f2226;--cinza:#5b6068;
+  --ad-ui:"Inter",sans-serif;--ad-body:"Literata",Georgia,serif;
+  min-height:100dvh;background:var(--fundo);color:var(--texto);font-family:var(--ad-body);font-size:18px;line-height:1.68;
+}
+body:has(.legal){background:var(--fundo,#fbfaf7);padding-bottom:0}
+.legal p{margin:1em 0}
+.legal a{color:var(--vermelho);text-decoration:underline;overflow-wrap:anywhere}
+.legal strong,.legal b{font-weight:700}
+.legal .marca{max-width:720px;margin:0 auto;padding:16px 20px 0;font-family:var(--ad-ui);font-weight:800;font-size:15px}
+.legal .marca a{display:flex;align-items:center;gap:8px;color:var(--grafite);text-decoration:none}
+.legal .marca small{font-weight:600;color:var(--cinza);font-size:13px}
+.legal main{max-width:720px;margin:0 auto;padding:8px 20px 40px}
+.legal h1{font-family:var(--ad-ui);font-weight:800;font-size:30px;line-height:1.15;color:var(--grafite);margin:18px 0 6px;text-wrap:wrap}
+.legal .atualizacao{font-family:var(--ad-ui);font-size:14px;color:var(--cinza);border-bottom:1px solid var(--linha);padding-bottom:12px;margin-bottom:22px}
+.legal h2{font-family:var(--ad-ui);font-weight:700;font-size:21px;line-height:1.25;color:var(--grafite);margin:32px 0 10px;padding-left:12px;border-left:5px solid var(--vermelho);text-wrap:wrap}
+.legal ul{list-style:disc;padding-left:28px;margin:1em 0}
+.legal li{margin:.4em 0}
+.legal footer{border-top:1px solid var(--linha);background:#f3f1ec;font-family:var(--ad-ui);font-size:13.5px;color:var(--cinza)}
+.legal footer div{max-width:720px;margin:0 auto;padding:22px 20px 30px}
+.legal footer p{margin:.4em 0}
+@media (min-width:620px){.legal h1{font-size:38px}}
+.legal .marca img{height:40px;width:auto;flex-shrink:0}

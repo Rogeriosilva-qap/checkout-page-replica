@@ -17,8 +17,8 @@ export const CONFIG = {
   guaranteeDays: 7,
   supportEmail: "operacaoaprovacao.edu@gmail.com",
   guaranteeText: "Garantia de 7 dias.",
-  termsUrl: "", // Link dos termos de uso
-  privacyUrl: "", // Link da política de privacidade
+  termsUrl: "/termos-de-uso", // Link dos termos de uso
+  privacyUrl: "/politica-de-privacidade", // Link da política de privacidade
   contactText: "Suporte: operacaoaprovacao.edu@gmail.com",
   whatsappNumber: "5562992810711", // País + DDD + número, apenas dígitos. Deixe "" para ocultar.
   whatsappText: "(62) 9 9281-0711",
