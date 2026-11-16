@@ -71,6 +71,30 @@ export type Database = {
         }
         Relationships: []
       }
+      question_leads: {
+        Row: {
+          consent_version: string
+          created_at: string
+          email: string
+          id: string
+          marketing_consent: boolean
+        }
+        Insert: {
+          consent_version?: string
+          created_at?: string
+          email: string
+          id?: string
+          marketing_consent?: boolean
+        }
+        Update: {
+          consent_version?: string
+          created_at?: string
+          email?: string
+          id?: string
+          marketing_consent?: boolean
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
