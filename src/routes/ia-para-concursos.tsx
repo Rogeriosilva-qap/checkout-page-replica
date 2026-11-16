@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { copyAdvertorialPrompt } from "@/lib/copy-advertorial-prompt";
@@ -99,6 +99,10 @@ function Advertorial() {
       <CopyPrompt id="prompt-questoes" text={questionsPrompt} />
       <p className="legenda">Funciona em ferramentas de IA de conversa, inclusive nas versões gratuitas. Os resultados variam conforme a ferramenta.</p>
       <p>No e-book, essa mesma lógica aparece no modelo P35, “Certo ou errado, um item por vez”, um dos 60 modelos do guia.</p>
+      <div className="ferramenta-gratis">
+        <p><strong>Quer testar agora?</strong> Cole uma questão da sua prova na ferramenta gratuita da Operação Aprovação e veja a explicação do raciocínio, com os pontos para conferir na fonte.</p>
+        <Link to="/explicar-questao" className="ferramenta-link">Explicar uma questão gratuitamente →</Link>
+      </div>
 
       <h3>Como fica na prática</h3>
       <p>Para não reproduzir um texto legal sem conferência, o exemplo abaixo usa um <strong>trecho fictício</strong>, criado só para esta demonstração. A conversa também é <strong>ilustrativa</strong>.</p>

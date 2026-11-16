@@ -11,7 +11,7 @@ import pag33 from "@/assets/pagina-33.jpg.asset.json";
 import pag30 from "@/assets/pagina-30.jpg.asset.json";
 import pag05 from "@/assets/pagina-05.jpg.asset.json";
 import bibliotecaProtegida from "@/assets/biblioteca-protegida.jpg.asset.json";
-import { FileText, LockKeyhole, ArrowRight, Zap } from "lucide-react";
+import { FileText, LockKeyhole, ArrowRight, Zap, Sparkles } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   staticData: { sitemap: true },
@@ -287,6 +287,18 @@ function Index() {
       </header>
 
       <main id="conteudo">
+        <section className="free-tool" aria-labelledby="t-freetool">
+          <div className="wrap free-tool-box">
+            <span className="free-tool-tag"><Sparkles aria-hidden="true" /> Ferramenta gratuita</span>
+            <div className="free-tool-copy">
+              <h2 id="t-freetool">Travou em uma questão de prova?</h2>
+              <p>Cole a questão na nossa ferramenta e receba a explicação do raciocínio da resposta, com os pontos para conferir no seu material. Grátis, sem cadastro.</p>
+            </div>
+            <Link to="/explicar-questao" className="btn free-tool-btn">
+              Explicar uma questão agora <ArrowRight aria-hidden="true" />
+            </Link>
+          </div>
+        </section>
         <section className="quick-library" aria-labelledby="t-library">
           <div className="wrap library-layout">
             <div className="library-copy">

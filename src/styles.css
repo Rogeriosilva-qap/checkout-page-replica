@@ -648,3 +648,19 @@ body:has(.advertorial){background:var(--fundo,#fbfaf7);padding-bottom:0}
 .explainer-top{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 .explainer-back{display:inline-flex;align-items:center;gap:6px;font-family:Poppins,system-ui,sans-serif;font-weight:600;font-size:14px;color:#f4f2ee;text-decoration:none;padding:8px 14px;border:1px solid rgba(255,255,255,.22);border-radius:999px;transition:border-color .2s,color .2s}
 .explainer-back:hover{border-color:#C8102E;color:#ff6b81}
+
+/* Isca gratuita: ferramenta de explicar questões */
+.free-tool{padding:34px 20px;background:linear-gradient(135deg,#1F1F23 0%,#2a1215 100%);border-top:3px solid #C8102E}
+.free-tool-box{display:flex;align-items:center;gap:22px;flex-wrap:wrap;max-width:1060px;margin:0 auto}
+.free-tool-tag{display:inline-flex;align-items:center;gap:7px;font-family:Poppins,system-ui,sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#ff8fa0;background:rgba(200,16,46,.18);border:1px solid rgba(200,16,46,.5);padding:7px 14px;border-radius:999px;white-space:nowrap}
+.free-tool-tag svg{width:14px;height:14px}
+.free-tool-copy{flex:1;min-width:min(100%,320px)}
+.free-tool-copy h2{font-family:Poppins,system-ui,sans-serif;font-size:clamp(20px,3vw,26px);color:#f4f2ee;margin:0 0 6px}
+.free-tool-copy p{margin:0;color:rgba(244,242,238,.78);font-size:15px;line-height:1.55}
+.free-tool-btn{white-space:nowrap}
+
+/* Caixa da ferramenta gratuita no advertorial */
+.advertorial .ferramenta-gratis{margin:26px 0;padding:20px 22px;background:#fdf3f4;border:1px solid rgba(200,16,46,.35);border-left:4px solid #c8102e;border-radius:10px}
+.advertorial .ferramenta-gratis p{margin:0 0 10px}
+.advertorial .ferramenta-link{display:inline-block;font-family:var(--ad-ui);font-weight:700;font-size:15px;color:#c8102e;text-decoration:none;border-bottom:2px solid #c8102e;padding-bottom:1px}
+.advertorial .ferramenta-link:hover{color:#8f0b21;border-color:#8f0b21}
