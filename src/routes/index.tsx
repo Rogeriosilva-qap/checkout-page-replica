@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode, type RefObject } from "react";
 
 import { CONFIG, getPurchaseFaq } from "@/config";
@@ -229,6 +229,11 @@ function Index() {
               Operação Aprovação<small>Estudos para Segurança Pública</small>
             </span>
           </div>
+          <nav className="topnav-site" aria-label="Páginas da Operação Aprovação">
+            <span className="topnav-site-item ativo" aria-current="page">E-book</span>
+            <Link className="topnav-site-item" to="/ia-para-concursos">Blog</Link>
+            <Link className="topnav-site-item" to="/explicar-questao">Explicar questão</Link>
+          </nav>
           <div className="hero">
             <div className="hero-text">
               <span className="kind">E-book digital em PDF</span>

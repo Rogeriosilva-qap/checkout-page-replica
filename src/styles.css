@@ -636,3 +636,10 @@ body:has(.advertorial){background:var(--fundo,#fbfaf7);padding-bottom:0}
 .explainer-footer{padding:20px;text-align:center;border-top:1px solid rgba(255,255,255,.08);font-size:14px;color:rgba(244,242,238,.6)}
 .explainer-footer a{color:#ff6b81}
 @media (prefers-reduced-motion:reduce){.explainer-spin{animation:none}}
+
+/* Navegação entre páginas no topo da página de vendas */
+.topnav-site{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 4px}
+.topnav-site-item{font-family:var(--head);font-weight:600;font-size:.85rem;letter-spacing:.02em;color:#E8E8EC;text-decoration:none;padding:8px 16px;border:1px solid rgba(255,255,255,.22);border-radius:999px;transition:border-color .2s,background .2s,color .2s}
+.topnav-site-item:hover{border-color:var(--red);color:#fff}
+.topnav-site-item.ativo{background:var(--red);border-color:var(--red);color:#fff;cursor:default}
+@media (max-width:560px){.topnav-site{gap:8px}.topnav-site-item{font-size:.8rem;padding:7px 13px}}
