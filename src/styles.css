@@ -797,6 +797,10 @@ body:has(.legal){background:var(--fundo,#fbfaf7);padding-bottom:0}
 .cyber summary{cursor:pointer;min-height:48px;padding:14px 16px;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:12px}
 .cyber summary::-webkit-details-marker{display:none}
 .cyber summary::after{content:"+";font-family:ui-monospace,monospace;color:var(--c-hl)}
+.cyber .waitlist{background:#000;border:1px solid var(--c-line);border-radius:10px;padding:28px 22px}
+.cyber .btn-w{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 22px;background:transparent;border:1px solid var(--c-red);color:var(--c-hl);border-radius:6px;font-family:Poppins,sans-serif;font-weight:700;font-size:16px;text-decoration:none;cursor:pointer;width:100%;max-width:420px;transition:border-color .2s,background-color .2s}
+.cyber .btn-w:hover{border-color:var(--c-hl);background:rgba(200,16,46,.14)}
+.cyber .waitlist .micro{margin-bottom:0}
 .cyber details[open] summary::after{content:"−"}
 .cyber details p{padding:0 16px 14px;margin:0;color:var(--c-mu)}
 .cyber footer.cf{border-top:1px solid var(--c-line);padding:36px 0 110px;color:var(--c-mu);font-size:14px}

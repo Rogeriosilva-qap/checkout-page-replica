@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode, type RefObject } from "react";
-import { CONFIG, getCyberCheckoutHref } from "@/config";
+import { CONFIG, getCyberCheckoutHref, getCyberWaitlistHref } from "@/config";
 import { copyAdvertorialPrompt } from "@/lib/copy-advertorial-prompt";
 import logo from "@/assets/logo-operacao-aprovacao.png.asset.json";
 
@@ -186,6 +186,18 @@ function CyberPage() {
             <ul className="dots">{OPS.map(([t]) => <li key={t}>{t}</li>)}</ul>
             <p className="price">{PRICE}</p>
             <BuyButton linkRef={offerRef} />
+          </div>
+        </div></section>
+
+        <section className="sec" aria-labelledby="cy-waitlist"><div className="cw">
+          <div className="waitlist">
+            <span className="label">// PRÓXIMA MISSÃO</span>
+            <h2 id="cy-waitlist">Plataforma de simulados Operação Aprovação: entre no grupo de espera</h2>
+            <p>Estamos finalizando uma plataforma de simulados no formato da sua banca, com cartão-resposta corrigido pelo celular, caderno de erros automático e correção de redação por foto. Quem entrar no grupo de espera do WhatsApp será avisado primeiro do lançamento e terá um desconto exclusivo.</p>
+            {getCyberWaitlistHref() && (
+              <a className="btn-w" href={getCyberWaitlistHref()!} target="_blank" rel="noopener noreferrer">Entrar no grupo de espera</a>
+            )}
+            <p className="micro">Grupo gratuito no WhatsApp. A plataforma ainda não foi lançada; os recursos podem mudar até o lançamento.</p>
           </div>
         </div></section>
 

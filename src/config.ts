@@ -3,7 +3,8 @@
    Deixe "" o que ainda não estiver confirmado: o item fica oculto.
    ========================================================= */
 export const CONFIG = {
-  cyberCheckoutUrl: "", // Checkout do Guia do Concurseiro Policial Cibernético. Vazio = botões mostram "Link de compra em breve."
+  cyberCheckoutUrl: "https://pay.kirvano.com/6a88a8dd-e999-440e-8f94-5d922f3615a4", // Checkout do Guia do Concurseiro Policial Cibernético. Vazio = botões mostram "Link de compra em breve."
+  cyberWaitlistUrl: "https://chat.whatsapp.com/JjnVbBHGjnT2OlG8TznUPo", // Grupo de espera da plataforma de simulados. Vazio = botão do grupo fica oculto.
   checkoutUrl: "https://pay.kirvano.com/28b35434-3fbf-4f7e-914d-ae6212e77484", // URL do checkout (ex.: link da plataforma de pagamento). OBRIGATÓRIO para vender.
   listPriceText: "R$ 97,00", // Preço cheio confirmado do e-book, exibido riscado ao lado do preço de lançamento. Deixe "" para ocultar.
   launchPriceText: "R$ 47,00", // Preço de lançamento cobrado agora.
@@ -36,6 +37,12 @@ export function getPurchaseFaq(settings: Pick<typeof CONFIG, "deliveryText" | "a
 
 // Link de compra do guia cibernético; null enquanto o checkout não existir.
 export function getCyberCheckoutHref(url: string = CONFIG.cyberCheckoutUrl): string | null {
+  const v = url.trim();
+  return v.length > 0 ? v : null;
+}
+
+// Link do grupo de espera dos simulados; null enquanto o grupo não existir.
+export function getCyberWaitlistHref(url: string = CONFIG.cyberWaitlistUrl): string | null {
   const v = url.trim();
   return v.length > 0 ? v : null;
 }
