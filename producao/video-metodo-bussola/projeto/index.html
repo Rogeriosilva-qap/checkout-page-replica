@@ -180,10 +180,10 @@ body{font-family:M,sans-serif;color:var(--white)}
       <svg width="34" height="42" viewBox="0 0 34 42"><path d="M3 3h19l9 9v27H3z" fill="none" stroke="#ff2330" stroke-width="4" stroke-linejoin="round"/><path d="M9 20h16M9 27h16M9 34h10" stroke="#ff2330" stroke-width="4" stroke-linecap="round"/></svg>
       <span style="font-weight:800;font-size:27px;color:#d5d5db">Conteúdo do seu cargo</span>
     </div>
-    <span class="tag abs" id="exTag" style="right:140px;top:608px">EXEMPLO ILUSTRATIVO</span>
+    <span class="tag abs" id="exTag" style="right:80px;top:608px">EXEMPLO ILUSTRATIVO</span>
     <div id="exAI" class="abs" style="left:80px;top:598px;height:52px;display:flex;align-items:center;gap:12px;
-      font-weight:900;font-size:24px;letter-spacing:1px;background:#fff;color:#111;border-radius:10px;padding:0 18px">
-      IA ORGANIZA POR MATÉRIA <span style="color:var(--red)">▸</span> VOCÊ CONFERE
+      font-weight:900;font-size:22px;letter-spacing:.5px;background:#fff;color:#111;border-radius:10px;padding:0 16px">
+      IA ORGANIZA <span style="color:var(--red)">▸</span> VOCÊ CONFERE
     </div>
     <div class="subj" id="exPort" style="top:664px;height:336px">
       <div class="h"><span>PORTUGUÊS</span><small id="exCount">5 itens</small></div>
@@ -277,6 +277,13 @@ const P = (t, a, d = .45) => clamp((t - a) / d);           // progresso linear 0
 const E = (t, a, d = .45) => easeOut(P(t, a, d));
 const cap = id => T.legendas.find(c => c.id === id);
 const at = (id, f = 0) => { const c = cap(id); return c.start + (c.end - c.start) * f; };
+const nrm = x => x.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+// instante em que a palavra (trecho normalizado) é dita na legenda; sem áudio, estima pela posição
+const wt = (id, needle) => {
+  const c = cap(id), ws = c.legenda.split(' '), k = ws.findIndex(x => nrm(x).includes(needle));
+  if (k < 0) return c.start;
+  return c.palavras ? c.palavras[k] : at(id, k / ws.length);
+};
 const SC = Object.fromEntries(T.cenas.map((s, i) => [s.id, { start: s.start, end: (T.cenas[i + 1] || { start: T.duracao + 1 }).start }]));
 const css = (el, o) => { for (const k in o) el.style[k] = o[k]; };
 const show = (el, a, dy = 0, sc = 1) => css(el, { opacity: a, transform: `translateY(${dy}px) scale(${sc})` });
@@ -343,7 +350,7 @@ const R_C = { x: 358, y: 910, w: 570, h: 94 };   // dentro da linha ALFA
 const R_D = { x: 80, y: 598, w: 860, h: 100 };   // calendário (a agendar)
 
 function dayLayout(t) {
-  const grow = E(t, at('c2', 0), .5);
+  const grow = E(t, wt('c2','quarta'), .5);
   const top = 712, gap = 8, base = 64, big = 136;
   let y = top; const out = [];
   DAYS.forEach((d, i) => { const h = i === 2 ? lerp(base, big, grow) : base; out.push({ y, h }); y += h + gap; });
@@ -386,38 +393,38 @@ window.renderAt = function (t) {
     css($('docStamp'), { opacity: E(t, .9, .3) * (1 - out), transform: `rotate(-6deg) scale(${lerp(1.5, 1, back(P(t, .9, .35)))})` });
     // pergunta entra logo no início; tremida curta no "travou"
     const qa = E(t, .1, .4);
-    const shake = (t > at('g1', .65) && t < at('g1', .65) + .35) ? Math.sin(t * 90) * 7 : 0;
+    const shake = (t > wt('g1','travou') && t < wt('g1','travou') + .35) ? Math.sin(t * 90) * 7 : 0;
     show($('hookT').children[0], qa, (1 - qa) * 40 + 0, 1); $('hookT').children[0].style.transform += ` translateX(${shake}px)`;
-    $('hookBar').style.transform = `scaleX(${E(t, at('g2', .2), .5)})`;
+    $('hookBar').style.transform = `scaleX(${E(t, wt('g2','primeiro'), .5)})`;
     show($('hookSub'), E(t, m, .45), (1 - E(t, m, .45)) * 20);
     // método: bússola + 4 fases
     css($('method'), { opacity: E(t, m - .05, .35) });
     $('needle').style.transform = `rotate(${lerp(-200, 45, easeOut(P(t, m, 1.6))) + Math.sin(t * 3) * 2}deg)`;
     css($('compass'), { transform: `scale(${lerp(.6, 1, back(P(t, m, .5)))})` });
     [1, 2, 3, 4].forEach((n, i) => { const k = E(t, m + .25 + i * .32, .4); show($('ph' + n), k, 0, 1); $('ph' + n).style.transform = `translateX(${(1 - k) * 80}px)`; });
-    const g = E(t, at('g4', .05), .45);
-    css($('phGoal'), { opacity: g, transform: `translateY(${(1 - g) * 30}px) scale(${lerp(.92, 1, back(P(t, at('g4', .05), .45)))})` });
+    const g = E(t, wt('g4','tarefa'), .45);
+    css($('phGoal'), { opacity: g, transform: `translateY(${(1 - g) * 30}px) scale(${lerp(.92, 1, back(P(t, wt('g4','tarefa'), .45)))})` });
   }
 
   /* 2. EXTRAÇÃO */
   if (t > SC.extracao.start - .1 && t < SC.extracao.end + .5) {
     const s = SC.extracao.start; titleIn('extracao', t);
     show($('exHead'), E(t, s + .4, .4), (1 - E(t, s + .4, .4)) * 14); $('exTag').style.opacity = E(t, s + .5, .4);
-    const ai = E(t, at('e2', 0), .4);
+    const ai = E(t, wt('e2','inteligencia'), .4);
     css($('exAI'), { opacity: ai, transform: `translateY(${(1 - ai) * -16}px)` });
     $('exHead').style.opacity = (E(t, s + .4, .4) * (1 - ai)).toFixed(3);
     // matérias se organizam (a partir da fala sobre o conteúdo do cargo)
-    const o = at('e1', .45);
+    const o = wt('e1','conteudo');
     const pk = E(t, o, .5);
     css($('exPort'), { opacity: pk, transform: `translateY(${(1 - pk) * 50}px)` });
-    ['exM1', 'exM2', 'exM3'].forEach((id, i) => { const k = E(t, o + .2 + i * .14, .45); css($(id), { opacity: k * (1 - .35 * E(t, at('e2', .5), .5)), transform: `translateY(${(1 - k) * 50}px)` }); });
+    ['exM1', 'exM2', 'exM3'].forEach((id, i) => { const k = E(t, o + .2 + i * .14, .45); css($(id), { opacity: k * (1 - .35 * E(t, wt('e2','materia'), .5)), transform: `translateY(${(1 - k) * 50}px)` }); });
     exItems.forEach((el, i) => { const k = E(t, o + .35 + i * .12, .35); css(el, { opacity: k, transform: `translateX(${(1 - k) * -30}px)` }); });
     // Português em destaque
-    const hl = E(t, at('e2', .45), .4);
+    const hl = E(t, wt('e2','materia'), .4);
     css($('exPort'), { borderColor: `rgba(255,35,48,${hl})`, boxShadow: `0 0 0 ${hl * 4}px rgba(255,35,48,.18)` });
     // conferência
-    const ck = E(t, at('e3', 0), .45);
-    css($('exCheck'), { opacity: ck, transform: `translateY(${(1 - ck) * 30}px) scale(${lerp(.94, 1, back(P(t, at('e3', 0), .45)))})` });
+    const ck = E(t, wt('e3','confira'), .45);
+    css($('exCheck'), { opacity: ck, transform: `translateY(${(1 - ck) * 30}px) scale(${lerp(.94, 1, back(P(t, wt('e3','confira'), .45)))})` });
     $('exCount').innerHTML = ck > .5 ? '<span style="color:#ff2330">✓</span> 5 de 5 itens' : '5 itens';
   }
 
@@ -426,32 +433,32 @@ window.renderAt = function (t) {
     const s = SC.fatiamento.start; titleIn('fatiamento', t);
     const mv = E(t, s, .6);
     css($('ftPort'), { transform: `translateY(${(1 - mv) * 64}px)` });
-    const foc = E(t, at('f2', 0), .4);                // foco em Português
+    const foc = E(t, wt('f2','portugues'), .4);                // foco em Português
     css($('ftPort'), { borderColor: `rgba(255,35,48,${foc})` });
-    const cv = E(t, at('f3', 0), .35);                // "concordância verbal"
+    const cv = E(t, wt('f3','concordancia'), .35);                // "concordância verbal"
     ftItems.forEach((el, i) => { el.style.opacity = i === 2 ? 1 : lerp(1, .3, cv); });
-    const sp = E(t, at('f3', .25), .45);              // divide em verbal | nominal
+    const sp = E(t, wt('f3','verbal'), .45);              // divide em verbal | nominal
     $('ftWhole').style.opacity = 1 - sp; $('ftHead').style.opacity = sp;
     css(pillV, { opacity: sp, transform: `translateX(${(1 - sp) * -40}px)` });
     css(pillN, { opacity: sp * (1 - .5 * cv), transform: `translateX(${(1 - sp) * -20}px)` });
     ftRow.style.color = cv > .5 ? '#fff' : '';
-    const dim = E(t, at('f3', .75), .5);
+    const dim = E(t, wt('f3','tarefa'), .5);
     $('ftPort').style.opacity = lerp(1, .55, dim);
   }
 
   /* 4. PRIORIZAÇÃO */
   if (t > SC.priorizacao.start - .1 && t < SC.priorizacao.end + .5) {
     const s = SC.priorizacao.start; titleIn('priorizacao', t);
-    [['cr1', at('p2', 0)], ['cr2', at('p3', 0)], ['cr3', at('p3', .38)]].forEach(([id, a]) => {
+    [['cr1', wt('p2','peso')], ['cr2', wt('p3','dificuldade')], ['cr3', wt('p3','base')]].forEach(([id, a]) => {
       const k = E(t, a, .4); css($(id), { opacity: k * lerp(1, .55, E(t, at('p4', 0), .5)), transform: `translateY(${(1 - k) * 30}px) scale(${lerp(.9, 1, back(P(t, a, .4)))})` });
     });
-    const lv = at('p3', .8);
+    const lv = wt('p3','outros');
     [['lvA', 0], ['lvB', 1], ['lvC', 2]].forEach(([id, i]) => { const k = E(t, lv + i * .22, .4); css($(id), { opacity: k, transform: `translateX(${(1 - k) * 70}px)` }); });
-    $('slotA').style.opacity = 1 - E(t, at('p4', .45), .3);
-    const cond = E(t, at('p4', .05), .35);
+    $('slotA').style.opacity = 1 - E(t, wt('p4','alfa'), .3);
+    const cond = E(t, wt('p4','concordancia'), .35);
     css($('prCond'), { opacity: cond, transform: `translateY(${(1 - cond) * 10}px)` });
-    const fs = E(t, at('p5', .25), .4);
-    css($('prFirst'), { opacity: fs, transform: `scale(${lerp(.8, 1, back(P(t, at('p5', .25), .4)))})`, transformOrigin: '0 50%' });
+    const fs = E(t, wt('p5','primeiras'), .4);
+    css($('prFirst'), { opacity: fs, transform: `scale(${lerp(.8, 1, back(P(t, wt('p5','primeiras'), .4)))})`, transformOrigin: '0 50%' });
     $('lvA').querySelector('.ds').style.opacity = 1 - fs;
     css($('lvA'), { boxShadow: `0 0 0 ${fs * 5}px rgba(255,35,48,.22)` });
     $('lvB').style.opacity *= lerp(1, .55, E(t, at('p4', 0), .5));
@@ -470,11 +477,11 @@ window.renderAt = function (t) {
     });
     const hiQ = L.grow;
     css(DAYS[2].el, { borderColor: `rgba(255,35,48,${hiQ})`, background: hiQ > 0 ? `rgba(255,35,48,${.08 * hiQ})` : '' });
-    css(QUA_TIME, { top: '60px', opacity: E(t, at('c2', .3), .35) });
-    const rv = E(t, at('c4', 0), .4);
-    css($('blkRev'), { opacity: rv, transform: `scale(${lerp(.85, 1, back(P(t, at('c4', 0), .4)))})` });
-    const mr = E(t, at('c5', .15), .4);
-    css($('blkMar'), { opacity: mr, transform: `scale(${lerp(.85, 1, back(P(t, at('c5', .15), .4)))})` });
+    css(QUA_TIME, { top: '60px', opacity: E(t, wt('c2','19'), .35) });
+    const rv = E(t, wt('c4','revisar'), .4);
+    css($('blkRev'), { opacity: rv, transform: `scale(${lerp(.85, 1, back(P(t, wt('c4','revisar'), .4)))})` });
+    const mr = E(t, wt('c5','margem'), .4);
+    css($('blkMar'), { opacity: mr, transform: `scale(${lerp(.85, 1, back(P(t, wt('c5','margem'), .4)))})` });
   }
 
   /* 6. FECHAMENTO */
@@ -491,7 +498,7 @@ window.renderAt = function (t) {
   }
 
   /* CARTÃO DA TAREFA (objeto único) */
-  const born = at('f3', .7);
+  const born = wt('f3','tarefa');
   const task = $('task');
   if (t < born) { task.style.display = 'none'; }
   else {
@@ -501,9 +508,9 @@ window.renderAt = function (t) {
     const tA = E(t, born, .7);
     r = mix(PILLV, R_A, easeIO(P(t, born, .7)));
     const tB = easeIO(P(t, SC.priorizacao.start - .05, .7)); if (tB > 0) r = mix(R_A, R_B, tB);
-    const tC = easeIO(P(t, at('p4', .3), .75)); if (tC > 0) r = mix(R_B, R_C, tC);
+    const tC = easeIO(P(t, wt('p4','prioridade'), .75)); if (tC > 0) r = mix(R_B, R_C, tC);
     const tD = easeIO(P(t, SC.calendario.start - .05, .7)); if (tD > 0) r = mix(R_C, R_D, tD);
-    const tE = easeIO(P(t, at('c2', 0), .7)); if (tE > 0) r = mix(R_D, rE, tE);
+    const tE = easeIO(P(t, wt('c2','quarta'), .7)); if (tE > 0) r = mix(R_D, rE, tE);
     rect(task, r);
     // grande ↔ compacto
     const full = clamp((r.h - 210) / 70), cmpA = clamp((190 - r.h) / 50);
@@ -517,16 +524,16 @@ window.renderAt = function (t) {
     css(task, { opacity: clamp(P(t, born, .15)) * (1 - E(t, SC.fechamento.start, .35)),
       transform: `scale(${t > SC.fechamento.start ? lerp(1, .9, E(t, SC.fechamento.start, .35)) : 1})` });
     // checklist sincronizado com a fala
-    [['tkL1', 'tkB1', at('f4', .05)], ['tkL2', 'tkB2', at('f4', .55)]].forEach(([l, b, a]) => {
+    [['tkL1', 'tkB1', wt('f4','resolver')], ['tkL2', 'tkB2', wt('f4','corrigir')]].forEach(([l, b, a]) => {
       const q = E(t, a, .35); css($(l), { opacity: .15 + .85 * q, transform: `translateX(${(1 - q) * 24}px)` });
       $(b).style.background = q > .6 ? 'var(--red)' : 'transparent';
       $(b).innerHTML = q > .6 ? '<svg width="36" height="36" viewBox="0 0 36 36" style="position:absolute;left:0;top:0"><path d="M8 18l6 6 13-13" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>' : '';
     });
-    $('tkFt').style.opacity = E(t, at('f4', .9), .4);
+    $('tkFt').style.opacity = E(t, wt('f4','erros'), .4);
     // selos ALFA e horário
-    const ba = E(t, at('p4', .55), .35), bh = E(t, at('c2', .55), .35);
-    css($('bAlfa'), { opacity: ba, display: ba > 0 ? 'block' : 'none', transform: `scale(${lerp(1.6, 1, back(P(t, at('p4', .55), .35)))})` });
-    css($('bHora'), { opacity: bh, display: bh > 0 ? 'block' : 'none', transform: `scale(${lerp(1.6, 1, back(P(t, at('c2', .55), .35)))})` });
+    const ba = E(t, wt('p4','alfa'), .35), bh = E(t, wt('c2','19'), .35);
+    css($('bAlfa'), { opacity: ba, display: ba > 0 ? 'block' : 'none', transform: `scale(${lerp(1.6, 1, back(P(t, wt('p4','alfa'), .35)))})` });
+    css($('bHora'), { opacity: bh, display: bh > 0 ? 'block' : 'none', transform: `scale(${lerp(1.6, 1, back(P(t, wt('c2','19'), .35)))})` });
     document.querySelectorAll('#task .badge').forEach(b => css(b, { fontSize: (22 * kk * kw) + 'px', padding: `${6 * kk * kw}px ${12 * kk * kw}px` }));
     css($('tkBadges'), { top: (r.h / 2 - 18 * kk * kw) + 'px', opacity: cmpA });
     // texto da tarefa no calendário espelha a fala
@@ -538,7 +545,14 @@ window.renderAt = function (t) {
   const box = $('capBox');
   if (!c) { box.parentNode.style.opacity = 0; }
   else {
-    box.innerHTML = c.linhas.join('<br>');
+    // destaque palavra a palavra: dita = branco, atual = vermelho, próxima = cinza claro
+    let k0 = 0;
+    const times = c.palavras || c.legenda.split(' ').map((_, j, arr) => at(c.id, j / arr.length));
+    box.innerHTML = c.linhas.map(line => line.split(' ').map(w => {
+      const j = k0++, ts = times[j], te = j + 1 < times.length ? times[j + 1] : c.end;
+      const col = t < ts ? '#c4c4cc' : (t < te ? '#ff3b46' : '#ffffff');
+      return `<span style="color:${col}">${w}</span>`;
+    }).join(' ')).join('<br>');
     const k = E(t, c.start - .05, .14);
     css(box.parentNode, { opacity: k, transform: `translateY(${(1 - k) * 12}px)` });
   }

@@ -1,36 +1,57 @@
 # Vídeo · Método Bússola (Operação Aprovação)
 
-Vídeo vertical educativo, 1080 × 1920, 30 fps, baseado na Operação 01 do
-*Guia Concurseiro Policial Cibernético*. **Versão atual: PRÉVIA** — tempos
-estimados, sem locução (o selo "PRÉVIA · VOZ PENDENTE" some sozinho quando o
-áudio entra).
+Vídeo vertical educativo, 1080 × 1920, 30 fps, 63,7 s, baseado na Operação 01 do
+*Guia Concurseiro Policial Cibernético*. **Versão final com a locução do autor**
+(`narracao-metodo-bussola.wav`, convertida sem edição do áudio de WhatsApp enviado).
 
 ## Arquivos
 
 | Arquivo | O que é |
 |---|---|
-| `narracao-metodo-bussola.txt` | Só o texto falado, para gerar a voz no "Ouvir / Ler em voz alta" do Claude |
-| `saida/metodo-bussola-PREVIA.mp4` | Prévia renderizada (62 s, faixa de áudio muda) |
-| `saida/metodo-bussola.srt` | Legendas pt-BR, até 2 linhas |
+| `saida/metodo-bussola.mp4` | Vídeo final: voz + trilha original + efeitos, −15 LUFS (padrão de redes) |
+| `saida/metodo-bussola.srt` | Legendas pt-BR sincronizadas à fala, até 2 linhas |
+| `narracao-metodo-bussola.txt` | Texto falado (atualizado: "inteligência artificial", como está na locução) |
+| `narracao-metodo-bussola.wav` | Locução usada no vídeo |
+| `projeto/palavras.json` | Tempo de cada palavra da locução (transcrição Whisper) |
 | `projeto/roteiro.json` | Fonte das legendas (texto exibido e texto falado) |
-| `projeto/timeline.json` / `timeline.js` | Tempos de cada legenda e cena (gerados) |
+| `projeto/timeline.json` / `timeline.js` | Tempos de legendas, palavras e cenas (gerados) |
 | `projeto/index.html` | Composição e animação editáveis (HTML/CSS/JS, função pura do tempo) |
 | `projeto/assets/` | Logo da Operação Aprovação (extraída do PDF) e fonte Montserrat (OFL) |
-| `tools/sync.py` | Calcula tempos (estimados ou a partir do áudio) e gera o `.srt` |
-| `tools/render.mjs` | Renderiza quadro a quadro no Chromium e codifica com ffmpeg |
+| `tools/transcribe.py` | Transcreve a locução com tempo por palavra |
+| `tools/sync.py` | Encaixa legendas, destaques e cortes na fala e gera o `.srt` |
+| `tools/trilha.py` | Compõe a trilha original e os efeitos, sincronizados aos cortes |
+| `tools/render.mjs` | Renderiza no Chromium, mixa o áudio e codifica com ffmpeg |
 
-## Quando a voz estiver pronta
+## Sincronização
 
-1. Salve o áudio nesta pasta como `narracao-metodo-bussola.wav` (ou `.mp3` / `.m4a`).
-2. Rode `./build.sh`.
+- Cada legenda entra e sai na fala real; a palavra que está sendo dita fica em vermelho.
+- Os destaques acompanham a palavra: "travou" (tremida), "matéria" (Português em destaque),
+  "confira" (selo de conferência), "verbal" (divisão), "resolver"/"corrigir" (checklist),
+  "peso"/"dificuldade"/"base" (critérios), "Alfa" (selo), "quarta"/"19" (agenda),
+  "revisar" e "margem" (blocos da semana).
+- Trocas de cena acontecem nas pausas entre parágrafos.
 
-O `sync.py` detecta as pausas reais da locução e encaixa nelas os cortes de cena,
-os destaques e as legendas; a voz não é alterada. Sai `saida/metodo-bussola.mp4`
-(sem o selo de prévia) e um `.srt` novo. Se algum corte precisar de ajuste fino,
-edite `start`/`end` em `projeto/timeline.json` e rode `./build.sh --sem-sync`.
+## Áudio
 
-Trilha: nenhuma foi incluída. Se o autor autorizar um arquivo, ele deve ser
-mixado abaixo da narração.
+- Voz: só filtro de graves (70 Hz) e nivelamento em −16 LUFS; timbre e ritmo preservados.
+- Trilha: **composição original gerada em código** (`tools/trilha.py`), sem amostras ou
+  músicas de terceiros, portanto sem risco de direitos autorais. Pulso tático em Ré menor,
+  100 BPM; no gancho só pad e "tique de relógio"; bateria e baixo entram com o Método
+  Bússola; acorde final no fechamento. Fica 12–19 dB abaixo da voz e abaixa sozinha
+  quando há fala (ducking).
+- Efeitos: whoosh nas trocas de cena e cliques discretos nos destaques.
+
+## Refazer
+
+```
+./build.sh                 # sincroniza, gera trilha e renderiza
+./build.sh --sem-sync      # usa um timeline.json ajustado à mão
+./build.sh --sem-trilha    # só a voz
+```
+
+Trocou a locução? Salve o novo arquivo como `narracao-metodo-bussola.wav` e rode
+`python3 tools/transcribe.py CAMINHO_DO_MODELO_WHISPER` antes do `./build.sh`
+(sem transcrição, o sync usa as pausas do áudio).
 
 ## Ver e editar
 
@@ -38,18 +59,18 @@ mixado abaixo da narração.
 - `projeto/index.html?t=27.5` congela num instante.
 - `node tools/render.mjs --stills 5,27.5` gera PNGs em `saida/stills/`.
 
-Requisitos: Python 3, Node com Playwright/Chromium, ffmpeg.
+Requisitos: Python 3 (numpy, scipy; faster-whisper só para transcrever), Node com Playwright/Chromium, ffmpeg.
 
-## Cenas (tempos da prévia)
+## Cenas (tempos finais)
 
 | Cena | Início | Conteúdo |
 |---|---|---|
-| Gancho | 0,0 s | Edital estilizado + "O que estudar primeiro?"; Método Bússola entra depois do gancho |
-| 1 · Extração | 10,2 s | Lista organizada por matéria, Português em destaque, "Confira no edital e nas retificações", selo "Exemplo ilustrativo" |
-| 2 · Fatiamento | 20,3 s | "Concordância verbal e nominal" se divide; "verbal" vira o cartão "Resolver 5 questões + corrigir os erros" |
-| 3 · Priorização | 30,2 s | Peso na prova (dado do seu edital) · Sua dificuldade · Assuntos de base → Alfa/Bravo/Charlie; cartão vai para Alfa "neste exemplo: se for Alfa para você" |
-| 4 · Calendário | 43,9 s | O mesmo cartão vai para "QUA · 19h"; revisão na quinta e margem para imprevistos no sábado |
-| Fechamento | 55,4 s | Logo + "Salve e marque sua primeira tarefa" |
+| Gancho | 0,0 s | Edital estilizado + "O que estudar primeiro?"; Método Bússola entra em 4,7 s |
+| 1 · Extração | 9,3 s | Lista organizada por matéria, Português em destaque, "Confira no edital e nas retificações", selo "Exemplo ilustrativo" |
+| 2 · Fatiamento | 20,2 s | "Concordância verbal e nominal" se divide; "verbal" vira o cartão "Resolver 5 questões + corrigir os erros" |
+| 3 · Priorização | 29,8 s | Peso na prova (dado do seu edital) · Sua dificuldade · Assuntos de base → Alfa/Bravo/Charlie; cartão vai para Alfa "neste exemplo: se for Alfa para você" |
+| 4 · Calendário | 46,3 s | O mesmo cartão vai para "QUA · 19h"; revisão na quinta e margem para imprevistos no sábado |
+| Fechamento | 57,6 s | Logo + "Salve e marque sua primeira tarefa" |
 
 Área segura: títulos entre y 226–560, palco até y ~1300, legendas a partir de y 1352
-e nada útil abaixo de y ~1510 nem à direita de x 940 (controles de Reels/TikTok/Shorts).
+e nada útil abaixo de y ~1510 (controles de Reels/TikTok/Shorts).

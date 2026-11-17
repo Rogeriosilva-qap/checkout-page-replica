@@ -1,8 +1,8 @@
 {
-  "modo": "estimado",
-  "audio": null,
+  "modo": "audio",
+  "audio": "narracao-metodo-bussola.wav",
   "fps": 30,
-  "duracao": 62.221,
+  "duracao": 63.719,
   "cenas": [
     {
       "id": "gancho",
@@ -12,27 +12,27 @@
     {
       "id": "extracao",
       "titulo": "1. Extração",
-      "start": 10.228
+      "start": 9.335
     },
     {
       "id": "fatiamento",
       "titulo": "2. Fatiamento",
-      "start": 20.336
+      "start": 20.221
     },
     {
       "id": "priorizacao",
       "titulo": "3. Priorização",
-      "start": 30.2
+      "start": 29.806
     },
     {
       "id": "calendario",
       "titulo": "4. Calendário",
-      "start": 43.908
+      "start": 46.249
     },
     {
       "id": "fechamento",
       "titulo": "Fechamento",
-      "start": 55.374
+      "start": 57.597
     }
   ],
   "legendas": [
@@ -41,9 +41,16 @@
       "cena": "gancho",
       "pausa_antes": "",
       "legenda": "Abriu o edital e travou",
-      "start": 0.35,
-      "end": 1.744,
-      "show_end": 1.864,
+      "start": 0.891,
+      "end": 2.44,
+      "palavras": [
+        0.891,
+        1.16,
+        1.28,
+        1.64,
+        2.06
+      ],
+      "show_end": 2.44,
       "linhas": [
         "Abriu o edital e travou"
       ]
@@ -53,9 +60,19 @@
       "cena": "gancho",
       "pausa_antes": "",
       "legenda": "na hora de decidir o que estudar primeiro?",
-      "start": 1.864,
-      "end": 4.409,
-      "show_end": 4.859,
+      "start": 2.44,
+      "end": 4.153,
+      "palavras": [
+        2.44,
+        2.62,
+        2.7,
+        2.82,
+        3.28,
+        3.42,
+        3.52,
+        3.78
+      ],
+      "show_end": 4.727,
       "linhas": [
         "na hora de decidir o",
         "que estudar primeiro?"
@@ -66,9 +83,19 @@
       "cena": "gancho",
       "pausa_antes": "s",
       "legenda": "Vou te mostrar como eu transformaria aquela lista",
-      "start": 4.859,
-      "end": 7.829,
-      "show_end": 7.949,
+      "start": 4.727,
+      "end": 6.9,
+      "palavras": [
+        4.727,
+        4.88,
+        4.96,
+        5.26,
+        5.66,
+        5.8,
+        6.24,
+        6.54
+      ],
+      "show_end": 6.9,
       "linhas": [
         "Vou te mostrar como eu",
         "transformaria aquela lista"
@@ -79,9 +106,17 @@
       "cena": "gancho",
       "pausa_antes": "",
       "legenda": "em uma tarefa para esta semana.",
-      "start": 7.949,
-      "end": 9.828,
-      "show_end": 10.428,
+      "start": 6.9,
+      "end": 8.652,
+      "palavras": [
+        6.9,
+        7.08,
+        7.2,
+        7.52,
+        7.78,
+        8.24
+      ],
+      "show_end": 9.252,
       "linhas": [
         "em uma tarefa para esta semana."
       ]
@@ -91,9 +126,18 @@
       "cena": "extracao",
       "pausa_antes": "p",
       "legenda": "Primeiro, pegue o conteúdo do seu cargo.",
-      "start": 10.578,
-      "end": 13.002,
-      "show_end": 13.452,
+      "start": 9.685,
+      "end": 11.854,
+      "palavras": [
+        9.685,
+        10.46,
+        10.74,
+        10.84,
+        11.24,
+        11.42,
+        11.52
+      ],
+      "show_end": 12.454,
       "linhas": [
         "Primeiro, pegue o",
         "conteúdo do seu cargo."
@@ -103,13 +147,26 @@
       "id": "e2",
       "cena": "extracao",
       "pausa_antes": "s",
-      "legenda": "Se usar a IA para organizar a lista por matéria,",
-      "start": 13.452,
-      "end": 16.361,
-      "show_end": 16.481,
+      "legenda": "Se usar a inteligência artificial para organizar a lista por matéria,",
+      "start": 12.766,
+      "end": 15.982,
+      "palavras": [
+        12.766,
+        12.92,
+        13.14,
+        13.26,
+        13.62,
+        14.2,
+        14.42,
+        14.88,
+        14.96,
+        15.24,
+        15.52
+      ],
+      "show_end": 16.578,
       "linhas": [
-        "Se usar a IA para organizar",
-        "a lista por matéria,"
+        "Se usar a inteligência artificial",
+        "para organizar a lista por matéria,"
       ]
     },
     {
@@ -117,9 +174,20 @@
       "cena": "extracao",
       "pausa_antes": "",
       "legenda": "confira o resultado no edital oficial e nas retificações.",
-      "start": 16.481,
-      "end": 19.936,
-      "show_end": 20.536,
+      "start": 16.578,
+      "end": 19.638,
+      "palavras": [
+        16.578,
+        16.98,
+        17.08,
+        17.56,
+        17.68,
+        18.0,
+        18.42,
+        18.76,
+        18.88
+      ],
+      "show_end": 20.238,
       "linhas": [
         "confira o resultado no edital",
         "oficial e nas retificações."
@@ -130,9 +198,15 @@
       "cena": "fatiamento",
       "pausa_antes": "p",
       "legenda": "Depois, divida os assuntos.",
-      "start": 20.686,
-      "end": 22.322,
-      "show_end": 22.772,
+      "start": 20.571,
+      "end": 22.401,
+      "palavras": [
+        20.571,
+        21.3,
+        21.72,
+        21.92
+      ],
+      "show_end": 22.999,
       "linhas": [
         "Depois, divida os assuntos."
       ]
@@ -142,9 +216,15 @@
       "cena": "fatiamento",
       "pausa_antes": "s",
       "legenda": "Em Português, por exemplo,",
-      "start": 22.772,
-      "end": 24.348,
-      "show_end": 24.468,
+      "start": 22.999,
+      "end": 23.945,
+      "palavras": [
+        22.999,
+        23.08,
+        23.58,
+        23.62
+      ],
+      "show_end": 24.368,
       "linhas": [
         "Em Português, por exemplo,"
       ]
@@ -154,9 +234,17 @@
       "cena": "fatiamento",
       "pausa_antes": "",
       "legenda": "concordância verbal pode virar uma tarefa:",
-      "start": 24.468,
-      "end": 27.013,
-      "show_end": 27.133,
+      "start": 24.368,
+      "end": 26.245,
+      "palavras": [
+        24.368,
+        24.76,
+        25.18,
+        25.5,
+        25.84,
+        25.92
+      ],
+      "show_end": 26.845,
       "linhas": [
         "concordância verbal",
         "pode virar uma tarefa:"
@@ -167,9 +255,18 @@
       "cena": "fatiamento",
       "pausa_antes": "",
       "legenda": "resolver cinco questões e corrigir os erros.",
-      "start": 27.133,
-      "end": 29.8,
-      "show_end": 30.4,
+      "start": 27.071,
+      "end": 29.107,
+      "palavras": [
+        27.071,
+        27.32,
+        27.6,
+        28.0,
+        28.32,
+        28.64,
+        28.8
+      ],
+      "show_end": 29.707,
       "linhas": [
         "resolver cinco questões",
         "e corrigir os erros."
@@ -180,9 +277,15 @@
       "cena": "priorizacao",
       "pausa_antes": "p",
       "legenda": "Agora, defina a prioridade.",
-      "start": 30.55,
-      "end": 32.186,
-      "show_end": 32.636,
+      "start": 30.156,
+      "end": 31.925,
+      "palavras": [
+        30.156,
+        30.81,
+        31.2,
+        31.4
+      ],
+      "show_end": 32.525,
       "linhas": [
         "Agora, defina a prioridade."
       ]
@@ -192,9 +295,16 @@
       "cena": "priorizacao",
       "pausa_antes": "s",
       "legenda": "Considere o peso na prova,",
-      "start": 32.636,
-      "end": 34.212,
-      "show_end": 34.332,
+      "start": 32.692,
+      "end": 33.958,
+      "palavras": [
+        32.692,
+        33.16,
+        33.26,
+        33.52,
+        33.6
+      ],
+      "show_end": 34.484,
       "linhas": [
         "Considere o peso na prova,"
       ]
@@ -204,9 +314,22 @@
       "cena": "priorizacao",
       "pausa_antes": "",
       "legenda": "sua dificuldade e o que serve de base para outros assuntos.",
-      "start": 34.332,
-      "end": 37.908,
-      "show_end": 38.358,
+      "start": 34.484,
+      "end": 37.878,
+      "palavras": [
+        34.484,
+        34.7,
+        35.32,
+        35.78,
+        35.86,
+        35.92,
+        36.26,
+        36.36,
+        36.6,
+        37.02,
+        37.34
+      ],
+      "show_end": 38.478,
       "linhas": [
         "sua dificuldade e o que serve",
         "de base para outros assuntos."
@@ -217,9 +340,18 @@
       "cena": "priorizacao",
       "pausa_antes": "s",
       "legenda": "Se concordância for prioridade Alfa para você,",
-      "start": 38.358,
-      "end": 41.146,
-      "show_end": 41.266,
+      "start": 38.785,
+      "end": 41.884,
+      "palavras": [
+        38.785,
+        39.0,
+        39.5,
+        39.74,
+        40.62,
+        41.52,
+        41.54
+      ],
+      "show_end": 42.442,
       "linhas": [
         "Se concordância for",
         "prioridade Alfa para você,"
@@ -230,9 +362,16 @@
       "cena": "priorizacao",
       "pausa_antes": "",
       "legenda": "coloque-a entre as primeiras sessões.",
-      "start": 41.266,
-      "end": 43.508,
-      "show_end": 44.108,
+      "start": 42.442,
+      "end": 44.892,
+      "palavras": [
+        42.442,
+        43.02,
+        43.98,
+        44.2,
+        44.44
+      ],
+      "show_end": 45.492,
       "linhas": [
         "coloque-a entre as",
         "primeiras sessões."
@@ -243,9 +382,16 @@
       "cena": "calendario",
       "pausa_antes": "p",
       "legenda": "Por fim, marque o horário.",
-      "start": 44.258,
-      "end": 45.834,
-      "show_end": 46.284,
+      "start": 46.599,
+      "end": 48.153,
+      "palavras": [
+        46.599,
+        46.76,
+        47.54,
+        47.68,
+        47.86
+      ],
+      "show_end": 48.753,
       "linhas": [
         "Por fim, marque o horário."
       ]
@@ -256,9 +402,15 @@
       "pausa_antes": "s",
       "legenda": "Quarta-feira, às 19 horas:",
       "fala": "Quarta-feira, às dezenove horas:",
-      "start": 46.284,
-      "end": 48.223,
-      "show_end": 48.343,
+      "start": 48.993,
+      "end": 50.554,
+      "palavras": [
+        48.993,
+        49.18,
+        49.9,
+        50.3
+      ],
+      "show_end": 50.954,
       "linhas": [
         "Quarta-feira, às 19 horas:"
       ]
@@ -268,9 +420,17 @@
       "cena": "calendario",
       "pausa_antes": "",
       "legenda": "cinco questões de concordância e correção.",
-      "start": 48.343,
-      "end": 50.889,
-      "show_end": 51.339,
+      "start": 50.954,
+      "end": 53.188,
+      "palavras": [
+        50.954,
+        51.26,
+        51.66,
+        51.84,
+        52.36,
+        52.7
+      ],
+      "show_end": 53.788,
       "linhas": [
         "cinco questões de",
         "concordância e correção."
@@ -281,9 +441,15 @@
       "cena": "calendario",
       "pausa_antes": "s",
       "legenda": "Reserve tempo para revisar",
-      "start": 51.339,
-      "end": 52.915,
-      "show_end": 53.035,
+      "start": 54.162,
+      "end": 55.542,
+      "palavras": [
+        54.162,
+        54.34,
+        54.72,
+        55.0
+      ],
+      "show_end": 55.724,
       "linhas": [
         "Reserve tempo para revisar"
       ]
@@ -293,9 +459,16 @@
       "cena": "calendario",
       "pausa_antes": "",
       "legenda": "e deixe margem para imprevistos.",
-      "start": 53.035,
-      "end": 54.974,
-      "show_end": 55.574,
+      "start": 55.724,
+      "end": 57.089,
+      "palavras": [
+        55.724,
+        55.78,
+        56.0,
+        56.34,
+        57.17
+      ],
+      "show_end": 57.689,
       "linhas": [
         "e deixe margem para imprevistos."
       ]
@@ -305,9 +478,23 @@
       "cena": "fechamento",
       "pausa_antes": "p",
       "legenda": "Salve o vídeo e coloque a sua primeira tarefa na agenda hoje.",
-      "start": 55.724,
-      "end": 59.421,
-      "show_end": 60.021,
+      "start": 57.947,
+      "end": 60.919,
+      "palavras": [
+        57.947,
+        58.26,
+        58.32,
+        58.54,
+        59.08,
+        59.42,
+        59.56,
+        59.6,
+        59.84,
+        60.2,
+        60.3,
+        60.52
+      ],
+      "show_end": 61.519,
       "linhas": [
         "Salve o vídeo e coloque a sua",
         "primeira tarefa na agenda hoje."

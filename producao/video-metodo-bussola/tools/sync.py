@@ -99,6 +99,76 @@ def from_audio(caps, path):
     return max(total, speech_end + OUTRO)
 
 
+PALAVRAS = os.path.join(ROOT, "projeto", "palavras.json")
+
+
+def norm_tokens(text):
+    import unicodedata
+    t = unicodedata.normalize("NFKD", text.lower())
+    t = "".join(ch for ch in t if not unicodedata.combining(ch))
+    return re.findall(r"[a-z0-9]+", t)
+
+
+def from_words(caps, words, audio):
+    """Sincroniza pelas palavras transcritas (tools/transcribe.py), com cortes ajustados às pausas reais."""
+    import difflib
+    sil, total = silences(audio, d=0.12)
+    # tokens do roteiro (o que é falado)
+    stoks, owner = [], []
+    for i, c in enumerate(caps):
+        for tk in norm_tokens(c.get("fala", c["legenda"])):
+            stoks.append(tk); owner.append(i)
+    atoks, atime = [], []
+    for w in words:
+        for tk in norm_tokens(w["w"]):
+            atoks.append(tk); atime.append((w["s"], w["e"]))
+    sm = difflib.SequenceMatcher(None, stoks, atoks, autojunk=False)
+    tt = [None] * len(stoks)
+    for a, b, n in sm.get_matching_blocks():
+        for k in range(n):
+            tt[a + k] = atime[b + k]
+    # interpola tokens sem correspondência
+    known = [i for i, x in enumerate(tt) if x]
+    for i in range(len(tt)):
+        if tt[i] is None:
+            prv = max([k for k in known if k < i], default=None); nxt = min([k for k in known if k > i], default=None)
+            if prv is None: tt[i] = (tt[nxt][0] - .3, tt[nxt][0])
+            elif nxt is None: tt[i] = (tt[prv][1], tt[prv][1] + .3)
+            else:
+                f = (i - prv) / (nxt - prv); a0, b0 = tt[prv][1], tt[nxt][0]
+                tt[i] = (a0 + (b0 - a0) * f, a0 + (b0 - a0) * f + .05)
+    def snap_start(t):
+        for a, b in sil:
+            if a - .05 <= t <= b + .05 or (b > t and b - t < .3 and a <= t + .3):
+                return b
+        return t
+    def snap_end(t):
+        for a, b in sil:
+            if a - .3 <= t <= b:
+                return a
+        return t
+    for i, c in enumerate(caps):
+        idx = [k for k, o in enumerate(owner) if o == i]
+        st = snap_start(tt[idx[0]][0]); en = snap_end(tt[idx[-1]][1])
+        c["start"], c["end"] = round(st, 3), round(max(en, st + .4), 3)
+        # tempo de cada palavra exibida (destaque na legenda)
+        disp = c["legenda"].split()
+        if "fala" not in c:
+            times, k = [], 0
+            for w in disp:
+                n = max(1, len(norm_tokens(w)))
+                times.append(tt[idx[min(k, len(idx) - 1)]][0]); k += n
+        else:
+            times = [tt[idx[min(len(idx) - 1, round(j * len(idx) / len(disp)))]][0] for j in range(len(disp))]
+        times[0] = c["start"]
+        c["palavras"] = [round(max(c["start"], x), 3) for x in times]
+    for i in range(1, len(caps)):  # sem sobreposição
+        if caps[i]["start"] < caps[i - 1]["end"]:
+            caps[i - 1]["end"] = caps[i]["start"]
+    speech_end = caps[-1]["end"]
+    return max(total, speech_end + OUTRO)
+
+
 def split_lines(text, maxc=34):
     """Quebra equilibrada em no máximo 2 linhas."""
     if len(text) <= maxc:
@@ -129,7 +199,10 @@ def main():
     rot = json.load(open(ROTEIRO, encoding="utf-8"))
     caps = rot["legendas"]
     audio = a.audio or find_audio()
-    if audio:
+    if audio and os.path.exists(PALAVRAS):
+        total = from_words(caps, json.load(open(PALAVRAS, encoding="utf-8")), audio)
+        mode = "audio"
+    elif audio:
         total = from_audio(caps, audio)
         mode = "audio"
     else:
