@@ -194,13 +194,15 @@ def srt_time(t):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--audio")
+    ap.add_argument("--palavras", help="tempos por palavra (padrão: projeto/palavras.json)")
     ap.add_argument("--fps", type=int, default=30)
     a = ap.parse_args()
     rot = json.load(open(ROTEIRO, encoding="utf-8"))
     caps = rot["legendas"]
     audio = a.audio or find_audio()
-    if audio and os.path.exists(PALAVRAS):
-        total = from_words(caps, json.load(open(PALAVRAS, encoding="utf-8")), audio)
+    pal = a.palavras or PALAVRAS
+    if audio and os.path.exists(pal):
+        total = from_words(caps, json.load(open(pal, encoding="utf-8")), audio)
         mode = "audio"
     elif audio:
         total = from_audio(caps, audio)
@@ -218,7 +220,7 @@ def main():
         first = next(c for c in caps if c["cena"] == s["id"])
         scenes.append({**s, "start": round(max(0.0, first["start"] - 0.35), 3) if scenes else 0.0})
     total = round(total, 3)
-    tl = {"modo": mode, "audio": os.path.basename(audio) if audio else None,
+    tl = {"modo": mode, "audio": os.path.relpath(os.path.abspath(audio), ROOT) if audio else None,
           "fps": a.fps, "duracao": total, "cenas": scenes, "legendas": caps}
     with open(OUT_JSON, "w", encoding="utf-8") as f:
         json.dump(tl, f, ensure_ascii=False, indent=2)

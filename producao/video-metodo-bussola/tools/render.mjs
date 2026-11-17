@@ -62,7 +62,7 @@ await Promise.all(Array.from({ length: W }, async () => {
 await browser.close();
 
 const audio = TL.audio ? path.join(ROOT, TL.audio) : null;
-const outName = TL.modo === 'audio' ? 'metodo-bussola.mp4' : 'metodo-bussola-PREVIA.mp4';
+const outName = opt('--out') || (TL.modo === 'audio' ? 'metodo-bussola.mp4' : 'metodo-bussola-PREVIA.mp4');
 const out = path.join(ROOT, 'saida', outName);
 const music = path.join(ROOT, 'projeto/audio/trilha-original.wav');
 const fx = path.join(ROOT, 'projeto/audio/efeitos.wav');

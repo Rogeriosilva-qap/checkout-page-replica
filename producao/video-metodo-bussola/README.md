@@ -10,6 +10,9 @@ Vídeo vertical educativo, 1080 × 1920, 30 fps, 63,7 s, baseado na Operação 0
 |---|---|
 | `saida/metodo-bussola.mp4` | Vídeo final: voz + trilha original + efeitos, −15 LUFS (padrão de redes) |
 | `saida/metodo-bussola.srt` | Legendas pt-BR sincronizadas à fala, até 2 linhas |
+| `saida/metodo-bussola-voz-eduardo-elevenlabs.mp4` / `.srt` | Versão alternativa (58,1 s) com a voz ElevenLabs "Eduardo S. – Brazilian Clear & Pro" |
+| `vozes/` | Narrações geradas no ElevenLabs + tempos por palavra |
+| `tools/elevenlabs.py` | Gera uma narração no ElevenLabs a partir do `.txt` (chave injetada pelo proxy do ambiente) |
 | `narracao-metodo-bussola.txt` | Texto falado (atualizado: "inteligência artificial", como está na locução) |
 | `narracao-metodo-bussola.wav` | Locução usada no vídeo |
 | `projeto/palavras.json` | Tempo de cada palavra da locução (transcrição Whisper) |
@@ -45,6 +48,8 @@ Vídeo vertical educativo, 1080 × 1920, 30 fps, 63,7 s, baseado na Operação 0
 
 ```
 ./build.sh                 # sincroniza, gera trilha e renderiza
+./build.sh --voz eduardo-elevenlabs   # versão com a voz ElevenLabs
+python3 tools/elevenlabs.py VOICE_ID nome   # gera nova narração em vozes/nome.mp3
 ./build.sh --sem-sync      # usa um timeline.json ajustado à mão
 ./build.sh --sem-trilha    # só a voz
 ```
