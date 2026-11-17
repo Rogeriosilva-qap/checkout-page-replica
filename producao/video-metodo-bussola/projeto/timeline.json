@@ -1,0 +1,317 @@
+{
+  "modo": "estimado",
+  "audio": null,
+  "fps": 30,
+  "duracao": 62.221,
+  "cenas": [
+    {
+      "id": "gancho",
+      "titulo": "Gancho",
+      "start": 0.0
+    },
+    {
+      "id": "extracao",
+      "titulo": "1. Extração",
+      "start": 10.228
+    },
+    {
+      "id": "fatiamento",
+      "titulo": "2. Fatiamento",
+      "start": 20.336
+    },
+    {
+      "id": "priorizacao",
+      "titulo": "3. Priorização",
+      "start": 30.2
+    },
+    {
+      "id": "calendario",
+      "titulo": "4. Calendário",
+      "start": 43.908
+    },
+    {
+      "id": "fechamento",
+      "titulo": "Fechamento",
+      "start": 55.374
+    }
+  ],
+  "legendas": [
+    {
+      "id": "g1",
+      "cena": "gancho",
+      "pausa_antes": "",
+      "legenda": "Abriu o edital e travou",
+      "start": 0.35,
+      "end": 1.744,
+      "show_end": 1.864,
+      "linhas": [
+        "Abriu o edital e travou"
+      ]
+    },
+    {
+      "id": "g2",
+      "cena": "gancho",
+      "pausa_antes": "",
+      "legenda": "na hora de decidir o que estudar primeiro?",
+      "start": 1.864,
+      "end": 4.409,
+      "show_end": 4.859,
+      "linhas": [
+        "na hora de decidir o",
+        "que estudar primeiro?"
+      ]
+    },
+    {
+      "id": "g3",
+      "cena": "gancho",
+      "pausa_antes": "s",
+      "legenda": "Vou te mostrar como eu transformaria aquela lista",
+      "start": 4.859,
+      "end": 7.829,
+      "show_end": 7.949,
+      "linhas": [
+        "Vou te mostrar como eu",
+        "transformaria aquela lista"
+      ]
+    },
+    {
+      "id": "g4",
+      "cena": "gancho",
+      "pausa_antes": "",
+      "legenda": "em uma tarefa para esta semana.",
+      "start": 7.949,
+      "end": 9.828,
+      "show_end": 10.428,
+      "linhas": [
+        "em uma tarefa para esta semana."
+      ]
+    },
+    {
+      "id": "e1",
+      "cena": "extracao",
+      "pausa_antes": "p",
+      "legenda": "Primeiro, pegue o conteúdo do seu cargo.",
+      "start": 10.578,
+      "end": 13.002,
+      "show_end": 13.452,
+      "linhas": [
+        "Primeiro, pegue o",
+        "conteúdo do seu cargo."
+      ]
+    },
+    {
+      "id": "e2",
+      "cena": "extracao",
+      "pausa_antes": "s",
+      "legenda": "Se usar a IA para organizar a lista por matéria,",
+      "start": 13.452,
+      "end": 16.361,
+      "show_end": 16.481,
+      "linhas": [
+        "Se usar a IA para organizar",
+        "a lista por matéria,"
+      ]
+    },
+    {
+      "id": "e3",
+      "cena": "extracao",
+      "pausa_antes": "",
+      "legenda": "confira o resultado no edital oficial e nas retificações.",
+      "start": 16.481,
+      "end": 19.936,
+      "show_end": 20.536,
+      "linhas": [
+        "confira o resultado no edital",
+        "oficial e nas retificações."
+      ]
+    },
+    {
+      "id": "f1",
+      "cena": "fatiamento",
+      "pausa_antes": "p",
+      "legenda": "Depois, divida os assuntos.",
+      "start": 20.686,
+      "end": 22.322,
+      "show_end": 22.772,
+      "linhas": [
+        "Depois, divida os assuntos."
+      ]
+    },
+    {
+      "id": "f2",
+      "cena": "fatiamento",
+      "pausa_antes": "s",
+      "legenda": "Em Português, por exemplo,",
+      "start": 22.772,
+      "end": 24.348,
+      "show_end": 24.468,
+      "linhas": [
+        "Em Português, por exemplo,"
+      ]
+    },
+    {
+      "id": "f3",
+      "cena": "fatiamento",
+      "pausa_antes": "",
+      "legenda": "concordância verbal pode virar uma tarefa:",
+      "start": 24.468,
+      "end": 27.013,
+      "show_end": 27.133,
+      "linhas": [
+        "concordância verbal",
+        "pode virar uma tarefa:"
+      ]
+    },
+    {
+      "id": "f4",
+      "cena": "fatiamento",
+      "pausa_antes": "",
+      "legenda": "resolver cinco questões e corrigir os erros.",
+      "start": 27.133,
+      "end": 29.8,
+      "show_end": 30.4,
+      "linhas": [
+        "resolver cinco questões",
+        "e corrigir os erros."
+      ]
+    },
+    {
+      "id": "p1",
+      "cena": "priorizacao",
+      "pausa_antes": "p",
+      "legenda": "Agora, defina a prioridade.",
+      "start": 30.55,
+      "end": 32.186,
+      "show_end": 32.636,
+      "linhas": [
+        "Agora, defina a prioridade."
+      ]
+    },
+    {
+      "id": "p2",
+      "cena": "priorizacao",
+      "pausa_antes": "s",
+      "legenda": "Considere o peso na prova,",
+      "start": 32.636,
+      "end": 34.212,
+      "show_end": 34.332,
+      "linhas": [
+        "Considere o peso na prova,"
+      ]
+    },
+    {
+      "id": "p3",
+      "cena": "priorizacao",
+      "pausa_antes": "",
+      "legenda": "sua dificuldade e o que serve de base para outros assuntos.",
+      "start": 34.332,
+      "end": 37.908,
+      "show_end": 38.358,
+      "linhas": [
+        "sua dificuldade e o que serve",
+        "de base para outros assuntos."
+      ]
+    },
+    {
+      "id": "p4",
+      "cena": "priorizacao",
+      "pausa_antes": "s",
+      "legenda": "Se concordância for prioridade Alfa para você,",
+      "start": 38.358,
+      "end": 41.146,
+      "show_end": 41.266,
+      "linhas": [
+        "Se concordância for",
+        "prioridade Alfa para você,"
+      ]
+    },
+    {
+      "id": "p5",
+      "cena": "priorizacao",
+      "pausa_antes": "",
+      "legenda": "coloque-a entre as primeiras sessões.",
+      "start": 41.266,
+      "end": 43.508,
+      "show_end": 44.108,
+      "linhas": [
+        "coloque-a entre as",
+        "primeiras sessões."
+      ]
+    },
+    {
+      "id": "c1",
+      "cena": "calendario",
+      "pausa_antes": "p",
+      "legenda": "Por fim, marque o horário.",
+      "start": 44.258,
+      "end": 45.834,
+      "show_end": 46.284,
+      "linhas": [
+        "Por fim, marque o horário."
+      ]
+    },
+    {
+      "id": "c2",
+      "cena": "calendario",
+      "pausa_antes": "s",
+      "legenda": "Quarta-feira, às 19 horas:",
+      "fala": "Quarta-feira, às dezenove horas:",
+      "start": 46.284,
+      "end": 48.223,
+      "show_end": 48.343,
+      "linhas": [
+        "Quarta-feira, às 19 horas:"
+      ]
+    },
+    {
+      "id": "c3",
+      "cena": "calendario",
+      "pausa_antes": "",
+      "legenda": "cinco questões de concordância e correção.",
+      "start": 48.343,
+      "end": 50.889,
+      "show_end": 51.339,
+      "linhas": [
+        "cinco questões de",
+        "concordância e correção."
+      ]
+    },
+    {
+      "id": "c4",
+      "cena": "calendario",
+      "pausa_antes": "s",
+      "legenda": "Reserve tempo para revisar",
+      "start": 51.339,
+      "end": 52.915,
+      "show_end": 53.035,
+      "linhas": [
+        "Reserve tempo para revisar"
+      ]
+    },
+    {
+      "id": "c5",
+      "cena": "calendario",
+      "pausa_antes": "",
+      "legenda": "e deixe margem para imprevistos.",
+      "start": 53.035,
+      "end": 54.974,
+      "show_end": 55.574,
+      "linhas": [
+        "e deixe margem para imprevistos."
+      ]
+    },
+    {
+      "id": "s1",
+      "cena": "fechamento",
+      "pausa_antes": "p",
+      "legenda": "Salve o vídeo e coloque a sua primeira tarefa na agenda hoje.",
+      "start": 55.724,
+      "end": 59.421,
+      "show_end": 60.021,
+      "linhas": [
+        "Salve o vídeo e coloque a sua",
+        "primeira tarefa na agenda hoje."
+      ]
+    }
+  ]
+}

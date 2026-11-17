@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Método Bússola · Operação Aprovação</title>
+<!--
+  Projeto editável do vídeo vertical (1080×1920, 30 fps).
+  - Textos falados/legendas: roteiro.json  → rode tools/sync.py
+  - Tempos: timeline.json / timeline.js (gerados; podem ser ajustados à mão)
+  - Toda a animação é função pura do tempo: window.renderAt(segundos)
+  - Abra no navegador para assistir (?t=12.5 congela num instante)
+-->
+<style>
+@font-face{font-family:M;font-weight:600;src:url(assets/fonts/montserrat-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:M;font-weight:700;src:url(assets/fonts/montserrat-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:M;font-weight:800;src:url(assets/fonts/montserrat-latin-800-normal.woff2) format("woff2")}
+@font-face{font-family:M;font-weight:900;src:url(assets/fonts/montserrat-latin-900-normal.woff2) format("woff2")}
+:root{
+  --bg:#111113; --bg2:#0a0a0b; --panel:#1b1b1e; --panel2:#232327; --line:#303036;
+  --white:#ffffff; --mute:#a3a3ad; --dim:#6b6b75; --red:#ff2330; --red2:#c8111d;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#000;overflow:hidden}
+body{font-family:M,sans-serif;color:var(--white)}
+#wrap{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:0 0}
+#stage{position:absolute;inset:0;overflow:hidden;background:var(--bg)}
+.abs{position:absolute}
+.bg{position:absolute;inset:0;
+  background:
+   radial-gradient(1200px 900px at 50% 30%, rgba(255,255,255,.045), transparent 70%),
+   radial-gradient(900px 700px at 50% 110%, rgba(255,35,48,.07), transparent 70%),
+   linear-gradient(rgba(255,255,255,.028) 1px, transparent 1px) 0 0/60px 60px,
+   linear-gradient(90deg, rgba(255,255,255,.028) 1px, transparent 1px) 0 0/60px 60px,
+   var(--bg)}
+.vignette{position:absolute;inset:0;background:radial-gradient(130% 90% at 50% 45%, transparent 55%, rgba(0,0,0,.55))}
+
+/* cabeçalho */
+.hdr{position:absolute;left:80px;right:80px;top:104px;display:flex;justify-content:space-between;
+  font-weight:800;font-size:30px;letter-spacing:.5px;z-index:20}
+.previa{position:absolute;left:80px;top:156px;font-weight:800;font-size:21px;letter-spacing:2px;color:var(--red);
+  border:2px solid var(--red);border-radius:6px;padding:5px 12px 4px;z-index:20}
+
+/* títulos de cena (separados das legendas) */
+.title{position:absolute;left:80px;top:226px;width:900px}
+.title h1{font-weight:900;font-size:100px;line-height:.93;letter-spacing:-2px;text-transform:uppercase}
+.title .bar{height:16px;width:360px;background:var(--red);margin-top:24px;transform-origin:0 50%}
+.title .sub{font-weight:900;font-size:50px;color:var(--red);margin-top:22px;letter-spacing:-1px;text-transform:uppercase}
+
+.scene{position:absolute;inset:0}
+
+/* legendas */
+#cap{position:absolute;left:70px;width:870px;top:1352px;z-index:40;display:flex;justify-content:flex-start}
+#cap .box{background:rgba(0,0,0,.86);border:2px solid #2b2b31;border-left:8px solid var(--red);border-radius:14px;
+  padding:20px 28px 22px 26px;font-weight:700;font-size:46px;line-height:1.22;letter-spacing:-.3px;max-width:870px}
+
+/* edital */
+.doc{position:absolute;background:#18181b;border:2px solid #2d2d33;border-radius:18px;overflow:hidden;
+  box-shadow:0 40px 90px rgba(0,0,0,.6)}
+.doc-top{display:flex;justify-content:space-between;align-items:center;padding:26px 34px;border-bottom:2px solid #2d2d33;
+  font-size:24px;font-weight:700;color:var(--mute);letter-spacing:1px}
+.doc-top b{color:#fff;font-weight:900;font-size:28px}
+.doc-text{padding:28px 34px;font-weight:600;font-size:30px;line-height:1.6;color:#8b8b95;text-align:justify}
+.doc-text b{color:#d5d5db;font-weight:800}
+.stamp{position:absolute;font-weight:900;color:var(--red);border:5px solid var(--red);border-radius:10px;
+  padding:10px 20px 8px;letter-spacing:2px;background:rgba(17,17,19,.85);white-space:nowrap}
+.tag{display:inline-block;font-weight:800;font-size:22px;letter-spacing:1.5px;color:var(--red);border:2px solid var(--red);
+  border-radius:6px;padding:5px 10px 4px;white-space:nowrap}
+
+/* painéis */
+.panel{position:absolute;background:var(--panel);border:2px solid var(--line);border-radius:18px}
+.row{position:absolute;display:flex;align-items:center}
+.ico{display:block}
+
+/* bússola + fases */
+.phase{position:absolute;left:330px;width:610px;height:82px;display:flex;align-items:center;gap:22px;
+  background:var(--panel);border:2px solid var(--line);border-radius:14px;padding:0 26px}
+.phase .n{font-weight:900;font-size:30px;color:var(--red);width:46px}
+.phase .l{font-weight:900;font-size:36px;letter-spacing:-.5px}
+
+/* matéria */
+.subj{position:absolute;left:80px;width:860px;background:var(--panel);border:2px solid var(--line);border-radius:18px;overflow:hidden}
+.subj .h{height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;font-weight:900;font-size:36px}
+.subj .h small{font-weight:700;font-size:24px;color:var(--mute)}
+.item{position:absolute;left:28px;right:28px;height:50px;display:flex;align-items:center;font-weight:700;font-size:31px;color:#e4e4e8}
+.item .k{color:var(--red);font-weight:900;width:44px}
+.mini{position:absolute;left:80px;width:860px;height:54px;background:var(--panel);border:2px solid var(--line);border-radius:12px;
+  display:flex;align-items:center;justify-content:space-between;padding:0 24px;font-weight:800;font-size:28px;color:#cfcfd6}
+.mini small{font-weight:700;font-size:22px;color:var(--mute)}
+.pill{position:absolute;height:46px;border-radius:23px;display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:28px;padding:0 20px;white-space:nowrap}
+
+/* cartão da tarefa (persistente entre cenas) */
+#task{position:absolute;z-index:30;background:#1d1d21;border:3px solid var(--red);border-radius:20px;overflow:hidden;
+  box-shadow:0 24px 70px rgba(0,0,0,.55), 0 0 0 1px rgba(255,35,48,.15)}
+#task .full{position:absolute;left:0;top:0;width:860px;height:330px;padding:28px 34px}
+#task .full .tg{font-weight:900;font-size:24px;letter-spacing:2px;color:var(--red)}
+#task .full .tt{font-weight:900;font-size:60px;letter-spacing:-1.5px;margin-top:6px}
+#task .chk{display:flex;align-items:center;gap:18px;font-weight:800;font-size:40px;margin-top:20px}
+#task .box{width:44px;height:44px;border:4px solid var(--red);border-radius:9px;flex:none;position:relative}
+#task .ft{position:absolute;right:34px;top:30px;font-weight:800;font-size:26px;color:var(--mute);display:flex;gap:10px;align-items:center}
+#task .cmp{position:absolute;left:0;top:0;padding:0 24px;display:flex;flex-direction:column;justify-content:center}
+#task .cmp .a{font-weight:900;letter-spacing:-.5px;white-space:nowrap}
+#task .cmp .b{font-weight:700;color:var(--mute);white-space:nowrap}
+#task .badges{position:absolute;right:18px;display:flex;gap:10px}
+.badge{font-weight:900;letter-spacing:1px;border-radius:8px;white-space:nowrap}
+.badge.alfa{background:var(--red);color:#fff}
+.badge.hora{background:#fff;color:#111}
+
+/* critérios / níveis */
+.crit{position:absolute;top:722px;width:272px;height:156px;background:var(--panel);border:2px solid var(--line);border-radius:16px;
+  padding:16px 18px;display:flex;flex-direction:column;justify-content:space-between}
+.crit .l{font-weight:900;font-size:26px;line-height:1.05;text-transform:uppercase}
+.crit .s{font-weight:700;font-size:20px;color:var(--mute)}
+.lvl{position:absolute;left:80px;width:860px;height:120px;border-radius:16px;border:2px solid var(--line);background:var(--panel)}
+.lvl .nm{position:absolute;left:28px;top:18px;font-weight:900;font-size:46px;letter-spacing:-1px}
+.lvl .ds{position:absolute;left:30px;top:72px;font-weight:700;font-size:26px;color:var(--mute)}
+.lvl .slot{position:absolute;left:276px;top:10px;width:572px;height:96px;border:3px dashed #3a3a42;border-radius:14px}
+
+/* agenda */
+.day{position:absolute;left:80px;width:860px;border-radius:14px;background:var(--panel);border:2px solid var(--line)}
+.day .d{position:absolute;left:24px;font-weight:900;font-size:30px;letter-spacing:1px}
+.blk{position:absolute;border-radius:10px;display:flex;align-items:center;padding:0 18px;font-weight:800;font-size:24px;white-space:nowrap}
+.blk.busy{background:#2a2a30;color:#9a9aa4}
+.blk.rev{border:3px dashed var(--red);color:#fff;background:rgba(255,35,48,.10)}
+.blk.mar{border:3px dashed #6b6b75;color:#d0d0d6}
+
+/* fechamento */
+.logo{position:absolute;border-radius:50%;overflow:hidden;box-shadow:0 0 0 6px rgba(255,35,48,.25),0 30px 80px rgba(0,0,0,.6)}
+.logo img{width:100%;height:100%;display:block}
+</style>
+</head>
+<body>
+<div id="wrap"><div id="stage">
+  <div class="bg"></div>
+  <div class="vignette"></div>
+
+  <div class="hdr"><span>OPERAÇÃO APROVAÇÃO</span><span id="counter"></span></div>
+  <div class="previa" id="previa">PRÉVIA · VOZ PENDENTE</div>
+
+  <!-- ===== 1. GANCHO ===== -->
+  <section class="scene" id="sc-gancho">
+    <div class="doc" id="doc" style="left:60px;top:200px;width:960px;height:1120px">
+      <div class="doc-top"><b>EDITAL Nº 00/2026</b><span>ANEXO · CONTEÚDO PROGRAMÁTICO</span></div>
+      <p class="doc-text" id="docText"></p>
+    </div>
+    <div class="abs" id="docShade" style="left:0;top:0;width:1080px;height:1920px;
+      background:linear-gradient(180deg, rgba(10,10,11,.97) 0, rgba(10,10,11,.93) 34%, rgba(10,10,11,.25) 52%, rgba(10,10,11,0) 70%)"></div>
+    <div class="stamp" id="docStamp" style="left:520px;top:1150px;font-size:30px;transform:rotate(-6deg)">EXEMPLO ILUSTRATIVO</div>
+    <div class="title" id="hookT" style="top:230px">
+      <h1 style="font-size:122px;line-height:.92">O QUE<br>ESTUDAR<br>PRIMEIRO<span style="color:var(--red)">?</span></h1>
+      <div class="bar" id="hookBar"></div>
+      <div class="sub" id="hookSub">MÉTODO BÚSSOLA</div>
+    </div>
+    <div class="abs" id="method" style="left:0;top:0;width:1080px;height:1920px">
+      <svg id="compass" class="abs" style="left:80px;top:780px" width="220" height="220" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="40" fill="none" stroke="#ff2330" stroke-width="6"/>
+        <path d="M50 4v10M50 86v10M4 50h10M86 50h10" stroke="#ff2330" stroke-width="6" stroke-linecap="round"/>
+        <g id="needle" style="transform-origin:50px 50px">
+          <path d="M50 22 L58 50 L50 78 L42 50 Z" fill="#ff2330"/><path d="M50 50 L58 50 L50 78 Z" fill="#8a0d14"/>
+          <circle cx="50" cy="50" r="4.5" fill="#111113"/>
+        </g>
+      </svg>
+      <div class="phase" id="ph1" style="top:744px"><span class="n">01</span><span class="l">EXTRAÇÃO</span></div>
+      <div class="phase" id="ph2" style="top:842px"><span class="n">02</span><span class="l">FATIAMENTO</span></div>
+      <div class="phase" id="ph3" style="top:940px"><span class="n">03</span><span class="l">PRIORIZAÇÃO</span></div>
+      <div class="phase" id="ph4" style="top:1038px"><span class="n">04</span><span class="l">CALENDÁRIO</span></div>
+      <div class="abs" id="phGoal" style="left:80px;top:1150px;width:860px;height:96px;border-radius:16px;background:var(--red);
+        display:flex;align-items:center;justify-content:center;gap:22px;font-weight:900;font-size:38px;letter-spacing:-.5px">
+        <span style="opacity:.85">EDITAL</span>
+        <svg width="54" height="30" viewBox="0 0 54 30"><path d="M2 15h44M34 3l14 12-14 12" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>1 TAREFA NA SEMANA</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 2. EXTRAÇÃO ===== -->
+  <section class="scene" id="sc-extracao">
+    <div class="title"><h1>1. Extraia o<br>conteúdo</h1><div class="bar"></div><div class="sub">Comece pelo edital</div></div>
+    <div class="abs" id="exHead" style="left:80px;top:598px;width:860px;height:52px;display:flex;align-items:center;gap:16px">
+      <svg width="34" height="42" viewBox="0 0 34 42"><path d="M3 3h19l9 9v27H3z" fill="none" stroke="#ff2330" stroke-width="4" stroke-linejoin="round"/><path d="M9 20h16M9 27h16M9 34h10" stroke="#ff2330" stroke-width="4" stroke-linecap="round"/></svg>
+      <span style="font-weight:800;font-size:27px;color:#d5d5db">Conteúdo do seu cargo</span>
+    </div>
+    <span class="tag abs" id="exTag" style="right:140px;top:608px">EXEMPLO ILUSTRATIVO</span>
+    <div id="exAI" class="abs" style="left:80px;top:598px;height:52px;display:flex;align-items:center;gap:12px;
+      font-weight:900;font-size:24px;letter-spacing:1px;background:#fff;color:#111;border-radius:10px;padding:0 18px">
+      IA ORGANIZA POR MATÉRIA <span style="color:var(--red)">▸</span> VOCÊ CONFERE
+    </div>
+    <div class="subj" id="exPort" style="top:664px;height:336px">
+      <div class="h"><span>PORTUGUÊS</span><small id="exCount">5 itens</small></div>
+    </div>
+    <div class="mini" id="exM1" style="top:1014px"><span>Direito Constitucional</span><small>6 itens</small></div>
+    <div class="mini" id="exM2" style="top:1076px"><span>Direito Penal</span><small>8 itens</small></div>
+    <div class="mini" id="exM3" style="top:1138px"><span>Raciocínio Lógico</span><small>5 itens</small></div>
+    <div class="abs" id="exCheck" style="left:80px;top:1212px;width:860px;height:78px;border-radius:14px;background:#fff;color:#111;
+      display:flex;align-items:center;gap:18px;padding:0 24px;font-weight:900;font-size:30px;letter-spacing:-.3px">
+      <svg width="46" height="46" viewBox="0 0 46 46"><circle cx="23" cy="23" r="21" fill="#ff2330"/><path d="M13 23.5l7 7 13-14" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Confira no edital e nas retificações
+    </div>
+  </section>
+
+  <!-- ===== 3. FATIAMENTO ===== -->
+  <section class="scene" id="sc-fatiamento">
+    <div class="title"><h1>2. Divida em<br>tarefas</h1><div class="bar"></div><div class="sub">Fatiamento</div></div>
+    <div class="subj" id="ftPort" style="top:600px;height:336px">
+      <div class="h"><span>PORTUGUÊS</span><small>assuntos do edital</small></div>
+    </div>
+  </section>
+
+  <!-- ===== 4. PRIORIZAÇÃO ===== -->
+  <section class="scene" id="sc-priorizacao">
+    <div class="title"><h1>3. Defina as<br>prioridades</h1><div class="bar"></div><div class="sub" id="prSub">Alfa · Bravo · Charlie</div></div>
+    <div class="crit" id="cr1" style="left:80px">
+      <svg width="48" height="40" viewBox="0 0 48 40"><path d="M24 4v32M10 36h28M6 10h36M6 10l-5 13h10zM42 10l-5 13h10z" fill="none" stroke="#ff2330" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+      <div><div class="l">Peso na prova</div><div class="s">dado do seu edital</div></div>
+    </div>
+    <div class="crit" id="cr2" style="left:374px">
+      <svg width="48" height="40" viewBox="0 0 48 40"><path d="M5 34a19 19 0 0 1 38 0" fill="none" stroke="#ff2330" stroke-width="4" stroke-linecap="round"/><path d="M24 34l10-14" stroke="#fff" stroke-width="4" stroke-linecap="round"/><circle cx="24" cy="34" r="4" fill="#fff"/></svg>
+      <div><div class="l">Sua<br>dificuldade</div></div>
+    </div>
+    <div class="crit" id="cr3" style="left:668px">
+      <svg width="48" height="40" viewBox="0 0 48 40"><rect x="4" y="27" width="40" height="10" rx="2" fill="#ff2330"/><rect x="10" y="15" width="28" height="9" rx="2" fill="none" stroke="#fff" stroke-width="3"/><rect x="16" y="3" width="16" height="9" rx="2" fill="none" stroke="#fff" stroke-width="3"/></svg>
+      <div><div class="l">Assuntos<br>de base</div></div>
+    </div>
+    <div class="lvl" id="lvA" style="top:898px;border-color:var(--red)"><div class="nm" style="color:var(--red)">ALFA</div><div class="ds">primeiro</div><div class="slot" id="slotA"></div></div>
+    <div class="lvl" id="lvB" style="top:1032px"><div class="nm">BRAVO</div><div class="ds">em seguida</div></div>
+    <div class="lvl" id="lvC" style="top:1166px"><div class="nm">CHARLIE</div><div class="ds">manutenção</div></div>
+    <div class="abs" id="prCond" style="left:356px;top:878px;font-weight:900;font-size:22px;letter-spacing:1px;background:var(--bg);
+      color:#fff;padding:4px 12px;border-radius:6px;border:2px solid var(--red);white-space:nowrap">NESTE EXEMPLO: SE FOR ALFA PARA VOCÊ</div>
+    <div class="abs" id="prFirst" style="left:106px;top:970px;font-weight:900;font-size:18px;letter-spacing:1px;color:#111;background:#fff;
+      padding:5px 12px;border-radius:6px;white-space:nowrap">▲ PRIMEIRAS SESSÕES</div>
+  </section>
+
+  <!-- ===== 5. CALENDÁRIO ===== -->
+  <section class="scene" id="sc-calendario">
+    <div class="title"><h1>4. Monte o<br>calendário</h1><div class="bar"></div><div class="sub">Comece hoje</div></div>
+    <div id="days"></div>
+  </section>
+
+  <!-- ===== 6. FECHAMENTO ===== -->
+  <section class="scene" id="sc-fechamento">
+    <div class="logo" id="logo" style="left:290px;top:300px;width:500px;height:500px"><img src="assets/logo-operacao-aprovacao.png" alt=""></div>
+    <div class="abs" id="endT" style="left:80px;top:880px;width:920px;font-weight:900;font-size:86px;line-height:.95;letter-spacing:-2px;text-transform:uppercase">
+      Salve e marque<br>sua <span style="color:var(--red)">primeira<br>tarefa</span>
+    </div>
+    <div class="abs" id="endBar" style="left:80px;top:1180px;width:360px;height:16px;background:var(--red);transform-origin:0 50%"></div>
+    <svg id="endIco" class="abs" style="left:820px;top:1110px" width="100" height="120" viewBox="0 0 50 60"><path d="M6 4h38v52L25 43 6 56z" fill="none" stroke="#ff2330" stroke-width="5" stroke-linejoin="round"/></svg>
+    <div class="abs" id="endSrc" style="left:80px;top:1226px;font-weight:700;font-size:26px;line-height:1.35;color:var(--mute)">Método Bússola · Operação 01 do<br>Guia Concurseiro Policial Cibernético</div>
+  </section>
+
+  <!-- cartão da tarefa: o mesmo objeto atravessa fatiamento → priorização → calendário -->
+  <div id="task">
+    <div class="full" id="tkFull">
+      <div class="tg">TAREFA · PORTUGUÊS</div>
+      <div class="tt">Concordância verbal</div>
+      <div class="chk" id="tkL1"><span class="box" id="tkB1"></span>Resolver 5 questões</div>
+      <div class="chk" id="tkL2"><span class="box" id="tkB2"></span>+ Corrigir os erros</div>
+      <div class="ft" id="tkFt"><svg width="28" height="28" viewBox="0 0 28 28"><circle cx="14" cy="14" r="11" fill="none" stroke="#a3a3ad" stroke-width="3"/><path d="M14 8v6l4 3" stroke="#a3a3ad" stroke-width="3" fill="none" stroke-linecap="round"/></svg>1 sessão</div>
+    </div>
+    <div class="cmp" id="tkCmp"><div class="a">Concordância verbal</div><div class="b">5 questões + correção</div></div>
+    <div class="badges" id="tkBadges"><span class="badge alfa" id="bAlfa">ALFA</span><span class="badge hora" id="bHora">QUA · 19h</span></div>
+  </div>
+
+  <div id="cap"><div class="box" id="capBox"></div></div>
+</div></div>
+
+<script src="timeline.js"></script>
+<script>
+(() => {
+const T = window.TIMELINE;
+const $ = id => document.getElementById(id);
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const lerp = (a, b, x) => a + (b - a) * x;
+const easeOut = x => 1 - Math.pow(1 - x, 3);
+const easeIO = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+const back = x => { const c = 1.6; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+const P = (t, a, d = .45) => clamp((t - a) / d);           // progresso linear 0..1
+const E = (t, a, d = .45) => easeOut(P(t, a, d));
+const cap = id => T.legendas.find(c => c.id === id);
+const at = (id, f = 0) => { const c = cap(id); return c.start + (c.end - c.start) * f; };
+const SC = Object.fromEntries(T.cenas.map((s, i) => [s.id, { start: s.start, end: (T.cenas[i + 1] || { start: T.duracao + 1 }).start }]));
+const css = (el, o) => { for (const k in o) el.style[k] = o[k]; };
+const show = (el, a, dy = 0, sc = 1) => css(el, { opacity: a, transform: `translateY(${dy}px) scale(${sc})` });
+const rect = (el, r) => css(el, { left: r.x + 'px', top: r.y + 'px', width: r.w + 'px', height: r.h + 'px' });
+const mix = (r1, r2, x) => ({ x: lerp(r1.x, r2.x, x), y: lerp(r1.y, r2.y, x), w: lerp(r1.w, r2.w, x), h: lerp(r1.h, r2.h, x) });
+
+/* ---------- conteúdo ---------- */
+$('docText').innerHTML = (
+ '<b>LÍNGUA PORTUGUESA:</b> 1 Compreensão e interpretação de textos. 2 Ortografia oficial. 3 Concordância verbal e nominal. 4 Regência verbal e nominal. 5 Emprego do sinal indicativo de crase. ' +
+ '<b>NOÇÕES DE DIREITO CONSTITUCIONAL:</b> 1 Direitos e garantias fundamentais. 2 Direitos e deveres individuais e coletivos. 3 Administração pública. 4 Segurança pública. 5 Organização do Estado. 6 Poder Executivo. ' +
+ '<b>NOÇÕES DE DIREITO PENAL:</b> 1 Aplicação da lei penal. 2 Crime. 3 Imputabilidade penal. 4 Concurso de pessoas. 5 Crimes contra a pessoa. 6 Crimes contra o patrimônio. 7 Crimes contra a fé pública. 8 Crimes contra a administração pública. ' +
+ '<b>RACIOCÍNIO LÓGICO:</b> 1 Proposições e conectivos. 2 Equivalências e negações. 3 Argumentação. 4 Porcentagem. 5 Problemas de contagem. ' +
+ '<b>LEGISLAÇÃO ESPECIAL:</b> conforme o cargo. <b>NOÇÕES DE DIREITO PROCESSUAL PENAL:</b> 1 Inquérito policial. 2 Ação penal. 3 Prova. 4 Prisão e liberdade provisória. ' +
+ '<b>DIREITOS HUMANOS:</b> 1 Teoria geral. 2 Declaração Universal. <b>NOÇÕES DE INFORMÁTICA:</b> 1 Segurança da informação. 2 Redes. 3 Navegadores e correio eletrônico.'
+);
+const PORT = ['Interpretação de textos', 'Ortografia oficial', 'Concordância verbal e nominal', 'Regência verbal e nominal', 'Crase'];
+const mkItems = (host, prefix) => PORT.map((txt, i) => {
+  const d = document.createElement('div'); d.className = 'item'; d.id = prefix + i; d.style.top = (70 + i * 50) + 'px';
+  d.innerHTML = `<span class="k">${i + 1}</span><span class="tx">${txt}</span>`; host.appendChild(d); return d;
+});
+const exItems = mkItems($('exPort'), 'exI');
+const ftItems = mkItems($('ftPort'), 'ftI');
+// fatiamento: o item 3 vira "Concordância" + pílulas verbal | nominal
+const ftRow = ftItems[2];
+ftRow.querySelector('.tx').innerHTML = '<span id="ftWhole">Concordância verbal e nominal</span><span id="ftHead" style="position:absolute;left:44px;opacity:0">Concordância</span>';
+const pillV = document.createElement('div'); pillV.className = 'pill'; pillV.id = 'pillV'; pillV.textContent = 'verbal';
+const pillN = document.createElement('div'); pillN.className = 'pill'; pillN.id = 'pillN'; pillN.textContent = 'nominal';
+$('ftPort').append(pillV, pillN);
+const PILLV = { x: 80 + 314, y: 600 + 70 + 100 + 2, w: 140, h: 46 };   // posição da pílula "verbal" no palco
+css(pillV, { left: (PILLV.x - 80) + 'px', top: (PILLV.y - 600) + 'px', width: PILLV.w + 'px', background: 'var(--red)', color: '#fff' });
+css(pillN, { left: (PILLV.x - 80 + 156) + 'px', top: (PILLV.y - 600) + 'px', width: '160px', border: '3px solid #55555e', color: '#bdbdc5' });
+
+// agenda
+const DAYS = [
+  { d: 'SEG', blocks: [{ c: 'busy', t: 'Trabalho · 8h–17h', x: 140, w: 330 }] },
+  { d: 'TER', blocks: [{ c: 'busy', t: 'Escala · plantão', x: 140, w: 300 }] },
+  { d: 'QUA', blocks: [] },
+  { d: 'QUI', blocks: [{ c: 'busy', t: 'Treino', x: 140, w: 170 }, { c: 'rev', t: 'REVISÃO · 19h', x: 326, w: 330, id: 'blkRev' }] },
+  { d: 'SEX', blocks: [{ c: 'busy', t: 'Trabalho · 8h–17h', x: 140, w: 330 }] },
+  { d: 'SÁB', blocks: [{ c: 'mar', t: 'MARGEM · imprevistos', x: 140, w: 400, id: 'blkMar' }] },
+  { d: 'DOM', blocks: [{ c: 'busy', t: 'Descanso', x: 140, w: 210 }] },
+];
+DAYS.forEach((day, i) => {
+  const el = document.createElement('div'); el.className = 'day'; el.id = 'day' + i;
+  el.innerHTML = `<div class="d">${day.d}</div>` + day.blocks.map(b =>
+    `<div class="blk ${b.c}" ${b.id ? `id="${b.id}"` : ''} style="left:${b.x}px;width:${b.w}px">${b.t}</div>`).join('');
+  $('days').appendChild(el); day.el = el;
+});
+const QUA_TIME = document.createElement('div');
+QUA_TIME.id = 'quaTime'; QUA_TIME.className = 'abs';
+css(QUA_TIME, { left: '24px', fontWeight: 900, fontSize: '40px', color: 'var(--red)' }); QUA_TIME.textContent = '19h';
+DAYS[2].el.appendChild(QUA_TIME);
+
+// ajusta títulos longos à largura útil
+document.fonts.ready.then(() => document.querySelectorAll('.title h1').forEach(h => {
+  let fs = parseFloat(getComputedStyle(h).fontSize);
+  while (h.scrollWidth > 905 && fs > 60) { fs -= 2; h.style.fontSize = fs + 'px'; }
+}));
+
+/* ---------- geometria do cartão ---------- */
+const R_A = { x: 80, y: 958, w: 860, h: 330 };   // fatiamento (grande)
+const R_B = { x: 80, y: 598, w: 860, h: 108 };   // priorização (topo)
+const R_C = { x: 358, y: 910, w: 570, h: 94 };   // dentro da linha ALFA
+const R_D = { x: 80, y: 598, w: 860, h: 100 };   // calendário (a agendar)
+
+function dayLayout(t) {
+  const grow = E(t, at('c2', 0), .5);
+  const top = 712, gap = 8, base = 64, big = 136;
+  let y = top; const out = [];
+  DAYS.forEach((d, i) => { const h = i === 2 ? lerp(base, big, grow) : base; out.push({ y, h }); y += h + gap; });
+  return { rows: out, grow };
+}
+
+/* ---------- render ---------- */
+function sceneAlpha(id, t) {
+  const s = SC[id];
+  const a = id === 'gancho' ? 1 : E(t, s.start, .45);
+  const b = 1 - E(t, s.end - .1, .3);
+  return { a: Math.min(a, b), dy: (1 - a) * 40 - (1 - b) * 30 };
+}
+
+function titleIn(sec, t) {
+  const s = SC[sec].start; const root = $('sc-' + sec).querySelector('.title');
+  if (!root) return;
+  const [h, bar, sub] = root.children;
+  show(h, E(t, s + .05, .45), (1 - E(t, s + .05, .45)) * 30);
+  bar.style.transform = `scaleX(${E(t, s + .3, .5)})`;
+  show(sub, E(t, s + .45, .4), (1 - E(t, s + .45, .4)) * 16);
+}
+
+window.renderAt = function (t) {
+  // cenas
+  for (const id in SC) {
+    const { a, dy } = sceneAlpha(id, t);
+    css($('sc-' + id), { opacity: a, transform: `translateY(${dy}px)`, display: a <= 0.001 ? 'none' : 'block' });
+  }
+  const ph = ['extracao', 'fatiamento', 'priorizacao', 'calendario'].findIndex(id => t >= SC[id].start && t < SC[id].end);
+  $('counter').textContent = ph >= 0 ? `FASE ${ph + 1}/4` : (t >= at('g3', 0) && t < SC.extracao.start ? 'MÉTODO BÚSSOLA' : '');
+  $('previa').style.display = T.modo === 'audio' ? 'none' : 'block';
+
+  /* 1. GANCHO */
+  if (t < SC.gancho.end + .5) {
+    const m = at('g3', 0);                         // entrada do Método Bússola
+    const out = E(t, m - .15, .7);
+    css($('doc'), { transform: `translateY(${lerp(0, 160, out) - t * 6}px) scale(${1.06 - Math.min(t, 6) * .008 - out * .08}) rotate(${-1.2 + out * 1.2}deg)`, opacity: 1 - out * .92 });
+    css($('docShade'), { opacity: 1 - out * .2 });
+    css($('docStamp'), { opacity: E(t, .9, .3) * (1 - out), transform: `rotate(-6deg) scale(${lerp(1.5, 1, back(P(t, .9, .35)))})` });
+    // pergunta entra logo no início; tremida curta no "travou"
+    const qa = E(t, .1, .4);
+    const shake = (t > at('g1', .65) && t < at('g1', .65) + .35) ? Math.sin(t * 90) * 7 : 0;
+    show($('hookT').children[0], qa, (1 - qa) * 40 + 0, 1); $('hookT').children[0].style.transform += ` translateX(${shake}px)`;
+    $('hookBar').style.transform = `scaleX(${E(t, at('g2', .2), .5)})`;
+    show($('hookSub'), E(t, m, .45), (1 - E(t, m, .45)) * 20);
+    // método: bússola + 4 fases
+    css($('method'), { opacity: E(t, m - .05, .35) });
+    $('needle').style.transform = `rotate(${lerp(-200, 45, easeOut(P(t, m, 1.6))) + Math.sin(t * 3) * 2}deg)`;
+    css($('compass'), { transform: `scale(${lerp(.6, 1, back(P(t, m, .5)))})` });
+    [1, 2, 3, 4].forEach((n, i) => { const k = E(t, m + .25 + i * .32, .4); show($('ph' + n), k, 0, 1); $('ph' + n).style.transform = `translateX(${(1 - k) * 80}px)`; });
+    const g = E(t, at('g4', .05), .45);
+    css($('phGoal'), { opacity: g, transform: `translateY(${(1 - g) * 30}px) scale(${lerp(.92, 1, back(P(t, at('g4', .05), .45)))})` });
+  }
+
+  /* 2. EXTRAÇÃO */
+  if (t > SC.extracao.start - .1 && t < SC.extracao.end + .5) {
+    const s = SC.extracao.start; titleIn('extracao', t);
+    show($('exHead'), E(t, s + .4, .4), (1 - E(t, s + .4, .4)) * 14); $('exTag').style.opacity = E(t, s + .5, .4);
+    const ai = E(t, at('e2', 0), .4);
+    css($('exAI'), { opacity: ai, transform: `translateY(${(1 - ai) * -16}px)` });
+    $('exHead').style.opacity = (E(t, s + .4, .4) * (1 - ai)).toFixed(3);
+    // matérias se organizam (a partir da fala sobre o conteúdo do cargo)
+    const o = at('e1', .45);
+    const pk = E(t, o, .5);
+    css($('exPort'), { opacity: pk, transform: `translateY(${(1 - pk) * 50}px)` });
+    ['exM1', 'exM2', 'exM3'].forEach((id, i) => { const k = E(t, o + .2 + i * .14, .45); css($(id), { opacity: k * (1 - .35 * E(t, at('e2', .5), .5)), transform: `translateY(${(1 - k) * 50}px)` }); });
+    exItems.forEach((el, i) => { const k = E(t, o + .35 + i * .12, .35); css(el, { opacity: k, transform: `translateX(${(1 - k) * -30}px)` }); });
+    // Português em destaque
+    const hl = E(t, at('e2', .45), .4);
+    css($('exPort'), { borderColor: `rgba(255,35,48,${hl})`, boxShadow: `0 0 0 ${hl * 4}px rgba(255,35,48,.18)` });
+    // conferência
+    const ck = E(t, at('e3', 0), .45);
+    css($('exCheck'), { opacity: ck, transform: `translateY(${(1 - ck) * 30}px) scale(${lerp(.94, 1, back(P(t, at('e3', 0), .45)))})` });
+    $('exCount').innerHTML = ck > .5 ? '<span style="color:#ff2330">✓</span> 5 de 5 itens' : '5 itens';
+  }
+
+  /* 3. FATIAMENTO */
+  if (t > SC.fatiamento.start - .1 && t < SC.fatiamento.end + .5) {
+    const s = SC.fatiamento.start; titleIn('fatiamento', t);
+    const mv = E(t, s, .6);
+    css($('ftPort'), { transform: `translateY(${(1 - mv) * 64}px)` });
+    const foc = E(t, at('f2', 0), .4);                // foco em Português
+    css($('ftPort'), { borderColor: `rgba(255,35,48,${foc})` });
+    const cv = E(t, at('f3', 0), .35);                // "concordância verbal"
+    ftItems.forEach((el, i) => { el.style.opacity = i === 2 ? 1 : lerp(1, .3, cv); });
+    const sp = E(t, at('f3', .25), .45);              // divide em verbal | nominal
+    $('ftWhole').style.opacity = 1 - sp; $('ftHead').style.opacity = sp;
+    css(pillV, { opacity: sp, transform: `translateX(${(1 - sp) * -40}px)` });
+    css(pillN, { opacity: sp * (1 - .5 * cv), transform: `translateX(${(1 - sp) * -20}px)` });
+    ftRow.style.color = cv > .5 ? '#fff' : '';
+    const dim = E(t, at('f3', .75), .5);
+    $('ftPort').style.opacity = lerp(1, .55, dim);
+  }
+
+  /* 4. PRIORIZAÇÃO */
+  if (t > SC.priorizacao.start - .1 && t < SC.priorizacao.end + .5) {
+    const s = SC.priorizacao.start; titleIn('priorizacao', t);
+    [['cr1', at('p2', 0)], ['cr2', at('p3', 0)], ['cr3', at('p3', .38)]].forEach(([id, a]) => {
+      const k = E(t, a, .4); css($(id), { opacity: k * lerp(1, .55, E(t, at('p4', 0), .5)), transform: `translateY(${(1 - k) * 30}px) scale(${lerp(.9, 1, back(P(t, a, .4)))})` });
+    });
+    const lv = at('p3', .8);
+    [['lvA', 0], ['lvB', 1], ['lvC', 2]].forEach(([id, i]) => { const k = E(t, lv + i * .22, .4); css($(id), { opacity: k, transform: `translateX(${(1 - k) * 70}px)` }); });
+    $('slotA').style.opacity = 1 - E(t, at('p4', .45), .3);
+    const cond = E(t, at('p4', .05), .35);
+    css($('prCond'), { opacity: cond, transform: `translateY(${(1 - cond) * 10}px)` });
+    const fs = E(t, at('p5', .25), .4);
+    css($('prFirst'), { opacity: fs, transform: `scale(${lerp(.8, 1, back(P(t, at('p5', .25), .4)))})`, transformOrigin: '0 50%' });
+    $('lvA').querySelector('.ds').style.opacity = 1 - fs;
+    css($('lvA'), { boxShadow: `0 0 0 ${fs * 5}px rgba(255,35,48,.22)` });
+    $('lvB').style.opacity *= lerp(1, .55, E(t, at('p4', 0), .5));
+    $('lvC').style.opacity *= lerp(1, .55, E(t, at('p4', 0), .5));
+  }
+
+  /* 5. CALENDÁRIO */
+  const L = dayLayout(t);
+  if (t > SC.calendario.start - .1 && t < SC.calendario.end + .5) {
+    const s = SC.calendario.start; titleIn('calendario', t);
+    DAYS.forEach((d, i) => {
+      const k = E(t, s + .35 + i * .09, .4); const r = L.rows[i];
+      css(d.el, { top: r.y + 'px', height: r.h + 'px', opacity: k, transform: `translateX(${(1 - k) * 60}px)` });
+      d.el.querySelector('.d').style.top = (i === 2 ? lerp(16, 18, L.grow) : 16) + 'px';
+      d.el.querySelectorAll('.blk').forEach(b => css(b, { top: '9px', height: (r.h - 22) + 'px' }));
+    });
+    const hiQ = L.grow;
+    css(DAYS[2].el, { borderColor: `rgba(255,35,48,${hiQ})`, background: hiQ > 0 ? `rgba(255,35,48,${.08 * hiQ})` : '' });
+    css(QUA_TIME, { top: '60px', opacity: E(t, at('c2', .3), .35) });
+    const rv = E(t, at('c4', 0), .4);
+    css($('blkRev'), { opacity: rv, transform: `scale(${lerp(.85, 1, back(P(t, at('c4', 0), .4)))})` });
+    const mr = E(t, at('c5', .15), .4);
+    css($('blkMar'), { opacity: mr, transform: `scale(${lerp(.85, 1, back(P(t, at('c5', .15), .4)))})` });
+  }
+
+  /* 6. FECHAMENTO */
+  if (t > SC.fechamento.start - .1) {
+    const s = SC.fechamento.start;
+    const lg = P(t, s + .1, .6);
+    css($('logo'), { opacity: easeOut(lg), transform: `scale(${lerp(.7, 1, back(lg))}) rotate(${lerp(-25, 0, easeOut(lg))}deg)` });
+    const tt = E(t, s + .45, .45);
+    show($('endT'), tt, (1 - tt) * 40);
+    $('endBar').style.transform = `scaleX(${E(t, s + .8, .5)})`;
+    const ic = P(t, s + 1.0, .5);
+    css($('endIco'), { opacity: easeOut(ic), transform: `translateY(${(1 - back(ic)) * -60}px)` });
+    show($('endSrc'), E(t, s + 1.2, .5), 0);
+  }
+
+  /* CARTÃO DA TAREFA (objeto único) */
+  const born = at('f3', .7);
+  const task = $('task');
+  if (t < born) { task.style.display = 'none'; }
+  else {
+    task.style.display = 'block';
+    const rE = { x: 300, y: L.rows[2].y + 9, w: 640, h: L.rows[2].h - 18 };
+    let r, k;
+    const tA = E(t, born, .7);
+    r = mix(PILLV, R_A, easeIO(P(t, born, .7)));
+    const tB = easeIO(P(t, SC.priorizacao.start - .05, .7)); if (tB > 0) r = mix(R_A, R_B, tB);
+    const tC = easeIO(P(t, at('p4', .3), .75)); if (tC > 0) r = mix(R_B, R_C, tC);
+    const tD = easeIO(P(t, SC.calendario.start - .05, .7)); if (tD > 0) r = mix(R_C, R_D, tD);
+    const tE = easeIO(P(t, at('c2', 0), .7)); if (tE > 0) r = mix(R_D, rE, tE);
+    rect(task, r);
+    // grande ↔ compacto
+    const full = clamp((r.h - 210) / 70), cmpA = clamp((190 - r.h) / 50);
+    const fe = full * Math.min(1, tA * 1.5);
+    css($('tkFull'), { opacity: fe, transform: `scale(${Math.max(.2, r.w / 860)})`, transformOrigin: '0 0' });
+    const kk = clamp(r.h / 108, .55, 1.1);
+    const cmp = $('tkCmp'); css(cmp, { opacity: cmpA, height: r.h + 'px', width: r.w + 'px' });
+    const kw = clamp((r.w - 300) / 560, .74, 1);
+    cmp.children[0].style.fontSize = (40 * kk * kw) + 'px'; cmp.children[1].style.fontSize = (26 * kk * kw) + 'px';
+    if (t < born + .35) css(task, { background: '#ff2330' }); else css(task, { background: `rgba(29,29,33,1)` });
+    css(task, { opacity: clamp(P(t, born, .15)) * (1 - E(t, SC.fechamento.start, .35)),
+      transform: `scale(${t > SC.fechamento.start ? lerp(1, .9, E(t, SC.fechamento.start, .35)) : 1})` });
+    // checklist sincronizado com a fala
+    [['tkL1', 'tkB1', at('f4', .05)], ['tkL2', 'tkB2', at('f4', .55)]].forEach(([l, b, a]) => {
+      const q = E(t, a, .35); css($(l), { opacity: .15 + .85 * q, transform: `translateX(${(1 - q) * 24}px)` });
+      $(b).style.background = q > .6 ? 'var(--red)' : 'transparent';
+      $(b).innerHTML = q > .6 ? '<svg width="36" height="36" viewBox="0 0 36 36" style="position:absolute;left:0;top:0"><path d="M8 18l6 6 13-13" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>' : '';
+    });
+    $('tkFt').style.opacity = E(t, at('f4', .9), .4);
+    // selos ALFA e horário
+    const ba = E(t, at('p4', .55), .35), bh = E(t, at('c2', .55), .35);
+    css($('bAlfa'), { opacity: ba, display: ba > 0 ? 'block' : 'none', transform: `scale(${lerp(1.6, 1, back(P(t, at('p4', .55), .35)))})` });
+    css($('bHora'), { opacity: bh, display: bh > 0 ? 'block' : 'none', transform: `scale(${lerp(1.6, 1, back(P(t, at('c2', .55), .35)))})` });
+    document.querySelectorAll('#task .badge').forEach(b => css(b, { fontSize: (22 * kk * kw) + 'px', padding: `${6 * kk * kw}px ${12 * kk * kw}px` }));
+    css($('tkBadges'), { top: (r.h / 2 - 18 * kk * kw) + 'px', opacity: cmpA });
+    // texto da tarefa no calendário espelha a fala
+    $('tkCmp').children[1].textContent = 'cinco questões + correção'.replace('cinco', '5');
+  }
+
+  /* LEGENDAS */
+  const c = T.legendas.find(c => t >= c.start - .05 && t < c.show_end);
+  const box = $('capBox');
+  if (!c) { box.parentNode.style.opacity = 0; }
+  else {
+    box.innerHTML = c.linhas.join('<br>');
+    const k = E(t, c.start - .05, .14);
+    css(box.parentNode, { opacity: k, transform: `translateY(${(1 - k) * 12}px)` });
+  }
+};
+
+/* ---------- reprodução no navegador ---------- */
+function fit() { const s = Math.min(innerWidth / 1080, innerHeight / 1920); $('wrap').style.transform = `scale(${s})`; }
+const qs = new URLSearchParams(location.search);
+if (!qs.has('render')) {
+  fit(); addEventListener('resize', fit);
+  document.fonts.ready.then(() => {
+    if (qs.has('t')) { renderAt(parseFloat(qs.get('t'))); return; }
+    let audio = null;
+    if (T.audio) { audio = new Audio('../' + T.audio); }
+    let t0 = null;
+    const loop = now => {
+      if (t0 === null) { t0 = now; if (audio) audio.play().catch(() => {}); }
+      let t = audio && !audio.paused ? audio.currentTime : (now - t0) / 1000;
+      if (t > T.duracao) { t0 = now; t = 0; if (audio) { audio.currentTime = 0; audio.play().catch(() => {}); } }
+      renderAt(t); requestAnimationFrame(loop);
+    };
+    addEventListener('click', () => requestAnimationFrame(loop), { once: true });
+    renderAt(0.0001);
+  });
+}
+window.READY = document.fonts.ready;
+})();
+</script>
+</body>
+</html>
