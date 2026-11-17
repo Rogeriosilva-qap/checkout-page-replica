@@ -706,6 +706,8 @@ body:has(.legal){background:var(--fundo,#fbfaf7);padding-bottom:0}
 .menu-site-item{display:block;font-family:var(--head);font-weight:600;font-size:.95rem;color:#E8E8EC;text-decoration:none;padding:11px 14px;border-radius:8px;transition:background .15s,color .15s}
 .menu-site-item:hover{background:rgba(200,16,46,.18);color:#fff}
 .menu-site-item.ativo{color:#fff;background:var(--red);cursor:default}
+.menu-novo{display:inline-block;margin-left:8px;padding:2px 7px;border-radius:999px;background:var(--red);color:#fff;font-family:var(--head);font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;vertical-align:middle}
+.menu-site-item:hover .menu-novo{background:#fff;color:var(--red)}
 @media (prefers-reduced-motion:reduce){.menu-site.aberto{animation:none}.menu-toggle span{transition:none}}
 
 /* Captura de e-mail isolada na ferramenta gratuita. */

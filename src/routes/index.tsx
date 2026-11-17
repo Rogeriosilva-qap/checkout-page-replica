@@ -251,7 +251,10 @@ function Index() {
           </div>
           {menuOpen && <button type="button" className="menu-backdrop" aria-hidden="true" tabIndex={-1} onClick={() => setMenuOpen(false)} />}
           <nav id="menu-site" className={menuOpen ? "menu-site aberto" : "menu-site"} aria-label="Páginas da Operação Aprovação">
-            <span className="menu-site-item ativo" aria-current="page">E-book</span>
+            <span className="menu-site-item ativo" aria-current="page">E-books</span>
+            <Link className="menu-site-item" to="/concurseiro-cibernetico" onClick={() => setMenuOpen(false)}>
+              Concurseiro Policial Cibernético<small className="menu-novo">novo</small>
+            </Link>
             <Link className="menu-site-item" to="/ia-para-concursos" onClick={() => setMenuOpen(false)}>Blog</Link>
             <Link className="menu-site-item" to="/explicar-questao" onClick={() => setMenuOpen(false)}>Explicar questão</Link>
             <Link className="menu-site-item" to="/termos-de-uso" onClick={() => setMenuOpen(false)}>Termos de uso</Link>
