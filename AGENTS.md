@@ -43,3 +43,4 @@ use the editor.
 - Cookie consent goes through src/lib/consent.ts (skill module, BR added to consent regions) and the banner in src/components/cookie-consent.tsx; never read consent storage keys directly.
 - Paid-library previews must use permanently redacted raster assets, never CSS-only blur or an overlay over readable source media, so removing the lock cannot reveal paid content.
 - The advertorial uses route-scoped `.advertorial` styles and excludes shared cookie UI by pathname in the root shell, keeping sales-page styling and behavior unchanged.
+- The cyber guide page (/concurseiro-cibernetico) uses its own route-scoped `.cyber` styles and its checkout comes only from CONFIG.cyberCheckoutUrl via getCyberCheckoutHref, so an empty link never navigates.

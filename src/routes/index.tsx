@@ -941,6 +941,13 @@ function Index() {
         </section>
         <SimuladosSignup />
         <VisitorForms />
+        <aside className="novo-ebook" aria-label="Novo e-book">
+          <div className="wrap">
+            <p><b>Novo e-book:</b> O Guia Definitivo do Concurseiro Policial Cibernético.{" "}
+              <Link to="/concurseiro-cibernetico">Conhecer o guia</Link>
+            </p>
+          </div>
+        </aside>
       </main>
 
       <footer>

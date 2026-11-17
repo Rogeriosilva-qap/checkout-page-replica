@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ConcurseiroCiberneticoRouteImport } from './routes/concurseiro-cibernetico'
 import { Route as ExplicarQuestaoRouteImport } from './routes/explicar-questao'
 import { Route as IaParaConcursosRouteImport } from './routes/ia-para-concursos'
 import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
@@ -19,6 +20,11 @@ import { Route as TermosDeUsoRouteImport } from './routes/termos-de-uso'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConcurseiroCiberneticoRoute = ConcurseiroCiberneticoRouteImport.update({
+  id: '/concurseiro-cibernetico',
+  path: '/concurseiro-cibernetico',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ExplicarQuestaoRoute = ExplicarQuestaoRouteImport.update({
@@ -49,6 +55,7 @@ const TermosDeUsoRoute = TermosDeUsoRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/concurseiro-cibernetico': typeof ConcurseiroCiberneticoRoute
   '/explicar-questao': typeof ExplicarQuestaoRoute
   '/ia-para-concursos': typeof IaParaConcursosRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
@@ -57,6 +64,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/concurseiro-cibernetico': typeof ConcurseiroCiberneticoRoute
   '/explicar-questao': typeof ExplicarQuestaoRoute
   '/ia-para-concursos': typeof IaParaConcursosRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
@@ -66,6 +74,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/concurseiro-cibernetico': typeof ConcurseiroCiberneticoRoute
   '/explicar-questao': typeof ExplicarQuestaoRoute
   '/ia-para-concursos': typeof IaParaConcursosRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
@@ -76,6 +85,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/concurseiro-cibernetico'
     | '/explicar-questao'
     | '/ia-para-concursos'
     | '/politica-de-privacidade'
@@ -84,6 +94,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/concurseiro-cibernetico'
     | '/explicar-questao'
     | '/ia-para-concursos'
     | '/politica-de-privacidade'
@@ -92,6 +103,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/concurseiro-cibernetico'
     | '/explicar-questao'
     | '/ia-para-concursos'
     | '/politica-de-privacidade'
@@ -101,6 +113,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ConcurseiroCiberneticoRoute: typeof ConcurseiroCiberneticoRoute
   ExplicarQuestaoRoute: typeof ExplicarQuestaoRoute
   IaParaConcursosRoute: typeof IaParaConcursosRoute
   PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
@@ -115,6 +128,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/concurseiro-cibernetico': {
+      id: '/concurseiro-cibernetico'
+      path: '/concurseiro-cibernetico'
+      fullPath: '/concurseiro-cibernetico'
+      preLoaderRoute: typeof ConcurseiroCiberneticoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/explicar-questao': {
@@ -157,6 +177,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ConcurseiroCiberneticoRoute: ConcurseiroCiberneticoRoute,
   ExplicarQuestaoRoute: ExplicarQuestaoRoute,
   IaParaConcursosRoute: IaParaConcursosRoute,
   PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,

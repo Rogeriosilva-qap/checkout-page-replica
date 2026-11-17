@@ -3,6 +3,7 @@
    Deixe "" o que ainda não estiver confirmado: o item fica oculto.
    ========================================================= */
 export const CONFIG = {
+  cyberCheckoutUrl: "", // Checkout do Guia do Concurseiro Policial Cibernético. Vazio = botões mostram "Link de compra em breve."
   checkoutUrl: "https://pay.kirvano.com/28b35434-3fbf-4f7e-914d-ae6212e77484", // URL do checkout (ex.: link da plataforma de pagamento). OBRIGATÓRIO para vender.
   listPriceText: "R$ 97,00", // Preço cheio confirmado do e-book, exibido riscado ao lado do preço de lançamento. Deixe "" para ocultar.
   launchPriceText: "R$ 47,00", // Preço de lançamento cobrado agora.
@@ -31,4 +32,10 @@ export function getPurchaseFaq(settings: Pick<typeof CONFIG, "deliveryText" | "a
     { question: "Com quem falo se tiver dificuldade para acessar o material?", answer: settings.accessSupportText },
     { question: "Como solicito reembolso?", answer: settings.refundText },
   ].filter(({ answer }) => answer.trim().length > 0);
+}
+
+// Link de compra do guia cibernético; null enquanto o checkout não existir.
+export function getCyberCheckoutHref(url: string = CONFIG.cyberCheckoutUrl): string | null {
+  const v = url.trim();
+  return v.length > 0 ? v : null;
 }
