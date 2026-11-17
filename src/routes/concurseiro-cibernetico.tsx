@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode, type RefObject } from "react";
 import { CONFIG, getCyberCheckoutHref, getCyberWaitlistHref } from "@/config";
 import { copyAdvertorialPrompt } from "@/lib/copy-advertorial-prompt";
+import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo-operacao-aprovacao.png.asset.json";
 
 const URL_PAGE = "https://operacaoaprovacaoebooks.com.br/concurseiro-cibernetico";
@@ -54,6 +56,7 @@ const OPS: [string, string][] = [
 ];
 
 const FAQ: [string, string][] = [
+  ["O que é o Método Bússola e como ele ajuda no meu estudo?", "É o método do guia para transformar o edital em um mapa de estudo: em vez de encarar uma lista extensa de conteúdos sem saber por onde começar, você usa a IA para dividir os assuntos em micro-tópicos, organizá-los por prioridade Alfa, Bravo e Charlie e montar um cronograma com margem para imprevistos. O processo tem 4 fases e inclui a checagem do mapa com o edital oficial, para conferir se algo ficou de fora. O benefício é ter mais clareza sobre o que estudar e reduzir o trabalho de organização — especialmente para quem concilia estudo, trabalho e escala. No e-book, você encontra o passo a passo e os comandos para aplicar o método ao seu edital, sem precisar montar tudo do zero. A IA apoia o planejamento; a conferência e o estudo continuam com você."],
   ["É um curso ou um e-book?", "É um e-book em PDF, sem aulas em vídeo."],
   ["Preciso saber usar IA?", "Não. Os comandos já vêm prontos; você troca os campos entre colchetes e cola o texto que vai estudar."],
   ["Funciona com ferramentas gratuitas?", "Os comandos são textos para copiar e colar e podem ser usados em ferramentas que aceitem pedidos por escrito, inclusive versões gratuitas. Recursos e limites variam entre ferramentas e planos."],
@@ -67,6 +70,28 @@ function CyberPage() {
   const preRef = useRef<HTMLPreElement>(null);
   const [showBar, setShowBar] = useState(false);
   const [copied, setCopied] = useState<string>("");
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+    const onPointer = (event: PointerEvent) => {
+      if (event.target instanceof Node && !menuRef.current?.contains(event.target)) setMenuOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    document.addEventListener("pointerdown", onPointer);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.removeEventListener("pointerdown", onPointer);
+    };
+  }, [menuOpen]);
 
   useEffect(() => {
     const els = [heroRef, offerRef, finalRef].map((r) => r.current).filter(Boolean) as Element[];
@@ -88,8 +113,19 @@ function CyberPage() {
   return (
     <div className="cyber">
       <header className="cyber-top grid-bg">
-        <div className="cw">
+        <div className="cw" ref={menuRef}>
           <Link to="/" className="brand"><img src={logo.url} alt="" width={32} height={32} />Operação Aprovação</Link>
+          <Button ref={menuButtonRef} type="button" variant="ghost" size="icon" className="cy-menu-toggle" aria-label={menuOpen ? "Fechar menu de páginas" : "Abrir menu de páginas"} aria-expanded={menuOpen} aria-controls="cy-menu" onClick={() => setMenuOpen((open) => !open)}>
+            {menuOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
+          </Button>
+          <nav id="cy-menu" className="cy-menu" aria-label="Páginas da Operação Aprovação" hidden={!menuOpen}>
+            <Link to="/" onClick={() => setMenuOpen(false)}>E-books</Link>
+            <span aria-current="page">Concurseiro Policial Cibernético</span>
+            <Link to="/ia-para-concursos" onClick={() => setMenuOpen(false)}>Blog</Link>
+            <Link to="/explicar-questao" onClick={() => setMenuOpen(false)}>Explicar questão</Link>
+            <Link to="/termos-de-uso" onClick={() => setMenuOpen(false)}>Termos de uso</Link>
+            <Link to="/politica-de-privacidade" onClick={() => setMenuOpen(false)}>Política de privacidade</Link>
+          </nav>
         </div>
       </header>
       <main>

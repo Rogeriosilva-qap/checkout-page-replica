@@ -44,3 +44,4 @@ use the editor.
 - Paid-library previews must use permanently redacted raster assets, never CSS-only blur or an overlay over readable source media, so removing the lock cannot reveal paid content.
 - The advertorial uses route-scoped `.advertorial` styles and excludes shared cookie UI by pathname in the root shell, keeping sales-page styling and behavior unchanged.
 - The cyber guide page (/concurseiro-cibernetico) uses its own route-scoped `.cyber` styles and its checkout comes only from CONFIG.cyberCheckoutUrl via getCyberCheckoutHref, so an empty link never navigates.
+- The cyber guide's page menu uses route-local state and `.cyber`-scoped styles to preserve navigation and appearance on other pages.

@@ -758,6 +758,16 @@ body:has(.legal){background:var(--fundo,#fbfaf7);padding-bottom:0}
 .cyber-top .cw{display:flex;align-items:center;justify-content:space-between;min-height:60px}
 .cyber-top a.brand{display:flex;align-items:center;gap:10px;color:var(--c-tx);text-decoration:none;font-family:Poppins,sans-serif;font-weight:700;font-size:15px}
 .cyber-top img{height:32px;width:auto;display:block}
+.cyber-top .cw{position:relative;gap:12px}
+.cyber-top a.brand{min-width:0}
+.cyber .cy-menu-toggle{width:48px;height:48px;flex-shrink:0;padding:12px;border:1px solid var(--c-line);border-radius:6px;background:var(--c-bg);color:var(--c-tx)}
+.cyber .cy-menu-toggle:hover{border-color:var(--c-hl);background:var(--c-grid);color:var(--c-tx)}
+.cyber .cy-menu-toggle svg{width:24px;height:24px}
+.cyber .cy-menu{position:absolute;top:calc(100% + 8px);right:20px;width:340px;max-width:calc(100% - 40px);z-index:50;padding:8px;background:var(--c-bg);border:1px solid var(--c-line);border-top:3px solid var(--c-red);border-radius:6px}
+.cyber .cy-menu[hidden]{display:none}
+.cyber .cy-menu a,.cyber .cy-menu span{display:flex;align-items:center;min-height:48px;padding:12px;font-family:Poppins,sans-serif;font-size:14px;font-weight:600;color:var(--c-tx);text-decoration:none;overflow-wrap:anywhere;border-radius:4px}
+.cyber .cy-menu a:hover{background:var(--c-grid);color:var(--c-hl)}
+.cyber .cy-menu [aria-current="page"]{background:var(--c-red);color:var(--c-tx)}
 .cyber-hero{-webkit-mask-image:none;padding:40px 0 56px;background-color:#000}
 .cyber-hero .cw{display:grid;gap:36px;align-items:center}
 @media(min-width:860px){.cyber-hero .cw{grid-template-columns:1.25fr .75fr}.cyber-hero{padding:72px 0}}
