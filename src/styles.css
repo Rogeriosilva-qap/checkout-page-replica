@@ -821,3 +821,28 @@ body:has(.legal){background:var(--fundo,#fbfaf7);padding-bottom:0}
 .cyber .cbar strong{font-family:Poppins,sans-serif;white-space:nowrap}
 @media(min-width:860px){.cyber .cbar{display:none}.cyber footer.cf{padding-bottom:36px}}
 @media(prefers-reduced-motion:reduce){.cyber *{transition:none!important;animation:none!important}}
+
+/* ===== Cyber: 3D realista ===== */
+.cyber-book3d{perspective:1400px;display:flex;justify-content:center;padding:20px 0 40px;position:relative}
+.cyber-book3d::after{content:"";position:absolute;bottom:18px;left:50%;width:min(70%,280px);height:26px;transform:translateX(-46%);background:radial-gradient(ellipse at center,rgba(200,16,46,.45),transparent 70%);filter:blur(8px);z-index:0}
+.cyber-book3d .cyber-cover{transform-style:preserve-3d;transform:rotateY(-22deg) rotateX(4deg);border-radius:2px 6px 6px 2px;z-index:1;transition:transform .6s cubic-bezier(.2,.8,.2,1);animation:cy-float 6s ease-in-out infinite;box-shadow:inset 6px 0 10px -4px rgba(255,255,255,.12),inset -2px 0 0 rgba(255,255,255,.05),18px 26px 40px -10px rgba(0,0,0,.85),0 0 60px -10px rgba(200,16,46,.45);background-image:radial-gradient(circle at 75% 20%,rgba(200,16,46,.22),transparent 55%),linear-gradient(#121216 1px,transparent 1px),linear-gradient(90deg,#121216 1px,transparent 1px);background-size:auto,22px 22px,22px 22px}
+.cyber-book3d:hover .cyber-cover{transform:rotateY(-8deg) rotateX(2deg)}
+.cyber-book3d .cyber-cover>*{position:relative;z-index:2}
+.cyber-book3d .cyber-cover img{position:absolute}
+/* lombada + páginas */
+.cyber-book3d .cyber-cover .c5{position:absolute;bottom:7.5%;left:10%;font-family:ui-monospace,Menlo,monospace;font-size:clamp(7px,2vw,9px);letter-spacing:.3em;color:#fff;opacity:.85}
+.cyber-book3d .cyber-cover .c4{margin-top:14px;font-family:ui-monospace,Menlo,monospace;font-size:clamp(8px,2.2vw,10px);color:var(--c-mu);letter-spacing:.08em;border-top:1px solid var(--c-line);padding-top:8px}
+.cyber-book3d .cyber-cover .c3{text-shadow:0 0 18px rgba(255,77,99,.55)}
+.cyber-book3d .cyber-cover .c2{text-shadow:0 2px 0 rgba(0,0,0,.6)}
+.cyber-book3d .cyber-cover{overflow:visible}
+.cyber-book3d .cyber-cover::before{box-shadow:0 0 18px rgba(200,16,46,.6)}
+.cyber-book3d .cyber-cover{border-left:10px solid #0b0b0d}
+.cyber-book3d .cyber-cover::after{box-shadow:0 0 18px rgba(200,16,46,.6)}
+@keyframes cy-float{0%,100%{translate:0 0}50%{translate:0 -10px}}
+/* profundidade nos blocos */
+.cyber .card,.cyber .offer{background:linear-gradient(160deg,#121216,#060607 60%);box-shadow:0 1px 0 rgba(255,255,255,.06) inset,0 20px 40px -18px rgba(0,0,0,.9),0 0 0 1px rgba(255,255,255,.02);transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
+.cyber .card:hover{transform:translateY(-4px);border-color:#4a4a52;box-shadow:0 1px 0 rgba(255,255,255,.08) inset,0 28px 50px -18px rgba(0,0,0,.95),0 0 30px -12px rgba(200,16,46,.5)}
+.cyber .offer{box-shadow:0 1px 0 rgba(255,255,255,.06) inset,0 30px 70px -20px rgba(200,16,46,.45),0 20px 40px -18px rgba(0,0,0,.9)}
+.cyber .btn-c{box-shadow:0 4px 0 #7d0a1d,0 12px 24px -8px rgba(200,16,46,.6);transition:transform .15s,box-shadow .15s}
+.cyber .btn-c:active{transform:translateY(3px);box-shadow:0 1px 0 #7d0a1d,0 6px 12px -6px rgba(200,16,46,.6)}
+@media (prefers-reduced-motion:reduce){.cyber-book3d .cyber-cover{animation:none;transition:none}.cyber .card,.cyber .offer{transition:none}.cyber .card:hover{transform:none}}

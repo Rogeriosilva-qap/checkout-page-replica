@@ -142,13 +142,15 @@ function CyberPage() {
             </div>
             {/* CAPA: componente em HTML/CSS provisório. Quando houver a capa real, troque este bloco
                 por <img src={capaReal.url} alt="Capa do e-book ..." /> (asset em src/assets). */}
-            <div className="cyber-cover grid-bg" role="img" aria-label="Capa do e-book O Guia Definitivo do Concurseiro Policial Cibernético">
+            <div className="cyber-book3d"><div className="cyber-cover grid-bg" role="img" aria-label="Capa do e-book O Guia Definitivo do Concurseiro Policial Cibernético">
               <img src={logo.url} alt="" />
               <span className="c1">O GUIA DEFINITIVO DO</span>
               <span className="c2">CONCURSEIRO</span>
               <span className="c2">POLICIAL</span>
               <span className="c3">CIBERNÉTICO</span>
-            </div>
+              <span className="c4" aria-hidden="true">// 22 COMANDOS · MÉTODO BÚSSOLA</span>
+              <span className="c5" aria-hidden="true">OPERAÇÃO APROVAÇÃO</span>
+            </div></div>
           </div>
         </section>
 
