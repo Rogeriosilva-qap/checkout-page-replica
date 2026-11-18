@@ -13,7 +13,14 @@ import numpy as np
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SR = 48000
 rng = np.random.default_rng(11)
-TL = json.load(open(os.path.join(ROOT, ".cache", "timeline.json"), encoding="utf-8"))
+import argparse
+_ap = argparse.ArgumentParser()
+_ap.add_argument("--timeline", default=os.path.join(ROOT, ".cache", "timeline.json"))
+_ap.add_argument("--drop", default="metodo", help="cena em que a bateria entra")
+_ap.add_argument("--cta", default="cta", help="cena do acorde final")
+_ap.add_argument("--out", default="trilha-original.wav", help="arquivo em public/")
+ARGS = _ap.parse_args()
+TL = json.load(open(ARGS.timeline, encoding="utf-8"))
 DUR = TL["total"]
 N = int(DUR * SR)
 ST = {s["id"]: s["start"] for s in TL["scenes"]}
@@ -72,8 +79,8 @@ def riser(d=0.45, a=0.12):
 
 music = np.zeros(N)
 t_all = np.arange(N) / SR
-T_DROP = ST["metodo"]
-T_CTA = ST["cta"]
+T_DROP = ST[ARGS.drop]
+T_CTA = ST[ARGS.cta]
 
 # pad grave contínuo (Dm → Bb → F → C), mais aberto depois do drop
 CH = [[50, 53, 57], [46, 50, 53], [53, 57, 60], [48, 52, 55]]
@@ -113,7 +120,7 @@ while t < T_CTA + 2 * BEAT:
 # impactos nas trocas de cena, riser antes do drop
 for sid, st in ST.items():
     if st > 0.1:
-        add(music, st, impact(.45 if sid in ("metodo", "cta") else .25))
+        add(music, st, impact(.45 if sid in (ARGS.drop, ARGS.cta) else .25))
 add(music, T_DROP - .45, riser(.45, .16))
 
 # CTA: grade some, acorde final sustentado
@@ -136,7 +143,7 @@ def save(path, x, peak=.89):
         w.writeframes((np.stack([x, x], 1) * 32767).astype("<i2").tobytes())
 
 
-save(os.path.join(ROOT, "public", "trilha-original.wav"), music)
+save(os.path.join(ROOT, "public", ARGS.out), music)
 
 # efeito de glitch: rajadas de ruído digital quantizado (≈0,15 s)
 n = int(.16 * SR); tt = np.arange(n) / SR

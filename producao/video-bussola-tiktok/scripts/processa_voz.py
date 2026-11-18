@@ -9,7 +9,12 @@ import json, os, re, subprocess, wave
 import numpy as np
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-VOZ = os.path.join(ROOT, "public", "voz")
+import argparse
+_ap = argparse.ArgumentParser()
+_ap.add_argument("--pasta", default="voz", help="subpasta de public/ com a narração gerada")
+_ap.add_argument("--saida", default="src/data/narracao.json", help="JSON com tempos por palavra")
+ARGS = _ap.parse_args()
+VOZ = os.path.join(ROOT, "public", ARGS.pasta)
 FINAL = os.path.join(VOZ, "final")
 SR = 48000
 PAUSA_MAX = 0.18      # pausa de vírgula
@@ -80,7 +85,7 @@ def main():
         f = int(0.004 * SR)
         idx = np.cumsum(keep_mask) - 1
         for a, b in cuts:
-            j = idx[min(len(idx) - 1, int(a * SR))]
+            j = int(min(max(idx[min(len(idx) - 1, int(a * SR))], 0), len(y)))
             lo, hi = max(0, j - f), min(len(y), j + f)
             y[lo:hi] *= np.concatenate([np.linspace(1, 0, j - lo), np.linspace(0, 1, hi - j)]) if hi > lo else 1
         path = os.path.join(FINAL, cid + ".wav")
@@ -90,11 +95,11 @@ def main():
         nivela(path)
         new_words = [{"text": w["text"], "start": round(remap(w["start"]), 3), "end": round(remap(w["end"]), 3)}
                      for w in words]
-        out["cenas"][cid] = {"arquivo": f"voz/final/{cid}.wav", "duracao": round(len(y) / SR, 3),
+        out["cenas"][cid] = {"arquivo": f"{ARGS.pasta}/final/{cid}.wav", "duracao": round(len(y) / SR, 3),
                              "texto": c["texto"], "palavras": new_words}
         print(f"{cid}: {dur:.2f}s → {len(y)/SR:.2f}s")
-    os.makedirs(os.path.join(ROOT, "src", "data"), exist_ok=True)
-    json.dump(out, open(os.path.join(ROOT, "src", "data", "narracao.json"), "w", encoding="utf-8"),
+    os.makedirs(os.path.dirname(os.path.join(ROOT, ARGS.saida)), exist_ok=True)
+    json.dump(out, open(os.path.join(ROOT, ARGS.saida), "w", encoding="utf-8"),
               ensure_ascii=False, indent=1)
     tot = sum(v["duracao"] for k, v in out["cenas"].items() if k not in ("cena-09-stories",))
     print(f"total (versão bio): {tot:.2f}s")

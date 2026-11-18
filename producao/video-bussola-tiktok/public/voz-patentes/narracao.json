@@ -1,0 +1,479 @@
+{
+ "cenas": {
+  "p1": {
+   "arquivo": "voz-patentes/p1.mp3",
+   "texto": "Se a sua preparação fosse uma carreira, qual seria a sua patente?",
+   "velocidade": 1.15,
+   "duracao": 3.37,
+   "fala_fim": 3.344,
+   "palavras": [
+    {
+     "text": "Se",
+     "start": 0.0,
+     "end": 0.151
+    },
+    {
+     "text": "a",
+     "start": 0.174,
+     "end": 0.197
+    },
+    {
+     "text": "sua",
+     "start": 0.232,
+     "end": 0.337
+    },
+    {
+     "text": "preparação",
+     "start": 0.36,
+     "end": 0.766
+    },
+    {
+     "text": "fosse",
+     "start": 0.801,
+     "end": 0.964
+    },
+    {
+     "text": "uma",
+     "start": 0.987,
+     "end": 1.08
+    },
+    {
+     "text": "carreira,",
+     "start": 1.115,
+     "end": 1.625
+    },
+    {
+     "text": "qual",
+     "start": 1.904,
+     "end": 2.032
+    },
+    {
+     "text": "seria",
+     "start": 2.067,
+     "end": 2.252
+    },
+    {
+     "text": "a",
+     "start": 2.276,
+     "end": 2.299
+    },
+    {
+     "text": "sua",
+     "start": 2.334,
+     "end": 2.45
+    },
+    {
+     "text": "patente?",
+     "start": 2.485,
+     "end": 3.344
+    }
+   ]
+  },
+  "p2": {
+   "arquivo": "voz-patentes/p2.mp3",
+   "texto": "Na plataforma de simulados da Operação Aprovação, cada simulado que você faz vale 100 XP.",
+   "velocidade": 1.15,
+   "duracao": 5.094,
+   "fala_fim": 5.062,
+   "palavras": [
+    {
+     "text": "Na",
+     "start": 0.0,
+     "end": 0.104
+    },
+    {
+     "text": "plataforma",
+     "start": 0.139,
+     "end": 0.569
+    },
+    {
+     "text": "de",
+     "start": 0.604,
+     "end": 0.65
+    },
+    {
+     "text": "simulados",
+     "start": 0.685,
+     "end": 1.138
+    },
+    {
+     "text": "da",
+     "start": 1.173,
+     "end": 1.231
+    },
+    {
+     "text": "Operação",
+     "start": 1.254,
+     "end": 1.556
+    },
+    {
+     "text": "Aprovação,",
+     "start": 1.579,
+     "end": 2.206
+    },
+    {
+     "text": "cada",
+     "start": 2.589,
+     "end": 2.786
+    },
+    {
+     "text": "simulado",
+     "start": 2.821,
+     "end": 3.123
+    },
+    {
+     "text": "que",
+     "start": 3.146,
+     "end": 3.216
+    },
+    {
+     "text": "você",
+     "start": 3.251,
+     "end": 3.413
+    },
+    {
+     "text": "faz",
+     "start": 3.483,
+     "end": 3.669
+    },
+    {
+     "text": "vale",
+     "start": 3.715,
+     "end": 3.878
+    },
+    {
+     "text": "100",
+     "start": 3.913,
+     "end": 4.087
+    },
+    {
+     "text": "XP.",
+     "start": 4.156,
+     "end": 5.062
+    }
+   ]
+  },
+  "p3": {
+   "arquivo": "voz-patentes/p3.mp3",
+   "texto": "Cada questão que você errou e depois dominou no Modo Redenção vale mais 25.",
+   "velocidade": 1.15,
+   "duracao": 4.206,
+   "fala_fim": 4.18,
+   "palavras": [
+    {
+     "text": "Cada",
+     "start": 0.0,
+     "end": 0.221
+    },
+    {
+     "text": "questão",
+     "start": 0.255,
+     "end": 0.546
+    },
+    {
+     "text": "que",
+     "start": 0.58,
+     "end": 0.65
+    },
+    {
+     "text": "você",
+     "start": 0.685,
+     "end": 0.859
+    },
+    {
+     "text": "errou",
+     "start": 0.906,
+     "end": 1.173
+    },
+    {
+     "text": "e",
+     "start": 1.207,
+     "end": 1.231
+    },
+    {
+     "text": "depois",
+     "start": 1.265,
+     "end": 1.556
+    },
+    {
+     "text": "dominou",
+     "start": 1.591,
+     "end": 1.927
+    },
+    {
+     "text": "no",
+     "start": 1.974,
+     "end": 2.032
+    },
+    {
+     "text": "Modo",
+     "start": 2.067,
+     "end": 2.276
+    },
+    {
+     "text": "Redenção",
+     "start": 2.31,
+     "end": 2.74
+    },
+    {
+     "text": "vale",
+     "start": 2.775,
+     "end": 2.937
+    },
+    {
+     "text": "mais",
+     "start": 2.972,
+     "end": 3.135
+    },
+    {
+     "text": "25.",
+     "start": 3.181,
+     "end": 4.18
+    }
+   ]
+  },
+  "p4": {
+   "arquivo": "voz-patentes/p4.mp3",
+   "texto": "E cada dia seguido de estudo soma mais 15.",
+   "velocidade": 1.15,
+   "duracao": 2.743,
+   "fala_fim": 2.694,
+   "palavras": [
+    {
+     "text": "E",
+     "start": 0.0,
+     "end": 0.151
+    },
+    {
+     "text": "cada",
+     "start": 0.209,
+     "end": 0.395
+    },
+    {
+     "text": "dia",
+     "start": 0.43,
+     "end": 0.522
+    },
+    {
+     "text": "seguido",
+     "start": 0.569,
+     "end": 0.824
+    },
+    {
+     "text": "de",
+     "start": 0.859,
+     "end": 0.929
+    },
+    {
+     "text": "estudo",
+     "start": 0.952,
+     "end": 1.347
+    },
+    {
+     "text": "soma",
+     "start": 1.405,
+     "end": 1.602
+    },
+    {
+     "text": "mais",
+     "start": 1.637,
+     "end": 1.811
+    },
+    {
+     "text": "15.",
+     "start": 1.869,
+     "end": 2.694
+    }
+   ]
+  },
+  "p5": {
+   "arquivo": "voz-patentes/p5.mp3",
+   "texto": "Você começa como Recruta. Três simulados e já é Soldado. Depois Cabo, Sargento, Subtenente, Tenente, Capitão… até chegar a Caveira.",
+   "velocidade": 1.15,
+   "duracao": 9.43,
+   "fala_fim": 9.381,
+   "palavras": [
+    {
+     "text": "Você",
+     "start": 0.0,
+     "end": 0.221
+    },
+    {
+     "text": "começa",
+     "start": 0.255,
+     "end": 0.488
+    },
+    {
+     "text": "como",
+     "start": 0.522,
+     "end": 0.662
+    },
+    {
+     "text": "Recruta.",
+     "start": 0.685,
+     "end": 1.091
+    },
+    {
+     "text": "Três",
+     "start": 1.428,
+     "end": 1.637
+    },
+    {
+     "text": "simulados",
+     "start": 1.66,
+     "end": 2.067
+    },
+    {
+     "text": "e",
+     "start": 2.113,
+     "end": 2.148
+    },
+    {
+     "text": "já",
+     "start": 2.194,
+     "end": 2.264
+    },
+    {
+     "text": "é",
+     "start": 2.299,
+     "end": 2.322
+    },
+    {
+     "text": "Soldado.",
+     "start": 2.368,
+     "end": 2.833
+    },
+    {
+     "text": "Depois",
+     "start": 3.17,
+     "end": 3.425
+    },
+    {
+     "text": "Cabo,",
+     "start": 3.483,
+     "end": 3.913
+    },
+    {
+     "text": "Sargento,",
+     "start": 4.122,
+     "end": 4.725
+    },
+    {
+     "text": "Subtenente,",
+     "start": 5.004,
+     "end": 5.724
+    },
+    {
+     "text": "Tenente,",
+     "start": 5.968,
+     "end": 6.583
+    },
+    {
+     "text": "Capitão…",
+     "start": 6.769,
+     "end": 7.349
+    },
+    {
+     "text": "até",
+     "start": 8.173,
+     "end": 8.359
+    },
+    {
+     "text": "chegar",
+     "start": 8.394,
+     "end": 8.615
+    },
+    {
+     "text": "a",
+     "start": 8.649,
+     "end": 8.673
+    },
+    {
+     "text": "Caveira.",
+     "start": 8.707,
+     "end": 9.381
+    }
+   ]
+  },
+  "p6": {
+   "arquivo": "voz-patentes/p6.mp3",
+   "texto": "Comenta SIMULADO que eu te coloco no grupo de espera, com desconto de lançamento.",
+   "velocidade": 1.15,
+   "duracao": 3.657,
+   "fala_fim": 3.622,
+   "palavras": [
+    {
+     "text": "Comenta",
+     "start": 0.0,
+     "end": 0.29
+    },
+    {
+     "text": "SIMULADO",
+     "start": 0.325,
+     "end": 0.731
+    },
+    {
+     "text": "que",
+     "start": 0.766,
+     "end": 0.836
+    },
+    {
+     "text": "eu",
+     "start": 0.859,
+     "end": 0.917
+    },
+    {
+     "text": "te",
+     "start": 0.94,
+     "end": 0.987
+    },
+    {
+     "text": "coloco",
+     "start": 1.022,
+     "end": 1.242
+    },
+    {
+     "text": "no",
+     "start": 1.277,
+     "end": 1.324
+    },
+    {
+     "text": "grupo",
+     "start": 1.358,
+     "end": 1.544
+    },
+    {
+     "text": "de",
+     "start": 1.567,
+     "end": 1.614
+    },
+    {
+     "text": "espera,",
+     "start": 1.637,
+     "end": 2.136
+    },
+    {
+     "text": "com",
+     "start": 2.345,
+     "end": 2.461
+    },
+    {
+     "text": "desconto",
+     "start": 2.496,
+     "end": 2.786
+    },
+    {
+     "text": "de",
+     "start": 2.821,
+     "end": 2.868
+    },
+    {
+     "text": "lançamento.",
+     "start": 2.902,
+     "end": 3.622
+    }
+   ]
+  }
+ },
+ "voz": "4J31DrhygVjvFsoj7BsM"
+}

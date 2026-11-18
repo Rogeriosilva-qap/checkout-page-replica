@@ -62,3 +62,25 @@ As fontes vêm do `@remotion/google-fonts`. Aqui o Chromium sai pelo proxy do am
 via `scripts/chrome-proxy.sh` (o Remotion abre o navegador em conexão direta). Na sua
 máquina isso não é necessário: `render-all.mjs` só usa o wrapper quando encontra
 `/opt/pw-browsers`; em outro lugar o Remotion usa o navegador dele.
+
+## Vídeos curtos da plataforma de simulados (pré-lançamento)
+
+| Arquivo | Composição | O que é |
+|---|---|---|
+| `out/video-patentes-simulados.mp4` | `PatentesSimulados` | "Qual seria a sua patente?" (26,4 s): regras de XP e as 8 patentes, de Recruta a Caveira |
+| `out/video-teaser-simulados.mp4` | `TeaserSimulados` | Teaser de 10 s: "Vem aí" + 4 recursos + "Comente SIMULADO" |
+| `out/legendas-patentes.srt` / `out/legendas-teaser.srt` | | Legendas |
+
+- Código: `src/patentes/Patentes.tsx` e `src/patentes/Teaser.tsx` (tempos no topo de cada arquivo) e o kit comum `src/kit.tsx`.
+- Regras de XP e nomes das patentes copiados da plataforma (`src/lib/patentes.ts` no Lovable):
+  simulado = 100 XP, questão dominada = 25 XP, dia de ofensiva = 15 XP. Se mudarem, atualize `PATENTES`
+  e a narração (`roteiros/patentes.json`).
+- Refazer:
+  ```
+  python3 scripts/elevenlabs.py --roteiro roteiros/patentes.json --pasta voz-patentes --velocidade 1.15
+  python3 scripts/processa_voz.py --pasta voz-patentes --saida src/data/narracao-patentes.json
+  npx tsx scripts/export-shorts.ts
+  python3 scripts/trilha.py --timeline .cache/timeline-patentes.json --drop simulado --cta cta --out trilha-patentes.wav
+  npx remotion render src/index.ts PatentesSimulados out/video-patentes-simulados.mp4 --browser-executable=$PWD/scripts/chrome-proxy.sh
+  ```
+  (o teaser é igual, trocando `patentes` por `teaser`, `--drop nome` e a composição `TeaserSimulados`).

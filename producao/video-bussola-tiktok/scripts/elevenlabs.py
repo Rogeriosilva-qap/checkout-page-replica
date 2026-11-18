@@ -71,15 +71,20 @@ def main():
     ap.add_argument("--velocidade", type=float, default=1.1)
     ap.add_argument("--so", action="append", help="gera só estas cenas (pode repetir)")
     ap.add_argument("--vel-cena", action="append", default=[], help="cena=velocidade, ex.: cena-08=1.2")
+    ap.add_argument("--roteiro", help="JSON com [[id, texto], ...] (outros vídeos); padrão: roteiro do vídeo Bússola")
+    ap.add_argument("--pasta", default="voz", help="subpasta de public/ onde salvar (ex.: voz-patentes)")
     a = ap.parse_args()
-    if os.path.exists(os.path.join(PUB, "narracao.mp3")):
+    global OUT
+    OUT = os.path.join(PUB, a.pasta)
+    falas = [tuple(x) for x in json.load(open(a.roteiro, encoding="utf-8"))] if a.roteiro else FALAS
+    if not a.roteiro and os.path.exists(os.path.join(PUB, "narracao.mp3")):
         raise SystemExit("public/narracao.mp3 existe: a narração fornecida tem prioridade; nada gerado.")
     os.makedirs(OUT, exist_ok=True)
     meta_path = os.path.join(OUT, "narracao.json")
     meta = json.load(open(meta_path, encoding="utf-8")) if os.path.exists(meta_path) else {"cenas": {}}
     vel = {k: float(v) for k, v in (x.split("=") for x in a.vel_cena)}
-    main_seq = [f for f in FALAS if f[0] not in ("cena-09-stories", "cena-09-direct")]
-    for i, (cid, text) in enumerate(FALAS):
+    main_seq = [f for f in falas if f[0] not in ("cena-09-stories", "cena-09-direct")]
+    for i, (cid, text) in enumerate(falas):
         if a.so and cid not in a.so:
             continue
         idx = next(j for j, f in enumerate(main_seq) if f[0] == cid.replace("-stories", "").replace("-direct", ""))
@@ -90,7 +95,7 @@ def main():
         path = os.path.join(OUT, cid + ".mp3")
         open(path, "wb").write(base64.b64decode(r["audio_base64"]))
         w = words_from(r["alignment"])  # tempos sobre o texto original (204, 22, IA)
-        meta["cenas"][cid] = {"arquivo": f"voz/{cid}.mp3", "texto": text, "velocidade": speed,
+        meta["cenas"][cid] = {"arquivo": f"{a.pasta}/{cid}.mp3", "texto": text, "velocidade": speed,
                               "duracao": round(duration(path), 3), "fala_fim": w[-1]["end"], "palavras": w}
         print(f"{cid}: {meta['cenas'][cid]['duracao']:.2f}s (fala até {w[-1]['end']:.2f}s, vel {speed})")
     meta["voz"] = a.voz
