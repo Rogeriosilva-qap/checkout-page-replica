@@ -1,0 +1,63 @@
+# Vídeo TikTok/Reels · Método Bússola (Remotion)
+
+Divulgação do *Guia Definitivo do Concurseiro Policial Cibernético* (Operação Aprovação):
+o Método Bússola aplicado à linha "Lei de Execução Penal (Lei nº 7.210/1984)" de um edital
+de Polícia Penal. 1080×1920, 30 fps, 990 frames (33 s), H.264 CRF 18.
+
+## Arquivos finais (`out/`)
+
+| Arquivo | O que é |
+|---|---|
+| `video-bussola-tiktok.mp4` | Versão padrão (= `-bio`) |
+| `video-bussola-tiktok-bio.mp4` | CTA "LINK NA BIO", narração "O link tá na bio" |
+| `video-bussola-tiktok-stories.mp4` | CTA "LINK NOS STORIES", narração "O link tá nos stories" |
+| `capa-tiktok.png` | Capa (frame do segundo 1) |
+| `legendas.srt` / `legendas-stories.srt` | Narração sincronizada palavra a palavra |
+| `frames/segundo-XX.png` | Quadros de conferência (1, 7, 15, 20, 24, 30 s) |
+
+## Como rodar
+
+```
+npm install
+npm run studio     # abre o Remotion Studio (prop `cta`: "bio" | "stories")
+npm run render     # prepara assets e renderiza as duas versões + capa + .srt
+```
+
+`npm run render` (scripts/render-all.mjs) faz, em ordem:
+1. `scripts/prepare.mjs`: verifica `public/`, grava `src/data/assets.json` e:
+   - sem `public/narracao.mp3`: gera a narração no ElevenLabs (`scripts/elevenlabs.py`) e
+     enxuga pausas/nivela a −14 LUFS (`scripts/processa_voz.py`) → `public/voz/`;
+   - com `public/narracao.mp3`: usa o arquivo do autor (as legendas passam a ser
+     distribuídas pelo tempo de cada cena, porque não há tempo por palavra);
+   - gera `.cache/timeline.json` e os `.srt` (`scripts/export-timeline.ts`);
+   - sem `public/musica.mp3`: compõe a trilha original (`scripts/trilha.py`).
+2. Renderiza `bio` e `stories`, copia a padrão e exporta a capa.
+
+## Onde ajustar
+
+- **Tempos:** `src/timing.ts` (frames por cena, atraso da voz, duração do glitch). O
+  `export-timeline` avisa se alguma fala ficar maior que a própria cena.
+- **Cenas:** `src/scenes/Cena01Gancho.tsx` … `Cena09Cta.tsx`.
+- **Micro-tópicos e prioridades:** `src/data/topicos.ts` (exemplo ilustrativo do guia).
+- **Legendas:** `src/captions.ts` (agrupamento 2–4 palavras e palavras-chave em vermelho).
+- **Cores, fontes e zonas seguras:** `src/theme.ts`.
+
+## Áudio
+
+- Voz: ElevenLabs, "Eduardo S. – Brazilian Clear & Pro" (ID `4J31DrhygVjvFsoj7BsM`),
+  modelo multilingual v2, velocidade 1,2, uma fala por cena (com contexto da anterior
+  e da seguinte para manter a entonação). Silêncios finais cortados e pausas internas
+  encurtadas (sem acelerar a voz). Para trocar de voz:
+  `python3 scripts/elevenlabs.py --voz OUTRO_ID` e depois `npm run render`.
+- Trilha: **composição original gerada em código** (`scripts/trilha.py`), sem amostras de
+  terceiros: tensão no gancho, bateria a partir do Método Bússola, impactos nas trocas,
+  acorde final no CTA. Fica ~13 dB abaixo da voz e sobe nas pausas.
+  Para usar outra música, coloque `public/musica.mp3` (com licença de uso).
+- Efeito de glitch curto em cada troca de cena (`public/sfx/glitch.wav`, também gerado).
+
+## Render neste ambiente
+
+As fontes vêm do `@remotion/google-fonts`. Aqui o Chromium sai pelo proxy do ambiente
+via `scripts/chrome-proxy.sh` (o Remotion abre o navegador em conexão direta). Na sua
+máquina isso não é necessário: `render-all.mjs` só usa o wrapper quando encontra
+`/opt/pw-browsers`; em outro lugar o Remotion usa o navegador dele.

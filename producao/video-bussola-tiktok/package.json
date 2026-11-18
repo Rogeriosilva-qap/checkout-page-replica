@@ -1,0 +1,23 @@
+{
+  "name": "video-bussola-tiktok",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prepare-assets": "node scripts/prepare.mjs",
+    "studio": "npm run prepare-assets && remotion studio",
+    "render": "node scripts/render-all.mjs"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.540",
+    "@remotion/google-fonts": "4.0.540",
+    "@remotion/media-utils": "4.0.540",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "remotion": "4.0.540"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.2",
+    "tsx": "^4.23.15",
+    "typescript": "5.9.3"
+  }
+}
