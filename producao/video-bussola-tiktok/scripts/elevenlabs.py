@@ -24,6 +24,7 @@ FALAS = [
     ("cena-08", "E entre cada fase, você confere contra o edital. A IA acelera, e a conferência garante a direção certa."),
     ("cena-09", "São 22 comandos prontos, o Método Bússola e o caderno de erros automatizado. O link tá na bio."),
     ("cena-09-stories", "São 22 comandos prontos, o Método Bússola e o caderno de erros automatizado. O link tá nos stories."),
+    ("cena-09-direct", "São 22 comandos prontos, o Método Bússola e o caderno de erros automatizado. Comente BÚSSOLA que eu te mando no direct."),
 ]
 
 
@@ -77,11 +78,11 @@ def main():
     meta_path = os.path.join(OUT, "narracao.json")
     meta = json.load(open(meta_path, encoding="utf-8")) if os.path.exists(meta_path) else {"cenas": {}}
     vel = {k: float(v) for k, v in (x.split("=") for x in a.vel_cena)}
-    main_seq = [f for f in FALAS if f[0] != "cena-09-stories"]
+    main_seq = [f for f in FALAS if f[0] not in ("cena-09-stories", "cena-09-direct")]
     for i, (cid, text) in enumerate(FALAS):
         if a.so and cid not in a.so:
             continue
-        idx = next(j for j, f in enumerate(main_seq) if f[0] == cid.replace("-stories", ""))
+        idx = next(j for j, f in enumerate(main_seq) if f[0] == cid.replace("-stories", "").replace("-direct", ""))
         prev = " ".join(t for _, t in main_seq[max(0, idx - 2):idx]) or None
         nxt = main_seq[idx + 1][1] if idx + 1 < len(main_seq) else None
         speed = vel.get(cid, a.velocidade)

@@ -16,7 +16,8 @@ import { Cena07Calendario } from "./scenes/Cena07Calendario";
 import { Cena08Conferencia } from "./scenes/Cena08Conferencia";
 import { Cena09Cta } from "./scenes/Cena09Cta";
 
-export type VideoProps = { cta: "bio" | "stories" };
+/** cta: "bio" (LINK NA BIO), "stories" (LINK NOS STORIES) ou "direct" (COMENTE BÚSSOLA, para anúncio) */
+export type VideoProps = { cta: "bio" | "stories" | "direct" };
 
 const renderScene = (id: SceneId, frames: number, cta: VideoProps["cta"]) => {
   switch (id) {

@@ -20,11 +20,11 @@ const ts = (t: number) => {
   return `${p(Math.floor(ms / 3600000))}:${p(Math.floor(ms / 60000) % 60)}:${p(Math.floor(ms / 1000) % 60)},${p(ms % 1000, 3)}`;
 };
 fs.mkdirSync(path.join(root, "out"), { recursive: true });
-for (const cta of ["bio", "stories"] as const) {
+for (const cta of ["bio", "stories", "direct"] as const) {
   const srt = buildCaptions(cta)
     .map((c, i) => `${i + 1}\n${ts(c.from)} --> ${ts(c.to)}\n${c.words.map((w) => w.text).join(" ")}\n`)
     .join("\n");
-  fs.writeFileSync(path.join(root, `out/legendas${cta === "bio" ? "" : "-stories"}.srt`), srt);
+  fs.writeFileSync(path.join(root, `out/legendas${cta === "bio" ? "" : `-${cta}`}.srt`), srt);
   const over = overflowReport(cta);
   if (over.length) console.warn(`[${cta}] ATENÇÃO, fala maior que a cena:\n  ` + over.join("\n  "));
 }

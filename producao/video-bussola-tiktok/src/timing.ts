@@ -55,5 +55,5 @@ export const sceneStart = (id: SceneId): number => {
 export const sceneFrames = (id: SceneId): number => SCENES.find((s) => s.id === id)!.frames;
 
 /** arquivo de voz da cena, considerando a variação do CTA */
-export const vozDaCena = (voz: string, cta: "bio" | "stories") =>
-  voz === "cena-09" && cta === "stories" ? "cena-09-stories" : voz;
+export const vozDaCena = (voz: string, cta: "bio" | "stories" | "direct") =>
+  voz === "cena-09" && cta !== "bio" ? `cena-09-${cta}` : voz;

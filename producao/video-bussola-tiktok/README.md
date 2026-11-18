@@ -11,15 +11,16 @@ de Polícia Penal. 1080×1920, 30 fps, 990 frames (33 s), H.264 CRF 18.
 | `video-bussola-tiktok.mp4` | Versão padrão (= `-bio`) |
 | `video-bussola-tiktok-bio.mp4` | CTA "LINK NA BIO", narração "O link tá na bio" |
 | `video-bussola-tiktok-stories.mp4` | CTA "LINK NOS STORIES", narração "O link tá nos stories" |
+| `video-bussola-tiktok-direct.mp4` | **Para anúncio:** CTA "COMENTE “BÚSSOLA”", narração "Comente BÚSSOLA que eu te mando no direct" |
 | `capa-tiktok.png` | Capa (frame do segundo 1) |
-| `legendas.srt` / `legendas-stories.srt` | Narração sincronizada palavra a palavra |
+| `legendas.srt` / `legendas-stories.srt` / `legendas-direct.srt` | Narração sincronizada palavra a palavra |
 | `frames/segundo-XX.png` | Quadros de conferência (1, 7, 15, 20, 24, 30 s) |
 
 ## Como rodar
 
 ```
 npm install
-npm run studio     # abre o Remotion Studio (prop `cta`: "bio" | "stories")
+npm run studio     # abre o Remotion Studio (prop `cta`: "bio" | "stories" | "direct")
 npm run render     # prepara assets e renderiza as duas versões + capa + .srt
 ```
 

@@ -4,12 +4,12 @@ import narracao from "./data/narracao.json";
 import assets from "./data/assets.json";
 import { FPS, SCENES, VOICE_DELAY, vozDaCena } from "./timing";
 
-export type Cta = "bio" | "stories";
+export type Cta = "bio" | "stories" | "direct";
 export type Word = { text: string; start: number; end: number; key: boolean };
 export type Caption = { words: Word[]; from: number; to: number; cena: string };
 
 /** palavras-chave em vermelho (comparação sem acento e sem pontuação) */
-const KEYS = ["204", "comecar", "bussola", "extrai", "micro-topicos", "alfa", "semana", "confere", "22", "comandos"];
+const KEYS = ["204", "comecar", "bussola", "extrai", "micro-topicos", "alfa", "semana", "confere", "22", "comandos", "direct"];
 
 const norm = (s: string) =>
   s

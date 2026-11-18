@@ -7,17 +7,18 @@ import { wordFrame } from "../captions";
 
 const LINHAS = ["22 comandos prontos", "Método Bússola", "Caderno de erros automatizado"];
 
-export const Cena09Cta: React.FC<{ cta: "bio" | "stories"; frames: number }> = ({ cta, frames }) => {
+export const Cena09Cta: React.FC<{ cta: "bio" | "stories" | "direct"; frames: number }> = ({ cta, frames }) => {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const voz = cta === "stories" ? "cena-09-stories" : "cena-09";
+  const voz = cta === "bio" ? "cena-09" : `cena-09-${cta}`;
   const capa = spring({ frame: f - 2, fps, config: { damping: 200, stiffness: 120, mass: 0.9 } });
   const rot = interpolate(capa, [0, 1], [-8, -3]);
   const lineAt = [wordFrame(voz, "22", 0.05, frames), wordFrame(voz, "metodo", 0.3, frames), wordFrame(voz, "caderno", 0.5, frames)];
-  const btnAt = Math.min(frames - 40, wordFrame(voz, "link", 0.75, frames) - 4);
+  const btnAt = Math.min(frames - 40, wordFrame(voz, cta === "direct" ? "comente" : "link", 0.75, frames) - 4);
   const btn = spring({ frame: f - btnAt, fps, config: { damping: 200, stiffness: 300 } });
   const pulse = f > btnAt + 8 ? 1 + Math.sin(((f - btnAt) / fps) * Math.PI * 2 * 1.6) * 0.035 : 1;
-  const label = cta === "stories" ? "LINK NOS STORIES" : "LINK NA BIO";
+  const label = cta === "direct" ? "COMENTE “BÚSSOLA”" : cta === "stories" ? "LINK NOS STORIES" : "LINK NA BIO";
+  const sub = interpolate(f, [btnAt + 10, btnAt + 16], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const foot = interpolate(f, [10, 20], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   return (
     <AbsoluteFill>
@@ -81,6 +82,11 @@ export const Cena09Cta: React.FC<{ cta: "bio" | "stories"; frames: number }> = (
           <path d="M5 12h12M12 6l6 6-6 6" fill="none" stroke="#fff" strokeWidth={3.2} strokeLinecap="square" />
         </svg>
       </div>
+      {cta === "direct" ? (
+        <Mono size={28} color={C.white} style={{ position: "absolute", left: 80, top: 1246, width: 860, textAlign: "center", opacity: sub }}>
+          que eu te mando o link no <span style={{ color: C.red }}>direct</span> ↓
+        </Mono>
+      ) : null}
       <Mono size={22} style={{ position: "absolute", left: 80, top: 1430, width: 860, textAlign: "center", letterSpacing: 2, opacity: foot, color: C.white }}>
         POLÍCIA PENAL · PM · PC · PF · PRF · GCM
       </Mono>

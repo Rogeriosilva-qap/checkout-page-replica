@@ -754,6 +754,120 @@
      "end": 5.341
     }
    ]
+  },
+  "cena-09-direct": {
+   "arquivo": "voz/cena-09-direct.mp3",
+   "texto": "São 22 comandos prontos, o Método Bússola e o caderno de erros automatizado. Comente BÚSSOLA que eu te mando no direct.",
+   "velocidade": 1.2,
+   "duracao": 5.799,
+   "fala_fim": 5.759,
+   "palavras": [
+    {
+     "text": "São",
+     "start": 0.0,
+     "end": 0.197
+    },
+    {
+     "text": "22",
+     "start": 0.221,
+     "end": 0.58
+    },
+    {
+     "text": "comandos",
+     "start": 0.627,
+     "end": 0.894
+    },
+    {
+     "text": "prontos,",
+     "start": 0.94,
+     "end": 1.312
+    },
+    {
+     "text": "o",
+     "start": 1.37,
+     "end": 1.416
+    },
+    {
+     "text": "Método",
+     "start": 1.463,
+     "end": 1.695
+    },
+    {
+     "text": "Bússola",
+     "start": 1.741,
+     "end": 2.067
+    },
+    {
+     "text": "e",
+     "start": 2.125,
+     "end": 2.183
+    },
+    {
+     "text": "o",
+     "start": 2.206,
+     "end": 2.229
+    },
+    {
+     "text": "caderno",
+     "start": 2.252,
+     "end": 2.566
+    },
+    {
+     "text": "de",
+     "start": 2.612,
+     "end": 2.67
+    },
+    {
+     "text": "erros",
+     "start": 2.694,
+     "end": 2.833
+    },
+    {
+     "text": "automatizado.",
+     "start": 2.879,
+     "end": 3.518
+    },
+    {
+     "text": "Comente",
+     "start": 3.889,
+     "end": 4.18
+    },
+    {
+     "text": "BÚSSOLA",
+     "start": 4.226,
+     "end": 4.528
+    },
+    {
+     "text": "que",
+     "start": 4.551,
+     "end": 4.621
+    },
+    {
+     "text": "eu",
+     "start": 4.644,
+     "end": 4.69
+    },
+    {
+     "text": "te",
+     "start": 4.714,
+     "end": 4.772
+    },
+    {
+     "text": "mando",
+     "start": 4.807,
+     "end": 4.957
+    },
+    {
+     "text": "no",
+     "start": 5.004,
+     "end": 5.074
+    },
+    {
+     "text": "direct.",
+     "start": 5.108,
+     "end": 5.759
+    }
+   ]
   }
  },
  "voz": "4J31DrhygVjvFsoj7BsM"
