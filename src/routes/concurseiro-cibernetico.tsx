@@ -9,7 +9,7 @@ import logo from "@/assets/logo-operacao-aprovacao.png.asset.json";
 const URL_PAGE = "https://operacaoaprovacaoebooks.com.br/concurseiro-cibernetico";
 const TITLE = "O Guia Definitivo do Concurseiro Policial Cibernético | Operação Aprovação";
 const DESC = "Como usar inteligência artificial para dominar editais, criar simulados e acelerar sua posse.";
-const PRICE = "R$ 37,00";
+const PRICE = "R$ 47,00";
 const CTA = `Quero o guia por ${PRICE}`;
 
 export const Route = createFileRoute("/concurseiro-cibernetico")({
@@ -136,6 +136,7 @@ function CyberPage() {
               <h1 id="cy-h1">Pare de gastar horas organizando. Use a IA para mapear o edital, treinar e revisar.</h1>
               <p className="mu">22 comandos prontos, o Método Bússola para fatiar editais e um caderno de erros automatizado, para quem estuda para Polícia Penal, PM, PC, PF, PRF ou Guarda Municipal.</p>
               <p className="price">{PRICE}</p>
+              <p className="micro">Pagamento único. Sai por menos de R$ 0,13 por dia em um ano de estudo.</p>
               <BuyButton linkRef={heroRef} />
               <p className="micro">E-book em PDF com 38 páginas, sumário e links clicáveis para consultar no celular.</p>
             </div>
