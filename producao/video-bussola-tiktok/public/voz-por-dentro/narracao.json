@@ -1,0 +1,522 @@
+{
+ "cenas": {
+  "d1": {
+   "arquivo": "voz-por-dentro/d1.mp3",
+   "texto": "Eu corrigi esse simulado só apontando o celular.",
+   "velocidade": 1.12,
+   "duracao": 2.456,
+   "fala_fim": 2.415,
+   "palavras": [
+    {
+     "text": "Eu",
+     "start": 0.0,
+     "end": 0.151
+    },
+    {
+     "text": "corrigi",
+     "start": 0.186,
+     "end": 0.441
+    },
+    {
+     "text": "esse",
+     "start": 0.476,
+     "end": 0.604
+    },
+    {
+     "text": "simulado",
+     "start": 0.65,
+     "end": 1.057
+    },
+    {
+     "text": "só",
+     "start": 1.08,
+     "end": 1.173
+    },
+    {
+     "text": "apontando",
+     "start": 1.207,
+     "end": 1.579
+    },
+    {
+     "text": "o",
+     "start": 1.602,
+     "end": 1.625
+    },
+    {
+     "text": "celular.",
+     "start": 1.672,
+     "end": 2.415
+    }
+   ]
+  },
+  "d2": {
+   "arquivo": "voz-por-dentro/d2.mp3",
+   "texto": "A plataforma monta a prova no padrão da sua banca. É só imprimir,",
+   "velocidade": 1.12,
+   "duracao": 3.422,
+   "fala_fim": 3.39,
+   "palavras": [
+    {
+     "text": "A",
+     "start": 0.0,
+     "end": 0.081
+    },
+    {
+     "text": "plataforma",
+     "start": 0.128,
+     "end": 0.592
+    },
+    {
+     "text": "monta",
+     "start": 0.639,
+     "end": 0.871
+    },
+    {
+     "text": "a",
+     "start": 0.894,
+     "end": 0.917
+    },
+    {
+     "text": "prova",
+     "start": 0.964,
+     "end": 1.173
+    },
+    {
+     "text": "no",
+     "start": 1.207,
+     "end": 1.265
+    },
+    {
+     "text": "padrão",
+     "start": 1.3,
+     "end": 1.567
+    },
+    {
+     "text": "da",
+     "start": 1.602,
+     "end": 1.66
+    },
+    {
+     "text": "sua",
+     "start": 1.695,
+     "end": 1.811
+    },
+    {
+     "text": "banca.",
+     "start": 1.858,
+     "end": 2.159
+    },
+    {
+     "text": "É",
+     "start": 2.554,
+     "end": 2.601
+    },
+    {
+     "text": "só",
+     "start": 2.67,
+     "end": 2.752
+    },
+    {
+     "text": "imprimir,",
+     "start": 2.798,
+     "end": 3.39
+    }
+   ]
+  },
+  "d3": {
+   "arquivo": "voz-por-dentro/d3.mp3",
+   "texto": "marcar o cartão-resposta como no dia da prova",
+   "velocidade": 1.12,
+   "duracao": 2.038,
+   "fala_fim": 1.997,
+   "palavras": [
+    {
+     "text": "marcar",
+     "start": 0.0,
+     "end": 0.348
+    },
+    {
+     "text": "o",
+     "start": 0.383,
+     "end": 0.406
+    },
+    {
+     "text": "cartão-resposta",
+     "start": 0.43,
+     "end": 1.149
+    },
+    {
+     "text": "como",
+     "start": 1.184,
+     "end": 1.335
+    },
+    {
+     "text": "no",
+     "start": 1.358,
+     "end": 1.416
+    },
+    {
+     "text": "dia",
+     "start": 1.451,
+     "end": 1.544
+    },
+    {
+     "text": "da",
+     "start": 1.579,
+     "end": 1.66
+    },
+    {
+     "text": "prova",
+     "start": 1.707,
+     "end": 1.997
+    }
+   ]
+  },
+  "d4": {
+   "arquivo": "voz-por-dentro/d4.mp3",
+   "texto": "e apontar a câmera.",
+   "velocidade": 1.12,
+   "duracao": 1.254,
+   "fala_fim": 1.207,
+   "palavras": [
+    {
+     "text": "e",
+     "start": 0.0,
+     "end": 0.081
+    },
+    {
+     "text": "apontar",
+     "start": 0.104,
+     "end": 0.43
+    },
+    {
+     "text": "a",
+     "start": 0.464,
+     "end": 0.488
+    },
+    {
+     "text": "câmera.",
+     "start": 0.522,
+     "end": 1.207
+    }
+   ]
+  },
+  "d5": {
+   "arquivo": "voz-por-dentro/d5.mp3",
+   "texto": "Ela lê as marcações e mostra a sua nota, os acertos e os erros.",
+   "velocidade": 1.12,
+   "duracao": 3.944,
+   "fala_fim": 3.901,
+   "palavras": [
+    {
+     "text": "Ela",
+     "start": 0.0,
+     "end": 0.209
+    },
+    {
+     "text": "lê",
+     "start": 0.244,
+     "end": 0.337
+    },
+    {
+     "text": "as",
+     "start": 0.36,
+     "end": 0.43
+    },
+    {
+     "text": "marcações",
+     "start": 0.476,
+     "end": 1.033
+    },
+    {
+     "text": "e",
+     "start": 1.115,
+     "end": 1.219
+    },
+    {
+     "text": "mostra",
+     "start": 1.265,
+     "end": 1.556
+    },
+    {
+     "text": "a",
+     "start": 1.579,
+     "end": 1.614
+    },
+    {
+     "text": "sua",
+     "start": 1.66,
+     "end": 1.811
+    },
+    {
+     "text": "nota,",
+     "start": 1.858,
+     "end": 2.136
+    },
+    {
+     "text": "os",
+     "start": 2.241,
+     "end": 2.357
+    },
+    {
+     "text": "acertos",
+     "start": 2.403,
+     "end": 2.775
+    },
+    {
+     "text": "e",
+     "start": 2.844,
+     "end": 2.914
+    },
+    {
+     "text": "os",
+     "start": 2.961,
+     "end": 3.042
+    },
+    {
+     "text": "erros.",
+     "start": 3.111,
+     "end": 3.901
+    }
+   ]
+  },
+  "d6": {
+   "arquivo": "voz-por-dentro/d6.mp3",
+   "texto": "Cada questão errada vai sozinha para o seu Caderno de Erros.",
+   "velocidade": 1.12,
+   "duracao": 2.873,
+   "fala_fim": 2.833,
+   "palavras": [
+    {
+     "text": "Cada",
+     "start": 0.0,
+     "end": 0.209
+    },
+    {
+     "text": "questão",
+     "start": 0.244,
+     "end": 0.511
+    },
+    {
+     "text": "errada",
+     "start": 0.546,
+     "end": 0.801
+    },
+    {
+     "text": "vai",
+     "start": 0.848,
+     "end": 0.952
+    },
+    {
+     "text": "sozinha",
+     "start": 0.998,
+     "end": 1.358
+    },
+    {
+     "text": "para",
+     "start": 1.405,
+     "end": 1.533
+    },
+    {
+     "text": "o",
+     "start": 1.556,
+     "end": 1.579
+    },
+    {
+     "text": "seu",
+     "start": 1.614,
+     "end": 1.73
+    },
+    {
+     "text": "Caderno",
+     "start": 1.765,
+     "end": 2.055
+    },
+    {
+     "text": "de",
+     "start": 2.09,
+     "end": 2.171
+    },
+    {
+     "text": "Erros.",
+     "start": 2.218,
+     "end": 2.833
+    }
+   ]
+  },
+  "d7": {
+   "arquivo": "voz-por-dentro/d7.mp3",
+   "texto": "E volta no Modo Redenção até você acertar e ganhar o selo de dominada.",
+   "velocidade": 1.12,
+   "duracao": 3.605,
+   "fala_fim": 3.576,
+   "palavras": [
+    {
+     "text": "E",
+     "start": 0.0,
+     "end": 0.07
+    },
+    {
+     "text": "volta",
+     "start": 0.139,
+     "end": 0.36
+    },
+    {
+     "text": "no",
+     "start": 0.383,
+     "end": 0.453
+    },
+    {
+     "text": "Modo",
+     "start": 0.499,
+     "end": 0.673
+    },
+    {
+     "text": "Redenção",
+     "start": 0.708,
+     "end": 1.138
+    },
+    {
+     "text": "até",
+     "start": 1.173,
+     "end": 1.289
+    },
+    {
+     "text": "você",
+     "start": 1.324,
+     "end": 1.486
+    },
+    {
+     "text": "acertar",
+     "start": 1.521,
+     "end": 1.939
+    },
+    {
+     "text": "e",
+     "start": 1.962,
+     "end": 1.985
+    },
+    {
+     "text": "ganhar",
+     "start": 2.02,
+     "end": 2.264
+    },
+    {
+     "text": "o",
+     "start": 2.299,
+     "end": 2.322
+    },
+    {
+     "text": "selo",
+     "start": 2.368,
+     "end": 2.589
+    },
+    {
+     "text": "de",
+     "start": 2.635,
+     "end": 2.694
+    },
+    {
+     "text": "dominada.",
+     "start": 2.74,
+     "end": 3.576
+    }
+   ]
+  },
+  "d8": {
+   "arquivo": "voz-por-dentro/d8.mp3",
+   "texto": "Tá quase saindo. Comenta SIMULADO que eu te coloco no grupo de espera, com desconto de lançamento.",
+   "velocidade": 1.12,
+   "duracao": 4.911,
+   "fala_fim": 4.876,
+   "palavras": [
+    {
+     "text": "Tá",
+     "start": 0.0,
+     "end": 0.116
+    },
+    {
+     "text": "quase",
+     "start": 0.163,
+     "end": 0.372
+    },
+    {
+     "text": "saindo.",
+     "start": 0.406,
+     "end": 0.859
+    },
+    {
+     "text": "Comenta",
+     "start": 1.149,
+     "end": 1.463
+    },
+    {
+     "text": "SIMULADO",
+     "start": 1.498,
+     "end": 1.916
+    },
+    {
+     "text": "que",
+     "start": 1.939,
+     "end": 2.009
+    },
+    {
+     "text": "eu",
+     "start": 2.032,
+     "end": 2.078
+    },
+    {
+     "text": "te",
+     "start": 2.101,
+     "end": 2.159
+    },
+    {
+     "text": "coloco",
+     "start": 2.194,
+     "end": 2.426
+    },
+    {
+     "text": "no",
+     "start": 2.461,
+     "end": 2.519
+    },
+    {
+     "text": "grupo",
+     "start": 2.554,
+     "end": 2.763
+    },
+    {
+     "text": "de",
+     "start": 2.786,
+     "end": 2.844
+    },
+    {
+     "text": "espera,",
+     "start": 2.868,
+     "end": 3.367
+    },
+    {
+     "text": "com",
+     "start": 3.471,
+     "end": 3.611
+    },
+    {
+     "text": "desconto",
+     "start": 3.646,
+     "end": 3.971
+    },
+    {
+     "text": "de",
+     "start": 4.005,
+     "end": 4.052
+    },
+    {
+     "text": "lançamento.",
+     "start": 4.098,
+     "end": 4.876
+    }
+   ]
+  }
+ },
+ "voz": "4J31DrhygVjvFsoj7BsM"
+}

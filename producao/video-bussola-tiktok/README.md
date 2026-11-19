@@ -84,3 +84,20 @@ máquina isso não é necessário: `render-all.mjs` só usa o wrapper quando enc
   npx remotion render src/index.ts PatentesSimulados out/video-patentes-simulados.mp4 --browser-executable=$PWD/scripts/chrome-proxy.sh
   ```
   (o teaser é igual, trocando `patentes` por `teaser`, `--drop nome` e a composição `TeaserSimulados`).
+
+### Vídeo "por dentro" com gravações reais (`PorDentroSimulados`, 28,4 s)
+
+- `out/video-por-dentro-simulados.mp4`: imprimir → marcar o cartão → apontar a câmera → nota/acertos/erros →
+  Caderno de Erros → Modo Redenção até "questão dominada" → "Comente SIMULADO".
+- Gravações brutas (WhatsApp, 19/11) ficam em `brutos-plataforma/` (fora do git). `scripts/footage.py` corta,
+  acelera (com etiqueta "ACELERADO" no vídeo), desfoca o QR Code do cartão e gera `public/footage/<cena>.mp4`.
+  O trecho com a URL de correção (código do cartão) não é usado.
+- Refazer:
+  ```
+  python3 scripts/elevenlabs.py --roteiro roteiros/por-dentro.json --pasta voz-por-dentro --velocidade 1.12
+  python3 scripts/processa_voz.py --pasta voz-por-dentro --saida src/data/narracao-por-dentro.json
+  npx tsx scripts/export-shorts.ts
+  python3 scripts/footage.py --brutos brutos-plataforma
+  python3 scripts/trilha.py --timeline .cache/timeline-por-dentro.json --drop imprime --cta cta --out trilha-por-dentro.wav
+  npx remotion render src/index.ts PorDentroSimulados out/video-por-dentro-simulados.mp4 --browser-executable=$PWD/scripts/chrome-proxy.sh
+  ```
