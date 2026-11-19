@@ -101,3 +101,10 @@ máquina isso não é necessário: `render-all.mjs` só usa o wrapper quando enc
   python3 scripts/trilha.py --timeline .cache/timeline-por-dentro.json --drop imprime --cta cta --out trilha-por-dentro.wav
   npx remotion render src/index.ts PorDentroSimulados out/video-por-dentro-simulados.mp4 --browser-executable=$PWD/scripts/chrome-proxy.sh
   ```
+
+### Vídeo do sistema de correção (`CorrecaoSimulados`, 28,3 s)
+
+- `out/video-correcao-simulados.mp4`: "Fez o simulado e ficou esperando o gabarito?" → câmera → nota → "nada de
+  conferir na mão" → zoom no **gabarito**, no **comentário (fundamentação)** e no **alerta de pegadinha** → Caderno de Erros → CTA.
+- Refazer: roteiro `roteiros/correcao.json` (pasta de voz `voz-correcao`), `python3 scripts/footage.py --brutos brutos-plataforma --conjunto correcao`,
+  trilha com `--timeline .cache/timeline-correcao.json --drop camera --cta cta --out trilha-correcao.wav` e a composição `CorrecaoSimulados`.

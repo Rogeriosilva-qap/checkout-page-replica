@@ -1,0 +1,34 @@
+{
+ "gancho": {
+  "velocidade": 3.79,
+  "frames": 84
+ },
+ "camera": {
+  "velocidade": 4.22,
+  "frames": 96
+ },
+ "le": {
+  "velocidade": 3.23,
+  "frames": 116
+ },
+ "mao": {
+  "velocidade": 1.99,
+  "frames": 68
+ },
+ "gabarito": {
+  "velocidade": 1.45,
+  "frames": 62
+ },
+ "comentario": {
+  "velocidade": 1.2,
+  "frames": 70
+ },
+ "pegadinha": {
+  "velocidade": 1.01,
+  "frames": 92
+ },
+ "falhas": {
+  "velocidade": 4.12,
+  "frames": 80
+ }
+}
