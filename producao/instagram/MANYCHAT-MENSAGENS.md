@@ -96,3 +96,79 @@ com as informações da plataforma de pagamento. Não deixe isso no automático.
 1. Com outra conta, comente "bússola" (sem acento) no post. Confira a resposta pública e a mensagem no direct.
 2. Toque em cada botão e confira as respostas.
 3. Clique no link e veja se abre a página certa no celular.
+
+---
+
+# ManyChat · Automação "Comente SIMULADO" (vídeos da plataforma de simulados)
+
+Link do grupo de espera: **https://chat.whatsapp.com/JjnVbBHGjnT2OlG8TznUPo**
+
+## 1. Gatilho
+
+- **Tipo:** comentário em post/reel/anúncio **e** mensagem no direct.
+- **Palavras-chave (contém):** `simulado`, `simulados`, `SIMULADO`, `Simulado`.
+- Use em: vídeo da correção, teaser, patentes e "por dentro".
+
+## 2. Respostas públicas no comentário (sorteio)
+
+1. Te mandei o link no direct! 📩🎯
+2. QSL! O convite do grupo já está no seu direct 📩
+3. Missão recebida! Confere o direct 🎯
+4. Enviado! Olha o direct que o link do grupo está lá 📩
+5. Chegou no seu direct, guerreiro(a)! 🚨
+6. Feito! Seu convite pro grupo de espera está no direct 📩
+7. Pronto! Te chamei no direct 🎯
+8. Gabarito sem esperar? Te mandei os detalhes no direct 📸
+
+## 3. Mensagem no direct (automática)
+
+> Fala, guerreiro(a)! 🎯 Aqui é da **Operação Aprovação**.
+>
+> Você pediu o link dos **Simulados Operação Aprovação**, a plataforma de simulados para concursos de segurança pública que está quase saindo.
+>
+> O que você vai ter lá:
+> 📸 Correção do cartão-resposta pela câmera do celular: nota, acertos e erros sem esperar ninguém
+> ✅ Gabarito de cada questão
+> 💬 Comentário explicando o porquê
+> ⚠️ Alerta da pegadinha da banca em que você caiu
+> 📒 Caderno de Erros automático + Modo Redenção
+> (recursos variam conforme o plano)
+>
+> Quem entra no **grupo de espera** recebe a plataforma antes de todo mundo e tem **desconto exclusivo no lançamento**. O grupo é gratuito.
+
+**Botão (link):** `Entrar no grupo 🚨` → https://chat.whatsapp.com/JjnVbBHGjnT2OlG8TznUPo
+**Botões de resposta rápida:** `Quando lança?` · `Quais carreiras?` · `Como é a correção?` · `Quanto vai custar?`
+
+## 4. Respostas dos botões
+
+**Quando lança?**
+> Estamos na reta final, alimentando o banco de questões. 🛠️ A data sai primeiro no grupo de espera, junto com o desconto de lançamento.
+> [botão: Entrar no grupo 🚨]
+
+**Quais carreiras?**
+> A plataforma é focada em concursos de segurança pública: **PM, PC, PF, PRF, Polícia Penal e Guarda Municipal**, com simulados no padrão da banca (como AOCP, FGV e Cebraspe), com base no último edital. 🎯
+> Qual concurso você está estudando?
+> [botão: Entrar no grupo 🚨]
+
+**Como é a correção?**
+> Você imprime a prova, marca o cartão-resposta como no dia oficial e aponta a câmera do celular. 📸
+> A plataforma lê as marcações e mostra a nota, os acertos e os erros. Em cada questão tem o gabarito, o comentário e o alerta da pegadinha da banca, e os erros vão direto pro seu Caderno de Erros.
+> (A correção pela câmera faz parte do plano Anual.)
+> [botão: Entrar no grupo 🚨]
+
+**Quanto vai custar?**
+> Os valores e o desconto de lançamento vão ser anunciados primeiro no grupo de espera. Quem está no grupo garante a condição exclusiva. 🎯
+> [botão: Entrar no grupo 🚨]
+
+## 5. Lembrete (opcional, ~23 h depois, só para quem NÃO clicou no link)
+
+> Passando pra garantir que o convite chegou 🚨
+> O grupo de espera dos Simulados Operação Aprovação está aqui: https://chat.whatsapp.com/JjnVbBHGjnT2OlG8TznUPo
+> Quem está no grupo recebe a plataforma primeiro e tem desconto no lançamento.
+
+## 6. Cuidados
+
+- Não diga "na hora" ou "em segundos" sobre a correção: a leitura leva alguns segundos (no vídeo aparece "acelerado").
+- Não prometa aprovação nem anuncie preço antes de a cobrança estar ativa.
+- Um lembrete no máximo, dentro de 24 h da última mensagem da pessoa.
+- Teste antes: comente "simulado" com outra conta e toque em todos os botões.
