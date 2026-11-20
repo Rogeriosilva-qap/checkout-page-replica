@@ -178,3 +178,23 @@ Hashtags: poucas e específicas (3–8). Troque/remova as de carreira que não f
 > #concursopolicial #direitopenal #concussao #policiapenal #concursopm
 
 **Dica:** no vídeo do gabarito, responda alguns comentários de quem errou ("Quase! O verbo é exigir 😉"). Engaja e mostra que o perfil é ativo.
+
+---
+
+## 8. Carrossel "Se o GTA 6 fosse no Brasil" (`gta-6/gta6-01…09.png`)
+
+**Instagram (carrossel)**
+> Se o GTA 6 fosse no Brasil… quantos crimes você cometeria nos primeiros 5 minutos? 🎮⚖️
+>
+> Furto, roubo, receptação, racha, fuga do local do acidente, porte ilegal e desobediência à ordem de parada: arrasta e confere a tipificação e a pegadinha de prova de cada um.
+>
+> 👇 Comenta quantas você acertou (de 0 a 7) e salva 🔖 pra revisar antes da prova.
+> Quer treinar questões assim, com gabarito, comentário e pegadinha da banca? Comenta SIMULADO e entra no grupo de espera.
+>
+> Conteúdo educativo e resumido; confira sempre a lei atualizada. GTA é marca de seus titulares, sem vínculo com a Operação Aprovação.
+> #gta6 #concursopolicial #direitopenal #policiapenal #concursopm
+
+**TikTok (modo foto) / Threads**
+> Se o GTA 6 fosse no Brasil, que crime seria cada missão? 🎮⚖️ Furto x roubo, receptação, racha, porte ilegal… com a pegadinha de prova. Quantas você acerta? #gta6 #concursopolicial #direitopenal
+
+**Comentário fixado:** "Qual dessas você errou? 👇 A do furto x roubo derruba muita gente 😅"
