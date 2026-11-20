@@ -1,0 +1,30 @@
+{
+ "gancho": {
+  "velocidade": 1.76,
+  "frames": 75
+ },
+ "imprime": {
+  "velocidade": 5.89,
+  "frames": 107
+ },
+ "marca": {
+  "velocidade": 4.82,
+  "frames": 66
+ },
+ "camera": {
+  "velocidade": 6.75,
+  "frames": 60
+ },
+ "le": {
+  "velocidade": 3.29,
+  "frames": 114
+ },
+ "falhas": {
+  "velocidade": 3.24,
+  "frames": 102
+ },
+ "redencao": {
+  "velocidade": 5.5,
+  "frames": 150
+ }
+}

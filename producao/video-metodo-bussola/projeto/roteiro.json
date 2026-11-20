@@ -1,0 +1,164 @@
+{
+  "_comentario": "Fonte única das legendas. 'fala' é o trecho falado (usado para sincronizar com o áudio); 'legenda' é o texto exibido (até 2 linhas). 'pausa_antes' marca fim de frase (s) ou de parágrafo (p).",
+  "cenas": [
+    {
+      "id": "gancho",
+      "titulo": "Gancho"
+    },
+    {
+      "id": "extracao",
+      "titulo": "1. Extração"
+    },
+    {
+      "id": "fatiamento",
+      "titulo": "2. Fatiamento"
+    },
+    {
+      "id": "priorizacao",
+      "titulo": "3. Priorização"
+    },
+    {
+      "id": "calendario",
+      "titulo": "4. Calendário"
+    },
+    {
+      "id": "fechamento",
+      "titulo": "Fechamento"
+    }
+  ],
+  "legendas": [
+    {
+      "id": "g1",
+      "cena": "gancho",
+      "pausa_antes": "",
+      "legenda": "Abriu o edital e travou"
+    },
+    {
+      "id": "g2",
+      "cena": "gancho",
+      "pausa_antes": "",
+      "legenda": "na hora de decidir o que estudar primeiro?"
+    },
+    {
+      "id": "g3",
+      "cena": "gancho",
+      "pausa_antes": "s",
+      "legenda": "Vou te mostrar como eu transformaria aquela lista"
+    },
+    {
+      "id": "g4",
+      "cena": "gancho",
+      "pausa_antes": "",
+      "legenda": "em uma tarefa para esta semana."
+    },
+    {
+      "id": "e1",
+      "cena": "extracao",
+      "pausa_antes": "p",
+      "legenda": "Primeiro, pegue o conteúdo do seu cargo."
+    },
+    {
+      "id": "e2",
+      "cena": "extracao",
+      "pausa_antes": "s",
+      "legenda": "Se usar a inteligência artificial para organizar a lista por matéria,"
+    },
+    {
+      "id": "e3",
+      "cena": "extracao",
+      "pausa_antes": "",
+      "legenda": "confira o resultado no edital oficial e nas retificações."
+    },
+    {
+      "id": "f1",
+      "cena": "fatiamento",
+      "pausa_antes": "p",
+      "legenda": "Depois, divida os assuntos."
+    },
+    {
+      "id": "f2",
+      "cena": "fatiamento",
+      "pausa_antes": "s",
+      "legenda": "Em Português, por exemplo,"
+    },
+    {
+      "id": "f3",
+      "cena": "fatiamento",
+      "pausa_antes": "",
+      "legenda": "concordância verbal pode virar uma tarefa:"
+    },
+    {
+      "id": "f4",
+      "cena": "fatiamento",
+      "pausa_antes": "",
+      "legenda": "resolver cinco questões e corrigir os erros."
+    },
+    {
+      "id": "p1",
+      "cena": "priorizacao",
+      "pausa_antes": "p",
+      "legenda": "Agora, defina a prioridade."
+    },
+    {
+      "id": "p2",
+      "cena": "priorizacao",
+      "pausa_antes": "s",
+      "legenda": "Considere o peso na prova,"
+    },
+    {
+      "id": "p3",
+      "cena": "priorizacao",
+      "pausa_antes": "",
+      "legenda": "sua dificuldade e o que serve de base para outros assuntos."
+    },
+    {
+      "id": "p4",
+      "cena": "priorizacao",
+      "pausa_antes": "s",
+      "legenda": "Se concordância for prioridade Alfa para você,"
+    },
+    {
+      "id": "p5",
+      "cena": "priorizacao",
+      "pausa_antes": "",
+      "legenda": "coloque-a entre as primeiras sessões."
+    },
+    {
+      "id": "c1",
+      "cena": "calendario",
+      "pausa_antes": "p",
+      "legenda": "Por fim, marque o horário."
+    },
+    {
+      "id": "c2",
+      "cena": "calendario",
+      "pausa_antes": "s",
+      "legenda": "Quarta-feira, às 19 horas:",
+      "fala": "Quarta-feira, às dezenove horas:"
+    },
+    {
+      "id": "c3",
+      "cena": "calendario",
+      "pausa_antes": "",
+      "legenda": "cinco questões de concordância e correção."
+    },
+    {
+      "id": "c4",
+      "cena": "calendario",
+      "pausa_antes": "s",
+      "legenda": "Reserve tempo para revisar"
+    },
+    {
+      "id": "c5",
+      "cena": "calendario",
+      "pausa_antes": "",
+      "legenda": "e deixe margem para imprevistos."
+    },
+    {
+      "id": "s1",
+      "cena": "fechamento",
+      "pausa_antes": "p",
+      "legenda": "Salve o vídeo e coloque a sua primeira tarefa na agenda hoje."
+    }
+  ]
+}

@@ -1,0 +1,316 @@
+{
+ "voz": "4J31DrhygVjvFsoj7BsM",
+ "cenas": {
+  "q1": {
+   "arquivo": "voz-questao/final/q1.wav",
+   "duracao": 3.347,
+   "texto": "Essa pegadinha é clássica em prova policial. Você tem dez segundos.",
+   "palavras": [
+    {
+     "text": "Essa",
+     "start": 0.0,
+     "end": 0.209
+    },
+    {
+     "text": "pegadinha",
+     "start": 0.255,
+     "end": 0.662
+    },
+    {
+     "text": "é",
+     "start": 0.743,
+     "end": 0.789
+    },
+    {
+     "text": "clássica",
+     "start": 0.836,
+     "end": 1.161
+    },
+    {
+     "text": "em",
+     "start": 1.184,
+     "end": 1.231
+    },
+    {
+     "text": "prova",
+     "start": 1.277,
+     "end": 1.486
+    },
+    {
+     "text": "policial.",
+     "start": 1.521,
+     "end": 2.061
+    },
+    {
+     "text": "Você",
+     "start": 2.114,
+     "end": 2.311
+    },
+    {
+     "text": "tem",
+     "start": 2.358,
+     "end": 2.497
+    },
+    {
+     "text": "dez",
+     "start": 2.567,
+     "end": 2.741
+    },
+    {
+     "text": "segundos.",
+     "start": 2.787,
+     "end": 3.347
+    }
+   ]
+  },
+  "q2": {
+   "arquivo": "voz-questao/final/q2.wav",
+   "duracao": 11.079,
+   "texto": "Ao fiscalizar um estabelecimento, um agente público exige vantagem indevida para deixar de lavrar a ocorrência. Que crime é esse? A: corrupção passiva. B: corrupção ativa. C: concussão. D: prevaricação.",
+   "palavras": [
+    {
+     "text": "Ao",
+     "start": 0.0,
+     "end": 0.116
+    },
+    {
+     "text": "fiscalizar",
+     "start": 0.139,
+     "end": 0.534
+    },
+    {
+     "text": "um",
+     "start": 0.58,
+     "end": 0.627
+    },
+    {
+     "text": "estabelecimento,",
+     "start": 0.65,
+     "end": 1.382
+    },
+    {
+     "text": "um",
+     "start": 1.405,
+     "end": 1.474
+    },
+    {
+     "text": "agente",
+     "start": 1.521,
+     "end": 1.765
+    },
+    {
+     "text": "público",
+     "start": 1.811,
+     "end": 2.148
+    },
+    {
+     "text": "exige",
+     "start": 2.183,
+     "end": 2.438
+    },
+    {
+     "text": "vantagem",
+     "start": 2.473,
+     "end": 2.856
+    },
+    {
+     "text": "indevida",
+     "start": 2.891,
+     "end": 3.344
+    },
+    {
+     "text": "para",
+     "start": 3.379,
+     "end": 3.518
+    },
+    {
+     "text": "deixar",
+     "start": 3.553,
+     "end": 3.913
+    },
+    {
+     "text": "de",
+     "start": 3.959,
+     "end": 4.017
+    },
+    {
+     "text": "lavrar",
+     "start": 4.063,
+     "end": 4.342
+    },
+    {
+     "text": "a",
+     "start": 4.365,
+     "end": 4.4
+    },
+    {
+     "text": "ocorrência.",
+     "start": 4.435,
+     "end": 5.039
+    },
+    {
+     "text": "Que",
+     "start": 5.119,
+     "end": 5.235
+    },
+    {
+     "text": "crime",
+     "start": 5.282,
+     "end": 5.502
+    },
+    {
+     "text": "é",
+     "start": 5.537,
+     "end": 5.56
+    },
+    {
+     "text": "esse?",
+     "start": 5.595,
+     "end": 5.92
+    },
+    {
+     "text": "A:",
+     "start": 6.026,
+     "end": 6.329
+    },
+    {
+     "text": "corrupção",
+     "start": 6.421,
+     "end": 6.805
+    },
+    {
+     "text": "passiva.",
+     "start": 6.839,
+     "end": 7.35
+    },
+    {
+     "text": "B:",
+     "start": 7.479,
+     "end": 7.734
+    },
+    {
+     "text": "corrupção",
+     "start": 7.816,
+     "end": 8.234
+    },
+    {
+     "text": "ativa.",
+     "start": 8.268,
+     "end": 8.686
+    },
+    {
+     "text": "C:",
+     "start": 8.815,
+     "end": 9.151
+    },
+    {
+     "text": "concussão.",
+     "start": 9.256,
+     "end": 9.825
+    },
+    {
+     "text": "D:",
+     "start": 9.944,
+     "end": 10.246
+    },
+    {
+     "text": "prevaricação.",
+     "start": 10.345,
+     "end": 11.079
+    }
+   ]
+  },
+  "q3": {
+   "arquivo": "voz-questao/final/q3.wav",
+   "duracao": 4.911,
+   "texto": "Comenta a sua resposta. O gabarito comentado sai às 19 horas. Segue o perfil pra não perder.",
+   "palavras": [
+    {
+     "text": "Comenta",
+     "start": 0.0,
+     "end": 0.36
+    },
+    {
+     "text": "a",
+     "start": 0.383,
+     "end": 0.406
+    },
+    {
+     "text": "sua",
+     "start": 0.441,
+     "end": 0.557
+    },
+    {
+     "text": "resposta.",
+     "start": 0.58,
+     "end": 1.058
+    },
+    {
+     "text": "O",
+     "start": 1.09,
+     "end": 1.137
+    },
+    {
+     "text": "gabarito",
+     "start": 1.206,
+     "end": 1.636
+    },
+    {
+     "text": "comentado",
+     "start": 1.682,
+     "end": 2.216
+    },
+    {
+     "text": "sai",
+     "start": 2.286,
+     "end": 2.518
+    },
+    {
+     "text": "às",
+     "start": 2.553,
+     "end": 2.634
+    },
+    {
+     "text": "19",
+     "start": 2.681,
+     "end": 3.076
+    },
+    {
+     "text": "horas.",
+     "start": 3.099,
+     "end": 3.494
+    },
+    {
+     "text": "Segue",
+     "start": 3.638,
+     "end": 3.894
+    },
+    {
+     "text": "o",
+     "start": 3.917,
+     "end": 3.952
+    },
+    {
+     "text": "perfil",
+     "start": 3.987,
+     "end": 4.242
+    },
+    {
+     "text": "pra",
+     "start": 4.288,
+     "end": 4.393
+    },
+    {
+     "text": "não",
+     "start": 4.439,
+     "end": 4.521
+    },
+    {
+     "text": "perder.",
+     "start": 4.555,
+     "end": 4.912
+    }
+   ]
+  }
+ }
+}

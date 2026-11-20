@@ -1,0 +1,372 @@
+{
+ "cenas": {
+  "q1": {
+   "arquivo": "voz-questao-gta/q1.mp3",
+   "texto": "Edição GTA 6: se essa missão fosse no Brasil, que crime seria? Você tem dez segundos.",
+   "velocidade": 1.12,
+   "duracao": 5.851,
+   "fala_fim": 5.805,
+   "palavras": [
+    {
+     "text": "Edição",
+     "start": 0.0,
+     "end": 0.453
+    },
+    {
+     "text": "GTA",
+     "start": 0.499,
+     "end": 1.451
+    },
+    {
+     "text": "6:",
+     "start": 1.567,
+     "end": 2.055
+    },
+    {
+     "text": "se",
+     "start": 2.241,
+     "end": 2.322
+    },
+    {
+     "text": "essa",
+     "start": 2.357,
+     "end": 2.461
+    },
+    {
+     "text": "missão",
+     "start": 2.508,
+     "end": 2.763
+    },
+    {
+     "text": "fosse",
+     "start": 2.798,
+     "end": 3.007
+    },
+    {
+     "text": "no",
+     "start": 3.042,
+     "end": 3.1
+    },
+    {
+     "text": "Brasil,",
+     "start": 3.135,
+     "end": 3.448
+    },
+    {
+     "text": "que",
+     "start": 3.471,
+     "end": 3.541
+    },
+    {
+     "text": "crime",
+     "start": 3.576,
+     "end": 3.773
+    },
+    {
+     "text": "seria?",
+     "start": 3.808,
+     "end": 4.226
+    },
+    {
+     "text": "Você",
+     "start": 4.412,
+     "end": 4.598
+    },
+    {
+     "text": "tem",
+     "start": 4.644,
+     "end": 4.772
+    },
+    {
+     "text": "dez",
+     "start": 4.818,
+     "end": 4.923
+    },
+    {
+     "text": "segundos.",
+     "start": 4.946,
+     "end": 5.805
+    }
+   ]
+  },
+  "q2": {
+   "arquivo": "voz-questao-gta/q2.mp3",
+   "texto": "Um homem aponta uma arma de fogo para o motorista, manda ele descer e foge com o carro. Que crime é esse? A: furto qualificado. B: roubo com aumento de pena. C: receptação. D: extorsão.",
+   "velocidade": 1.12,
+   "duracao": 14.655,
+   "fala_fim": 14.629,
+   "palavras": [
+    {
+     "text": "Um",
+     "start": 0.0,
+     "end": 0.116
+    },
+    {
+     "text": "homem",
+     "start": 0.163,
+     "end": 0.348
+    },
+    {
+     "text": "aponta",
+     "start": 0.383,
+     "end": 0.662
+    },
+    {
+     "text": "uma",
+     "start": 0.685,
+     "end": 0.789
+    },
+    {
+     "text": "arma",
+     "start": 0.824,
+     "end": 0.998
+    },
+    {
+     "text": "de",
+     "start": 1.033,
+     "end": 1.091
+    },
+    {
+     "text": "fogo",
+     "start": 1.138,
+     "end": 1.37
+    },
+    {
+     "text": "para",
+     "start": 1.405,
+     "end": 1.533
+    },
+    {
+     "text": "o",
+     "start": 1.556,
+     "end": 1.579
+    },
+    {
+     "text": "motorista,",
+     "start": 1.602,
+     "end": 2.148
+    },
+    {
+     "text": "manda",
+     "start": 2.194,
+     "end": 2.426
+    },
+    {
+     "text": "ele",
+     "start": 2.45,
+     "end": 2.543
+    },
+    {
+     "text": "descer",
+     "start": 2.589,
+     "end": 2.914
+    },
+    {
+     "text": "e",
+     "start": 2.949,
+     "end": 2.972
+    },
+    {
+     "text": "foge",
+     "start": 3.019,
+     "end": 3.228
+    },
+    {
+     "text": "com",
+     "start": 3.262,
+     "end": 3.39
+    },
+    {
+     "text": "o",
+     "start": 3.413,
+     "end": 3.437
+    },
+    {
+     "text": "carro.",
+     "start": 3.46,
+     "end": 3.889
+    },
+    {
+     "text": "Que",
+     "start": 4.18,
+     "end": 4.296
+    },
+    {
+     "text": "crime",
+     "start": 4.342,
+     "end": 4.574
+    },
+    {
+     "text": "é",
+     "start": 4.598,
+     "end": 4.621
+    },
+    {
+     "text": "esse?",
+     "start": 4.702,
+     "end": 5.074
+    },
+    {
+     "text": "A:",
+     "start": 5.921,
+     "end": 6.293
+    },
+    {
+     "text": "furto",
+     "start": 6.745,
+     "end": 7.024
+    },
+    {
+     "text": "qualificado.",
+     "start": 7.07,
+     "end": 7.732
+    },
+    {
+     "text": "B:",
+     "start": 8.266,
+     "end": 8.673
+    },
+    {
+     "text": "roubo",
+     "start": 9.207,
+     "end": 9.462
+    },
+    {
+     "text": "com",
+     "start": 9.497,
+     "end": 9.601
+    },
+    {
+     "text": "aumento",
+     "start": 9.636,
+     "end": 9.892
+    },
+    {
+     "text": "de",
+     "start": 9.927,
+     "end": 9.985
+    },
+    {
+     "text": "pena.",
+     "start": 10.031,
+     "end": 10.461
+    },
+    {
+     "text": "C:",
+     "start": 10.855,
+     "end": 11.285
+    },
+    {
+     "text": "receptação.",
+     "start": 11.366,
+     "end": 12.19
+    },
+    {
+     "text": "D:",
+     "start": 12.643,
+     "end": 13.003
+    },
+    {
+     "text": "extorsão.",
+     "start": 13.189,
+     "end": 14.629
+    }
+   ]
+  },
+  "q3": {
+   "arquivo": "voz-questao-gta/q3.mp3",
+   "texto": "Comenta a sua resposta. O gabarito comentado sai às 19 horas. Segue o perfil pra não perder.",
+   "velocidade": 1.12,
+   "duracao": 5.695,
+   "fala_fim": 5.666,
+   "palavras": [
+    {
+     "text": "Comenta",
+     "start": 0.0,
+     "end": 0.418
+    },
+    {
+     "text": "a",
+     "start": 0.441,
+     "end": 0.464
+    },
+    {
+     "text": "sua",
+     "start": 0.511,
+     "end": 0.65
+    },
+    {
+     "text": "resposta.",
+     "start": 0.673,
+     "end": 1.207
+    },
+    {
+     "text": "O",
+     "start": 1.602,
+     "end": 1.66
+    },
+    {
+     "text": "gabarito",
+     "start": 1.73,
+     "end": 2.067
+    },
+    {
+     "text": "comentado",
+     "start": 2.09,
+     "end": 2.531
+    },
+    {
+     "text": "sai",
+     "start": 2.577,
+     "end": 2.775
+    },
+    {
+     "text": "às",
+     "start": 2.821,
+     "end": 2.891
+    },
+    {
+     "text": "19",
+     "start": 2.937,
+     "end": 3.344
+    },
+    {
+     "text": "horas.",
+     "start": 3.379,
+     "end": 3.773
+    },
+    {
+     "text": "Segue",
+     "start": 3.959,
+     "end": 4.238
+    },
+    {
+     "text": "o",
+     "start": 4.261,
+     "end": 4.284
+    },
+    {
+     "text": "perfil",
+     "start": 4.319,
+     "end": 4.621
+    },
+    {
+     "text": "pra",
+     "start": 4.667,
+     "end": 4.772
+    },
+    {
+     "text": "não",
+     "start": 4.818,
+     "end": 4.934
+    },
+    {
+     "text": "perder.",
+     "start": 4.969,
+     "end": 5.666
+    }
+   ]
+  }
+ },
+ "voz": "4J31DrhygVjvFsoj7BsM"
+}
