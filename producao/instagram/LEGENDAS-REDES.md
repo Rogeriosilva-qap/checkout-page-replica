@@ -198,3 +198,38 @@ Hashtags: poucas e específicas (3–8). Troque/remova as de carreira que não f
 > Se o GTA 6 fosse no Brasil, que crime seria cada missão? 🎮⚖️ Furto x roubo, receptação, racha, porte ilegal… com a pegadinha de prova. Quantas você acerta? #gta6 #concursopolicial #direitopenal
 
 **Comentário fixado:** "Qual dessas você errou? 👇 A do furto x roubo derruba muita gente 😅"
+
+---
+
+## 9. Questão do Dia · Edição GTA 6 (`questao-gta/`)
+
+**Post 1: questão (vídeo + 3 fotos)**
+> 🎮 Edição GTA 6: se essa missão fosse no Brasil, que crime seria?
+> Um homem aponta uma arma de fogo para o motorista, manda ele descer e foge com o carro.
+> (A) Furto qualificado (B) Roubo com aumento de pena (C) Receptação (D) Extorsão
+>
+> ⏱ Você tem 10 segundos. Comenta a sua letra 👇
+> Gabarito comentado às 19h, com a pegadinha da banca. Segue @operacaoaprovacaoconcursos pra não perder.
+>
+> Questão de treino da Operação Aprovação. GTA é marca de seus titulares, sem vínculo.
+> #gta6 #concursopolicial #direitopenal #policiapenal #concursopm
+
+**Comentário fixado:** "Gabarito comentado às 19h ⏱ Comenta a sua letra 👇"
+
+**Post 2: gabarito, às 19h (vídeo + 3 fotos)**
+> Marcou furto? Caiu na pegadinha. 😬
+> ✅ Resposta: letra B, roubo com aumento de pena (art. 157, § 2º-A, I, do CP).
+>
+> O que diferencia:
+> Leva com violência ou grave ameaça → roubo
+> Leva sem violência nem ameaça → furto
+> A vantagem depende de a vítima fazer algo → extorsão
+> Compra sabendo que é produto de crime → receptação
+>
+> E é assim em cada questão da plataforma Simulados Operação Aprovação: gabarito, comentário e pegadinha da banca.
+> 👇 Comenta SIMULADO e entra no grupo de espera, com desconto de lançamento.
+>
+> Questão de treino. GTA é marca de seus titulares, sem vínculo.
+> #gta6 #concursopolicial #direitopenal #roubo #policiapenal
+
+**Comentário fixado (depois das 19h):** "✅ Gabarito: B (roubo). A grave ameaça é o que tira do furto 😉"
