@@ -108,3 +108,12 @@ máquina isso não é necessário: `render-all.mjs` só usa o wrapper quando enc
   conferir na mão" → zoom no **gabarito**, no **comentário (fundamentação)** e no **alerta de pegadinha** → Caderno de Erros → CTA.
 - Refazer: roteiro `roteiros/correcao.json` (pasta de voz `voz-correcao`), `python3 scripts/footage.py --brutos brutos-plataforma --conjunto correcao`,
   trilha com `--timeline .cache/timeline-correcao.json --drop camera --cta cta --out trilha-correcao.wav` e a composição `CorrecaoSimulados`.
+
+### Série "Questão do Dia" (`QuestaoDia` 30,8 s e `GabaritoDia` 28,1 s)
+
+- `out/video-questao-dia.mp4`: questão 38 do simulado #C7F3C618 (concussão), leitura com as alternativas entrando
+  na fala, cronômetro de 10 s com tique, "gabarito comentado às 19h" + seguir o perfil.
+- `out/video-gabarito-dia.mp4`: "Marcou A? Caiu na pegadinha" → letra C → comentário (art. 316 do CP) → tabela de
+  verbos (exigir/solicitar/oferecer/retardar) → imagens reais do gabarito e da pegadinha na plataforma → "Comente SIMULADO".
+- Para outra questão: edite `ENUNCIADO`, `ALTS`, `HORARIO` e os cartões em `src/patentes/Questao.tsx`, gere as vozes com
+  `roteiros/questao.json` e `roteiros/gabarito.json` (pastas `voz-questao` e `voz-gabarito`) e renderize.

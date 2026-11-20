@@ -141,3 +141,40 @@ Hashtags: poucas e específicas (3–8). Troque/remova as de carreira que não f
 - **ManyChat:** gatilhos `simulado` (link do grupo do WhatsApp) e `bussola` (link do guia).
 - **YouTube não tem ManyChat:** lá, coloque o link do grupo/guia no comentário fixado ou na descrição.
 - **Mesmo vídeo em várias redes:** baixe sem marca d'água (use os MP4 originais), não reposte o download do TikTok no Reels.
+
+---
+
+## 6. Questão do Dia: questão (`video-questao-dia.mp4`)
+
+**Instagram / TikTok / Kwai**
+> ⏱ Você tem 10 segundos.
+> Um agente público EXIGE vantagem indevida para não lavrar a ocorrência. Que crime é esse?
+> (A) Corrupção passiva (B) Corrupção ativa (C) Concussão (D) Prevaricação
+>
+> 👇 Comenta a sua letra. Gabarito comentado às 19h, com a pegadinha da banca.
+> Segue @operacaoaprovacaoconcursos pra não perder.
+>
+> Questão de treino gerada pela plataforma Simulados Operação Aprovação (pré-lançamento).
+> #concursopolicial #direitopenal #questaodeconcurso #policiapenal #concursopm
+
+**Comentário fixado:** "Gabarito comentado às 19h ⏱ Comenta a sua letra 👇"
+
+## 7. Questão do Dia: gabarito (`video-gabarito-dia.mp4`)
+
+**Instagram / TikTok / Kwai**
+> Marcou A? Caiu na pegadinha. 😬
+> ✅ Resposta: letra C, concussão (art. 316 do CP).
+>
+> O verbo decide:
+> EXIGIR → concussão
+> SOLICITAR / RECEBER → corrupção passiva
+> OFERECER / PROMETER → corrupção ativa
+> RETARDAR / DEIXAR DE PRATICAR ato de ofício por interesse pessoal → prevaricação
+>
+> E é assim em cada questão da plataforma Simulados Operação Aprovação: gabarito, comentário e pegadinha da banca.
+> 👇 Comenta SIMULADO e entra no grupo de espera, com desconto de lançamento.
+>
+> Questão de treino. Imagens reais da versão de pré-lançamento. Não garantimos aprovação.
+> #concursopolicial #direitopenal #concussao #policiapenal #concursopm
+
+**Dica:** no vídeo do gabarito, responda alguns comentários de quem errou ("Quase! O verbo é exigir 😉"). Engaja e mostra que o perfil é ativo.
