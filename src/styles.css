@@ -923,3 +923,8 @@ body:has(.legal){background:var(--fundo,#fbfaf7);padding-bottom:0}
 .kit-foot{padding:40px 0 0;font-size:14px;color:var(--k-mu)}
 .kit-foot p{margin:0 0 6px}
 .kit-foot a{color:var(--k-mu)}
+
+/* Aviso do kit nas páginas dos e-books (componente KitNotice) */
+.kit-notice{display:flex;gap:10px;align-items:flex-start;margin:14px 0 0;padding:12px 14px;border:1px solid #E3192B;border-left:6px solid #E3192B;border-radius:8px;background:rgba(227,25,43,.12);color:#fff;font-size:15px;line-height:1.45;text-align:left}
+.kit-notice strong{color:#fff}
+.kit-notice a{color:#ff8a96;font-weight:700;text-decoration:underline;white-space:nowrap}
