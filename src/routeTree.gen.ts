@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ConcurseiroCiberneticoRouteImport } from './routes/concurseiro-cibernetico'
 import { Route as ExplicarQuestaoRouteImport } from './routes/explicar-questao'
 import { Route as IaParaConcursosRouteImport } from './routes/ia-para-concursos'
+import { Route as LinksRouteImport } from './routes/links'
 import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TermosDeUsoRouteImport } from './routes/termos-de-uso'
@@ -37,6 +38,11 @@ const IaParaConcursosRoute = IaParaConcursosRouteImport.update({
   path: '/ia-para-concursos',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LinksRoute = LinksRouteImport.update({
+  id: '/links',
+  path: '/links',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PoliticaDePrivacidadeRoute = PoliticaDePrivacidadeRouteImport.update({
   id: '/politica-de-privacidade',
   path: '/politica-de-privacidade',
@@ -58,6 +64,7 @@ export interface FileRoutesByFullPath {
   '/concurseiro-cibernetico': typeof ConcurseiroCiberneticoRoute
   '/explicar-questao': typeof ExplicarQuestaoRoute
   '/ia-para-concursos': typeof IaParaConcursosRoute
+  '/links': typeof LinksRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/termos-de-uso': typeof TermosDeUsoRoute
@@ -67,6 +74,7 @@ export interface FileRoutesByTo {
   '/concurseiro-cibernetico': typeof ConcurseiroCiberneticoRoute
   '/explicar-questao': typeof ExplicarQuestaoRoute
   '/ia-para-concursos': typeof IaParaConcursosRoute
+  '/links': typeof LinksRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/termos-de-uso': typeof TermosDeUsoRoute
@@ -77,6 +85,7 @@ export interface FileRoutesById {
   '/concurseiro-cibernetico': typeof ConcurseiroCiberneticoRoute
   '/explicar-questao': typeof ExplicarQuestaoRoute
   '/ia-para-concursos': typeof IaParaConcursosRoute
+  '/links': typeof LinksRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/termos-de-uso': typeof TermosDeUsoRoute
@@ -88,6 +97,7 @@ export interface FileRouteTypes {
     | '/concurseiro-cibernetico'
     | '/explicar-questao'
     | '/ia-para-concursos'
+    | '/links'
     | '/politica-de-privacidade'
     | '/sitemap.xml'
     | '/termos-de-uso'
@@ -97,6 +107,7 @@ export interface FileRouteTypes {
     | '/concurseiro-cibernetico'
     | '/explicar-questao'
     | '/ia-para-concursos'
+    | '/links'
     | '/politica-de-privacidade'
     | '/sitemap.xml'
     | '/termos-de-uso'
@@ -106,6 +117,7 @@ export interface FileRouteTypes {
     | '/concurseiro-cibernetico'
     | '/explicar-questao'
     | '/ia-para-concursos'
+    | '/links'
     | '/politica-de-privacidade'
     | '/sitemap.xml'
     | '/termos-de-uso'
@@ -116,6 +128,7 @@ export interface RootRouteChildren {
   ConcurseiroCiberneticoRoute: typeof ConcurseiroCiberneticoRoute
   ExplicarQuestaoRoute: typeof ExplicarQuestaoRoute
   IaParaConcursosRoute: typeof IaParaConcursosRoute
+  LinksRoute: typeof LinksRoute
   PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermosDeUsoRoute: typeof TermosDeUsoRoute
@@ -151,6 +164,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IaParaConcursosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/links': {
+      id: '/links'
+      path: '/links'
+      fullPath: '/links'
+      preLoaderRoute: typeof LinksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/politica-de-privacidade': {
       id: '/politica-de-privacidade'
       path: '/politica-de-privacidade'
@@ -180,6 +200,7 @@ const rootRouteChildren: RootRouteChildren = {
   ConcurseiroCiberneticoRoute: ConcurseiroCiberneticoRoute,
   ExplicarQuestaoRoute: ExplicarQuestaoRoute,
   IaParaConcursosRoute: IaParaConcursosRoute,
+  LinksRoute: LinksRoute,
   PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermosDeUsoRoute: TermosDeUsoRoute,

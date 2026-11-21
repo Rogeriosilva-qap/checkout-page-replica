@@ -45,3 +45,4 @@ use the editor.
 - The advertorial uses route-scoped `.advertorial` styles and excludes shared cookie UI by pathname in the root shell, keeping sales-page styling and behavior unchanged.
 - The cyber guide page (/concurseiro-cibernetico) uses its own route-scoped `.cyber` styles and its checkout comes only from CONFIG.cyberCheckoutUrl via getCyberCheckoutHref, so an empty link never navigates.
 - The cyber guide's page menu uses route-local state and `.cyber`-scoped styles to preserve navigation and appearance on other pages.
+- The Instagram bio page (/links) lists destinations from getBioLinks in src/lib/bio-links.ts (reading CONFIG), hides unconfigured items, uses route-scoped `.links` styles and stays out of the sitemap with noindex.
