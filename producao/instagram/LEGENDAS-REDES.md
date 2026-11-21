@@ -257,3 +257,31 @@ Hashtags: poucas e específicas (3–8). Troque/remova as de carreira que não f
 
 **Publique só depois que o checkout do kit estiver ativo no site.**
 
+
+---
+
+## 11. Promoção "Em vez de 1 e-book, leve 2" (`kit/promo-*.png`)
+
+**Instagram (post `promo-feed.png`)**
+> 🚨 Em vez de 1 e-book, leve 2 pelo preço de 1.
+>
+> Antes: 1 e-book por R$ 47.
+> Agora: o Guia do Concurseiro Policial Cibernético + o IA para Concursos Policiais (60 prompts) + 4 bônus, pelos mesmos R$ 47.
+>
+> 🧭 Método Bússola, 22 comandos prontos e caderno de erros automatizado
+> 📘 60 prompts + biblioteca resumida para consulta rápida
+> 🎁 NotebookLM, roteiro de 7 dias, checklist de conferência e índice por necessidade
+> 🎯 Desconto exclusivo na plataforma de simulados, no lançamento
+>
+> Separados: R$ 94. No kit: R$ 47. Garantia de 7 dias.
+> 👉 Link na bio.
+>
+> E-books em PDF. Material educacional independente; não garantimos aprovação.
+> #concursopolicial #policiapenal #concursopm #guardamunicipal #estudocomia
+
+**Stories (`promo-story-01…03.png`):** publique em sequência; no 03, sticker de link para `operacaoaprovacaoebooks.com.br/kit-concurseiro-policial`.
+
+**Status do WhatsApp:** os mesmos 3 stories, com a legenda no último:
+> 🚨 Em vez de 1 e-book, leve 2 pelo preço de 1 (R$ 47) 👉 operacaoaprovacaoebooks.com.br/kit-concurseiro-policial
+
+**Arte quadrada (`promo-quadrado.png`):** para grupos próprios, Facebook ou WhatsApp Business (catálogo).

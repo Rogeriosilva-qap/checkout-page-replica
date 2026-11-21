@@ -242,6 +242,59 @@ const kitFeed = [
     <div class="wrap" style="top:1235px;text-align:center"><p class="disc">E-books em PDF · garantia de 7 dias · não garantimos aprovação.</p></div>`, F.w, F.h, "02/02"),
 ];
 
+// ---------- PROMOÇÃO: em vez de 1 e-book, leve 2 ----------
+const card1 = (img, nome, w) => `<div style="display:flex;flex-direction:column;align-items:center;gap:14px">
+  <img src="${img}" style="width:${w}px;aspect-ratio:640/908;object-fit:cover;border-radius:6px;box-shadow:0 26px 60px rgba(0,0,0,.7),0 0 46px rgba(227,25,43,.3)">
+  <span class="mono" style="font-size:${Math.round(w / 12)}px;text-align:center;line-height:1.3">${nome}</span></div>`;
+const plus = (s) => `<div style="font-weight:900;font-size:${s}px;color:#E3192B;line-height:1;align-self:center;margin-bottom:60px">+</div>`;
+const duo = (top, w, plusSize) => `<div style="position:absolute;left:0;right:0;top:${top}px;display:flex;justify-content:center;gap:26px">
+  ${card1(CAPA, "GUIA CIBERNÉTICO", w)}${plus(plusSize)}${card1(PROMPTS_CAPA, "60 PROMPTS", w)}</div>`;
+const antesDepois = (top, fs) => `<div class="wrap" style="top:${top}px;display:grid;grid-template-columns:1fr 1fr;gap:14px">
+  <div class="box" style="padding:22px 24px;border-left-color:#2A2A32;opacity:.75"><div class="mono gray" style="font-size:${fs - 6}px">ANTES</div>
+    <div style="font-weight:900;font-size:${fs}px;margin-top:6px">1 e-book</div><div class="mono gray" style="font-size:${fs - 4}px;margin-top:4px">R$ 47</div></div>
+  <div class="box" style="padding:22px 24px;border-color:#E3192B;background:rgba(227,25,43,.14)"><div class="mono red" style="font-size:${fs - 6}px">AGORA</div>
+    <div style="font-weight:900;font-size:${fs}px;margin-top:6px">2 e-books + bônus</div><div class="mono" style="font-size:${fs - 4}px;margin-top:4px">R$ 47</div></div></div>`;
+const PROMO_ITENS = [
+  ["Guia do Concurseiro Policial Cibernético", "Método Bússola, 22 comandos prontos e caderno de erros automatizado.", "bussola"],
+  ["IA para Concursos Policiais", "60 prompts + biblioteca resumida para consulta rápida.", "livro"],
+  ["4 bônus", "NotebookLM, roteiro de 7 dias, checklist de conferência e índice por necessidade.", "check"],
+  ["Desconto na plataforma de simulados", "Exclusivo para quem compra o kit, no lançamento.", "alvo"],
+];
+const promoStories = [
+  frame(`${header("// PROMOÇÃO · OPERAÇÃO APROVAÇÃO")}
+    <div class="wrap" style="top:330px"><h1 style="font-size:96px">Em vez de<br>1 e-book…</h1></div>
+    <div class="wrap" style="top:560px"><h1 style="font-size:150px"><span class="hit">leve 2</span></h1><div class="bar" style="margin-top:22px"></div></div>
+    ${duo(820, 300, 110)}
+    <div class="wrap" style="top:1380px;text-align:center"><div style="font-weight:900;font-size:56px;letter-spacing:-1px">pelo preço de <span class="red">1</span></div></div>`, S.w, S.h, "01/03"),
+  frame(`${header("// O QUE VOCÊ LEVA")}${title(320, `2 e-books<br><span class="hit">+ 4 bônus</span>`, 104)}
+    ${listBox(640, PROMO_ITENS, 22)}
+    <div class="wrap" style="top:1460px;text-align:center"><p class="mono" style="font-size:30px">TUDO NA MESMA COMPRA 🎯</p></div>`, S.w, S.h, "02/03"),
+  frame(`${header("// MESMO PREÇO, O DOBRO DE MATERIAL")}
+    <div style="position:absolute;left:0;right:0;top:320px;display:flex;justify-content:center"><img src="${SELO}" style="width:170px"></div>
+    ${antesDepois(530, 50)}
+    <div class="wrap" style="top:900px;text-align:center"><div class="mono gray" style="font-size:32px">SEPARADOS: <s>R$ 94</s></div>
+      <div style="font-weight:900;font-size:190px;letter-spacing:-8px;line-height:1">R$ <span class="red">47</span></div>
+      <div class="mono" style="font-size:26px;margin-top:6px">pagamento único · garantia de 7 dias</div></div>
+    <div class="wrap" style="top:1260px"><div class="btn" style="height:130px;font-size:52px">Quero os 2 e-books</div></div>
+    ${linkArea(1420, "TOQUE NO LINK")}
+    <div class="wrap" style="top:1510px;text-align:center"><p class="disc">E-books em PDF. Material educacional independente. Não garantimos aprovação.</p></div>`, S.w, S.h, "03/03"),
+];
+const promoFeed = frame(`<div class="wrap" style="top:100px"><div class="lbl">// PROMOÇÃO</div></div>
+  <div class="wrap" style="top:150px"><h1 style="font-size:78px">Em vez de 1 e-book,<br><span class="hit">leve 2</span> pelo preço de 1</h1></div>
+  ${duo(420, 230, 90)}
+  ${antesDepois(880, 32)}
+  <div class="wrap" style="top:1060px;display:flex;align-items:center;justify-content:space-between">
+    <div><div class="mono gray" style="font-size:24px">SEPARADOS: <s>R$ 94</s></div><div style="font-weight:900;font-size:96px;letter-spacing:-4px;line-height:1">R$ <span class="red">47</span></div></div>
+    <div class="btn" style="height:96px;padding:0 34px;font-size:38px">Link na bio →</div></div>
+  <div class="wrap" style="top:1240px"><p class="disc">+ 4 bônus e desconto exclusivo na plataforma de simulados no lançamento. Garantia de 7 dias.</p></div>`, F.w, F.h);
+const Q = { w: 1080, h: 1080 };
+const promoQuadrado = frame(`<div class="wrap" style="top:96px;text-align:center"><div class="lbl">// PROMOÇÃO · OPERAÇÃO APROVAÇÃO</div></div>
+  <div class="wrap" style="top:150px;text-align:center"><h1 style="font-size:84px">Em vez de 1,<br><span class="hit">leve 2 e-books</span></h1></div>
+  ${duo(390, 210, 84)}
+  <div class="wrap" style="top:850px;text-align:center"><span class="mono gray" style="font-size:26px">SEPARADOS: <s>R$ 94</s> · </span>
+    <span style="font-weight:900;font-size:76px;letter-spacing:-3px">R$ <span class="red">47</span></span></div>
+  <div class="wrap mono" style="top:968px;text-align:center;font-size:22px">+ 4 BÔNUS · GARANTIA DE 7 DIAS</div>`, Q.w, Q.h);
+
 const jobs = [
   ["destaques/capas/capa-o-guia.png", capa("livro", "O GUIA"), S],
   ["destaques/capas/capa-metodo-bussola.png", capa("bussola", "MÉTODO BÚSSOLA"), S],
@@ -252,6 +305,9 @@ const jobs = [
   ...simStories.map((h, i) => [`simulados/stories/${String(i + 1).padStart(2, "0")}.png`, h, S]),
   ...simFeed.map((h, i) => [`simulados/feed-carrossel/${String(i + 1).padStart(2, "0")}.png`, h, F]),
   ["kit/story-kit.png", kitStory, S],
+  ...promoStories.map((h, i) => [`kit/promo-story-${String(i + 1).padStart(2, "0")}.png`, h, S]),
+  ["kit/promo-feed.png", promoFeed, F],
+  ["kit/promo-quadrado.png", promoQuadrado, Q],
   ...kitFeed.map((h, i) => [`kit/feed-${String(i + 1).padStart(2, "0")}.png`, h, F]),
 ];
 const browser = await chromium.launch();
