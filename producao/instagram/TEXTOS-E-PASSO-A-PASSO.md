@@ -65,6 +65,6 @@ Coloque o link do grupo na bio (ou em um agregador de links junto com o guia).
   Recursos marcados como "variam conforme o plano" porque cartão-resposta pela câmera, redação por foto,
   Bússola Tática e cadastro do próprio edital aparecem no plano Anual. Preços não entraram nas artes:
   a cobrança da plataforma ainda não está ativa.
-- **Guia:** página `/concurseiro-cibernetico` (preço R$ 37, formato PDF e as respostas das dúvidas) e o próprio PDF.
+- **Guia:** página `/concurseiro-cibernetico` (preço R$ 47, formato PDF e as respostas das dúvidas) e o próprio PDF.
 - **Benefícios do grupo:** os que você informou (receber primeiro + desconto exclusivo), iguais aos do site.
   O valor do desconto não aparece porque ainda não foi definido.

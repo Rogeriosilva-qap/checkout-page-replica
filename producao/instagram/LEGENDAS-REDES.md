@@ -233,3 +233,27 @@ Hashtags: poucas e específicas (3–8). Troque/remova as de carreira que não f
 > #gta6 #concursopolicial #direitopenal #roubo #policiapenal
 
 **Comentário fixado (depois das 19h):** "✅ Gabarito: B (roubo). A grave ameaça é o que tira do furto 😉"
+
+---
+
+## 10. Kit Concurseiro Policial com IA (`kit/story-kit.png`, `kit/feed-01.png`, `kit/feed-02.png`)
+
+**Instagram (carrossel de 2 fotos)**
+> 2 e-books pelo preço de 1. 🎯
+>
+> Kit Concurseiro Policial com IA:
+> 🧭 Guia do Concurseiro Policial Cibernético: Método Bússola, 22 comandos prontos e caderno de erros automatizado
+> 📘 IA para Concursos Policiais: 60 prompts para transformar seu material em questões, revisões e plano de estudo
+> 🎁 Todos os bônus: NotebookLM, roteiro de 7 dias, checklist de conferência e índice por necessidade
+> 🎯 Desconto exclusivo na plataforma Simulados Operação Aprovação, no lançamento
+>
+> Separados: R$ 94. No kit: R$ 47.
+> 👉 Link na bio.
+>
+> E-books em PDF, garantia de 7 dias. Material educacional independente; não garantimos aprovação.
+> #concursopolicial #policiapenal #concursopm #guardamunicipal #estudocomia
+
+**Story:** use `kit/story-kit.png` com o sticker de link apontando para `operacaoaprovacaoebooks.com.br/kit-concurseiro-policial`.
+
+**Publique só depois que o checkout do kit estiver ativo no site.**
+

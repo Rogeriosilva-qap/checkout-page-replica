@@ -38,7 +38,13 @@ Cadastre várias e deixe o ManyChat **sortear**: respostas iguais em sequência 
 > ✅ Simulados nos formatos Cebraspe, FGV e AOCP
 > ✅ Caderno de erros automatizado
 >
-> É um e-book em PDF, por **R$ 37**.
+> É um e-book em PDF, por **R$ 47**.
+
+**Versão com o kit (use assim que o checkout do kit estiver ativo):** troque a linha acima e o botão por:
+
+> E tem mais: pelo mesmo **R$ 47** você leva o **Kit Concurseiro Policial com IA**, com o guia **+ o e-book IA para Concursos Policiais (60 prompts)**, todos os bônus e **desconto exclusivo na plataforma de simulados** quando ela for lançada. São 2 e-books pelo preço de 1. 🎯
+
+**Botão (link) na versão com o kit:** `Quero o kit 🧭` → https://operacaoaprovacaoebooks.com.br/kit-concurseiro-policial
 
 **Botão (link):** `Quero o guia 🧭` → [LINK DO GUIA]
 **Botões de resposta rápida** (levam às mensagens do item 4):

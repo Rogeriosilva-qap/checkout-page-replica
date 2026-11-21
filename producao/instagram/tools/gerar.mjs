@@ -98,7 +98,7 @@ const guia = [
     <div class="wrap box" style="top:590px;padding:44px 40px"><p style="font-weight:800;font-size:44px;line-height:1.25;letter-spacing:-.5px">Nenhuma resposta de IA vira matéria de estudo antes de ser conferida na fonte.</p></div>
     ${listBox(960, [["O edital, no canal oficial", ""], ["A lei, na versão oficial", ""], ["A questão, com o gabarito oficial", ""]], 16)}
     <div class="wrap" style="top:1400px"><p style="font-weight:700;font-size:34px;line-height:1.3" class="gray">A IA acelera o trabalho. A conferência garante a direção certa.</p></div>`, S.w, S.h, "04/05"),
-  frame(`${header("// GARANTA O SEU")}${title(320, `E-book em PDF<br><span class="hit">R$ 37</span>`, 112)}
+  frame(`${header("// GARANTA O SEU")}${title(320, `E-book em PDF<br><span class="hit">R$ 47</span>`, 112)}
     <div style="position:absolute;left:325px;top:680px;transform:rotate(-3deg);box-shadow:0 40px 90px rgba(0,0,0,.7),0 0 70px rgba(227,25,43,.35)"><img src="${CAPA}" style="width:430px;display:block"></div>
     ${linkArea(1340)}
     <div class="wrap" style="top:1530px;text-align:center"><p class="disc">Material educacional e independente. Confira sempre na fonte oficial.</p></div>`, S.w, S.h, "05/05"),
@@ -211,6 +211,37 @@ const simFeed = [
 ];
 
 // ---------- render ----------
+// ---------- KIT: 2 e-books pelo preço de 1 ----------
+const PROMPTS_CAPA = "data:image/jpeg;base64," + fs.readFileSync(path.join(ROOT, "assets", "capa-prompts.jpg")).toString("base64");
+const kitCovers = (top, w) => `<div style="position:absolute;left:0;right:0;top:${top}px;display:flex;justify-content:center;gap:28px">
+  <img src="${CAPA}" style="width:${w}px;transform:rotate(-4deg);box-shadow:0 30px 70px rgba(0,0,0,.7),0 0 50px rgba(227,25,43,.3)">
+  <img src="${PROMPTS_CAPA}" style="width:${w}px;aspect-ratio:640/908;object-fit:cover;transform:rotate(4deg);box-shadow:0 30px 70px rgba(0,0,0,.7),0 0 50px rgba(227,25,43,.3)"></div>`;
+const KIT_ITENS = [
+  ["Guia do Concurseiro Policial Cibernético", "Método Bússola, 22 comandos prontos e caderno de erros automatizado.", "bussola"],
+  ["IA para Concursos Policiais · 60 prompts", "Questões, revisões e plano de estudo a partir do seu material.", "livro"],
+  ["Todos os bônus", "NotebookLM, roteiro de 7 dias, checklist de conferência e índice por necessidade.", "check"],
+  ["Desconto na plataforma de simulados", "Exclusivo para quem compra o kit, no lançamento.", "alvo"],
+];
+const kitStory = frame(`${header("// KIT CONCURSEIRO POLICIAL COM IA")}${title(320, `2 e-books pelo<br><span class="hit">preço de 1</span>`, 104)}
+  ${kitCovers(640, 330)}
+  <div class="wrap" style="top:1180px;text-align:center"><div class="mono gray" style="font-size:30px">SEPARADOS: <s>R$ 94</s></div>
+  <div style="font-weight:900;font-size:120px;letter-spacing:-4px;line-height:1">R$ <span class="red">47</span></div></div>
+  ${linkArea(1430, "TOQUE NO LINK")}
+  <div class="wrap" style="top:1515px;text-align:center"><p class="disc">Material educacional independente. Não garantimos aprovação.</p></div>`, S.w, S.h);
+const kitFeed = [
+  frame(`<div class="wrap" style="top:110px"><div class="lbl">// KIT CONCURSEIRO POLICIAL COM IA</div></div>
+    <div class="wrap" style="top:170px"><h1 style="font-size:100px">2 e-books pelo<br><span class="hit">preço de 1</span></h1></div>
+    ${kitCovers(480, 270)}
+    <div class="wrap" style="top:950px;text-align:center"><div class="mono gray" style="font-size:28px">SEPARADOS: <s>R$ 94</s></div>
+    <div style="font-weight:900;font-size:104px;letter-spacing:-4px;line-height:1">R$ <span class="red">47</span></div></div>
+    <div class="wrap mono" style="top:1180px;text-align:center;font-size:28px">ARRASTA →</div>`, F.w, F.h, "01/02"),
+  frame(`<div class="wrap" style="top:110px"><div class="lbl">// O QUE VEM NO KIT</div></div>
+    <div class="wrap" style="top:170px"><h1 style="font-size:84px">Organize <span class="hit">e</span> estude<br>com IA</h1></div>
+    ${listBox(400, KIT_ITENS, 12).replace(/padding:26px 28px/g, "padding:20px 26px")}
+    <div class="wrap" style="top:1110px"><div class="btn" style="height:104px;font-size:44px">Link na bio →</div></div>
+    <div class="wrap" style="top:1235px;text-align:center"><p class="disc">E-books em PDF · garantia de 7 dias · não garantimos aprovação.</p></div>`, F.w, F.h, "02/02"),
+];
+
 const jobs = [
   ["destaques/capas/capa-o-guia.png", capa("livro", "O GUIA"), S],
   ["destaques/capas/capa-metodo-bussola.png", capa("bussola", "MÉTODO BÚSSOLA"), S],
@@ -220,6 +251,8 @@ const jobs = [
   ...duvidas.map((h, i) => [`destaques/duvidas/${String(i + 1).padStart(2, "0")}.png`, h, S]),
   ...simStories.map((h, i) => [`simulados/stories/${String(i + 1).padStart(2, "0")}.png`, h, S]),
   ...simFeed.map((h, i) => [`simulados/feed-carrossel/${String(i + 1).padStart(2, "0")}.png`, h, F]),
+  ["kit/story-kit.png", kitStory, S],
+  ...kitFeed.map((h, i) => [`kit/feed-${String(i + 1).padStart(2, "0")}.png`, h, F]),
 ];
 const browser = await chromium.launch();
 const page = await browser.newPage({ deviceScaleFactor: 1 });
