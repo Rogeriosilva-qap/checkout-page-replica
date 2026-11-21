@@ -46,3 +46,4 @@ use the editor.
 - The cyber guide page (/concurseiro-cibernetico) uses its own route-scoped `.cyber` styles and its checkout comes only from CONFIG.cyberCheckoutUrl via getCyberCheckoutHref, so an empty link never navigates.
 - The cyber guide's page menu uses route-local state and `.cyber`-scoped styles to preserve navigation and appearance on other pages.
 - The Instagram bio page (/links) lists destinations from getBioLinks in src/lib/bio-links.ts (reading CONFIG), hides unconfigured items, uses route-scoped `.links` styles and stays out of the sitemap with noindex.
+- The e-book kit page (/kit-concurseiro-policial) uses route-scoped `.kit` styles; its checkout comes only from CONFIG.kitCheckoutUrl via getKitCheckoutHref, so an empty link never navigates, and /links shows the kit in place of the two separate e-books only once that link is set.

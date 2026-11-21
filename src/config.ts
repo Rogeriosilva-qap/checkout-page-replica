@@ -4,6 +4,9 @@
    ========================================================= */
 export const CONFIG = {
   cyberCheckoutUrl: "https://pay.kirvano.com/6a88a8dd-e999-440e-8f94-5d922f3615a4", // Checkout do Guia do Concurseiro Policial Cibernético. Vazio = botões mostram "Link de compra em breve."
+  kitCheckoutUrl: "", // Checkout do Kit (os 2 e-books). Vazio = página do kit mostra "Link de compra em breve" e o kit fica fora da página /links.
+  kitPriceText: "R$ 47,00", // Preço do kit cobrado no checkout.
+  kitSeparatePriceText: "R$ 94,00", // Soma dos dois e-books comprados separadamente (âncora real).
   cyberWaitlistUrl: "https://chat.whatsapp.com/JjnVbBHGjnT2OlG8TznUPo", // Grupo de espera da plataforma de simulados. Vazio = botão do grupo fica oculto.
   checkoutUrl: "https://pay.kirvano.com/28b35434-3fbf-4f7e-914d-ae6212e77484", // URL do checkout (ex.: link da plataforma de pagamento). OBRIGATÓRIO para vender.
   listPriceText: "R$ 97,00", // Preço cheio confirmado do e-book, exibido riscado ao lado do preço de lançamento. Deixe "" para ocultar.
@@ -43,6 +46,12 @@ export function getCyberCheckoutHref(url: string = CONFIG.cyberCheckoutUrl): str
 
 // Link do grupo de espera dos simulados; null enquanto o grupo não existir.
 export function getCyberWaitlistHref(url: string = CONFIG.cyberWaitlistUrl): string | null {
+  const v = url.trim();
+  return v.length > 0 ? v : null;
+}
+
+// Link de compra do Kit (os dois e-books); null enquanto o checkout não existir.
+export function getKitCheckoutHref(url: string = CONFIG.kitCheckoutUrl): string | null {
   const v = url.trim();
   return v.length > 0 ? v : null;
 }

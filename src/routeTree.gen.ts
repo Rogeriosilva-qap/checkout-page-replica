@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ConcurseiroCiberneticoRouteImport } from './routes/concurseiro-cibernetico'
 import { Route as ExplicarQuestaoRouteImport } from './routes/explicar-questao'
 import { Route as IaParaConcursosRouteImport } from './routes/ia-para-concursos'
+import { Route as KitConcurseiroPolicialRouteImport } from './routes/kit-concurseiro-policial'
 import { Route as LinksRouteImport } from './routes/links'
 import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
@@ -36,6 +37,11 @@ const ExplicarQuestaoRoute = ExplicarQuestaoRouteImport.update({
 const IaParaConcursosRoute = IaParaConcursosRouteImport.update({
   id: '/ia-para-concursos',
   path: '/ia-para-concursos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KitConcurseiroPolicialRoute = KitConcurseiroPolicialRouteImport.update({
+  id: '/kit-concurseiro-policial',
+  path: '/kit-concurseiro-policial',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LinksRoute = LinksRouteImport.update({
@@ -64,6 +70,7 @@ export interface FileRoutesByFullPath {
   '/concurseiro-cibernetico': typeof ConcurseiroCiberneticoRoute
   '/explicar-questao': typeof ExplicarQuestaoRoute
   '/ia-para-concursos': typeof IaParaConcursosRoute
+  '/kit-concurseiro-policial': typeof KitConcurseiroPolicialRoute
   '/links': typeof LinksRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -74,6 +81,7 @@ export interface FileRoutesByTo {
   '/concurseiro-cibernetico': typeof ConcurseiroCiberneticoRoute
   '/explicar-questao': typeof ExplicarQuestaoRoute
   '/ia-para-concursos': typeof IaParaConcursosRoute
+  '/kit-concurseiro-policial': typeof KitConcurseiroPolicialRoute
   '/links': typeof LinksRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -85,6 +93,7 @@ export interface FileRoutesById {
   '/concurseiro-cibernetico': typeof ConcurseiroCiberneticoRoute
   '/explicar-questao': typeof ExplicarQuestaoRoute
   '/ia-para-concursos': typeof IaParaConcursosRoute
+  '/kit-concurseiro-policial': typeof KitConcurseiroPolicialRoute
   '/links': typeof LinksRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -97,6 +106,7 @@ export interface FileRouteTypes {
     | '/concurseiro-cibernetico'
     | '/explicar-questao'
     | '/ia-para-concursos'
+    | '/kit-concurseiro-policial'
     | '/links'
     | '/politica-de-privacidade'
     | '/sitemap.xml'
@@ -107,6 +117,7 @@ export interface FileRouteTypes {
     | '/concurseiro-cibernetico'
     | '/explicar-questao'
     | '/ia-para-concursos'
+    | '/kit-concurseiro-policial'
     | '/links'
     | '/politica-de-privacidade'
     | '/sitemap.xml'
@@ -117,6 +128,7 @@ export interface FileRouteTypes {
     | '/concurseiro-cibernetico'
     | '/explicar-questao'
     | '/ia-para-concursos'
+    | '/kit-concurseiro-policial'
     | '/links'
     | '/politica-de-privacidade'
     | '/sitemap.xml'
@@ -128,6 +140,7 @@ export interface RootRouteChildren {
   ConcurseiroCiberneticoRoute: typeof ConcurseiroCiberneticoRoute
   ExplicarQuestaoRoute: typeof ExplicarQuestaoRoute
   IaParaConcursosRoute: typeof IaParaConcursosRoute
+  KitConcurseiroPolicialRoute: typeof KitConcurseiroPolicialRoute
   LinksRoute: typeof LinksRoute
   PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -162,6 +175,13 @@ declare module '@tanstack/react-router' {
       path: '/ia-para-concursos'
       fullPath: '/ia-para-concursos'
       preLoaderRoute: typeof IaParaConcursosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kit-concurseiro-policial': {
+      id: '/kit-concurseiro-policial'
+      path: '/kit-concurseiro-policial'
+      fullPath: '/kit-concurseiro-policial'
+      preLoaderRoute: typeof KitConcurseiroPolicialRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/links': {
@@ -200,6 +220,7 @@ const rootRouteChildren: RootRouteChildren = {
   ConcurseiroCiberneticoRoute: ConcurseiroCiberneticoRoute,
   ExplicarQuestaoRoute: ExplicarQuestaoRoute,
   IaParaConcursosRoute: IaParaConcursosRoute,
+  KitConcurseiroPolicialRoute: KitConcurseiroPolicialRoute,
   LinksRoute: LinksRoute,
   PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
