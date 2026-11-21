@@ -61,6 +61,6 @@ export function getKitCheckoutHref(url: string = CONFIG.kitCheckoutUrl): string 
 export function getPriceAnchor(settings: Pick<typeof CONFIG, "kitCheckoutUrl" | "kitSeparatePriceText" | "listPriceText"> = CONFIG) {
   const kit = getKitCheckoutHref(settings.kitCheckoutUrl) !== null;
   return kit
-    ? { label: "Kit com 2 e-books · pagamento único", prefix: "Separados:", price: settings.kitSeparatePriceText, product: "2 e-books em PDF", cta: "Quero os 2 e-books por" }
-    : { label: "Preço de lançamento · pagamento único", prefix: "De", price: settings.listPriceText, product: "E-book em PDF", cta: "Quero o e-book por" };
+    ? { label: "Kit com 2 e-books · pagamento único", prefix: "Separados:", price: settings.kitSeparatePriceText, product: "2 e-books em PDF", cta: "Quero os 2 e-books por", short: "Quero o kit" }
+    : { label: "Preço de lançamento · pagamento único", prefix: "De", price: settings.listPriceText, product: "E-book em PDF", cta: "Quero o e-book por", short: "Quero o e-book" };
 }

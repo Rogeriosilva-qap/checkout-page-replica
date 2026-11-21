@@ -1015,7 +1015,7 @@ function Index() {
           </small>
         </span>
         <CheckoutButton cta="barra" tabIndex={barOn ? 0 : -1} withMessage={false}>
-          Quero o e-book
+          {getPriceAnchor().short}
         </CheckoutButton>
       </div>
     </>
