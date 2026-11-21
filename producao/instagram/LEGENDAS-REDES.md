@@ -285,3 +285,25 @@ Hashtags: poucas e específicas (3–8). Troque/remova as de carreira que não f
 > 🚨 Em vez de 1 e-book, leve 2 pelo preço de 1 (R$ 47) 👉 operacaoaprovacaoebooks.com.br/kit-concurseiro-policial
 
 **Arte quadrada (`promo-quadrado.png`):** para grupos próprios, Facebook ou WhatsApp Business (catálogo).
+
+---
+
+## 12. Carrossel de valor: revisão 24h · 7 dias · 30 dias (`carrossel-revisao/revisao-01…07.png`)
+
+**Instagram**
+> Você estuda… e uma semana depois esqueceu? 😩
+> O problema não é a sua memória. É a falta de revisão.
+>
+> A regra simples:
+> 1️⃣ 24 horas depois → a revisão que mais segura o conteúdo
+> 2️⃣ 7 dias depois → só o que errou ou hesitou
+> 3️⃣ 30 dias depois → para levar até a prova
+>
+> E revise com questões, não relendo resumo. Todo erro vai pro caderno de erros, com a data da próxima revisão.
+>
+> 🔖 Salva e manda pra quem estuda com você.
+> O caderno de erros com fórmulas e os comandos de IA para revisar estão no Kit Concurseiro Policial (link na bio).
+>
+> #concursopolicial #metododeestudo #revisao #policiapenal #concursopm
+
+**Comentário fixado:** "Qual dessas revisões você costuma pular? 👇"
