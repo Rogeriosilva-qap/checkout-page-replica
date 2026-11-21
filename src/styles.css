@@ -869,3 +869,57 @@ body:has(.legal){background:var(--fundo,#fbfaf7);padding-bottom:0}
 .links .lk-foot{margin-top:32px;font-size:13px;color:var(--l-mu);line-height:1.6}
 .links .lk-foot a{color:var(--l-mu)}
 @media(prefers-reduced-motion:reduce){.links .lk-item{transition:none}}
+
+/* Página do kit (/kit-concurseiro-policial) — estilos restritos a .kit */
+.kit{--k-bg:#0E0E11;--k-grid:#1C1C22;--k-red:#E3192B;--k-tx:#fff;--k-mu:#A7A7AD;--k-box:#16161B;--k-line:#2A2A32;min-height:100vh;color:var(--k-tx);font-family:"Source Sans 3",system-ui,sans-serif;font-size:17px;line-height:1.55;background:radial-gradient(ellipse 80% 30% at 50% 12%,rgba(227,25,43,.16),transparent 70%),linear-gradient(var(--k-grid) 1px,transparent 1px) 0 0/48px 48px,linear-gradient(90deg,var(--k-grid) 1px,transparent 1px) 0 0/48px 48px,var(--k-bg);border-top:4px solid var(--k-red);padding:0 16px 120px;overflow-x:clip}
+.kit h1,.kit h2,.kit h3{font-family:Poppins,sans-serif;color:var(--k-tx);margin:0}
+.kit-head{max-width:880px;margin:0 auto;padding:16px 0}
+.kit-brand{display:inline-flex;align-items:center;gap:10px;color:var(--k-tx);text-decoration:none;font-family:Poppins,sans-serif;font-weight:700}
+.kit-brand img{border-radius:50%}
+.kit-hero,.kit-sec,.kit-foot{max-width:880px;margin:0 auto}
+.kit-hero{text-align:center;padding:24px 0 8px}
+.kit-label,.kit-tag{font-family:ui-monospace,Menlo,Consolas,monospace;font-weight:700;letter-spacing:1px;color:var(--k-red);font-size:13px;margin:0 0 10px}
+.kit h1{font-size:clamp(34px,8vw,58px);line-height:1.02;letter-spacing:-1.5px;text-transform:uppercase}
+.kit h1 em{color:var(--k-red);font-style:italic}
+.kit-lead{max-width:640px;margin:16px auto 0;color:#d9d9de}
+.kit-covers{display:flex;justify-content:center;gap:16px;margin:28px auto 8px;max-width:520px}
+.kit-covers img{width:46%;height:auto;aspect-ratio:640/908;object-fit:cover;border-radius:6px;box-shadow:0 24px 50px rgba(0,0,0,.6),0 0 40px rgba(227,25,43,.25)}
+.kit-covers img:first-child{transform:rotate(-4deg)}
+.kit-covers img:last-child{transform:rotate(4deg)}
+.kit-price{display:flex;flex-direction:column;align-items:center;gap:2px;margin:22px 0 14px}
+.kit-sep{color:var(--k-mu)}
+.kit-price strong{font-family:Poppins,sans-serif;font-size:52px;line-height:1.05}
+.kit-micro{color:var(--k-mu);font-size:14px;margin:0}
+.kit-btn{display:flex;align-items:center;justify-content:center;width:100%;max-width:520px;min-height:58px;margin:0 auto;padding:12px 20px;background:var(--k-red);color:#fff;font-family:Poppins,sans-serif;font-weight:700;font-size:18px;border-radius:10px;text-decoration:none;box-shadow:0 4px 0 #7d0a1d,0 12px 24px -8px rgba(227,25,43,.6);cursor:pointer}
+.kit-btn[aria-disabled="true"]{opacity:.55;cursor:not-allowed}
+.kit-soon{color:var(--k-mu);font-size:14px;margin:8px 0 0}
+.kit-sec{padding:40px 0 0}
+.kit-sec h2{font-size:clamp(24px,5vw,32px);letter-spacing:-.5px;margin-bottom:16px}
+.kit-two{display:grid;gap:14px}
+@media(min-width:760px){.kit-two{grid-template-columns:1fr 1fr}}
+.kit-card,.kit-bonus article,.kit details{background:var(--k-box);border:1px solid var(--k-line);border-left:6px solid var(--k-red);border-radius:10px}
+.kit-card{padding:20px}
+.kit-card h3{font-size:19px;line-height:1.25;margin-bottom:10px}
+.kit-card ul{list-style:none;padding:0;margin:0 0 12px}
+.kit-card li{position:relative;padding-left:20px;margin-bottom:8px;font-size:16px}
+.kit-card li::before{content:"";position:absolute;left:0;top:.6em;width:8px;height:8px;background:var(--k-red)}
+.kit-more{color:#ff6b7b;font-weight:700;text-decoration:none}
+.kit-bonus{display:grid;gap:12px}
+@media(min-width:760px){.kit-bonus{grid-template-columns:1fr 1fr}}
+.kit-bonus article{padding:16px 18px}
+.kit-bonus h3{font-size:17px;margin-bottom:4px}
+.kit-bonus p{margin:0;color:var(--k-mu);font-size:15px}
+.kit-plat{border:2px solid var(--k-red);border-radius:12px;padding:22px 20px;background:rgba(227,25,43,.08)}
+.kit-plat h2{margin-bottom:10px}
+.kit-plat p{margin:0 0 10px}
+.kit-final{text-align:center}
+.kit-final .kit-micro{margin:-8px 0 16px}
+.kit details{margin:0 0 10px}
+.kit summary{cursor:pointer;min-height:48px;padding:12px 16px;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.kit summary::-webkit-details-marker{display:none}
+.kit summary::after{content:"+";color:#ff6b7b}
+.kit details[open] summary::after{content:"−"}
+.kit details p{padding:0 16px 14px;margin:0;color:var(--k-mu)}
+.kit-foot{padding:40px 0 0;font-size:14px;color:var(--k-mu)}
+.kit-foot p{margin:0 0 6px}
+.kit-foot a{color:var(--k-mu)}
