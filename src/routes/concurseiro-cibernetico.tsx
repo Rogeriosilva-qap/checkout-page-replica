@@ -5,6 +5,7 @@ import { copyAdvertorialPrompt } from "@/lib/copy-advertorial-prompt";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo-operacao-aprovacao.png.asset.json";
+import { KitNotice } from "@/components/kit-notice";
 
 const URL_PAGE = "https://operacaoaprovacaoebooks.com.br/concurseiro-cibernetico";
 const TITLE = "O Guia Definitivo do Concurseiro Policial Cibernético | Operação Aprovação";
@@ -138,6 +139,7 @@ function CyberPage() {
               <p className="price">{PRICE}</p>
               <p className="micro">Pagamento único. Sai por menos de R$ 0,13 por dia em um ano de estudo.</p>
               <BuyButton linkRef={heroRef} />
+              <KitNotice />
               <p className="micro">E-book em PDF com 38 páginas, sumário e links clicáveis para consultar no celular.</p>
             </div>
             {/* CAPA: componente em HTML/CSS provisório. Quando houver a capa real, troque este bloco
@@ -225,6 +227,7 @@ function CyberPage() {
             <ul className="dots">{OPS.map(([t]) => <li key={t}>{t}</li>)}</ul>
             <p className="price">{PRICE}</p>
             <BuyButton linkRef={offerRef} />
+            <KitNotice />
           </div>
         </div></section>
 

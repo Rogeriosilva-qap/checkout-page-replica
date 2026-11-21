@@ -3,8 +3,8 @@
    Deixe "" o que ainda não estiver confirmado: o item fica oculto.
    ========================================================= */
 export const CONFIG = {
-  cyberCheckoutUrl: "https://pay.kirvano.com/6a88a8dd-e999-440e-8f94-5d922f3615a4", // Checkout do Guia do Concurseiro Policial Cibernético. Vazio = botões mostram "Link de compra em breve."
-  kitCheckoutUrl: "", // Checkout do Kit (os 2 e-books). Vazio = página do kit mostra "Link de compra em breve" e o kit fica fora da página /links.
+  cyberCheckoutUrl: "https://pay.kirvano.com/28b35434-3fbf-4f7e-914d-ae6212e77484", // Agora leva ao checkout do Kit (os 2 e-books). Checkout antigo só do guia: https://pay.kirvano.com/6a88a8dd-e999-440e-8f94-5d922f3615a4. // Checkout do Guia do Concurseiro Policial Cibernético. Vazio = botões mostram "Link de compra em breve."
+  kitCheckoutUrl: "https://pay.kirvano.com/28b35434-3fbf-4f7e-914d-ae6212e77484", // Checkout do Kit (os 2 e-books). Vazio = página do kit mostra "Link de compra em breve" e o kit fica fora da página /links.
   kitPriceText: "R$ 47,00", // Preço do kit cobrado no checkout.
   kitSeparatePriceText: "R$ 94,00", // Soma dos dois e-books comprados separadamente (âncora real).
   cyberWaitlistUrl: "https://chat.whatsapp.com/JjnVbBHGjnT2OlG8TznUPo", // Grupo de espera da plataforma de simulados. Vazio = botão do grupo fica oculto.

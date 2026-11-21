@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, type ReactNode, type RefObject } from "rea
 import { CONFIG, getPurchaseFaq } from "@/config";
 import { Button } from "@/components/ui/button";
 import { VisitorForms, SimuladosSignup } from "@/components/visitor-forms";
+import { KitNotice } from "@/components/kit-notice";
 import logo from "@/assets/logo-operacao-aprovacao.png.asset.json";
 import capa from "@/assets/capa-ebook.jpg.asset.json";
 import pag14 from "@/assets/pagina-14.jpg.asset.json";
@@ -280,6 +281,7 @@ function Index() {
               <CheckoutButton cta="hero" id="cta-hero" className="btn btn-block" linkRef={heroRef}>
                 Quero o e-book por {CONFIG.launchPriceText}
               </CheckoutButton>
+              <KitNotice />
               <Button asChild variant="link" className="sample-link"><a href="#modelo-p35">Ver um prompt na prática</a></Button>
               <ul className="badges" aria-label="Resumo da oferta">
                 <li>Acesso pela plataforma, no celular e no PC</li>
@@ -828,6 +830,7 @@ function Index() {
               <CheckoutButton cta="oferta" id="cta-offer" className="btn btn-block">
                 Quero o e-book por {CONFIG.launchPriceText}
               </CheckoutButton>
+              <KitNotice />
               {CONFIG.guaranteeDays > 0 && (
                 <div className="guarantee">
                   <span className="shield" aria-hidden="true">{CONFIG.guaranteeDays}</span>
