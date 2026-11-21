@@ -30,3 +30,18 @@ describe("getKitCheckoutHref", () => {
     expect(getKitCheckoutHref("https://pay.example/kit")).toBe("https://pay.example/kit");
   });
 });
+
+import { getPriceAnchor } from "@/config";
+
+describe("getPriceAnchor", () => {
+  it("anchors the kit against the real sum of both e-books when the kit checkout exists", () => {
+    expect(getPriceAnchor({ kitCheckoutUrl: "https://pay.example/kit", kitSeparatePriceText: "R$ 94,00", listPriceText: "R$ 97,00" })).toMatchObject({
+      prefix: "Separados:",
+      price: "R$ 94,00",
+      label: "Kit com 2 e-books · pagamento único",
+    });
+  });
+  it("keeps the single e-book anchor while the kit is off", () => {
+    expect(getPriceAnchor({ kitCheckoutUrl: "", kitSeparatePriceText: "R$ 94,00", listPriceText: "R$ 97,00" })).toMatchObject({ prefix: "De", price: "R$ 97,00" });
+  });
+});
