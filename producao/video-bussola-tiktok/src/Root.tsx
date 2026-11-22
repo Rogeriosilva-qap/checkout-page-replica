@@ -8,6 +8,7 @@ import { PorDentroVideo, TOTAL_POR_DENTRO } from "./patentes/PorDentro";
 import { CorrecaoVideo, TOTAL_CORRECAO } from "./patentes/Correcao";
 import { GabaritoVideo, QuestaoVideo, TOTAL_GABARITO, TOTAL_QUESTAO } from "./patentes/Questao";
 import { GabaritoGtaVideo, QuestaoGtaVideo, TOTAL_GABARITO_GTA, TOTAL_QUESTAO_GTA } from "./patentes/QuestaoGta";
+import { GabaritoPortVideo, QuestaoPortVideo, TOTAL_GABARITO_PORT, TOTAL_QUESTAO_PORT } from "./patentes/QuestaoPort";
 
 export const RemotionRoot: React.FC = () => (
   <>
@@ -27,6 +28,8 @@ export const RemotionRoot: React.FC = () => (
   <Composition id="GabaritoDia" component={GabaritoVideo} durationInFrames={TOTAL_GABARITO} fps={FPS} width={WIDTH} height={HEIGHT} />
   <Composition id="QuestaoGta" component={QuestaoGtaVideo} durationInFrames={TOTAL_QUESTAO_GTA} fps={FPS} width={WIDTH} height={HEIGHT} />
   <Composition id="GabaritoGta" component={GabaritoGtaVideo} durationInFrames={TOTAL_GABARITO_GTA} fps={FPS} width={WIDTH} height={HEIGHT} />
+  <Composition id="QuestaoPort" component={QuestaoPortVideo} durationInFrames={TOTAL_QUESTAO_PORT} fps={FPS} width={WIDTH} height={HEIGHT} />
+  <Composition id="GabaritoPort" component={GabaritoPortVideo} durationInFrames={TOTAL_GABARITO_PORT} fps={FPS} width={WIDTH} height={HEIGHT} />
   <Composition id="TeaserSimulados" component={TeaserVideo} durationInFrames={TOTAL_TEASER} fps={FPS} width={WIDTH} height={HEIGHT} />
   </>
 );

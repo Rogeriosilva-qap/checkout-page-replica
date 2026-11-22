@@ -307,3 +307,38 @@ Hashtags: poucas e específicas (3–8). Troque/remova as de carreira que não f
 > #concursopolicial #metododeestudo #revisao #policiapenal #concursopm
 
 **Comentário fixado:** "Qual dessas revisões você costuma pular? 👇"
+
+---
+
+## 13. Questão do Dia · Português (regência) (`questao-port/`)
+
+**Post 1: questão (vídeo + 3 fotos)**
+> ⏱ Você tem 10 segundos. Qual frase está de acordo com a norma-padrão?
+> (A) Assisti o jogo do Brasil ontem.
+> (B) Assisti ao jogo do Brasil ontem.
+> (C) Prefiro estudar do que jogar.
+> (D) Ele aspira o cargo de delegado.
+>
+> 👇 Comenta a sua letra. Gabarito comentado às 19h, com a pegadinha da banca.
+> Vale para PM, PC, PF, PRF, Polícia Penal e GCM: português cai em todas.
+> Segue @operacaoaprovacaoconcursos pra não perder.
+>
+> #concursopolicial #portugues #regenciaverbal #concursopm #policiapenal
+
+**Comentário fixado:** "Gabarito comentado às 19h ⏱ Comenta a sua letra 👇 (e marca quem sempre erra essa 😅)"
+
+**Post 2: gabarito, às 19h**
+> Marcou A? Caiu na pegadinha. 😬
+> ✅ Resposta: B, assisti AO jogo.
+>
+> Assistir (= ver) pede a preposição A: assisti ao jogo, à aula, aos vídeos.
+> Preferir também: prefiro estudar A jogar (nunca "do que").
+> Aspirar (= desejar): aspira AO cargo.
+> Mas assistir (= ajudar) não pede: o médico assistiu o paciente.
+>
+> 🔖 Salva pra revisar antes da prova.
+> E é assim em cada questão da plataforma Simulados Operação Aprovação. Comenta SIMULADO e entra no grupo de espera.
+>
+> #concursopolicial #portugues #regenciaverbal #concursopm #policiapenal
+
+**Comentário fixado (depois das 19h):** "✅ Gabarito: B. Quem assiste, assiste A alguma coisa 😉"
