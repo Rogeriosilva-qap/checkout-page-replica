@@ -16,6 +16,8 @@ import ngg from "../src/data/narracao-gabarito-gta.json";
 import { SCENES_QUESTAO_PORT, SCENES_GABARITO_PORT } from "../src/patentes/QuestaoPort";
 import nqp from "../src/data/narracao-questao-port.json";
 import ngp from "../src/data/narracao-gabarito-port.json";
+import { SCENES_PLATAFORMA } from "../src/patentes/Plataforma";
+import npl from "../src/data/narracao-plataforma.json";
 import { buildCaps, overflow, starts, total, Narr, Scene } from "../src/kit";
 import pat from "../src/data/narracao-patentes.json";
 import tea from "../src/data/narracao-teaser.json";
@@ -25,7 +27,7 @@ const ts = (t: number) => {
   const ms = Math.round(t * 1000), p = (n: number, l = 2) => String(n).padStart(l, "0");
   return `${p(Math.floor(ms / 3600000))}:${p(Math.floor(ms / 60000) % 60)}:${p(Math.floor(ms / 1000) % 60)},${p(ms % 1000, 3)}`;
 };
-for (const [nome, scenes, narr] of [["patentes", SCENES_PATENTES, pat], ["teaser", SCENES_TEASER, tea], ["por-dentro", SCENES_POR_DENTRO, pdn], ["correcao", SCENES_CORRECAO, cor], ["questao", SCENES_QUESTAO, nq], ["gabarito", SCENES_GABARITO, ng], ["questao-gta", SCENES_QUESTAO_GTA, nqg], ["gabarito-gta", SCENES_GABARITO_GTA, ngg], ["questao-port", SCENES_QUESTAO_PORT, nqp], ["gabarito-port", SCENES_GABARITO_PORT, ngp]] as [string, Scene[], Narr][]) {
+for (const [nome, scenes, narr] of [["patentes", SCENES_PATENTES, pat], ["teaser", SCENES_TEASER, tea], ["por-dentro", SCENES_POR_DENTRO, pdn], ["correcao", SCENES_CORRECAO, cor], ["questao", SCENES_QUESTAO, nq], ["gabarito", SCENES_GABARITO, ng], ["questao-gta", SCENES_QUESTAO_GTA, nqg], ["gabarito-gta", SCENES_GABARITO_GTA, ngg], ["questao-port", SCENES_QUESTAO_PORT, nqp], ["gabarito-port", SCENES_GABARITO_PORT, ngp], ["plataforma", SCENES_PLATAFORMA, npl]] as [string, Scene[], Narr][]) {
   const st = starts(scenes);
   fs.mkdirSync(path.join(root, ".cache"), { recursive: true });
   fs.writeFileSync(path.join(root, `.cache/timeline-${nome}.json`), JSON.stringify({ total: total(scenes) / 30, scenes: scenes.map((s, i) => ({ id: s.id, start: st[i] / 30, frames: s.frames })) }));

@@ -342,3 +342,25 @@ Hashtags: poucas e específicas (3–8). Troque/remova as de carreira que não f
 > #concursopolicial #portugues #regenciaverbal #concursopm #policiapenal
 
 **Comentário fixado (depois das 19h):** "✅ Gabarito: B. Quem assiste, assiste A alguma coisa 😉"
+
+---
+
+## 14. Plataforma · Bússola Tática (`video-plataforma-bussola.mp4`, 26 s, dourado)
+
+**Grupo de espera (WhatsApp)**
+> 🎯 Olha o que a plataforma faz: eu escolhi o concurso (PM SP · Vunesp) e ela montou o Raio-X da banca, o peso de cada matéria e um plano de ataque semanal, dia por dia.
+> E depois de cada simulado mostra exatamente onde você está perdendo ponto.
+> Tá quase saindo. Quem está aqui recebe primeiro, com desconto de lançamento 🚀
+
+**Instagram / anúncio**
+> Escolhi meu concurso… e a plataforma montou meu plano de estudo. 🧭
+>
+> ✅ Raio-X da banca: o que ela mais cobra
+> ✅ Peso de cada matéria e tópicos com prioridade alta
+> ✅ Plano de ataque semanal, dia por dia
+> ✅ Onde você perde ponto depois de cada simulado
+>
+> 👇 Comenta SIMULADO e entra no grupo de espera, com desconto de lançamento.
+>
+> Imagens reais da versão de pré-lançamento. Raio-X é estimativa baseada no histórico de provas, não é dado oficial. Recursos variam conforme o plano. Não garantimos aprovação.
+> #concursopolicial #simulado #pmsp #concursopm #policiapenal

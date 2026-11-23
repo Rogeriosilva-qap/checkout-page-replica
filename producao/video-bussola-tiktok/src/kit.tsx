@@ -55,7 +55,7 @@ export const buildCaps = (scenes: Scene[], narr: Narr, keys: string[], fps = 30)
   return out;
 };
 
-export const Captions: React.FC<{ caps: Cap[]; y?: number }> = ({ caps, y = 1350 }) => {
+export const Captions: React.FC<{ caps: Cap[]; y?: number; accent?: string }> = ({ caps, y = 1350, accent = C.red }) => {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = f / fps;
@@ -66,7 +66,7 @@ export const Captions: React.FC<{ caps: Cap[]; y?: number }> = ({ caps, y = 1350
     <div style={{ position: "absolute", left: SAFE.left, width: 1080 - SAFE.left - SAFE.right, top: y, transform: `translateY(-50%) scale(${0.88 + s * 0.12})`, display: "flex", justifyContent: "center", zIndex: 50 }}>
       <div style={{ fontFamily: FONT, fontWeight: 800, fontSize: 64, lineHeight: 1.05, letterSpacing: -1.5, textAlign: "center", textTransform: "uppercase", color: C.white, WebkitTextStroke: "12px #000", paintOrder: "stroke fill", maxWidth: 880 }}>
         {cur.words.map((w, i) => (
-          <span key={i} style={{ color: w.key ? C.red : C.white }}>
+          <span key={i} style={{ color: w.key ? accent : C.white }}>
             {w.text.replace(/[,.:…]+$/, "")}
             {i < cur.words.length - 1 ? " " : ""}
           </span>
@@ -83,7 +83,9 @@ export const ShortVideo: React.FC<{
   keys: string[];
   musica: string;
   render: (id: string, frames: number) => React.ReactNode;
-}> = ({ scenes, narr, keys, musica, render }) => {
+  accent?: string;
+  glow?: string;
+}> = ({ scenes, narr, keys, musica, render, accent, glow }) => {
   const f = useCurrentFrame();
   const st = starts(scenes);
   const caps = useMemo(() => buildCaps(scenes, narr, keys), [scenes, narr, keys]);
@@ -101,7 +103,7 @@ export const ShortVideo: React.FC<{
   };
   return (
     <AbsoluteFill style={{ backgroundColor: C.bg }}>
-      <Background />
+      <Background glow={glow} />
       <AbsoluteFill
         style={{
           filter: glitch ? `drop-shadow(${off}px 0 0 rgba(255,0,40,.75)) drop-shadow(${-off}px 0 0 rgba(0,230,255,.6))` : undefined,
@@ -121,8 +123,8 @@ export const ShortVideo: React.FC<{
           ))}
         </AbsoluteFill>
       ) : null}
-      <HudFrame />
-      <Captions caps={caps} />
+      <HudFrame accent={accent} />
+      <Captions caps={caps} accent={accent} />
       {scenes.map((s, i) =>
         s.voz && narr.cenas[s.voz] ? (
           <Sequence key={`v${s.id}`} from={st[i] + VOICE_DELAY} durationInFrames={Math.ceil(narr.cenas[s.voz].duracao * 30) + 2}>

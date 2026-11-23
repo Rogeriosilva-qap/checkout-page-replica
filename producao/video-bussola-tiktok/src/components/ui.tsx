@@ -3,12 +3,12 @@ import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } fr
 import { C, FONT, MONO, SAFE, TACTICAL } from "../theme";
 
 /** fundo grafite + grade 72 px + brilho radial vermelho */
-export const Background: React.FC = () => (
+export const Background: React.FC<{ glow?: string }> = ({ glow = C.glow }) => (
   <AbsoluteFill
     style={{
       backgroundColor: C.bg,
       backgroundImage: [
-        `radial-gradient(ellipse 70% 45% at 50% 50%, ${C.glow}, rgba(227,25,43,0) 70%)`,
+        `radial-gradient(ellipse 70% 45% at 50% 50%, ${glow}, transparent 70%)`,
         `linear-gradient(${C.grid} 2px, transparent 2px)`,
         `linear-gradient(90deg, ${C.grid} 2px, transparent 2px)`,
       ].join(","),
@@ -19,19 +19,19 @@ export const Background: React.FC = () => (
 );
 
 /** faixa vermelha no topo + cantoneiras vermelhas */
-export const HudFrame: React.FC = () => {
+export const HudFrame: React.FC<{ accent?: string }> = ({ accent = C.red }) => {
   const L = 70;
   const T = 8;
   const m = 28;
   const corner = (pos: React.CSSProperties, rot: number) => (
     <div style={{ position: "absolute", width: L, height: L, ...pos, transform: `rotate(${rot}deg)` }}>
-      <div style={{ position: "absolute", left: 0, top: 0, width: L, height: T, background: C.red }} />
-      <div style={{ position: "absolute", left: 0, top: 0, width: T, height: L, background: C.red }} />
+      <div style={{ position: "absolute", left: 0, top: 0, width: L, height: T, background: accent }} />
+      <div style={{ position: "absolute", left: 0, top: 0, width: T, height: L, background: accent }} />
     </div>
   );
   return (
     <AbsoluteFill style={{ pointerEvents: "none" }}>
-      <div style={{ position: "absolute", left: 0, right: 0, top: 0, height: 6, background: C.red }} />
+      <div style={{ position: "absolute", left: 0, right: 0, top: 0, height: 6, background: accent }} />
       {corner({ left: m, top: m + 6 }, 0)}
       {corner({ right: m, top: m + 6 }, 90)}
       {corner({ right: m, bottom: m }, 180)}
