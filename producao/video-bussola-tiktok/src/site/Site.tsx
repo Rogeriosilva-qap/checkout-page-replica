@@ -12,7 +12,6 @@ const NARR = narrJson as Narr;
 const GOLD = "#D4A63A";
 const RED = "#E3192B";
 const SHOT_W = 1290;
-const SHOT_H = 2796; // altura de uma tela do celular (430×932 a 3x)
 
 const fr = (id: string, extra = 14) => Math.ceil(NARR.cenas[id].duracao * 30) + VOICE_DELAY + extra;
 export const SCENES_SITE: Scene[] = [
@@ -39,35 +38,38 @@ const useIn = (delay = 0) => {
   return spring({ frame: f - delay, fps, config: { damping: 200, stiffness: 180, mass: 0.7 } });
 };
 
-/* ---------- celular com telas reais ---------- */
-type Shot = { src: string; from?: number; to?: number; at?: number; dur?: number };
-const Phone: React.FC<{ h: number; shots: Shot[]; frames: number; mark?: { x: number; y: number; w: number; h: number; from: number; shot?: number } }> = ({ h, shots, frames, mark }) => {
+/* ---------- tela real da plataforma, grande e legível ---------- */
+type Shot = { src: string; h: number; from?: number | "end"; to?: number | "end"; at?: number; dur?: number };
+type Mark = { x: number; y: number; w: number; h: number; from: number; shot?: number };
+const Screen: React.FC<{ w: number; h: number; shots: Shot[]; frames: number; mark?: Mark }> = ({ w, h, shots, frames, mark }) => {
   const f = useCurrentFrame();
-  const sw = (h - 28) * (SHOT_W / SHOT_H); // largura da tela
-  const k = sw / SHOT_W; // px da captura -> px do vídeo
+  const k = w / SHOT_W; // px da captura -> px do vídeo
+  const win = h / k; // altura visível, em px da captura
   const enter = useIn(2);
-  const fadeOut = interpolate(f, [frames - 8, frames], [1, 0.0], { extrapolateLeft: "clamp" });
+  const fadeOut = interpolate(f, [frames - 8, frames], [1, 0], { extrapolateLeft: "clamp" });
+  const topo = (s: Shot, v: number | "end" | undefined) => Math.max(0, Math.min(s.h - win, v === "end" ? s.h - win : v ?? 0));
+  const yDe = (s: Shot) => {
+    const at = s.at ?? 0;
+    const dur = s.dur ?? frames - at;
+    return interpolate(f, [at + 12, at + dur - 6], [topo(s, s.from), topo(s, s.to ?? s.from)], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: ease });
+  };
   return (
-    <div style={{ position: "relative", width: sw + 28, height: h, borderRadius: 64 * (h / 960), background: "#050507", boxShadow: `0 40px 120px rgba(0,0,0,.7), 0 0 0 2px #2E2E36, 0 0 90px rgba(212,166,58,${0.12 * enter})`, transform: `translateY(${(1 - enter) * 60}px) scale(${0.96 + enter * 0.04})`, opacity: enter * fadeOut }}>
-      <div style={{ position: "absolute", left: 14, top: 14, width: sw, height: h - 28, borderRadius: 52 * (h / 960), overflow: "hidden", background: "#0b0b0d" }}>
+    <div style={{ position: "relative", width: w + 16, height: h + 16, borderRadius: 26, padding: 8, background: "#0a0a0c", boxShadow: `0 30px 90px rgba(0,0,0,.65), 0 0 0 2px rgba(212,166,58,${0.35 * enter}), 0 0 70px rgba(212,166,58,${0.14 * enter})`, transform: `translateY(${(1 - enter) * 50}px) scale(${0.97 + enter * 0.03})`, opacity: enter * fadeOut }}>
+      <div style={{ position: "relative", width: w, height: h, borderRadius: 18, overflow: "hidden", background: "#0b0b0d" }}>
         {shots.map((s, i) => {
           const at = s.at ?? 0;
           const dur = s.dur ?? frames - at;
           const o = interpolate(f, [at, at + 8], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) * (i < shots.length - 1 ? interpolate(f, [at + dur, at + dur + 8], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) : 1);
-          const y = interpolate(f, [at + 10, at + dur - 6], [s.from ?? 0, s.to ?? s.from ?? 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: ease });
-          return <Img key={i} src={staticFile(`site/${s.src}.jpg`)} style={{ position: "absolute", left: 0, top: -y * k, width: sw, opacity: o }} />;
+          return <Img key={i} src={staticFile(`site/${s.src}.jpg`)} style={{ position: "absolute", left: 0, top: -yDe(s) * k, width: w, opacity: o }} />;
         })}
         {mark ? (() => {
-          const s = shots[mark.shot ?? 0];
-          const at = s.at ?? 0;
-          const dur = s.dur ?? frames - at;
-          const y = interpolate(f, [at + 10, at + dur - 6], [s.from ?? 0, s.to ?? s.from ?? 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: ease });
+          const y = yDe(shots[mark.shot ?? 0]);
           const a = interpolate(f, [mark.from, mark.from + 8], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-          const pulse = 1 + Math.sin((f - mark.from) / 5) * 0.015;
-          return <div style={{ position: "absolute", left: mark.x * k - 6, top: (mark.y - y) * k - 6, width: mark.w * k + 12, height: mark.h * k + 12, border: `4px solid ${GOLD}`, borderRadius: 14, boxShadow: `0 0 30px rgba(212,166,58,.55), inset 0 0 0 9999px rgba(212,166,58,.06)`, opacity: a, transform: `scale(${pulse})` }} />;
+          const pulse = 1 + Math.sin((f - mark.from) / 5) * 0.012;
+          return <div style={{ position: "absolute", left: mark.x * k - 6, top: (mark.y - y) * k - 6, width: mark.w * k + 12, height: mark.h * k + 12, border: `4px solid ${GOLD}`, borderRadius: 12, boxShadow: `0 0 30px rgba(212,166,58,.55), inset 0 0 0 9999px rgba(212,166,58,.07)`, opacity: a, transform: `scale(${pulse})` }} />;
         })() : null}
+        <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 60, background: "linear-gradient(rgba(11,11,13,0), rgba(11,11,13,.85))" }} />
       </div>
-      <div style={{ position: "absolute", left: "50%", top: 24 * (h / 960), width: 110 * (h / 960), height: 30 * (h / 960), marginLeft: -55 * (h / 960), borderRadius: 20, background: "#050507" }} />
     </div>
   );
 };
@@ -109,31 +111,31 @@ const Chips: React.FC<{ items: string[]; size: number; delay?: number; justify?:
 );
 
 /* ---------- layout de uma cena com celular ---------- */
-const Feature: React.FC<{ frames: number; label: string; parts: { t: string; hit?: boolean; br?: boolean }[]; sub: React.ReactNode; chips?: string[]; shots: Shot[]; mark?: React.ComponentProps<typeof Phone>["mark"]; note?: string }> = ({ frames, label, parts, sub, chips, shots, mark, note }) => {
+const Feature: React.FC<{ frames: number; label: string; parts: { t: string; hit?: boolean; br?: boolean }[]; sub: React.ReactNode; chips?: string[]; shots: Shot[]; mark?: Mark; note?: string }> = ({ frames, label, parts, sub, chips, shots, mark, note }) => {
   const fmt = useFmt();
   if (fmt === "16x9") {
     return (
       <AbsoluteFill>
-        <div style={{ position: "absolute", left: 150, top: 0, bottom: 0, width: 880, display: "flex", flexDirection: "column", justifyContent: "center", gap: 26 }}>
+        <div style={{ position: "absolute", left: 110, top: 0, bottom: 0, width: 760, display: "flex", flexDirection: "column", justifyContent: "center", gap: 24 }}>
           <Label t={label} size={26} />
-          <Headline parts={parts} size={86} />
+          <Headline parts={parts} size={80} />
           <Sub t={sub} size={32} />
           {chips ? <Chips items={chips} size={22} /> : null}
           {note ? <div style={{ fontFamily: MONO, fontSize: 17, color: "#6f6f78", marginTop: 6 }}>{note}</div> : null}
         </div>
-        <div style={{ position: "absolute", right: 210, top: 60 }}><Phone h={960} shots={shots} frames={frames} mark={mark} /></div>
+        <div style={{ position: "absolute", right: 90, top: 64 }}><Screen w={860} h={936} shots={shots} frames={frames} mark={mark} /></div>
       </AbsoluteFill>
     );
   }
   return (
     <AbsoluteFill>
-      <div style={{ position: "absolute", left: 70, right: 70, top: 80, display: "flex", flexDirection: "column", gap: 16 }}>
+      <div style={{ position: "absolute", left: 56, right: 56, top: 66, display: "flex", flexDirection: "column", gap: 12 }}>
         <Label t={label} size={24} />
-        <Headline parts={parts} size={66} />
-        <Sub t={sub} size={27} />
+        <Headline parts={parts} size={60} />
+        <Sub t={sub} size={25} />
         {note ? <div style={{ fontFamily: MONO, fontSize: 16, color: "#6f6f78" }}>{note}</div> : null}
       </div>
-      <div style={{ position: "absolute", left: 0, right: 0, top: 480, display: "flex", justifyContent: "center" }}><Phone h={770} shots={shots} frames={frames} mark={mark} /></div>
+      <div style={{ position: "absolute", left: 0, right: 0, top: 318, display: "flex", justifyContent: "center" }}><Screen w={1004} h={940} shots={shots} frames={frames} mark={mark} /></div>
     </AbsoluteFill>
   );
 };
@@ -239,12 +241,12 @@ export const SiteVideo: React.FC = () => {
     switch (id) {
       case "s1": return <Dor1 />;
       case "s2": return <Dor2 frames={frames} />;
-      case "s3": return <Feature frames={frames} label="// 01 · ESCOLHA SEU CONCURSO" parts={[{ t: "No padrão da" }, { t: "sua banca.", hit: true }]} sub="Simulado montado pelo último edital, com o peso de cada matéria." chips={["PM SP", "Vunesp", "Edital 2026", "60 questões"]} shots={[{ src: "config", from: 0, to: 3500, at: 0, dur: frames - 34 }, { src: "gerando", from: 0, at: frames - 34 }]} />;
-      case "s4": return <Feature frames={frames} label="// 02 · RESOLVA" parts={[{ t: "Como no" }, { t: "dia da prova.", hit: true }]} sub="Cronômetro, cartão de navegação e revisão antes de entregar." shots={[{ src: "prova", from: 0 }]} mark={{ x: 836, y: 231, w: 407, h: 137, from: 18 }} />;
-      case "s5": return <Feature frames={frames} label="// 03 · CORREÇÃO NA HORA" parts={[{ t: "Sem esperar" }, { t: "ninguém.", hit: true }]} sub="Nota, acertos e desempenho por matéria assim que você entrega." shots={[{ src: "resultado", from: 0, to: 660 }]} />;
-      case "s6": return <Feature frames={frames} label="// GABARITO COMENTADO" parts={[{ t: "E a" }, { t: "pegadinha", hit: true }, { t: "da banca." }]} sub="Cada questão explica a resposta certa e onde a banca tenta te derrubar." shots={[{ src: "gabarito", from: 0, to: 270 }]} mark={{ x: 24, y: 2745, w: 1242, h: 290, from: 50 }} />;
-      case "s7": return <Feature frames={frames} label="// 04 · CADERNO DE ERROS" parts={[{ t: "Seu erro vira" }, { t: "missão.", hit: true }]} sub="Cada erro entra sozinho no Caderno. Você refaz no Modo Redenção até dominar." shots={[{ src: "red-questao", from: 0, at: 0, dur: 40 }, { src: "red-marcada", from: 0, at: 40, dur: 30 }, { src: "red-dominada", from: 0, at: 70 }]} />;
-      case "s8": return <Feature frames={frames} label="// BÚSSOLA TÁTICA" parts={[{ t: "O que sua banca" }, { t: "mais cobra.", hit: true }]} sub="Raio-X do edital: peso de cada matéria e tópicos com prioridade alta." shots={[{ src: "bussola", from: 1650, to: 3700 }]} note="Estimativa baseada no histórico de provas da banca, não é dado oficial." />;
+      case "s3": return <Feature frames={frames} label="// 01 · ESCOLHA SEU CONCURSO" parts={[{ t: "No padrão da" }, { t: "sua banca.", hit: true }]} sub="Simulado montado pelo último edital, com o peso de cada matéria." chips={["PM SP", "Vunesp", "Edital 2026", "60 questões"]} shots={[{ src: "config", h: 7305, from: 650, to: 3350, at: 0, dur: frames - 34 }, { src: "gerando", h: 2796, from: 900, to: 1150, at: frames - 34 }]} />;
+      case "s4": return <Feature frames={frames} label="// 02 · RESOLVA" parts={[{ t: "Como no" }, { t: "dia da prova.", hit: true }]} sub="Cronômetro, cartão de navegação e revisão antes de entregar." shots={[{ src: "prova", h: 2796, from: 0, to: 420 }]} mark={{ x: 836, y: 231, w: 407, h: 137, from: 14 }} />;
+      case "s5": return <Feature frames={frames} label="// 03 · CORREÇÃO NA HORA" parts={[{ t: "Sem esperar" }, { t: "ninguém.", hit: true }]} sub="Nota, acertos e desempenho por matéria assim que você entrega." shots={[{ src: "resultado", h: 3456, from: 230, to: 1180 }]} />;
+      case "s6": return <Feature frames={frames} label="// GABARITO COMENTADO" parts={[{ t: "E a" }, { t: "pegadinha", hit: true }, { t: "da banca." }]} sub="Cada questão explica a resposta certa e onde a banca tenta te derrubar." shots={[{ src: "gabarito", h: 3066, from: 880, to: "end" }]} mark={{ x: 24, y: 2745, w: 1242, h: 290, from: 58 }} />;
+      case "s7": return <Feature frames={frames} label="// 04 · CADERNO DE ERROS" parts={[{ t: "Seu erro vira" }, { t: "missão.", hit: true }]} sub="Cada erro entra sozinho no Caderno. Você refaz no Modo Redenção até dominar." shots={[{ src: "red-questao", h: 2796, from: 380, at: 0, dur: 40 }, { src: "red-marcada", h: 2796, from: 820, at: 40, dur: 30 }, { src: "red-dominada", h: 2796, from: "end", at: 70 }]} />;
+      case "s8": return <Feature frames={frames} label="// BÚSSOLA TÁTICA" parts={[{ t: "O que sua banca" }, { t: "mais cobra.", hit: true }]} sub="Raio-X do edital: peso de cada matéria e tópicos com prioridade alta." shots={[{ src: "bussola", h: 9000, from: 1700, to: 3900 }]} note="Estimativa baseada no histórico de provas da banca, não é dado oficial." />;
       default: return <Cta frames={frames} />;
     }
   };
