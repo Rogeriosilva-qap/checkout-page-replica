@@ -11,6 +11,7 @@ import { GabaritoGtaVideo, QuestaoGtaVideo, TOTAL_GABARITO_GTA, TOTAL_QUESTAO_GT
 import { PlataformaVideo, TOTAL_PLATAFORMA } from "./patentes/Plataforma";
 import { SiteVideo, TOTAL_SITE } from "./site/Site";
 import { GoiasVideo, TOTAL_GOIAS } from "./goias/Goias";
+import { PmspVideo, TOTAL_PMSP } from "./pmsp/Pmsp";
 import { GabaritoPortVideo, QuestaoPortVideo, TOTAL_GABARITO_PORT, TOTAL_QUESTAO_PORT } from "./patentes/QuestaoPort";
 
 export const RemotionRoot: React.FC = () => (
@@ -34,6 +35,7 @@ export const RemotionRoot: React.FC = () => (
   <Composition id="QuestaoPort" component={QuestaoPortVideo} durationInFrames={TOTAL_QUESTAO_PORT} fps={FPS} width={WIDTH} height={HEIGHT} />
   <Composition id="GabaritoPort" component={GabaritoPortVideo} durationInFrames={TOTAL_GABARITO_PORT} fps={FPS} width={WIDTH} height={HEIGHT} />
   <Composition id="PlataformaBussola" component={PlataformaVideo} durationInFrames={TOTAL_PLATAFORMA} fps={FPS} width={WIDTH} height={HEIGHT} />
+  <Composition id="PmspDireito" component={PmspVideo} durationInFrames={TOTAL_PMSP} fps={FPS} width={WIDTH} height={HEIGHT} />
   <Composition id="Goias2027" component={GoiasVideo} durationInFrames={TOTAL_GOIAS} fps={FPS} width={WIDTH} height={HEIGHT} />
   <Composition id="SiteHorizontal" component={SiteVideo} durationInFrames={TOTAL_SITE} fps={FPS} width={1920} height={1080} />
   <Composition id="SiteVertical" component={SiteVideo} durationInFrames={TOTAL_SITE} fps={FPS} width={1080} height={1350} />

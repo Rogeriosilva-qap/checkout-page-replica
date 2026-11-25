@@ -1,0 +1,419 @@
+{
+ "cenas": {
+  "p1": {
+   "arquivo": "voz-pmsp/p1.mp3",
+   "texto": "Se você estuda Direito pra PM de São Paulo, para tudo.",
+   "velocidade": 1.08,
+   "duracao": 3.239,
+   "fala_fim": 3.204,
+   "palavras": [
+    {
+     "text": "Se",
+     "start": 0.0,
+     "end": 0.151
+    },
+    {
+     "text": "você",
+     "start": 0.174,
+     "end": 0.337
+    },
+    {
+     "text": "estuda",
+     "start": 0.406,
+     "end": 0.72
+    },
+    {
+     "text": "Direito",
+     "start": 0.755,
+     "end": 1.045
+    },
+    {
+     "text": "pra",
+     "start": 1.068,
+     "end": 1.207
+    },
+    {
+     "text": "PM",
+     "start": 1.265,
+     "end": 1.614
+    },
+    {
+     "text": "de",
+     "start": 1.718,
+     "end": 1.8
+    },
+    {
+     "text": "São",
+     "start": 1.834,
+     "end": 1.997
+    },
+    {
+     "text": "Paulo,",
+     "start": 2.032,
+     "end": 2.264
+    },
+    {
+     "text": "para",
+     "start": 2.287,
+     "end": 2.438
+    },
+    {
+     "text": "tudo.",
+     "start": 2.496,
+     "end": 3.204
+    }
+   ]
+  },
+  "p2": {
+   "arquivo": "voz-pmsp/p2.mp3",
+   "texto": "Português e Matemática são trinta e cinco das sessenta questões.",
+   "velocidade": 1.08,
+   "duracao": 3.527,
+   "fala_fim": 3.483,
+   "palavras": [
+    {
+     "text": "Português",
+     "start": 0.0,
+     "end": 0.441
+    },
+    {
+     "text": "e",
+     "start": 0.464,
+     "end": 0.488
+    },
+    {
+     "text": "Matemática",
+     "start": 0.522,
+     "end": 1.045
+    },
+    {
+     "text": "são",
+     "start": 1.08,
+     "end": 1.231
+    },
+    {
+     "text": "trinta",
+     "start": 1.277,
+     "end": 1.544
+    },
+    {
+     "text": "e",
+     "start": 1.567,
+     "end": 1.591
+    },
+    {
+     "text": "cinco",
+     "start": 1.625,
+     "end": 1.892
+    },
+    {
+     "text": "das",
+     "start": 1.927,
+     "end": 2.043
+    },
+    {
+     "text": "sessenta",
+     "start": 2.067,
+     "end": 2.438
+    },
+    {
+     "text": "questões.",
+     "start": 2.485,
+     "end": 3.483
+    }
+   ]
+  },
+  "p3": {
+   "arquivo": "voz-pmsp/p3.mp3",
+   "texto": "Direito mesmo? Só cinco, em Administração Pública.",
+   "velocidade": 1.08,
+   "duracao": 3.344,
+   "fala_fim": 3.297,
+   "palavras": [
+    {
+     "text": "Direito",
+     "start": 0.0,
+     "end": 0.337
+    },
+    {
+     "text": "mesmo?",
+     "start": 0.372,
+     "end": 0.789
+    },
+    {
+     "text": "Só",
+     "start": 0.859,
+     "end": 1.033
+    },
+    {
+     "text": "cinco,",
+     "start": 1.091,
+     "end": 1.521
+    },
+    {
+     "text": "em",
+     "start": 1.741,
+     "end": 1.823
+    },
+    {
+     "text": "Administração",
+     "start": 1.869,
+     "end": 2.461
+    },
+    {
+     "text": "Pública.",
+     "start": 2.496,
+     "end": 3.297
+    }
+   ]
+  },
+  "p4": {
+   "arquivo": "voz-pmsp/p4.mp3",
+   "texto": "E as inscrições vão só até vinte e dois de dezembro.",
+   "velocidade": 1.08,
+   "duracao": 2.821,
+   "fala_fim": 2.786,
+   "palavras": [
+    {
+     "text": "E",
+     "start": 0.0,
+     "end": 0.104
+    },
+    {
+     "text": "as",
+     "start": 0.163,
+     "end": 0.221
+    },
+    {
+     "text": "inscrições",
+     "start": 0.29,
+     "end": 0.813
+    },
+    {
+     "text": "vão",
+     "start": 0.848,
+     "end": 0.975
+    },
+    {
+     "text": "só",
+     "start": 1.01,
+     "end": 1.126
+    },
+    {
+     "text": "até",
+     "start": 1.149,
+     "end": 1.289
+    },
+    {
+     "text": "vinte",
+     "start": 1.358,
+     "end": 1.567
+    },
+    {
+     "text": "e",
+     "start": 1.591,
+     "end": 1.614
+    },
+    {
+     "text": "dois",
+     "start": 1.649,
+     "end": 1.834
+    },
+    {
+     "text": "de",
+     "start": 1.858,
+     "end": 1.904
+    },
+    {
+     "text": "dezembro.",
+     "start": 1.974,
+     "end": 2.786
+    }
+   ]
+  },
+  "p5": {
+   "arquivo": "voz-pmsp/p5.mp3",
+   "texto": "Por isso eu montei um simulado no padrão Vunesp, com correção na hora e a sua nota por matéria.",
+   "velocidade": 1.08,
+   "duracao": 5.695,
+   "fala_fim": 5.666,
+   "palavras": [
+    {
+     "text": "Por",
+     "start": 0.0,
+     "end": 0.163
+    },
+    {
+     "text": "isso",
+     "start": 0.197,
+     "end": 0.313
+    },
+    {
+     "text": "eu",
+     "start": 0.337,
+     "end": 0.383
+    },
+    {
+     "text": "montei",
+     "start": 0.418,
+     "end": 0.662
+    },
+    {
+     "text": "um",
+     "start": 0.697,
+     "end": 0.743
+    },
+    {
+     "text": "simulado",
+     "start": 0.801,
+     "end": 1.254
+    },
+    {
+     "text": "no",
+     "start": 1.277,
+     "end": 1.347
+    },
+    {
+     "text": "padrão",
+     "start": 1.382,
+     "end": 1.672
+    },
+    {
+     "text": "Vunesp,",
+     "start": 1.707,
+     "end": 2.171
+    },
+    {
+     "text": "com",
+     "start": 2.426,
+     "end": 2.577
+    },
+    {
+     "text": "correção",
+     "start": 2.624,
+     "end": 3.019
+    },
+    {
+     "text": "na",
+     "start": 3.053,
+     "end": 3.135
+    },
+    {
+     "text": "hora",
+     "start": 3.193,
+     "end": 3.471
+    },
+    {
+     "text": "e",
+     "start": 3.773,
+     "end": 3.878
+    },
+    {
+     "text": "a",
+     "start": 3.913,
+     "end": 3.936
+    },
+    {
+     "text": "sua",
+     "start": 3.971,
+     "end": 4.11
+    },
+    {
+     "text": "nota",
+     "start": 4.156,
+     "end": 4.331
+    },
+    {
+     "text": "por",
+     "start": 4.377,
+     "end": 4.47
+    },
+    {
+     "text": "matéria.",
+     "start": 4.516,
+     "end": 5.666
+    }
+   ]
+  },
+  "p6": {
+   "arquivo": "voz-pmsp/p6.mp3",
+   "texto": "Comenta PMSP que eu te mando o link pra fazer o primeiro de graça.",
+   "velocidade": 1.08,
+   "duracao": 4.258,
+   "fala_fim": 4.226,
+   "palavras": [
+    {
+     "text": "Comenta",
+     "start": 0.0,
+     "end": 0.453
+    },
+    {
+     "text": "PMSP",
+     "start": 0.511,
+     "end": 1.405
+    },
+    {
+     "text": "que",
+     "start": 1.881,
+     "end": 1.985
+    },
+    {
+     "text": "eu",
+     "start": 2.009,
+     "end": 2.055
+    },
+    {
+     "text": "te",
+     "start": 2.101,
+     "end": 2.171
+    },
+    {
+     "text": "mando",
+     "start": 2.218,
+     "end": 2.403
+    },
+    {
+     "text": "o",
+     "start": 2.426,
+     "end": 2.45
+    },
+    {
+     "text": "link",
+     "start": 2.485,
+     "end": 2.67
+    },
+    {
+     "text": "pra",
+     "start": 2.728,
+     "end": 2.833
+    },
+    {
+     "text": "fazer",
+     "start": 2.879,
+     "end": 3.135
+    },
+    {
+     "text": "o",
+     "start": 3.17,
+     "end": 3.193
+    },
+    {
+     "text": "primeiro",
+     "start": 3.216,
+     "end": 3.495
+    },
+    {
+     "text": "de",
+     "start": 3.518,
+     "end": 3.576
+    },
+    {
+     "text": "graça.",
+     "start": 3.622,
+     "end": 4.226
+    }
+   ]
+  }
+ },
+ "voz": "4J31DrhygVjvFsoj7BsM"
+}
