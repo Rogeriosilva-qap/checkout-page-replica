@@ -1,4 +1,5 @@
 # Revisão da página de vendas
+- [x] Atualizar links da plataforma no ar e Missão Goiás, retirar avisos antigos e verificar testes e navegação.
 - [x] Explicar o Método Bússola na FAQ do guia e adicionar navegação de páginas; verificar celular e computador sem publicar.
 - [x] Limitar a uma geração gratuita por e-mail com bloqueio simultâneo e oferecer o e-book após o uso; testar a resposta real e novo cadastro.
 - [x] Captar e-mail antes da explicação, guardar autorização opcional e verificar cadastro real e resposta em celular e desktop.

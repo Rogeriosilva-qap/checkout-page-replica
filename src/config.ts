@@ -8,6 +8,8 @@ export const CONFIG = {
   kitPriceText: "R$ 47,00", // Preço do kit cobrado no checkout.
   kitSeparatePriceText: "R$ 94,00", // Soma dos dois e-books comprados separadamente (âncora real).
   cyberWaitlistUrl: "https://chat.whatsapp.com/JjnVbBHGjnT2OlG8TznUPo", // Grupo de espera da plataforma de simulados. Vazio = botão do grupo fica oculto.
+  missaoGoiasUrl: "https://chat.whatsapp.com/Cho0lxWH2BGLVDJr1qsLYY", // Grupo gratuito de estudos PMGO e PCGO. Vazio = item oculto.
+  simuladosUrl: "https://xn--simuladosoperaoaprovao-q4bh5gi.com.br", // Plataforma de simulados no ar. Vazio = item oculto.
   checkoutUrl: "https://pay.kirvano.com/28b35434-3fbf-4f7e-914d-ae6212e77484", // URL do checkout (ex.: link da plataforma de pagamento). OBRIGATÓRIO para vender.
   listPriceText: "R$ 97,00", // Preço cheio confirmado do e-book, exibido riscado ao lado do preço de lançamento. Deixe "" para ocultar.
   launchPriceText: "R$ 47,00", // Preço de lançamento cobrado agora.
@@ -46,6 +48,12 @@ export function getCyberCheckoutHref(url: string = CONFIG.cyberCheckoutUrl): str
 
 // Link do grupo de espera dos simulados; null enquanto o grupo não existir.
 export function getCyberWaitlistHref(url: string = CONFIG.cyberWaitlistUrl): string | null {
+  const v = url.trim();
+  return v.length > 0 ? v : null;
+}
+
+// Link da plataforma de simulados; null enquanto o destino não estiver configurado.
+export function getSimuladosHref(url: string = CONFIG.simuladosUrl): string | null {
   const v = url.trim();
   return v.length > 0 ? v : null;
 }

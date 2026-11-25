@@ -13,7 +13,7 @@ export type BioLink = {
   highlight?: boolean;
 };
 
-type Settings = Pick<typeof CONFIG, "cyberWaitlistUrl" | "whatsappNumber" | "kitCheckoutUrl" | "kitPriceText">;
+type Settings = Pick<typeof CONFIG, "simuladosUrl" | "missaoGoiasUrl" | "whatsappNumber" | "kitCheckoutUrl" | "kitPriceText">;
 
 /**
  * Links da página /links (bio do Instagram), na ordem de exibição.
@@ -26,10 +26,19 @@ export function getBioLinks(settings: Settings = CONFIG): BioLink[] {
   const links: BioLink[] = [
     {
       id: "simulados",
-      label: "Grupo de espera · Simulados Operação Aprovação",
-      desc: "Receba a plataforma primeiro, com desconto de lançamento.",
-      href: settings.cyberWaitlistUrl.trim(),
-      tag: "EM BREVE",
+      label: "Simulados Operação Aprovação",
+      desc: "Simulados no padrão da sua banca. Crie sua conta e faça o 1º simulado grátis.",
+      href: settings.simuladosUrl.trim(),
+      tag: "1º GRÁTIS",
+      external: true,
+      highlight: true,
+    },
+    {
+      id: "missao-goias",
+      label: "Grupo Missão Goiás 2027 · PMGO e PCGO",
+      desc: "Grupo gratuito e aberto de estudos para quem vai prestar PMGO e PCGO.",
+      href: settings.missaoGoiasUrl.trim(),
+      tag: "GRÁTIS",
       external: true,
       highlight: true,
     },

@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { CONFIG, getKitCheckoutHref } from "@/config";
+import { CONFIG, getKitCheckoutHref, getSimuladosHref } from "@/config";
 import capaPrompts from "@/assets/capa-ebook.jpg.asset.json";
 import logo from "@/assets/logo-operacao-aprovacao.png.asset.json";
 
@@ -61,11 +61,12 @@ const FAQ: [string, string][] = [
   ["O que vem no kit?", "Os dois e-books completos em PDF: o Guia Definitivo do Concurseiro Policial Cibernético e o IA para Concursos Policiais (60 prompts, com a biblioteca resumida em PDF separado), mais todos os bônus que já acompanham cada um."],
   ["Qual a diferença entre os dois e-books?", "O Guia Cibernético ajuda a organizar o estudo: transformar o edital em plano, priorizar e montar o caderno de erros. O IA para Concursos Policiais ajuda a estudar o conteúdo: gerar questões, revisões e explicações a partir do seu material. Um completa o outro."],
   ["É curso em vídeo?", "Não. São e-books em PDF, sem aulas em vídeo, e não incluem assinatura de ferramentas de IA."],
-  ["Como funciona o desconto na plataforma de simulados?", "A plataforma Simulados Operação Aprovação ainda está em desenvolvimento. Quem compra o kit recebe, no lançamento, um desconto exclusivo pelo e-mail ou WhatsApp informados na compra. O valor do desconto será divulgado no lançamento."],
+  ["Como funciona o desconto na plataforma de simulados?", "A plataforma Simulados Operação Aprovação já está no ar. Para informações sobre as condições do desconto exclusivo do kit, fale com o suporte da Operação Aprovação."],
   ["Tem garantia?", `Sim. Garantia de ${CONFIG.guaranteeDays} dias: leia, teste no seu estudo e decida com calma.`],
 ];
 
 function KitPage() {
+  const simuladosHref = getSimuladosHref();
   return (
     <main className="kit">
       <header className="kit-head">
@@ -82,7 +83,7 @@ function KitPage() {
         </h1>
         <p className="kit-lead">
           Organize o edital <strong>e</strong> estude o conteúdo com inteligência artificial: o Guia do Concurseiro Policial Cibernético e o IA
-          para Concursos Policiais juntos, com todos os bônus e desconto exclusivo na plataforma de simulados quando ela for lançada.
+          para Concursos Policiais juntos, com todos os bônus e desconto exclusivo na plataforma de simulados.
         </p>
         <div className="kit-covers" aria-hidden="true">
           <img src="/kit/capa-cibernetico.jpg" alt="" width={640} height={908} />
@@ -128,13 +129,12 @@ function KitPage() {
           <p className="kit-tag">EXCLUSIVO PARA QUEM COMPRA O KIT</p>
           <h2>Desconto na plataforma Simulados Operação Aprovação</h2>
           <p>
-            A plataforma de simulados para concursos de segurança pública está em desenvolvimento: simulados no padrão da sua banca, correção do
-            cartão-resposta pela câmera, gabarito, comentário e a pegadinha da banca em cada questão, e Caderno de Erros automático.
+            A plataforma Simulados Operação Aprovação já está no ar. Simulados no padrão da sua banca: crie sua conta e faça o 1º simulado grátis.
           </p>
           <p>
-            <strong>Quem compra o kit recebe um desconto exclusivo no lançamento</strong>, enviado para o e-mail ou WhatsApp informados na compra.
-            O valor do desconto será divulgado no lançamento.
+            Para informações sobre as condições do desconto exclusivo do kit, fale com o suporte da Operação Aprovação.
           </p>
+          {simuladosHref && <a className="kit-btn" href={simuladosHref} target="_blank" rel="noopener noreferrer">Criar conta e fazer o 1º simulado grátis</a>}
         </div>
       </section>
 

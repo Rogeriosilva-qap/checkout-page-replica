@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode, type RefObject } from "react";
-import { CONFIG, getCyberCheckoutHref, getCyberWaitlistHref } from "@/config";
+import { CONFIG, getCyberCheckoutHref, getSimuladosHref } from "@/config";
 import { copyAdvertorialPrompt } from "@/lib/copy-advertorial-prompt";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -65,6 +65,7 @@ const FAQ: [string, string][] = [
 ];
 
 function CyberPage() {
+  const simuladosHref = getSimuladosHref();
   const heroRef = useRef<HTMLAnchorElement>(null);
   const offerRef = useRef<HTMLAnchorElement>(null);
   const finalRef = useRef<HTMLAnchorElement>(null);
@@ -233,13 +234,13 @@ function CyberPage() {
 
         <section className="sec" aria-labelledby="cy-waitlist"><div className="cw">
           <div className="waitlist">
-            <span className="label">// PRÓXIMA MISSÃO</span>
-            <h2 id="cy-waitlist">Plataforma de simulados Operação Aprovação: entre no grupo de espera</h2>
-            <p>Estamos finalizando uma plataforma de simulados no formato da sua banca, com cartão-resposta corrigido pelo celular, caderno de erros automático e correção de redação por foto. Quem entrar no grupo de espera do WhatsApp será avisado primeiro do lançamento e terá um desconto exclusivo.</p>
-            {getCyberWaitlistHref() && (
-              <a className="btn-w" href={getCyberWaitlistHref()!} target="_blank" rel="noopener noreferrer">Entrar no grupo de espera</a>
+            <span className="label">// PLATAFORMA NO AR</span>
+            <h2 id="cy-waitlist">Plataforma de simulados Operação Aprovação: já está no ar</h2>
+            <p>Simulados no padrão da sua banca. Crie sua conta e faça o 1º simulado grátis.</p>
+            {simuladosHref && (
+              <a className="btn-w" href={simuladosHref} target="_blank" rel="noopener noreferrer">Criar conta e fazer o 1º simulado grátis</a>
             )}
-            <p className="micro">Grupo gratuito no WhatsApp. A plataforma ainda não foi lançada; os recursos podem mudar até o lançamento.</p>
+            <p className="micro">Acesse a plataforma para criar sua conta e começar a treinar.</p>
           </div>
         </div></section>
 
