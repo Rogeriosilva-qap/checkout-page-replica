@@ -217,3 +217,39 @@ No último edital de Soldado da PMGO, sim: nível superior em qualquer área. Po
 ```
 Vale! 70 dos 85 pontos do último concurso vieram das matérias de Direito, e isso não se aprende em 2 meses. Quem começa agora sai na frente.
 ```
+
+---
+
+## 7. TikTok: "18 pontos numa matéria que muita gente deixa pra depois"
+
+**Arquivos:**
+- `video-bussola-tiktok/out/pmgo-militar.mp4` (9:16, 30 s)
+- `video-bussola-tiktok/out/pmgo-militar-4x5.mp4` (feed)
+- Capa: `video-bussola-tiktok/out/frames/capa-pmgo-militar.png` (o "18 PONTOS" gigante)
+
+**O dado:**
+- Na prova de Soldado PMGO 2022 (AOCP), Direito Penal Militar (4 questões) e Processo Penal Militar (5 questões) valeram peso 2.
+- Isso dá **18 pontos dos 85**.
+- A prova inteira de Português valeu **10 pontos** (10 questões, peso 1).
+
+**Chamada:** "link na bio", porque o TikTok não tem ManyChat. O grupo do WhatsApp fica no link da bio.
+
+**Legenda (TikTok):**
+
+```
+18 pontos da prova da PMGO estão em Penal Militar e Processo Penal Militar 😳 Vale quase o dobro de Português inteiro. Ainda não tem edital, mas quem começa agora sai na frente. Grupo de estudos gratuito no link da bio 👆 #PMGO #concursoPMGO #policiamilitar #concursoGoias #penalmilitar #concurseiro #estudos
+```
+
+**Comentário fixado:**
+
+```
+📌 Prova de Soldado PMGO 2022 (AOCP): Penal Militar 4 + Processo Penal Militar 5 questões, peso 2 = 18 pts. Português: 10 questões, peso 1 = 10 pts. O grupo Missão Goiás 2027 está no link da bio 👆
+```
+
+**Se postar no Instagram também:** troque o final da legenda por "Comenta GOIÁS que eu te mando o link do grupo". O vídeo diz "link na bio", e as duas chamadas funcionam juntas.
+
+**Resposta pronta para "e se mudar no próximo edital?":**
+
+```
+Pode mudar sim, ainda não tem edital. Mas Penal Militar e Processo Penal Militar são matérias clássicas de PM, e quem já tem a base sai na frente 💪
+```

@@ -1,0 +1,492 @@
+{
+ "voz": "4J31DrhygVjvFsoj7BsM",
+ "cenas": {
+  "m1": {
+   "arquivo": "voz-pmgo-militar/final/m1.wav",
+   "duracao": 5.9,
+   "texto": "Dezoito pontos da prova da PM de Goiás estão numa matéria que muita gente deixa pra depois.",
+   "palavras": [
+    {
+     "text": "Dezoito",
+     "start": 0.0,
+     "end": 0.557
+    },
+    {
+     "text": "pontos",
+     "start": 0.615,
+     "end": 0.952
+    },
+    {
+     "text": "da",
+     "start": 1.01,
+     "end": 1.103
+    },
+    {
+     "text": "prova",
+     "start": 1.149,
+     "end": 1.44
+    },
+    {
+     "text": "da",
+     "start": 1.486,
+     "end": 1.567
+    },
+    {
+     "text": "PM",
+     "start": 1.637,
+     "end": 2.032
+    },
+    {
+     "text": "de",
+     "start": 2.101,
+     "end": 2.159
+    },
+    {
+     "text": "Goiás",
+     "start": 2.218,
+     "end": 2.577
+    },
+    {
+     "text": "estão",
+     "start": 2.647,
+     "end": 3.123
+    },
+    {
+     "text": "numa",
+     "start": 3.399,
+     "end": 3.643
+    },
+    {
+     "text": "matéria",
+     "start": 3.69,
+     "end": 4.131
+    },
+    {
+     "text": "que",
+     "start": 4.201,
+     "end": 4.317
+    },
+    {
+     "text": "muita",
+     "start": 4.386,
+     "end": 4.735
+    },
+    {
+     "text": "gente",
+     "start": 4.781,
+     "end": 5.002
+    },
+    {
+     "text": "deixa",
+     "start": 5.048,
+     "end": 5.28
+    },
+    {
+     "text": "pra",
+     "start": 5.315,
+     "end": 5.408
+    },
+    {
+     "text": "depois.",
+     "start": 5.443,
+     "end": 5.9
+    }
+   ]
+  },
+  "m2": {
+   "arquivo": "voz-pmgo-militar/final/m2.wav",
+   "duracao": 5.303,
+   "texto": "No último concurso, Direito Penal Militar e Processo Penal Militar tiveram nove questões, com peso dois.",
+   "palavras": [
+    {
+     "text": "No",
+     "start": 0.0,
+     "end": 0.116
+    },
+    {
+     "text": "último",
+     "start": 0.139,
+     "end": 0.383
+    },
+    {
+     "text": "concurso,",
+     "start": 0.418,
+     "end": 1.005
+    },
+    {
+     "text": "Direito",
+     "start": 1.083,
+     "end": 1.385
+    },
+    {
+     "text": "Penal",
+     "start": 1.408,
+     "end": 1.617
+    },
+    {
+     "text": "Militar",
+     "start": 1.64,
+     "end": 2.07
+    },
+    {
+     "text": "e",
+     "start": 2.14,
+     "end": 2.256
+    },
+    {
+     "text": "Processo",
+     "start": 2.314,
+     "end": 2.65
+    },
+    {
+     "text": "Penal",
+     "start": 2.674,
+     "end": 2.871
+    },
+    {
+     "text": "Militar",
+     "start": 2.894,
+     "end": 3.219
+    },
+    {
+     "text": "tiveram",
+     "start": 3.266,
+     "end": 3.579
+    },
+    {
+     "text": "nove",
+     "start": 3.626,
+     "end": 3.823
+    },
+    {
+     "text": "questões,",
+     "start": 3.846,
+     "end": 4.423
+    },
+    {
+     "text": "com",
+     "start": 4.486,
+     "end": 4.625
+    },
+    {
+     "text": "peso",
+     "start": 4.671,
+     "end": 4.88
+    },
+    {
+     "text": "dois.",
+     "start": 4.938,
+     "end": 5.303
+    }
+   ]
+  },
+  "m3": {
+   "arquivo": "voz-pmgo-militar/final/m3.wav",
+   "duracao": 3.337,
+   "texto": "Isso vale quase o dobro de toda a prova de Português, que valeu dez pontos.",
+   "palavras": [
+    {
+     "text": "Isso",
+     "start": 0.0,
+     "end": 0.186
+    },
+    {
+     "text": "vale",
+     "start": 0.221,
+     "end": 0.395
+    },
+    {
+     "text": "quase",
+     "start": 0.43,
+     "end": 0.662
+    },
+    {
+     "text": "o",
+     "start": 0.685,
+     "end": 0.708
+    },
+    {
+     "text": "dobro",
+     "start": 0.755,
+     "end": 1.033
+    },
+    {
+     "text": "de",
+     "start": 1.057,
+     "end": 1.126
+    },
+    {
+     "text": "toda",
+     "start": 1.184,
+     "end": 1.37
+    },
+    {
+     "text": "a",
+     "start": 1.393,
+     "end": 1.416
+    },
+    {
+     "text": "prova",
+     "start": 1.451,
+     "end": 1.683
+    },
+    {
+     "text": "de",
+     "start": 1.707,
+     "end": 1.765
+    },
+    {
+     "text": "Português,",
+     "start": 1.811,
+     "end": 2.322
+    },
+    {
+     "text": "que",
+     "start": 2.38,
+     "end": 2.473
+    },
+    {
+     "text": "valeu",
+     "start": 2.508,
+     "end": 2.728
+    },
+    {
+     "text": "dez",
+     "start": 2.763,
+     "end": 2.902
+    },
+    {
+     "text": "pontos.",
+     "start": 2.972,
+     "end": 3.337
+    }
+   ]
+  },
+  "m4": {
+   "arquivo": "voz-pmgo-militar/final/m4.wav",
+   "duracao": 4.032,
+   "texto": "E é lei seca: o Código Penal Militar e o Código de Processo Penal Militar.",
+   "palavras": [
+    {
+     "text": "E",
+     "start": 0.0,
+     "end": 0.128
+    },
+    {
+     "text": "é",
+     "start": 0.197,
+     "end": 0.221
+    },
+    {
+     "text": "lei",
+     "start": 0.279,
+     "end": 0.395
+    },
+    {
+     "text": "seca:",
+     "start": 0.441,
+     "end": 0.836
+    },
+    {
+     "text": "o",
+     "start": 1.185,
+     "end": 1.255
+    },
+    {
+     "text": "Código",
+     "start": 1.301,
+     "end": 1.556
+    },
+    {
+     "text": "Penal",
+     "start": 1.591,
+     "end": 1.8
+    },
+    {
+     "text": "Militar",
+     "start": 1.835,
+     "end": 2.23
+    },
+    {
+     "text": "e",
+     "start": 2.265,
+     "end": 2.299
+    },
+    {
+     "text": "o",
+     "start": 2.334,
+     "end": 2.381
+    },
+    {
+     "text": "Código",
+     "start": 2.427,
+     "end": 2.694
+    },
+    {
+     "text": "de",
+     "start": 2.717,
+     "end": 2.764
+    },
+    {
+     "text": "Processo",
+     "start": 2.81,
+     "end": 3.193
+    },
+    {
+     "text": "Penal",
+     "start": 3.217,
+     "end": 3.426
+    },
+    {
+     "text": "Militar.",
+     "start": 3.449,
+     "end": 4.032
+    }
+   ]
+  },
+  "m5": {
+   "arquivo": "voz-pmgo-militar/final/m5.wav",
+   "duracao": 2.983,
+   "texto": "Ainda não tem edital. Mas quem começa por aqui sai na frente.",
+   "palavras": [
+    {
+     "text": "Ainda",
+     "start": 0.0,
+     "end": 0.267
+    },
+    {
+     "text": "não",
+     "start": 0.313,
+     "end": 0.418
+    },
+    {
+     "text": "tem",
+     "start": 0.453,
+     "end": 0.569
+    },
+    {
+     "text": "edital.",
+     "start": 0.604,
+     "end": 1.044
+    },
+    {
+     "text": "Mas",
+     "start": 1.356,
+     "end": 1.484
+    },
+    {
+     "text": "quem",
+     "start": 1.519,
+     "end": 1.623
+    },
+    {
+     "text": "começa",
+     "start": 1.647,
+     "end": 1.925
+    },
+    {
+     "text": "por",
+     "start": 1.96,
+     "end": 2.065
+    },
+    {
+     "text": "aqui",
+     "start": 2.099,
+     "end": 2.25
+    },
+    {
+     "text": "sai",
+     "start": 2.308,
+     "end": 2.436
+    },
+    {
+     "text": "na",
+     "start": 2.471,
+     "end": 2.541
+    },
+    {
+     "text": "frente.",
+     "start": 2.599,
+     "end": 2.984
+    }
+   ]
+  },
+  "m6": {
+   "arquivo": "voz-pmgo-militar/final/m6.wav",
+   "duracao": 3.358,
+   "texto": "O grupo de estudos gratuito da PM de Goiás está no link da bio.",
+   "palavras": [
+    {
+     "text": "O",
+     "start": 0.0,
+     "end": 0.104
+    },
+    {
+     "text": "grupo",
+     "start": 0.163,
+     "end": 0.372
+    },
+    {
+     "text": "de",
+     "start": 0.406,
+     "end": 0.464
+    },
+    {
+     "text": "estudos",
+     "start": 0.488,
+     "end": 0.94
+    },
+    {
+     "text": "gratuito",
+     "start": 0.987,
+     "end": 1.416
+    },
+    {
+     "text": "da",
+     "start": 1.451,
+     "end": 1.521
+    },
+    {
+     "text": "PM",
+     "start": 1.579,
+     "end": 1.823
+    },
+    {
+     "text": "de",
+     "start": 1.892,
+     "end": 1.939
+    },
+    {
+     "text": "Goiás",
+     "start": 1.985,
+     "end": 2.38
+    },
+    {
+     "text": "está",
+     "start": 2.485,
+     "end": 2.717
+    },
+    {
+     "text": "no",
+     "start": 2.763,
+     "end": 2.821
+    },
+    {
+     "text": "link",
+     "start": 2.856,
+     "end": 2.995
+    },
+    {
+     "text": "da",
+     "start": 3.053,
+     "end": 3.123
+    },
+    {
+     "text": "bio.",
+     "start": 3.17,
+     "end": 3.358
+    }
+   ]
+  }
+ }
+}

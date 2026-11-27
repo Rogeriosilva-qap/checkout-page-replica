@@ -13,6 +13,7 @@ import { SiteVideo, TOTAL_SITE } from "./site/Site";
 import { GoiasVideo, TOTAL_GOIAS } from "./goias/Goias";
 import { PmspVideo, TOTAL_PMSP } from "./pmsp/Pmsp";
 import { JornalVideo, TOTAL_JORNAL } from "./jornal/Jornal";
+import { PmgoMilitarVideo, TOTAL_PMGO_MILITAR } from "./pmgo/PmgoMilitar";
 import { GabaritoPortVideo, QuestaoPortVideo, TOTAL_GABARITO_PORT, TOTAL_QUESTAO_PORT } from "./patentes/QuestaoPort";
 
 export const RemotionRoot: React.FC = () => (
@@ -36,6 +37,7 @@ export const RemotionRoot: React.FC = () => (
   <Composition id="QuestaoPort" component={QuestaoPortVideo} durationInFrames={TOTAL_QUESTAO_PORT} fps={FPS} width={WIDTH} height={HEIGHT} />
   <Composition id="GabaritoPort" component={GabaritoPortVideo} durationInFrames={TOTAL_GABARITO_PORT} fps={FPS} width={WIDTH} height={HEIGHT} />
   <Composition id="PlataformaBussola" component={PlataformaVideo} durationInFrames={TOTAL_PLATAFORMA} fps={FPS} width={WIDTH} height={HEIGHT} />
+  <Composition id="PmgoMilitar" component={PmgoMilitarVideo} durationInFrames={TOTAL_PMGO_MILITAR} fps={FPS} width={WIDTH} height={HEIGHT} />
   <Composition id="JornalPmsp" component={JornalVideo} durationInFrames={TOTAL_JORNAL} fps={FPS} width={WIDTH} height={HEIGHT} />
   <Composition id="PmspDireito" component={PmspVideo} durationInFrames={TOTAL_PMSP} fps={FPS} width={WIDTH} height={HEIGHT} />
   <Composition id="Goias2027" component={GoiasVideo} durationInFrames={TOTAL_GOIAS} fps={FPS} width={WIDTH} height={HEIGHT} />
