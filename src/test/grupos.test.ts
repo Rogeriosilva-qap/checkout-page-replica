@@ -34,3 +34,12 @@ describe("getGrupos", () => {
     expect(linkDeGrupo("https://chat.whatsapp.com/AbC123?mode=ems_copy_t")).toBe("https://chat.whatsapp.com/AbC123?mode=ems_copy_t");
   });
 });
+
+describe("configured groups", () => {
+  it("shows all five study groups with clean WhatsApp invites", async () => {
+    const { CONFIG } = await import("@/config");
+    const ids = getGrupos(undefined, CONFIG).map((g) => g.id);
+    expect(ids).toEqual(["pmgo", "pmsp", "pcmg", "pcto", "gcm-goiania"]);
+    for (const g of getGrupos(undefined, CONFIG)) expect(g.href).toMatch(/^https:\/\/chat\.whatsapp\.com\/[A-Za-z0-9]+$/);
+  });
+});
