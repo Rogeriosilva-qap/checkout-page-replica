@@ -9,6 +9,11 @@ export const CONFIG = {
   kitSeparatePriceText: "R$ 94,00", // Soma dos dois e-books comprados separadamente (âncora real).
   cyberWaitlistUrl: "https://chat.whatsapp.com/JjnVbBHGjnT2OlG8TznUPo", // Grupo de espera da plataforma de simulados. Vazio = botão do grupo fica oculto.
   missaoGoiasUrl: "https://chat.whatsapp.com/Cho0lxWH2BGLVDJr1qsLYY", // Grupo gratuito de estudos PMGO e PCGO. Vazio = item oculto.
+  // Grupos de estudo (página /grupos). Link de convite do WhatsApp; vazio = grupo oculto. PMGO usa missaoGoiasUrl.
+  grupoPcmgUrl: "",
+  grupoPmspUrl: "",
+  grupoPctoUrl: "",
+  grupoGcmGoianiaUrl: "",
   simuladosUrl: "https://xn--simuladosoperaoaprovao-q4bh5gi.com.br", // Plataforma de simulados no ar. Vazio = item oculto.
   checkoutUrl: "https://pay.kirvano.com/28b35434-3fbf-4f7e-914d-ae6212e77484", // URL do checkout (ex.: link da plataforma de pagamento). OBRIGATÓRIO para vender.
   listPriceText: "R$ 97,00", // Preço cheio confirmado do e-book, exibido riscado ao lado do preço de lançamento. Deixe "" para ocultar.
