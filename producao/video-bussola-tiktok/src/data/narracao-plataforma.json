@@ -1,0 +1,514 @@
+{
+ "voz": "4J31DrhygVjvFsoj7BsM",
+ "cenas": {
+  "b1": {
+   "arquivo": "voz-plataforma/final/b1.wav",
+   "duracao": 2.605,
+   "texto": "Escolhi meu concurso e a plataforma montou meu plano de estudo.",
+   "palavras": [
+    {
+     "text": "Escolhi",
+     "start": 0.0,
+     "end": 0.325
+    },
+    {
+     "text": "meu",
+     "start": 0.348,
+     "end": 0.43
+    },
+    {
+     "text": "concurso",
+     "start": 0.476,
+     "end": 0.882
+    },
+    {
+     "text": "e",
+     "start": 0.906,
+     "end": 0.929
+    },
+    {
+     "text": "a",
+     "start": 0.964,
+     "end": 0.987
+    },
+    {
+     "text": "plataforma",
+     "start": 1.033,
+     "end": 1.486
+    },
+    {
+     "text": "montou",
+     "start": 1.521,
+     "end": 1.765
+    },
+    {
+     "text": "meu",
+     "start": 1.8,
+     "end": 1.892
+    },
+    {
+     "text": "plano",
+     "start": 1.927,
+     "end": 2.125
+    },
+    {
+     "text": "de",
+     "start": 2.148,
+     "end": 2.218
+    },
+    {
+     "text": "estudo.",
+     "start": 2.252,
+     "end": 2.605
+    }
+   ]
+  },
+  "b2": {
+   "arquivo": "voz-plataforma/final/b2.wav",
+   "duracao": 3.379,
+   "texto": "Você escolhe o edital, o cargo e a banca, e ela gera o Raio-X.",
+   "palavras": [
+    {
+     "text": "Você",
+     "start": 0.0,
+     "end": 0.209
+    },
+    {
+     "text": "escolhe",
+     "start": 0.255,
+     "end": 0.546
+    },
+    {
+     "text": "o",
+     "start": 0.569,
+     "end": 0.615
+    },
+    {
+     "text": "edital,",
+     "start": 0.65,
+     "end": 1.181
+    },
+    {
+     "text": "o",
+     "start": 1.275,
+     "end": 1.379
+    },
+    {
+     "text": "cargo",
+     "start": 1.426,
+     "end": 1.716
+    },
+    {
+     "text": "e",
+     "start": 1.739,
+     "end": 1.786
+    },
+    {
+     "text": "a",
+     "start": 1.809,
+     "end": 1.832
+    },
+    {
+     "text": "banca,",
+     "start": 1.878,
+     "end": 2.215
+    },
+    {
+     "text": "e",
+     "start": 2.229,
+     "end": 2.38
+    },
+    {
+     "text": "ela",
+     "start": 2.404,
+     "end": 2.543
+    },
+    {
+     "text": "gera",
+     "start": 2.589,
+     "end": 2.763
+    },
+    {
+     "text": "o",
+     "start": 2.787,
+     "end": 2.81
+    },
+    {
+     "text": "Raio-X.",
+     "start": 2.845,
+     "end": 3.379
+    }
+   ]
+  },
+  "b3": {
+   "arquivo": "voz-plataforma/final/b3.wav",
+   "duracao": 2.857,
+   "texto": "Primeiro, o perfil da banca: o que a Vunesp mais cobra nessa prova.",
+   "palavras": [
+    {
+     "text": "Primeiro,",
+     "start": 0.0,
+     "end": 0.372
+    },
+    {
+     "text": "o",
+     "start": 0.43,
+     "end": 0.488
+    },
+    {
+     "text": "perfil",
+     "start": 0.534,
+     "end": 0.766
+    },
+    {
+     "text": "da",
+     "start": 0.801,
+     "end": 0.859
+    },
+    {
+     "text": "banca:",
+     "start": 0.906,
+     "end": 1.184
+    },
+    {
+     "text": "o",
+     "start": 1.277,
+     "end": 1.335
+    },
+    {
+     "text": "que",
+     "start": 1.381,
+     "end": 1.451
+    },
+    {
+     "text": "a",
+     "start": 1.474,
+     "end": 1.497
+    },
+    {
+     "text": "Vunesp",
+     "start": 1.521,
+     "end": 1.834
+    },
+    {
+     "text": "mais",
+     "start": 1.915,
+     "end": 2.089
+    },
+    {
+     "text": "cobra",
+     "start": 2.136,
+     "end": 2.391
+    },
+    {
+     "text": "nessa",
+     "start": 2.438,
+     "end": 2.623
+    },
+    {
+     "text": "prova.",
+     "start": 2.67,
+     "end": 2.857
+    }
+   ]
+  },
+  "b4": {
+   "arquivo": "voz-plataforma/final/b4.wav",
+   "duracao": 2.94,
+   "texto": "Depois, o peso de cada matéria e os tópicos com prioridade alta.",
+   "palavras": [
+    {
+     "text": "Depois,",
+     "start": 0.0,
+     "end": 0.337
+    },
+    {
+     "text": "o",
+     "start": 0.36,
+     "end": 0.383
+    },
+    {
+     "text": "peso",
+     "start": 0.43,
+     "end": 0.662
+    },
+    {
+     "text": "de",
+     "start": 0.685,
+     "end": 0.743
+    },
+    {
+     "text": "cada",
+     "start": 0.789,
+     "end": 0.964
+    },
+    {
+     "text": "matéria",
+     "start": 1.01,
+     "end": 1.416
+    },
+    {
+     "text": "e",
+     "start": 1.486,
+     "end": 1.556
+    },
+    {
+     "text": "os",
+     "start": 1.602,
+     "end": 1.683
+    },
+    {
+     "text": "tópicos",
+     "start": 1.753,
+     "end": 2.078
+    },
+    {
+     "text": "com",
+     "start": 2.125,
+     "end": 2.241
+    },
+    {
+     "text": "prioridade",
+     "start": 2.287,
+     "end": 2.752
+    },
+    {
+     "text": "alta.",
+     "start": 2.798,
+     "end": 2.94
+    }
+   ]
+  },
+  "b5": {
+   "arquivo": "voz-plataforma/final/b5.wav",
+   "duracao": 4.122,
+   "texto": "E um plano de ataque semanal, dia por dia, com tempo e quantidade de questões.",
+   "palavras": [
+    {
+     "text": "E",
+     "start": 0.0,
+     "end": 0.081
+    },
+    {
+     "text": "um",
+     "start": 0.128,
+     "end": 0.186
+    },
+    {
+     "text": "plano",
+     "start": 0.221,
+     "end": 0.43
+    },
+    {
+     "text": "de",
+     "start": 0.464,
+     "end": 0.511
+    },
+    {
+     "text": "ataque",
+     "start": 0.546,
+     "end": 0.801
+    },
+    {
+     "text": "semanal,",
+     "start": 0.824,
+     "end": 1.296
+    },
+    {
+     "text": "dia",
+     "start": 1.406,
+     "end": 1.615
+    },
+    {
+     "text": "por",
+     "start": 1.661,
+     "end": 1.789
+    },
+    {
+     "text": "dia,",
+     "start": 1.859,
+     "end": 2.158
+    },
+    {
+     "text": "com",
+     "start": 2.219,
+     "end": 2.381
+    },
+    {
+     "text": "tempo",
+     "start": 2.486,
+     "end": 2.823
+    },
+    {
+     "text": "e",
+     "start": 2.892,
+     "end": 2.997
+    },
+    {
+     "text": "quantidade",
+     "start": 3.043,
+     "end": 3.508
+    },
+    {
+     "text": "de",
+     "start": 3.554,
+     "end": 3.612
+    },
+    {
+     "text": "questões.",
+     "start": 3.658,
+     "end": 4.122
+    }
+   ]
+  },
+  "b6": {
+   "arquivo": "voz-plataforma/final/b6.wav",
+   "duracao": 3.036,
+   "texto": "E depois de cada simulado, você vê exatamente onde está perdendo ponto.",
+   "palavras": [
+    {
+     "text": "E",
+     "start": 0.0,
+     "end": 0.07
+    },
+    {
+     "text": "depois",
+     "start": 0.139,
+     "end": 0.383
+    },
+    {
+     "text": "de",
+     "start": 0.406,
+     "end": 0.464
+    },
+    {
+     "text": "cada",
+     "start": 0.511,
+     "end": 0.685
+    },
+    {
+     "text": "simulado,",
+     "start": 0.72,
+     "end": 1.173
+    },
+    {
+     "text": "você",
+     "start": 1.196,
+     "end": 1.358
+    },
+    {
+     "text": "vê",
+     "start": 1.416,
+     "end": 1.509
+    },
+    {
+     "text": "exatamente",
+     "start": 1.533,
+     "end": 2.02
+    },
+    {
+     "text": "onde",
+     "start": 2.055,
+     "end": 2.148
+    },
+    {
+     "text": "está",
+     "start": 2.171,
+     "end": 2.345
+    },
+    {
+     "text": "perdendo",
+     "start": 2.392,
+     "end": 2.694
+    },
+    {
+     "text": "ponto.",
+     "start": 2.74,
+     "end": 3.036
+    }
+   ]
+  },
+  "b7": {
+   "arquivo": "voz-plataforma/final/b7.wav",
+   "duracao": 3.946,
+   "texto": "Tá quase saindo. Comenta SIMULADO e entra no grupo de espera, com desconto de lançamento.",
+   "palavras": [
+    {
+     "text": "Tá",
+     "start": 0.0,
+     "end": 0.128
+    },
+    {
+     "text": "quase",
+     "start": 0.174,
+     "end": 0.372
+    },
+    {
+     "text": "saindo.",
+     "start": 0.418,
+     "end": 0.871
+    },
+    {
+     "text": "Comenta",
+     "start": 0.988,
+     "end": 1.301
+    },
+    {
+     "text": "SIMULADO",
+     "start": 1.347,
+     "end": 1.823
+    },
+    {
+     "text": "e",
+     "start": 1.847,
+     "end": 1.87
+    },
+    {
+     "text": "entra",
+     "start": 1.905,
+     "end": 2.079
+    },
+    {
+     "text": "no",
+     "start": 2.102,
+     "end": 2.16
+    },
+    {
+     "text": "grupo",
+     "start": 2.195,
+     "end": 2.392
+    },
+    {
+     "text": "de",
+     "start": 2.416,
+     "end": 2.462
+    },
+    {
+     "text": "espera,",
+     "start": 2.485,
+     "end": 2.81
+    },
+    {
+     "text": "com",
+     "start": 2.845,
+     "end": 2.961
+    },
+    {
+     "text": "desconto",
+     "start": 2.996,
+     "end": 3.321
+    },
+    {
+     "text": "de",
+     "start": 3.368,
+     "end": 3.426
+    },
+    {
+     "text": "lançamento.",
+     "start": 3.472,
+     "end": 3.946
+    }
+   ]
+  }
+ }
+}

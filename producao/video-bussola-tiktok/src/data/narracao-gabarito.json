@@ -1,0 +1,427 @@
+{
+ "voz": "4J31DrhygVjvFsoj7BsM",
+ "cenas": {
+  "g1": {
+   "arquivo": "voz-gabarito/final/g1.wav",
+   "duracao": 2.236,
+   "texto": "Quem marcou corrupção passiva caiu na pegadinha.",
+   "palavras": [
+    {
+     "text": "Quem",
+     "start": 0.0,
+     "end": 0.221
+    },
+    {
+     "text": "marcou",
+     "start": 0.244,
+     "end": 0.546
+    },
+    {
+     "text": "corrupção",
+     "start": 0.592,
+     "end": 0.987
+    },
+    {
+     "text": "passiva",
+     "start": 1.022,
+     "end": 1.44
+    },
+    {
+     "text": "caiu",
+     "start": 1.486,
+     "end": 1.625
+    },
+    {
+     "text": "na",
+     "start": 1.672,
+     "end": 1.73
+    },
+    {
+     "text": "pegadinha.",
+     "start": 1.776,
+     "end": 2.236
+    }
+   ]
+  },
+  "g2": {
+   "arquivo": "voz-gabarito/final/g2.wav",
+   "duracao": 1.718,
+   "texto": "A resposta é a letra C: concussão.",
+   "palavras": [
+    {
+     "text": "A",
+     "start": 0.0,
+     "end": 0.07
+    },
+    {
+     "text": "resposta",
+     "start": 0.116,
+     "end": 0.464
+    },
+    {
+     "text": "é",
+     "start": 0.499,
+     "end": 0.522
+    },
+    {
+     "text": "a",
+     "start": 0.546,
+     "end": 0.569
+    },
+    {
+     "text": "letra",
+     "start": 0.604,
+     "end": 0.824
+    },
+    {
+     "text": "C:",
+     "start": 0.871,
+     "end": 1.14
+    },
+    {
+     "text": "concussão.",
+     "start": 1.234,
+     "end": 1.718
+    }
+   ]
+  },
+  "g3": {
+   "arquivo": "voz-gabarito/final/g3.wav",
+   "duracao": 7.548,
+   "texto": "Porque o verbo é exigir. Exigir vantagem indevida em razão da função é concussão, artigo 316 do Código Penal.",
+   "palavras": [
+    {
+     "text": "Porque",
+     "start": 0.0,
+     "end": 0.279
+    },
+    {
+     "text": "o",
+     "start": 0.325,
+     "end": 0.36
+    },
+    {
+     "text": "verbo",
+     "start": 0.418,
+     "end": 0.836
+    },
+    {
+     "text": "é",
+     "start": 0.959,
+     "end": 1.064
+    },
+    {
+     "text": "exigir.",
+     "start": 1.145,
+     "end": 1.713
+    },
+    {
+     "text": "Exigir",
+     "start": 2.045,
+     "end": 2.463
+    },
+    {
+     "text": "vantagem",
+     "start": 2.521,
+     "end": 2.939
+    },
+    {
+     "text": "indevida",
+     "start": 2.962,
+     "end": 3.415
+    },
+    {
+     "text": "em",
+     "start": 3.438,
+     "end": 3.496
+    },
+    {
+     "text": "razão",
+     "start": 3.531,
+     "end": 3.787
+    },
+    {
+     "text": "da",
+     "start": 3.822,
+     "end": 3.88
+    },
+    {
+     "text": "função",
+     "start": 3.926,
+     "end": 4.344
+    },
+    {
+     "text": "é",
+     "start": 4.43,
+     "end": 4.534
+    },
+    {
+     "text": "concussão,",
+     "start": 4.616,
+     "end": 5.158
+    },
+    {
+     "text": "artigo",
+     "start": 5.251,
+     "end": 5.587
+    },
+    {
+     "text": "316",
+     "start": 5.634,
+     "end": 6.772
+    },
+    {
+     "text": "do",
+     "start": 6.806,
+     "end": 6.876
+    },
+    {
+     "text": "Código",
+     "start": 6.923,
+     "end": 7.201
+    },
+    {
+     "text": "Penal.",
+     "start": 7.248,
+     "end": 7.548
+    }
+   ]
+  },
+  "g4": {
+   "arquivo": "voz-gabarito/final/g4.wav",
+   "duracao": 5.22,
+   "texto": "A pegadinha: solicitar ou receber é corrupção passiva. Oferecer ou prometer é corrupção ativa.",
+   "palavras": [
+    {
+     "text": "A",
+     "start": 0.0,
+     "end": 0.07
+    },
+    {
+     "text": "pegadinha:",
+     "start": 0.128,
+     "end": 0.627
+    },
+    {
+     "text": "solicitar",
+     "start": 0.75,
+     "end": 1.272
+    },
+    {
+     "text": "ou",
+     "start": 1.307,
+     "end": 1.353
+    },
+    {
+     "text": "receber",
+     "start": 1.4,
+     "end": 1.864
+    },
+    {
+     "text": "é",
+     "start": 2.022,
+     "end": 2.092
+    },
+    {
+     "text": "corrupção",
+     "start": 2.15,
+     "end": 2.521
+    },
+    {
+     "text": "passiva.",
+     "start": 2.556,
+     "end": 3.055
+    },
+    {
+     "text": "Oferecer",
+     "start": 3.142,
+     "end": 3.595
+    },
+    {
+     "text": "ou",
+     "start": 3.629,
+     "end": 3.676
+    },
+    {
+     "text": "prometer",
+     "start": 3.722,
+     "end": 4.21
+    },
+    {
+     "text": "é",
+     "start": 4.314,
+     "end": 4.384
+    },
+    {
+     "text": "corrupção",
+     "start": 4.442,
+     "end": 4.872
+    },
+    {
+     "text": "ativa.",
+     "start": 4.907,
+     "end": 5.221
+    }
+   ]
+  },
+  "g5": {
+   "arquivo": "voz-gabarito/final/g5.wav",
+   "duracao": 4.677,
+   "texto": "E é assim em cada questão da plataforma de simulados: gabarito, comentário e a pegadinha da banca.",
+   "palavras": [
+    {
+     "text": "E",
+     "start": 0.0,
+     "end": 0.116
+    },
+    {
+     "text": "é",
+     "start": 0.174,
+     "end": 0.197
+    },
+    {
+     "text": "assim",
+     "start": 0.232,
+     "end": 0.488
+    },
+    {
+     "text": "em",
+     "start": 0.534,
+     "end": 0.58
+    },
+    {
+     "text": "cada",
+     "start": 0.639,
+     "end": 0.824
+    },
+    {
+     "text": "questão",
+     "start": 0.871,
+     "end": 1.126
+    },
+    {
+     "text": "da",
+     "start": 1.149,
+     "end": 1.207
+    },
+    {
+     "text": "plataforma",
+     "start": 1.242,
+     "end": 1.695
+    },
+    {
+     "text": "de",
+     "start": 1.718,
+     "end": 1.765
+    },
+    {
+     "text": "simulados:",
+     "start": 1.788,
+     "end": 2.415
+    },
+    {
+     "text": "gabarito,",
+     "start": 2.535,
+     "end": 3.057
+    },
+    {
+     "text": "comentário",
+     "start": 3.092,
+     "end": 3.638
+    },
+    {
+     "text": "e",
+     "start": 3.684,
+     "end": 3.788
+    },
+    {
+     "text": "a",
+     "start": 3.823,
+     "end": 3.846
+    },
+    {
+     "text": "pegadinha",
+     "start": 3.893,
+     "end": 4.264
+    },
+    {
+     "text": "da",
+     "start": 4.311,
+     "end": 4.381
+    },
+    {
+     "text": "banca.",
+     "start": 4.427,
+     "end": 4.677
+    }
+   ]
+  },
+  "g6": {
+   "arquivo": "voz-gabarito/final/g6.wav",
+   "duracao": 3.446,
+   "texto": "Comenta SIMULADO e entra no grupo de espera, com desconto de lançamento.",
+   "palavras": [
+    {
+     "text": "Comenta",
+     "start": 0.0,
+     "end": 0.395
+    },
+    {
+     "text": "SIMULADO",
+     "start": 0.441,
+     "end": 0.964
+    },
+    {
+     "text": "e",
+     "start": 0.981,
+     "end": 1.151
+    },
+    {
+     "text": "entra",
+     "start": 1.186,
+     "end": 1.372
+    },
+    {
+     "text": "no",
+     "start": 1.407,
+     "end": 1.465
+    },
+    {
+     "text": "grupo",
+     "start": 1.499,
+     "end": 1.697
+    },
+    {
+     "text": "de",
+     "start": 1.72,
+     "end": 1.767
+    },
+    {
+     "text": "espera,",
+     "start": 1.79,
+     "end": 2.196
+    },
+    {
+     "text": "com",
+     "start": 2.254,
+     "end": 2.393
+    },
+    {
+     "text": "desconto",
+     "start": 2.439,
+     "end": 2.799
+    },
+    {
+     "text": "de",
+     "start": 2.846,
+     "end": 2.892
+    },
+    {
+     "text": "lançamento.",
+     "start": 2.939,
+     "end": 3.446
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,462 @@
+{
+ "voz": "4J31DrhygVjvFsoj7BsM",
+ "cenas": {
+  "g1": {
+   "arquivo": "voz-gabarito-port/final/g1.wav",
+   "duracao": 1.728,
+   "texto": "Quem marcou a letra A caiu na pegadinha.",
+   "palavras": [
+    {
+     "text": "Quem",
+     "start": 0.0,
+     "end": 0.186
+    },
+    {
+     "text": "marcou",
+     "start": 0.209,
+     "end": 0.43
+    },
+    {
+     "text": "a",
+     "start": 0.476,
+     "end": 0.499
+    },
+    {
+     "text": "letra",
+     "start": 0.534,
+     "end": 0.778
+    },
+    {
+     "text": "A",
+     "start": 0.848,
+     "end": 0.882
+    },
+    {
+     "text": "caiu",
+     "start": 0.929,
+     "end": 1.115
+    },
+    {
+     "text": "na",
+     "start": 1.161,
+     "end": 1.219
+    },
+    {
+     "text": "pegadinha.",
+     "start": 1.254,
+     "end": 1.728
+    }
+   ]
+  },
+  "g2": {
+   "arquivo": "voz-gabarito-port/final/g2.wav",
+   "duracao": 2.079,
+   "texto": "A resposta é a letra B: assisti ao jogo.",
+   "palavras": [
+    {
+     "text": "A",
+     "start": 0.0,
+     "end": 0.093
+    },
+    {
+     "text": "resposta",
+     "start": 0.151,
+     "end": 0.511
+    },
+    {
+     "text": "é",
+     "start": 0.534,
+     "end": 0.557
+    },
+    {
+     "text": "a",
+     "start": 0.58,
+     "end": 0.604
+    },
+    {
+     "text": "letra",
+     "start": 0.639,
+     "end": 0.848
+    },
+    {
+     "text": "B:",
+     "start": 0.894,
+     "end": 1.126
+    },
+    {
+     "text": "assisti",
+     "start": 1.26,
+     "end": 1.608
+    },
+    {
+     "text": "ao",
+     "start": 1.631,
+     "end": 1.713
+    },
+    {
+     "text": "jogo.",
+     "start": 1.748,
+     "end": 2.08
+    }
+   ]
+  },
+  "g3": {
+   "arquivo": "voz-gabarito-port/final/g3.wav",
+   "duracao": 5.192,
+   "texto": "Porque assistir, no sentido de ver, pede a preposição a. Quem assiste, assiste a alguma coisa.",
+   "palavras": [
+    {
+     "text": "Porque",
+     "start": 0.0,
+     "end": 0.255
+    },
+    {
+     "text": "assistir,",
+     "start": 0.279,
+     "end": 0.801
+    },
+    {
+     "text": "no",
+     "start": 0.836,
+     "end": 0.917
+    },
+    {
+     "text": "sentido",
+     "start": 0.952,
+     "end": 1.254
+    },
+    {
+     "text": "de",
+     "start": 1.3,
+     "end": 1.37
+    },
+    {
+     "text": "ver,",
+     "start": 1.428,
+     "end": 1.751
+    },
+    {
+     "text": "pede",
+     "start": 1.787,
+     "end": 2.042
+    },
+    {
+     "text": "a",
+     "start": 2.065,
+     "end": 2.089
+    },
+    {
+     "text": "preposição",
+     "start": 2.135,
+     "end": 2.855
+    },
+    {
+     "text": "a.",
+     "start": 2.936,
+     "end": 3.203
+    },
+    {
+     "text": "Quem",
+     "start": 3.3,
+     "end": 3.451
+    },
+    {
+     "text": "assiste,",
+     "start": 3.498,
+     "end": 4.02
+    },
+    {
+     "text": "assiste",
+     "start": 4.067,
+     "end": 4.38
+    },
+    {
+     "text": "a",
+     "start": 4.403,
+     "end": 4.426
+    },
+    {
+     "text": "alguma",
+     "start": 4.577,
+     "end": 4.81
+    },
+    {
+     "text": "coisa.",
+     "start": 4.856,
+     "end": 5.192
+    }
+   ]
+  },
+  "g4": {
+   "arquivo": "voz-gabarito-port/final/g4.wav",
+   "duracao": 6.91,
+   "texto": "A pegadinha: preferir também pede a: prefiro estudar a jogar. E aspirar, no sentido de desejar, pede a: aspira ao cargo.",
+   "palavras": [
+    {
+     "text": "A",
+     "start": 0.0,
+     "end": 0.07
+    },
+    {
+     "text": "pegadinha:",
+     "start": 0.139,
+     "end": 0.771
+    },
+    {
+     "text": "preferir",
+     "start": 0.845,
+     "end": 1.193
+    },
+    {
+     "text": "também",
+     "start": 1.251,
+     "end": 1.518
+    },
+    {
+     "text": "pede",
+     "start": 1.565,
+     "end": 1.809
+    },
+    {
+     "text": "a:",
+     "start": 1.832,
+     "end": 2.012
+    },
+    {
+     "text": "prefiro",
+     "start": 2.093,
+     "end": 2.511
+    },
+    {
+     "text": "estudar",
+     "start": 2.534,
+     "end": 2.917
+    },
+    {
+     "text": "a",
+     "start": 2.952,
+     "end": 2.975
+    },
+    {
+     "text": "jogar.",
+     "start": 2.998,
+     "end": 3.387
+    },
+    {
+     "text": "E",
+     "start": 3.419,
+     "end": 3.5
+    },
+    {
+     "text": "aspirar,",
+     "start": 3.547,
+     "end": 4.116
+    },
+    {
+     "text": "no",
+     "start": 4.245,
+     "end": 4.35
+    },
+    {
+     "text": "sentido",
+     "start": 4.385,
+     "end": 4.721
+    },
+    {
+     "text": "de",
+     "start": 4.768,
+     "end": 4.826
+    },
+    {
+     "text": "desejar,",
+     "start": 4.872,
+     "end": 5.402
+    },
+    {
+     "text": "pede",
+     "start": 5.45,
+     "end": 5.752
+    },
+    {
+     "text": "a:",
+     "start": 5.798,
+     "end": 5.973
+    },
+    {
+     "text": "aspira",
+     "start": 6.042,
+     "end": 6.507
+    },
+    {
+     "text": "ao",
+     "start": 6.53,
+     "end": 6.599
+    },
+    {
+     "text": "cargo.",
+     "start": 6.646,
+     "end": 6.91
+    }
+   ]
+  },
+  "g5": {
+   "arquivo": "voz-gabarito-port/final/g5.wav",
+   "duracao": 5.669,
+   "texto": "E é assim em cada questão da plataforma de simulados: gabarito, comentário e a pegadinha da banca.",
+   "palavras": [
+    {
+     "text": "E",
+     "start": 0.0,
+     "end": 0.116
+    },
+    {
+     "text": "é",
+     "start": 0.197,
+     "end": 0.232
+    },
+    {
+     "text": "assim",
+     "start": 0.279,
+     "end": 0.639
+    },
+    {
+     "text": "em",
+     "start": 0.743,
+     "end": 0.882
+    },
+    {
+     "text": "cada",
+     "start": 0.952,
+     "end": 1.173
+    },
+    {
+     "text": "questão",
+     "start": 1.207,
+     "end": 1.521
+    },
+    {
+     "text": "da",
+     "start": 1.556,
+     "end": 1.625
+    },
+    {
+     "text": "plataforma",
+     "start": 1.66,
+     "end": 2.252
+    },
+    {
+     "text": "de",
+     "start": 2.299,
+     "end": 2.403
+    },
+    {
+     "text": "simulados:",
+     "start": 2.45,
+     "end": 3.14
+    },
+    {
+     "text": "gabarito,",
+     "start": 3.234,
+     "end": 3.826
+    },
+    {
+     "text": "comentário",
+     "start": 3.861,
+     "end": 4.511
+    },
+    {
+     "text": "e",
+     "start": 4.56,
+     "end": 4.683
+    },
+    {
+     "text": "a",
+     "start": 4.718,
+     "end": 4.741
+    },
+    {
+     "text": "pegadinha",
+     "start": 4.787,
+     "end": 5.205
+    },
+    {
+     "text": "da",
+     "start": 5.24,
+     "end": 5.333
+    },
+    {
+     "text": "banca.",
+     "start": 5.38,
+     "end": 5.669
+    }
+   ]
+  },
+  "g6": {
+   "arquivo": "voz-gabarito-port/final/g6.wav",
+   "duracao": 3.219,
+   "texto": "Comenta SIMULADO e entra no grupo de espera, com desconto de lançamento.",
+   "palavras": [
+    {
+     "text": "Comenta",
+     "start": 0.0,
+     "end": 0.337
+    },
+    {
+     "text": "SIMULADO",
+     "start": 0.383,
+     "end": 0.871
+    },
+    {
+     "text": "e",
+     "start": 0.917,
+     "end": 1.057
+    },
+    {
+     "text": "entra",
+     "start": 1.103,
+     "end": 1.3
+    },
+    {
+     "text": "no",
+     "start": 1.335,
+     "end": 1.393
+    },
+    {
+     "text": "grupo",
+     "start": 1.428,
+     "end": 1.637
+    },
+    {
+     "text": "de",
+     "start": 1.66,
+     "end": 1.718
+    },
+    {
+     "text": "espera,",
+     "start": 1.741,
+     "end": 2.043
+    },
+    {
+     "text": "com",
+     "start": 2.067,
+     "end": 2.194
+    },
+    {
+     "text": "desconto",
+     "start": 2.218,
+     "end": 2.566
+    },
+    {
+     "text": "de",
+     "start": 2.612,
+     "end": 2.682
+    },
+    {
+     "text": "lançamento.",
+     "start": 2.717,
+     "end": 3.219
+    }
+   ]
+  }
+ }
+}

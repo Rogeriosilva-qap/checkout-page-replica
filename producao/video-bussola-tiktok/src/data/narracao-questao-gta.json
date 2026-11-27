@@ -1,0 +1,366 @@
+{
+ "voz": "4J31DrhygVjvFsoj7BsM",
+ "cenas": {
+  "q1": {
+   "arquivo": "voz-questao-gta/final/q1.wav",
+   "duracao": 5.346,
+   "texto": "Edição GTA 6: se essa missão fosse no Brasil, que crime seria? Você tem dez segundos.",
+   "palavras": [
+    {
+     "text": "Edição",
+     "start": 0.0,
+     "end": 0.453
+    },
+    {
+     "text": "GTA",
+     "start": 0.499,
+     "end": 1.358
+    },
+    {
+     "text": "6:",
+     "start": 1.474,
+     "end": 1.962
+    },
+    {
+     "text": "se",
+     "start": 2.07,
+     "end": 2.151
+    },
+    {
+     "text": "essa",
+     "start": 2.186,
+     "end": 2.29
+    },
+    {
+     "text": "missão",
+     "start": 2.337,
+     "end": 2.592
+    },
+    {
+     "text": "fosse",
+     "start": 2.627,
+     "end": 2.836
+    },
+    {
+     "text": "no",
+     "start": 2.871,
+     "end": 2.929
+    },
+    {
+     "text": "Brasil,",
+     "start": 2.964,
+     "end": 3.277
+    },
+    {
+     "text": "que",
+     "start": 3.3,
+     "end": 3.37
+    },
+    {
+     "text": "crime",
+     "start": 3.405,
+     "end": 3.602
+    },
+    {
+     "text": "seria?",
+     "start": 3.637,
+     "end": 4.029
+    },
+    {
+     "text": "Você",
+     "start": 4.081,
+     "end": 4.267
+    },
+    {
+     "text": "tem",
+     "start": 4.313,
+     "end": 4.441
+    },
+    {
+     "text": "dez",
+     "start": 4.487,
+     "end": 4.592
+    },
+    {
+     "text": "segundos.",
+     "start": 4.615,
+     "end": 5.346
+    }
+   ]
+  },
+  "q2": {
+   "arquivo": "voz-questao-gta/final/q2.wav",
+   "duracao": 10.595,
+   "texto": "Um homem aponta uma arma de fogo para o motorista, manda ele descer e foge com o carro. Que crime é esse? A: furto qualificado. B: roubo com aumento de pena. C: receptação. D: extorsão.",
+   "palavras": [
+    {
+     "text": "Um",
+     "start": 0.0,
+     "end": 0.116
+    },
+    {
+     "text": "homem",
+     "start": 0.163,
+     "end": 0.348
+    },
+    {
+     "text": "aponta",
+     "start": 0.383,
+     "end": 0.662
+    },
+    {
+     "text": "uma",
+     "start": 0.685,
+     "end": 0.789
+    },
+    {
+     "text": "arma",
+     "start": 0.824,
+     "end": 0.998
+    },
+    {
+     "text": "de",
+     "start": 1.033,
+     "end": 1.091
+    },
+    {
+     "text": "fogo",
+     "start": 1.138,
+     "end": 1.37
+    },
+    {
+     "text": "para",
+     "start": 1.405,
+     "end": 1.533
+    },
+    {
+     "text": "o",
+     "start": 1.556,
+     "end": 1.579
+    },
+    {
+     "text": "motorista,",
+     "start": 1.602,
+     "end": 2.148
+    },
+    {
+     "text": "manda",
+     "start": 2.194,
+     "end": 2.426
+    },
+    {
+     "text": "ele",
+     "start": 2.45,
+     "end": 2.543
+    },
+    {
+     "text": "descer",
+     "start": 2.589,
+     "end": 2.914
+    },
+    {
+     "text": "e",
+     "start": 2.949,
+     "end": 2.972
+    },
+    {
+     "text": "foge",
+     "start": 3.019,
+     "end": 3.228
+    },
+    {
+     "text": "com",
+     "start": 3.262,
+     "end": 3.39
+    },
+    {
+     "text": "o",
+     "start": 3.413,
+     "end": 3.437
+    },
+    {
+     "text": "carro.",
+     "start": 3.46,
+     "end": 3.815
+    },
+    {
+     "text": "Que",
+     "start": 3.885,
+     "end": 4.001
+    },
+    {
+     "text": "crime",
+     "start": 4.047,
+     "end": 4.279
+    },
+    {
+     "text": "é",
+     "start": 4.303,
+     "end": 4.326
+    },
+    {
+     "text": "esse?",
+     "start": 4.407,
+     "end": 4.739
+    },
+    {
+     "text": "A:",
+     "start": 4.825,
+     "end": 5.136
+    },
+    {
+     "text": "furto",
+     "start": 5.237,
+     "end": 5.516
+    },
+    {
+     "text": "qualificado.",
+     "start": 5.562,
+     "end": 6.15
+    },
+    {
+     "text": "B:",
+     "start": 6.272,
+     "end": 6.633
+    },
+    {
+     "text": "roubo",
+     "start": 6.75,
+     "end": 7.005
+    },
+    {
+     "text": "com",
+     "start": 7.04,
+     "end": 7.144
+    },
+    {
+     "text": "aumento",
+     "start": 7.179,
+     "end": 7.435
+    },
+    {
+     "text": "de",
+     "start": 7.47,
+     "end": 7.528
+    },
+    {
+     "text": "pena.",
+     "start": 7.574,
+     "end": 7.969
+    },
+    {
+     "text": "C:",
+     "start": 8.11,
+     "end": 8.54
+    },
+    {
+     "text": "receptação.",
+     "start": 8.621,
+     "end": 9.441
+    },
+    {
+     "text": "D:",
+     "start": 9.564,
+     "end": 9.924
+    },
+    {
+     "text": "extorsão.",
+     "start": 10.019,
+     "end": 10.595
+    }
+   ]
+  },
+  "q3": {
+   "arquivo": "voz-questao-gta/final/q3.wav",
+   "duracao": 5.045,
+   "texto": "Comenta a sua resposta. O gabarito comentado sai às 19 horas. Segue o perfil pra não perder.",
+   "palavras": [
+    {
+     "text": "Comenta",
+     "start": 0.0,
+     "end": 0.418
+    },
+    {
+     "text": "a",
+     "start": 0.441,
+     "end": 0.464
+    },
+    {
+     "text": "sua",
+     "start": 0.511,
+     "end": 0.65
+    },
+    {
+     "text": "resposta.",
+     "start": 0.673,
+     "end": 1.172
+    },
+    {
+     "text": "O",
+     "start": 1.426,
+     "end": 1.484
+    },
+    {
+     "text": "gabarito",
+     "start": 1.554,
+     "end": 1.891
+    },
+    {
+     "text": "comentado",
+     "start": 1.914,
+     "end": 2.355
+    },
+    {
+     "text": "sai",
+     "start": 2.401,
+     "end": 2.599
+    },
+    {
+     "text": "às",
+     "start": 2.645,
+     "end": 2.715
+    },
+    {
+     "text": "19",
+     "start": 2.761,
+     "end": 3.168
+    },
+    {
+     "text": "horas.",
+     "start": 3.203,
+     "end": 3.59
+    },
+    {
+     "text": "Segue",
+     "start": 3.727,
+     "end": 4.006
+    },
+    {
+     "text": "o",
+     "start": 4.029,
+     "end": 4.052
+    },
+    {
+     "text": "perfil",
+     "start": 4.087,
+     "end": 4.389
+    },
+    {
+     "text": "pra",
+     "start": 4.435,
+     "end": 4.54
+    },
+    {
+     "text": "não",
+     "start": 4.586,
+     "end": 4.702
+    },
+    {
+     "text": "perder.",
+     "start": 4.737,
+     "end": 5.046
+    }
+   ]
+  }
+ }
+}

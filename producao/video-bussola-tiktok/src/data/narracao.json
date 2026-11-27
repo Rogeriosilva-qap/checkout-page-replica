@@ -1,0 +1,852 @@
+{
+ "voz": "4J31DrhygVjvFsoj7BsM",
+ "cenas": {
+  "cena-01": {
+   "arquivo": "voz/final/cena-01.wav",
+   "duracao": 2.782,
+   "texto": "Essa linha do seu edital esconde 204 artigos.",
+   "palavras": [
+    {
+     "text": "Essa",
+     "start": 0.0,
+     "end": 0.174
+    },
+    {
+     "text": "linha",
+     "start": 0.209,
+     "end": 0.348
+    },
+    {
+     "text": "do",
+     "start": 0.372,
+     "end": 0.418
+    },
+    {
+     "text": "seu",
+     "start": 0.441,
+     "end": 0.557
+    },
+    {
+     "text": "edital",
+     "start": 0.592,
+     "end": 0.906
+    },
+    {
+     "text": "esconde",
+     "start": 0.964,
+     "end": 1.277
+    },
+    {
+     "text": "204",
+     "start": 1.324,
+     "end": 2.043
+    },
+    {
+     "text": "artigos.",
+     "start": 2.067,
+     "end": 2.781
+    }
+   ]
+  },
+  "cena-02": {
+   "arquivo": "voz/final/cena-02.wav",
+   "duracao": 1.942,
+   "texto": "E é por isso que tanto concurseiro trava antes de começar.",
+   "palavras": [
+    {
+     "text": "E",
+     "start": 0.0,
+     "end": 0.093
+    },
+    {
+     "text": "é",
+     "start": 0.128,
+     "end": 0.151
+    },
+    {
+     "text": "por",
+     "start": 0.186,
+     "end": 0.267
+    },
+    {
+     "text": "isso",
+     "start": 0.29,
+     "end": 0.383
+    },
+    {
+     "text": "que",
+     "start": 0.406,
+     "end": 0.476
+    },
+    {
+     "text": "tanto",
+     "start": 0.522,
+     "end": 0.662
+    },
+    {
+     "text": "concurseiro",
+     "start": 0.685,
+     "end": 1.068
+    },
+    {
+     "text": "trava",
+     "start": 1.091,
+     "end": 1.3
+    },
+    {
+     "text": "antes",
+     "start": 1.324,
+     "end": 1.44
+    },
+    {
+     "text": "de",
+     "start": 1.463,
+     "end": 1.509
+    },
+    {
+     "text": "começar.",
+     "start": 1.556,
+     "end": 1.942
+    }
+   ]
+  },
+  "cena-03": {
+   "arquivo": "voz/final/cena-03.wav",
+   "duracao": 1.816,
+   "texto": "O Método Bússola resolve isso em quatro fases.",
+   "palavras": [
+    {
+     "text": "O",
+     "start": 0.0,
+     "end": 0.081
+    },
+    {
+     "text": "Método",
+     "start": 0.139,
+     "end": 0.372
+    },
+    {
+     "text": "Bússola",
+     "start": 0.406,
+     "end": 0.65
+    },
+    {
+     "text": "resolve",
+     "start": 0.685,
+     "end": 0.998
+    },
+    {
+     "text": "isso",
+     "start": 1.022,
+     "end": 1.161
+    },
+    {
+     "text": "em",
+     "start": 1.184,
+     "end": 1.231
+    },
+    {
+     "text": "quatro",
+     "start": 1.265,
+     "end": 1.451
+    },
+    {
+     "text": "fases.",
+     "start": 1.474,
+     "end": 1.816
+    }
+   ]
+  },
+  "cena-04": {
+   "arquivo": "voz/final/cena-04.wav",
+   "duracao": 2.726,
+   "texto": "Fase um: você extrai o conteúdo do edital com um comando pronto.",
+   "palavras": [
+    {
+     "text": "Fase",
+     "start": 0.0,
+     "end": 0.279
+    },
+    {
+     "text": "um:",
+     "start": 0.325,
+     "end": 0.522
+    },
+    {
+     "text": "você",
+     "start": 0.664,
+     "end": 0.826
+    },
+    {
+     "text": "extrai",
+     "start": 0.884,
+     "end": 1.105
+    },
+    {
+     "text": "o",
+     "start": 1.14,
+     "end": 1.163
+    },
+    {
+     "text": "conteúdo",
+     "start": 1.186,
+     "end": 1.488
+    },
+    {
+     "text": "do",
+     "start": 1.534,
+     "end": 1.581
+    },
+    {
+     "text": "edital",
+     "start": 1.604,
+     "end": 1.906
+    },
+    {
+     "text": "com",
+     "start": 1.952,
+     "end": 2.034
+    },
+    {
+     "text": "um",
+     "start": 2.068,
+     "end": 2.115
+    },
+    {
+     "text": "comando",
+     "start": 2.161,
+     "end": 2.417
+    },
+    {
+     "text": "pronto.",
+     "start": 2.463,
+     "end": 2.726
+    }
+   ]
+  },
+  "cena-05": {
+   "arquivo": "voz/final/cena-05.wav",
+   "duracao": 3.553,
+   "texto": "Fase dois: cada item vira micro-tópicos que cabem em uma sessão de estudo.",
+   "palavras": [
+    {
+     "text": "Fase",
+     "start": 0.0,
+     "end": 0.244
+    },
+    {
+     "text": "dois:",
+     "start": 0.267,
+     "end": 0.637
+    },
+    {
+     "text": "cada",
+     "start": 0.708,
+     "end": 0.94
+    },
+    {
+     "text": "item",
+     "start": 0.998,
+     "end": 1.196
+    },
+    {
+     "text": "vira",
+     "start": 1.242,
+     "end": 1.405
+    },
+    {
+     "text": "micro-tópicos",
+     "start": 1.451,
+     "end": 2.008
+    },
+    {
+     "text": "que",
+     "start": 2.043,
+     "end": 2.125
+    },
+    {
+     "text": "cabem",
+     "start": 2.159,
+     "end": 2.519
+    },
+    {
+     "text": "em",
+     "start": 2.612,
+     "end": 2.728
+    },
+    {
+     "text": "uma",
+     "start": 2.786,
+     "end": 2.879
+    },
+    {
+     "text": "sessão",
+     "start": 2.914,
+     "end": 3.146
+    },
+    {
+     "text": "de",
+     "start": 3.181,
+     "end": 3.228
+    },
+    {
+     "text": "estudo.",
+     "start": 3.251,
+     "end": 3.553
+    }
+   ]
+  },
+  "cena-06": {
+   "arquivo": "voz/final/cena-06.wav",
+   "duracao": 4.779,
+   "texto": "Fase três: prioridade Alfa, Bravo e Charlie, pelo peso no edital e pela sua dificuldade.",
+   "palavras": [
+    {
+     "text": "Fase",
+     "start": 0.0,
+     "end": 0.244
+    },
+    {
+     "text": "três:",
+     "start": 0.279,
+     "end": 0.592
+    },
+    {
+     "text": "prioridade",
+     "start": 0.673,
+     "end": 1.173
+    },
+    {
+     "text": "Alfa,",
+     "start": 1.231,
+     "end": 1.623
+    },
+    {
+     "text": "Bravo",
+     "start": 1.696,
+     "end": 2.102
+    },
+    {
+     "text": "e",
+     "start": 2.195,
+     "end": 2.288
+    },
+    {
+     "text": "Charlie,",
+     "start": 2.335,
+     "end": 2.772
+    },
+    {
+     "text": "pelo",
+     "start": 2.808,
+     "end": 2.994
+    },
+    {
+     "text": "peso",
+     "start": 3.04,
+     "end": 3.261
+    },
+    {
+     "text": "no",
+     "start": 3.296,
+     "end": 3.354
+    },
+    {
+     "text": "edital",
+     "start": 3.377,
+     "end": 3.772
+    },
+    {
+     "text": "e",
+     "start": 3.865,
+     "end": 3.958
+    },
+    {
+     "text": "pela",
+     "start": 3.992,
+     "end": 4.132
+    },
+    {
+     "text": "sua",
+     "start": 4.155,
+     "end": 4.259
+    },
+    {
+     "text": "dificuldade.",
+     "start": 4.283,
+     "end": 4.779
+    }
+   ]
+  },
+  "cena-07": {
+   "arquivo": "voz/final/cena-07.wav",
+   "duracao": 3.005,
+   "texto": "Fase quatro: tudo vira semana de estudo, respeitando a sua escala.",
+   "palavras": [
+    {
+     "text": "Fase",
+     "start": 0.0,
+     "end": 0.232
+    },
+    {
+     "text": "quatro:",
+     "start": 0.279,
+     "end": 0.627
+    },
+    {
+     "text": "tudo",
+     "start": 0.716,
+     "end": 0.913
+    },
+    {
+     "text": "vira",
+     "start": 0.948,
+     "end": 1.088
+    },
+    {
+     "text": "semana",
+     "start": 1.122,
+     "end": 1.401
+    },
+    {
+     "text": "de",
+     "start": 1.436,
+     "end": 1.482
+    },
+    {
+     "text": "estudo,",
+     "start": 1.506,
+     "end": 1.924
+    },
+    {
+     "text": "respeitando",
+     "start": 1.993,
+     "end": 2.504
+    },
+    {
+     "text": "a",
+     "start": 2.527,
+     "end": 2.55
+    },
+    {
+     "text": "sua",
+     "start": 2.574,
+     "end": 2.667
+    },
+    {
+     "text": "escala.",
+     "start": 2.69,
+     "end": 3.005
+    }
+   ]
+  },
+  "cena-08": {
+   "arquivo": "voz/final/cena-08.wav",
+   "duracao": 4.801,
+   "texto": "E entre cada fase, você confere contra o edital. A IA acelera, e a conferência garante a direção certa.",
+   "palavras": [
+    {
+     "text": "E",
+     "start": 0.0,
+     "end": 0.128
+    },
+    {
+     "text": "entre",
+     "start": 0.174,
+     "end": 0.313
+    },
+    {
+     "text": "cada",
+     "start": 0.337,
+     "end": 0.488
+    },
+    {
+     "text": "fase,",
+     "start": 0.534,
+     "end": 0.848
+    },
+    {
+     "text": "você",
+     "start": 0.949,
+     "end": 1.088
+    },
+    {
+     "text": "confere",
+     "start": 1.135,
+     "end": 1.355
+    },
+    {
+     "text": "contra",
+     "start": 1.39,
+     "end": 1.599
+    },
+    {
+     "text": "o",
+     "start": 1.622,
+     "end": 1.657
+    },
+    {
+     "text": "edital.",
+     "start": 1.68,
+     "end": 2.036
+    },
+    {
+     "text": "A",
+     "start": 2.078,
+     "end": 2.148
+    },
+    {
+     "text": "IA",
+     "start": 2.252,
+     "end": 2.519
+    },
+    {
+     "text": "acelera,",
+     "start": 2.725,
+     "end": 3.287
+    },
+    {
+     "text": "e",
+     "start": 3.312,
+     "end": 3.405
+    },
+    {
+     "text": "a",
+     "start": 3.428,
+     "end": 3.451
+    },
+    {
+     "text": "conferência",
+     "start": 3.486,
+     "end": 3.846
+    },
+    {
+     "text": "garante",
+     "start": 3.881,
+     "end": 4.125
+    },
+    {
+     "text": "a",
+     "start": 4.148,
+     "end": 4.171
+    },
+    {
+     "text": "direção",
+     "start": 4.195,
+     "end": 4.508
+    },
+    {
+     "text": "certa.",
+     "start": 4.531,
+     "end": 4.801
+    }
+   ]
+  },
+  "cena-09": {
+   "arquivo": "voz/final/cena-09.wav",
+   "duracao": 4.185,
+   "texto": "São 22 comandos prontos, o Método Bússola e o caderno de erros automatizado. O link tá na bio.",
+   "palavras": [
+    {
+     "text": "São",
+     "start": 0.0,
+     "end": 0.209
+    },
+    {
+     "text": "22",
+     "start": 0.244,
+     "end": 0.639
+    },
+    {
+     "text": "comandos",
+     "start": 0.673,
+     "end": 0.917
+    },
+    {
+     "text": "prontos,",
+     "start": 0.964,
+     "end": 1.3
+    },
+    {
+     "text": "o",
+     "start": 1.393,
+     "end": 1.44
+    },
+    {
+     "text": "Método",
+     "start": 1.498,
+     "end": 1.753
+    },
+    {
+     "text": "Bússola",
+     "start": 1.8,
+     "end": 2.136
+    },
+    {
+     "text": "e",
+     "start": 2.194,
+     "end": 2.264
+    },
+    {
+     "text": "o",
+     "start": 2.287,
+     "end": 2.31
+    },
+    {
+     "text": "caderno",
+     "start": 2.334,
+     "end": 2.624
+    },
+    {
+     "text": "de",
+     "start": 2.647,
+     "end": 2.717
+    },
+    {
+     "text": "erros",
+     "start": 2.74,
+     "end": 2.868
+    },
+    {
+     "text": "automatizado.",
+     "start": 2.902,
+     "end": 3.467
+    },
+    {
+     "text": "O",
+     "start": 3.515,
+     "end": 3.573
+    },
+    {
+     "text": "link",
+     "start": 3.631,
+     "end": 3.747
+    },
+    {
+     "text": "tá",
+     "start": 3.793,
+     "end": 3.84
+    },
+    {
+     "text": "na",
+     "start": 3.875,
+     "end": 3.933
+    },
+    {
+     "text": "bio.",
+     "start": 3.979,
+     "end": 4.185
+    }
+   ]
+  },
+  "cena-09-direct": {
+   "arquivo": "voz/final/cena-09-direct.wav",
+   "duracao": 5.2,
+   "texto": "São 22 comandos prontos, o Método Bússola e o caderno de erros automatizado. Comente BÚSSOLA que eu te mando no direct.",
+   "palavras": [
+    {
+     "text": "São",
+     "start": 0.0,
+     "end": 0.197
+    },
+    {
+     "text": "22",
+     "start": 0.221,
+     "end": 0.58
+    },
+    {
+     "text": "comandos",
+     "start": 0.627,
+     "end": 0.894
+    },
+    {
+     "text": "prontos,",
+     "start": 0.94,
+     "end": 1.312
+    },
+    {
+     "text": "o",
+     "start": 1.37,
+     "end": 1.416
+    },
+    {
+     "text": "Método",
+     "start": 1.463,
+     "end": 1.695
+    },
+    {
+     "text": "Bússola",
+     "start": 1.741,
+     "end": 2.067
+    },
+    {
+     "text": "e",
+     "start": 2.125,
+     "end": 2.183
+    },
+    {
+     "text": "o",
+     "start": 2.206,
+     "end": 2.229
+    },
+    {
+     "text": "caderno",
+     "start": 2.252,
+     "end": 2.566
+    },
+    {
+     "text": "de",
+     "start": 2.612,
+     "end": 2.67
+    },
+    {
+     "text": "erros",
+     "start": 2.694,
+     "end": 2.833
+    },
+    {
+     "text": "automatizado.",
+     "start": 2.879,
+     "end": 3.499
+    },
+    {
+     "text": "Comente",
+     "start": 3.579,
+     "end": 3.87
+    },
+    {
+     "text": "BÚSSOLA",
+     "start": 3.916,
+     "end": 4.218
+    },
+    {
+     "text": "que",
+     "start": 4.241,
+     "end": 4.311
+    },
+    {
+     "text": "eu",
+     "start": 4.334,
+     "end": 4.38
+    },
+    {
+     "text": "te",
+     "start": 4.404,
+     "end": 4.462
+    },
+    {
+     "text": "mando",
+     "start": 4.497,
+     "end": 4.647
+    },
+    {
+     "text": "no",
+     "start": 4.694,
+     "end": 4.764
+    },
+    {
+     "text": "direct.",
+     "start": 4.798,
+     "end": 5.2
+    }
+   ]
+  },
+  "cena-09-stories": {
+   "arquivo": "voz/final/cena-09-stories.wav",
+   "duracao": 4.61,
+   "texto": "São 22 comandos prontos, o Método Bússola e o caderno de erros automatizado. O link tá nos stories.",
+   "palavras": [
+    {
+     "text": "São",
+     "start": 0.0,
+     "end": 0.221
+    },
+    {
+     "text": "22",
+     "start": 0.244,
+     "end": 0.685
+    },
+    {
+     "text": "comandos",
+     "start": 0.731,
+     "end": 0.975
+    },
+    {
+     "text": "prontos,",
+     "start": 1.022,
+     "end": 1.347
+    },
+    {
+     "text": "o",
+     "start": 1.405,
+     "end": 1.451
+    },
+    {
+     "text": "Método",
+     "start": 1.498,
+     "end": 1.73
+    },
+    {
+     "text": "Bússola",
+     "start": 1.788,
+     "end": 2.148
+    },
+    {
+     "text": "e",
+     "start": 2.225,
+     "end": 2.318
+    },
+    {
+     "text": "o",
+     "start": 2.341,
+     "end": 2.364
+    },
+    {
+     "text": "caderno",
+     "start": 2.387,
+     "end": 2.678
+    },
+    {
+     "text": "de",
+     "start": 2.712,
+     "end": 2.771
+    },
+    {
+     "text": "erros",
+     "start": 2.794,
+     "end": 2.945
+    },
+    {
+     "text": "automatizado.",
+     "start": 2.991,
+     "end": 3.568
+    },
+    {
+     "text": "O",
+     "start": 3.592,
+     "end": 3.65
+    },
+    {
+     "text": "link",
+     "start": 3.731,
+     "end": 3.871
+    },
+    {
+     "text": "tá",
+     "start": 3.929,
+     "end": 3.987
+    },
+    {
+     "text": "nos",
+     "start": 4.022,
+     "end": 4.115
+    },
+    {
+     "text": "stories.",
+     "start": 4.196,
+     "end": 4.61
+    }
+   ]
+  }
+ }
+}

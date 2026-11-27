@@ -1,0 +1,362 @@
+{
+ "cenas": {
+  "q1": {
+   "arquivo": "voz-questao-port/q1.mp3",
+   "texto": "Questão de português que derruba muito candidato em prova policial. Você tem dez segundos.",
+   "velocidade": 1.12,
+   "duracao": 4.127,
+   "fala_fim": 4.087,
+   "palavras": [
+    {
+     "text": "Questão",
+     "start": 0.0,
+     "end": 0.313
+    },
+    {
+     "text": "de",
+     "start": 0.337,
+     "end": 0.383
+    },
+    {
+     "text": "português",
+     "start": 0.43,
+     "end": 0.789
+    },
+    {
+     "text": "que",
+     "start": 0.824,
+     "end": 0.894
+    },
+    {
+     "text": "derruba",
+     "start": 0.94,
+     "end": 1.231
+    },
+    {
+     "text": "muito",
+     "start": 1.277,
+     "end": 1.474
+    },
+    {
+     "text": "candidato",
+     "start": 1.498,
+     "end": 1.869
+    },
+    {
+     "text": "em",
+     "start": 1.892,
+     "end": 1.939
+    },
+    {
+     "text": "prova",
+     "start": 1.974,
+     "end": 2.171
+    },
+    {
+     "text": "policial.",
+     "start": 2.218,
+     "end": 2.717
+    },
+    {
+     "text": "Você",
+     "start": 3.007,
+     "end": 3.193
+    },
+    {
+     "text": "tem",
+     "start": 3.239,
+     "end": 3.355
+    },
+    {
+     "text": "dez",
+     "start": 3.402,
+     "end": 3.518
+    },
+    {
+     "text": "segundos.",
+     "start": 3.541,
+     "end": 4.087
+    }
+   ]
+  },
+  "q2": {
+   "arquivo": "voz-questao-port/q2.mp3",
+   "texto": "Qual frase está de acordo com a norma-padrão? A: Assisti o jogo do Brasil ontem. B: Assisti ao jogo do Brasil ontem. C: Prefiro estudar do que jogar. D: Ele aspira o cargo de delegado.",
+   "velocidade": 1.12,
+   "duracao": 11.833,
+   "fala_fim": 11.796,
+   "palavras": [
+    {
+     "text": "Qual",
+     "start": 0.0,
+     "end": 0.174
+    },
+    {
+     "text": "frase",
+     "start": 0.221,
+     "end": 0.418
+    },
+    {
+     "text": "está",
+     "start": 0.441,
+     "end": 0.58
+    },
+    {
+     "text": "de",
+     "start": 0.627,
+     "end": 0.673
+    },
+    {
+     "text": "acordo",
+     "start": 0.708,
+     "end": 0.998
+    },
+    {
+     "text": "com",
+     "start": 1.045,
+     "end": 1.138
+    },
+    {
+     "text": "a",
+     "start": 1.173,
+     "end": 1.196
+    },
+    {
+     "text": "norma-padrão?",
+     "start": 1.231,
+     "end": 1.904
+    },
+    {
+     "text": "A:",
+     "start": 2.902,
+     "end": 3.193
+    },
+    {
+     "text": "Assisti",
+     "start": 3.379,
+     "end": 3.704
+    },
+    {
+     "text": "o",
+     "start": 3.738,
+     "end": 3.762
+    },
+    {
+     "text": "jogo",
+     "start": 3.808,
+     "end": 3.971
+    },
+    {
+     "text": "do",
+     "start": 3.994,
+     "end": 4.04
+    },
+    {
+     "text": "Brasil",
+     "start": 4.075,
+     "end": 4.342
+    },
+    {
+     "text": "ontem.",
+     "start": 4.377,
+     "end": 4.679
+    },
+    {
+     "text": "B:",
+     "start": 5.132,
+     "end": 5.317
+    },
+    {
+     "text": "Assisti",
+     "start": 5.341,
+     "end": 5.619
+    },
+    {
+     "text": "ao",
+     "start": 5.642,
+     "end": 5.7
+    },
+    {
+     "text": "jogo",
+     "start": 5.735,
+     "end": 5.875
+    },
+    {
+     "text": "do",
+     "start": 5.898,
+     "end": 5.944
+    },
+    {
+     "text": "Brasil",
+     "start": 5.979,
+     "end": 6.246
+    },
+    {
+     "text": "ontem.",
+     "start": 6.281,
+     "end": 6.571
+    },
+    {
+     "text": "C:",
+     "start": 6.861,
+     "end": 7.233
+    },
+    {
+     "text": "Prefiro",
+     "start": 7.349,
+     "end": 7.663
+    },
+    {
+     "text": "estudar",
+     "start": 7.686,
+     "end": 8.057
+    },
+    {
+     "text": "do",
+     "start": 8.115,
+     "end": 8.162
+    },
+    {
+     "text": "que",
+     "start": 8.208,
+     "end": 8.278
+    },
+    {
+     "text": "jogar.",
+     "start": 8.324,
+     "end": 8.719
+    },
+    {
+     "text": "D:",
+     "start": 9.567,
+     "end": 9.868
+    },
+    {
+     "text": "Ele",
+     "start": 10.112,
+     "end": 10.263
+    },
+    {
+     "text": "aspira",
+     "start": 10.286,
+     "end": 10.6
+    },
+    {
+     "text": "o",
+     "start": 10.623,
+     "end": 10.646
+    },
+    {
+     "text": "cargo",
+     "start": 10.681,
+     "end": 10.913
+    },
+    {
+     "text": "de",
+     "start": 10.948,
+     "end": 10.995
+    },
+    {
+     "text": "delegado.",
+     "start": 11.041,
+     "end": 11.796
+    }
+   ]
+  },
+  "q3": {
+   "arquivo": "voz-questao-port/q3.mp3",
+   "texto": "Comenta a sua resposta. O gabarito comentado sai às 19 horas. Segue o perfil pra não perder.",
+   "velocidade": 1.12,
+   "duracao": 5.512,
+   "fala_fim": 5.48,
+   "palavras": [
+    {
+     "text": "Comenta",
+     "start": 0.0,
+     "end": 0.348
+    },
+    {
+     "text": "a",
+     "start": 0.372,
+     "end": 0.395
+    },
+    {
+     "text": "sua",
+     "start": 0.441,
+     "end": 0.569
+    },
+    {
+     "text": "resposta.",
+     "start": 0.604,
+     "end": 1.091
+    },
+    {
+     "text": "O",
+     "start": 1.382,
+     "end": 1.44
+    },
+    {
+     "text": "gabarito",
+     "start": 1.498,
+     "end": 1.834
+    },
+    {
+     "text": "comentado",
+     "start": 1.858,
+     "end": 2.299
+    },
+    {
+     "text": "sai",
+     "start": 2.334,
+     "end": 2.554
+    },
+    {
+     "text": "às",
+     "start": 2.589,
+     "end": 2.659
+    },
+    {
+     "text": "19",
+     "start": 2.705,
+     "end": 3.1
+    },
+    {
+     "text": "horas.",
+     "start": 3.146,
+     "end": 3.553
+    },
+    {
+     "text": "Segue",
+     "start": 3.796,
+     "end": 4.075
+    },
+    {
+     "text": "o",
+     "start": 4.098,
+     "end": 4.122
+    },
+    {
+     "text": "perfil",
+     "start": 4.156,
+     "end": 4.493
+    },
+    {
+     "text": "pra",
+     "start": 4.54,
+     "end": 4.644
+    },
+    {
+     "text": "não",
+     "start": 4.679,
+     "end": 4.783
+    },
+    {
+     "text": "perder.",
+     "start": 4.818,
+     "end": 5.48
+    }
+   ]
+  }
+ },
+ "voz": "4J31DrhygVjvFsoj7BsM"
+}

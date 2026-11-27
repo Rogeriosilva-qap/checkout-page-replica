@@ -1,0 +1,548 @@
+{
+ "cenas": {
+  "g1": {
+   "arquivo": "voz-goias/g1.mp3",
+   "texto": "O governador de Goiás sinalizou concurso na segurança pública para 2027.",
+   "velocidade": 1.08,
+   "duracao": 5.433,
+   "fala_fim": 5.387,
+   "palavras": [
+    {
+     "text": "O",
+     "start": 0.0,
+     "end": 0.104
+    },
+    {
+     "text": "governador",
+     "start": 0.163,
+     "end": 0.639
+    },
+    {
+     "text": "de",
+     "start": 0.673,
+     "end": 0.72
+    },
+    {
+     "text": "Goiás",
+     "start": 0.755,
+     "end": 1.173
+    },
+    {
+     "text": "sinalizou",
+     "start": 1.579,
+     "end": 2.055
+    },
+    {
+     "text": "concurso",
+     "start": 2.09,
+     "end": 2.543
+    },
+    {
+     "text": "na",
+     "start": 2.577,
+     "end": 2.659
+    },
+    {
+     "text": "segurança",
+     "start": 2.694,
+     "end": 3.111
+    },
+    {
+     "text": "pública",
+     "start": 3.17,
+     "end": 3.506
+    },
+    {
+     "text": "para",
+     "start": 3.553,
+     "end": 3.704
+    },
+    {
+     "text": "2027.",
+     "start": 3.75,
+     "end": 5.387
+    }
+   ]
+  },
+  "g2": {
+   "arquivo": "voz-goias/g2.mp3",
+   "texto": "Mas calma: ainda não tem edital, nem número de vagas, nem banca.",
+   "velocidade": 1.08,
+   "duracao": 4.963,
+   "fala_fim": 4.923,
+   "palavras": [
+    {
+     "text": "Mas",
+     "start": 0.0,
+     "end": 0.174
+    },
+    {
+     "text": "calma:",
+     "start": 0.232,
+     "end": 0.604
+    },
+    {
+     "text": "ainda",
+     "start": 0.964,
+     "end": 1.149
+    },
+    {
+     "text": "não",
+     "start": 1.184,
+     "end": 1.265
+    },
+    {
+     "text": "tem",
+     "start": 1.312,
+     "end": 1.428
+    },
+    {
+     "text": "edital,",
+     "start": 1.451,
+     "end": 1.997
+    },
+    {
+     "text": "nem",
+     "start": 2.357,
+     "end": 2.519
+    },
+    {
+     "text": "número",
+     "start": 2.554,
+     "end": 2.786
+    },
+    {
+     "text": "de",
+     "start": 2.81,
+     "end": 2.868
+    },
+    {
+     "text": "vagas,",
+     "start": 2.926,
+     "end": 3.46
+    },
+    {
+     "text": "nem",
+     "start": 3.762,
+     "end": 3.913
+    },
+    {
+     "text": "banca.",
+     "start": 3.971,
+     "end": 4.923
+    }
+   ]
+  },
+  "g3": {
+   "arquivo": "voz-goias/g3.mp3",
+   "texto": "O que se sabe é que os anúncios ficaram para o início do ano que vem.",
+   "velocidade": 1.08,
+   "duracao": 3.579,
+   "fala_fim": 3.529,
+   "palavras": [
+    {
+     "text": "O",
+     "start": 0.0,
+     "end": 0.116
+    },
+    {
+     "text": "que",
+     "start": 0.174,
+     "end": 0.267
+    },
+    {
+     "text": "se",
+     "start": 0.325,
+     "end": 0.406
+    },
+    {
+     "text": "sabe",
+     "start": 0.453,
+     "end": 0.766
+    },
+    {
+     "text": "é",
+     "start": 0.789,
+     "end": 0.813
+    },
+    {
+     "text": "que",
+     "start": 0.859,
+     "end": 0.929
+    },
+    {
+     "text": "os",
+     "start": 0.952,
+     "end": 1.01
+    },
+    {
+     "text": "anúncios",
+     "start": 1.068,
+     "end": 1.428
+    },
+    {
+     "text": "ficaram",
+     "start": 1.474,
+     "end": 1.881
+    },
+    {
+     "text": "para",
+     "start": 1.927,
+     "end": 2.078
+    },
+    {
+     "text": "o",
+     "start": 2.101,
+     "end": 2.136
+    },
+    {
+     "text": "início",
+     "start": 2.183,
+     "end": 2.485
+    },
+    {
+     "text": "do",
+     "start": 2.519,
+     "end": 2.601
+    },
+    {
+     "text": "ano",
+     "start": 2.647,
+     "end": 2.752
+    },
+    {
+     "text": "que",
+     "start": 2.786,
+     "end": 2.868
+    },
+    {
+     "text": "vem.",
+     "start": 2.926,
+     "end": 3.529
+    }
+   ]
+  },
+  "g4": {
+   "arquivo": "voz-goias/g4.mp3",
+   "texto": "No último concurso da PM de Goiás, foram mil e quinhentas vagas para soldado, pela banca AOCP.",
+   "velocidade": 1.08,
+   "duracao": 6.4,
+   "fala_fim": 6.362,
+   "palavras": [
+    {
+     "text": "No",
+     "start": 0.0,
+     "end": 0.139
+    },
+    {
+     "text": "último",
+     "start": 0.174,
+     "end": 0.395
+    },
+    {
+     "text": "concurso",
+     "start": 0.43,
+     "end": 0.824
+    },
+    {
+     "text": "da",
+     "start": 0.848,
+     "end": 0.929
+    },
+    {
+     "text": "PM",
+     "start": 0.987,
+     "end": 1.265
+    },
+    {
+     "text": "de",
+     "start": 1.335,
+     "end": 1.382
+    },
+    {
+     "text": "Goiás,",
+     "start": 1.428,
+     "end": 2.032
+    },
+    {
+     "text": "foram",
+     "start": 2.392,
+     "end": 2.612
+    },
+    {
+     "text": "mil",
+     "start": 2.659,
+     "end": 2.786
+    },
+    {
+     "text": "e",
+     "start": 2.81,
+     "end": 2.833
+    },
+    {
+     "text": "quinhentas",
+     "start": 2.868,
+     "end": 3.193
+    },
+    {
+     "text": "vagas",
+     "start": 3.251,
+     "end": 3.483
+    },
+    {
+     "text": "para",
+     "start": 3.541,
+     "end": 3.669
+    },
+    {
+     "text": "soldado,",
+     "start": 3.704,
+     "end": 4.249
+    },
+    {
+     "text": "pela",
+     "start": 4.389,
+     "end": 4.586
+    },
+    {
+     "text": "banca",
+     "start": 4.632,
+     "end": 4.899
+    },
+    {
+     "text": "AOCP.",
+     "start": 4.969,
+     "end": 6.362
+    }
+   ]
+  },
+  "g5": {
+   "arquivo": "voz-goias/g5.mp3",
+   "texto": "E setenta dos oitenta e cinco pontos da prova vieram das matérias de Direito.",
+   "velocidade": 1.08,
+   "duracao": 4.258,
+   "fala_fim": 4.226,
+   "palavras": [
+    {
+     "text": "E",
+     "start": 0.0,
+     "end": 0.116
+    },
+    {
+     "text": "setenta",
+     "start": 0.186,
+     "end": 0.615
+    },
+    {
+     "text": "dos",
+     "start": 0.662,
+     "end": 0.778
+    },
+    {
+     "text": "oitenta",
+     "start": 0.824,
+     "end": 1.196
+    },
+    {
+     "text": "e",
+     "start": 1.231,
+     "end": 1.265
+    },
+    {
+     "text": "cinco",
+     "start": 1.289,
+     "end": 1.591
+    },
+    {
+     "text": "pontos",
+     "start": 1.637,
+     "end": 1.858
+    },
+    {
+     "text": "da",
+     "start": 1.892,
+     "end": 1.974
+    },
+    {
+     "text": "prova",
+     "start": 2.032,
+     "end": 2.345
+    },
+    {
+     "text": "vieram",
+     "start": 2.403,
+     "end": 2.694
+    },
+    {
+     "text": "das",
+     "start": 2.728,
+     "end": 2.844
+    },
+    {
+     "text": "matérias",
+     "start": 2.902,
+     "end": 3.239
+    },
+    {
+     "text": "de",
+     "start": 3.274,
+     "end": 3.332
+    },
+    {
+     "text": "Direito.",
+     "start": 3.402,
+     "end": 4.226
+    }
+   ]
+  },
+  "g6": {
+   "arquivo": "voz-goias/g6.mp3",
+   "texto": "Ou seja: quem começa agora, pelo último edital, sai na frente.",
+   "velocidade": 1.08,
+   "duracao": 3.657,
+   "fala_fim": 3.622,
+   "palavras": [
+    {
+     "text": "Ou",
+     "start": 0.0,
+     "end": 0.163
+    },
+    {
+     "text": "seja:",
+     "start": 0.197,
+     "end": 0.464
+    },
+    {
+     "text": "quem",
+     "start": 0.488,
+     "end": 0.604
+    },
+    {
+     "text": "começa",
+     "start": 0.65,
+     "end": 0.952
+    },
+    {
+     "text": "agora,",
+     "start": 0.975,
+     "end": 1.312
+    },
+    {
+     "text": "pelo",
+     "start": 1.335,
+     "end": 1.544
+    },
+    {
+     "text": "último",
+     "start": 1.579,
+     "end": 1.834
+    },
+    {
+     "text": "edital,",
+     "start": 1.858,
+     "end": 2.403
+    },
+    {
+     "text": "sai",
+     "start": 2.566,
+     "end": 2.74
+    },
+    {
+     "text": "na",
+     "start": 2.775,
+     "end": 2.844
+    },
+    {
+     "text": "frente.",
+     "start": 2.902,
+     "end": 3.622
+    }
+   ]
+  },
+  "g7": {
+   "arquivo": "voz-goias/g7.mp3",
+   "texto": "Comenta GOIÁS que eu te mando o link do nosso grupo de estudos. É gratuito.",
+   "velocidade": 1.08,
+   "duracao": 3.84,
+   "fala_fim": 3.808,
+   "palavras": [
+    {
+     "text": "Comenta",
+     "start": 0.0,
+     "end": 0.36
+    },
+    {
+     "text": "GOIÁS",
+     "start": 0.406,
+     "end": 0.662
+    },
+    {
+     "text": "que",
+     "start": 0.708,
+     "end": 0.778
+    },
+    {
+     "text": "eu",
+     "start": 0.801,
+     "end": 0.848
+    },
+    {
+     "text": "te",
+     "start": 0.871,
+     "end": 0.929
+    },
+    {
+     "text": "mando",
+     "start": 0.975,
+     "end": 1.138
+    },
+    {
+     "text": "o",
+     "start": 1.161,
+     "end": 1.184
+    },
+    {
+     "text": "link",
+     "start": 1.219,
+     "end": 1.37
+    },
+    {
+     "text": "do",
+     "start": 1.44,
+     "end": 1.486
+    },
+    {
+     "text": "nosso",
+     "start": 1.533,
+     "end": 1.718
+    },
+    {
+     "text": "grupo",
+     "start": 1.753,
+     "end": 1.974
+    },
+    {
+     "text": "de",
+     "start": 1.997,
+     "end": 2.043
+    },
+    {
+     "text": "estudos.",
+     "start": 2.067,
+     "end": 2.601
+    },
+    {
+     "text": "É",
+     "start": 2.961,
+     "end": 3.019
+    },
+    {
+     "text": "gratuito.",
+     "start": 3.088,
+     "end": 3.808
+    }
+   ]
+  }
+ },
+ "voz": "4J31DrhygVjvFsoj7BsM"
+}

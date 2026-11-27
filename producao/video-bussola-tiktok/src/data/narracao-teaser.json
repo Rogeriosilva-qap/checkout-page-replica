@@ -1,0 +1,111 @@
+{
+ "voz": "4J31DrhygVjvFsoj7BsM",
+ "cenas": {
+  "t1": {
+   "arquivo": "voz-teaser/final/t1.wav",
+   "duracao": 0.407,
+   "texto": "Vem aí.",
+   "palavras": [
+    {
+     "text": "Vem",
+     "start": 0.0,
+     "end": 0.186
+    },
+    {
+     "text": "aí.",
+     "start": 0.232,
+     "end": 0.407
+    }
+   ]
+  },
+  "t2": {
+   "arquivo": "voz-teaser/final/t2.wav",
+   "duracao": 2.049,
+   "texto": "A plataforma de simulados da Operação Aprovação.",
+   "palavras": [
+    {
+     "text": "A",
+     "start": 0.0,
+     "end": 0.081
+    },
+    {
+     "text": "plataforma",
+     "start": 0.139,
+     "end": 0.569
+    },
+    {
+     "text": "de",
+     "start": 0.604,
+     "end": 0.65
+    },
+    {
+     "text": "simulados",
+     "start": 0.685,
+     "end": 1.057
+    },
+    {
+     "text": "da",
+     "start": 1.103,
+     "end": 1.161
+    },
+    {
+     "text": "Operação",
+     "start": 1.184,
+     "end": 1.556
+    },
+    {
+     "text": "Aprovação.",
+     "start": 1.579,
+     "end": 2.049
+    }
+   ]
+  },
+  "t3": {
+   "arquivo": "voz-teaser/final/t3.wav",
+   "duracao": 2.229,
+   "texto": "Comenta SIMULADO e entra no grupo de espera.",
+   "palavras": [
+    {
+     "text": "Comenta",
+     "start": 0.0,
+     "end": 0.395
+    },
+    {
+     "text": "SIMULADO",
+     "start": 0.43,
+     "end": 0.964
+    },
+    {
+     "text": "e",
+     "start": 1.014,
+     "end": 1.178
+    },
+    {
+     "text": "entra",
+     "start": 1.213,
+     "end": 1.422
+    },
+    {
+     "text": "no",
+     "start": 1.456,
+     "end": 1.526
+    },
+    {
+     "text": "grupo",
+     "start": 1.561,
+     "end": 1.781
+    },
+    {
+     "text": "de",
+     "start": 1.816,
+     "end": 1.874
+    },
+    {
+     "text": "espera.",
+     "start": 1.898,
+     "end": 2.229
+    }
+   ]
+  }
+ }
+}

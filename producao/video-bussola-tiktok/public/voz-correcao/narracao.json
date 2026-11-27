@@ -1,0 +1,516 @@
+{
+ "cenas": {
+  "c1": {
+   "arquivo": "voz-correcao/c1.mp3",
+   "texto": "Fez o simulado e ficou esperando alguém mandar o gabarito?",
+   "velocidade": 1.12,
+   "duracao": 3.004,
+   "fala_fim": 2.972,
+   "palavras": [
+    {
+     "text": "Fez",
+     "start": 0.0,
+     "end": 0.197
+    },
+    {
+     "text": "o",
+     "start": 0.244,
+     "end": 0.267
+    },
+    {
+     "text": "simulado",
+     "start": 0.302,
+     "end": 0.65
+    },
+    {
+     "text": "e",
+     "start": 0.673,
+     "end": 0.697
+    },
+    {
+     "text": "ficou",
+     "start": 0.72,
+     "end": 0.882
+    },
+    {
+     "text": "esperando",
+     "start": 0.917,
+     "end": 1.3
+    },
+    {
+     "text": "alguém",
+     "start": 1.324,
+     "end": 1.544
+    },
+    {
+     "text": "mandar",
+     "start": 1.567,
+     "end": 1.788
+    },
+    {
+     "text": "o",
+     "start": 1.823,
+     "end": 1.846
+    },
+    {
+     "text": "gabarito?",
+     "start": 1.869,
+     "end": 2.972
+    }
+   ]
+  },
+  "c2": {
+   "arquivo": "voz-correcao/c2.mp3",
+   "texto": "Aqui você não espera ninguém. Aponta a câmera no cartão-resposta",
+   "velocidade": 1.12,
+   "duracao": 3.004,
+   "fala_fim": 2.972,
+   "palavras": [
+    {
+     "text": "Aqui",
+     "start": 0.0,
+     "end": 0.209
+    },
+    {
+     "text": "você",
+     "start": 0.244,
+     "end": 0.395
+    },
+    {
+     "text": "não",
+     "start": 0.441,
+     "end": 0.511
+    },
+    {
+     "text": "espera",
+     "start": 0.534,
+     "end": 0.755
+    },
+    {
+     "text": "ninguém.",
+     "start": 0.801,
+     "end": 1.219
+    },
+    {
+     "text": "Aponta",
+     "start": 1.37,
+     "end": 1.695
+    },
+    {
+     "text": "a",
+     "start": 1.718,
+     "end": 1.741
+    },
+    {
+     "text": "câmera",
+     "start": 1.788,
+     "end": 2.02
+    },
+    {
+     "text": "no",
+     "start": 2.055,
+     "end": 2.125
+    },
+    {
+     "text": "cartão-resposta",
+     "start": 2.159,
+     "end": 2.972
+    }
+   ]
+  },
+  "c3": {
+   "arquivo": "voz-correcao/c3.mp3",
+   "texto": "e a própria plataforma corrige: nota, acertos e erros.",
+   "velocidade": 1.12,
+   "duracao": 4.075,
+   "fala_fim": 4.04,
+   "palavras": [
+    {
+     "text": "e",
+     "start": 0.0,
+     "end": 0.151
+    },
+    {
+     "text": "a",
+     "start": 0.197,
+     "end": 0.221
+    },
+    {
+     "text": "própria",
+     "start": 0.267,
+     "end": 0.522
+    },
+    {
+     "text": "plataforma",
+     "start": 0.557,
+     "end": 1.08
+    },
+    {
+     "text": "corrige:",
+     "start": 1.126,
+     "end": 1.579
+    },
+    {
+     "text": "nota,",
+     "start": 1.916,
+     "end": 2.252
+    },
+    {
+     "text": "acertos",
+     "start": 2.357,
+     "end": 2.949
+    },
+    {
+     "text": "e",
+     "start": 3.065,
+     "end": 3.216
+    },
+    {
+     "text": "erros.",
+     "start": 3.251,
+     "end": 4.04
+    }
+   ]
+  },
+  "c4": {
+   "arquivo": "voz-correcao/c4.mp3",
+   "texto": "Nada de conferir questão por questão na mão.",
+   "velocidade": 1.12,
+   "duracao": 2.456,
+   "fala_fim": 2.415,
+   "palavras": [
+    {
+     "text": "Nada",
+     "start": 0.0,
+     "end": 0.221
+    },
+    {
+     "text": "de",
+     "start": 0.255,
+     "end": 0.302
+    },
+    {
+     "text": "conferir",
+     "start": 0.348,
+     "end": 0.685
+    },
+    {
+     "text": "questão",
+     "start": 0.731,
+     "end": 1.08
+    },
+    {
+     "text": "por",
+     "start": 1.126,
+     "end": 1.231
+    },
+    {
+     "text": "questão",
+     "start": 1.277,
+     "end": 1.556
+    },
+    {
+     "text": "na",
+     "start": 1.591,
+     "end": 1.66
+    },
+    {
+     "text": "mão.",
+     "start": 1.707,
+     "end": 2.415
+    }
+   ]
+  },
+  "c5": {
+   "arquivo": "voz-correcao/c5.mp3",
+   "texto": "Cada questão vem com o gabarito,",
+   "velocidade": 1.12,
+   "duracao": 1.489,
+   "fala_fim": 1.44,
+   "palavras": [
+    {
+     "text": "Cada",
+     "start": 0.0,
+     "end": 0.197
+    },
+    {
+     "text": "questão",
+     "start": 0.232,
+     "end": 0.499
+    },
+    {
+     "text": "vem",
+     "start": 0.522,
+     "end": 0.639
+    },
+    {
+     "text": "com",
+     "start": 0.673,
+     "end": 0.789
+    },
+    {
+     "text": "o",
+     "start": 0.813,
+     "end": 0.836
+    },
+    {
+     "text": "gabarito,",
+     "start": 0.859,
+     "end": 1.44
+    }
+   ]
+  },
+  "c6": {
+   "arquivo": "voz-correcao/c6.mp3",
+   "texto": "o comentário explicando o porquê",
+   "velocidade": 1.12,
+   "duracao": 1.567,
+   "fala_fim": 1.533,
+   "palavras": [
+    {
+     "text": "o",
+     "start": 0.0,
+     "end": 0.058
+    },
+    {
+     "text": "comentário",
+     "start": 0.093,
+     "end": 0.511
+    },
+    {
+     "text": "explicando",
+     "start": 0.534,
+     "end": 0.952
+    },
+    {
+     "text": "o",
+     "start": 0.975,
+     "end": 0.998
+    },
+    {
+     "text": "porquê",
+     "start": 1.045,
+     "end": 1.533
+    }
+   ]
+  },
+  "c7": {
+   "arquivo": "voz-correcao/c7.mp3",
+   "texto": "e o alerta da pegadinha da banca em que você caiu.",
+   "velocidade": 1.12,
+   "duracao": 3.344,
+   "fala_fim": 3.297,
+   "palavras": [
+    {
+     "text": "e",
+     "start": 0.0,
+     "end": 0.325
+    },
+    {
+     "text": "o",
+     "start": 0.383,
+     "end": 0.418
+    },
+    {
+     "text": "alerta",
+     "start": 0.464,
+     "end": 0.917
+    },
+    {
+     "text": "da",
+     "start": 0.964,
+     "end": 1.033
+    },
+    {
+     "text": "pegadinha",
+     "start": 1.08,
+     "end": 1.463
+    },
+    {
+     "text": "da",
+     "start": 1.498,
+     "end": 1.579
+    },
+    {
+     "text": "banca",
+     "start": 1.625,
+     "end": 1.927
+    },
+    {
+     "text": "em",
+     "start": 1.974,
+     "end": 2.09
+    },
+    {
+     "text": "que",
+     "start": 2.136,
+     "end": 2.206
+    },
+    {
+     "text": "você",
+     "start": 2.252,
+     "end": 2.438
+    },
+    {
+     "text": "caiu.",
+     "start": 2.496,
+     "end": 3.297
+    }
+   ]
+  },
+  "c8": {
+   "arquivo": "voz-correcao/c8.mp3",
+   "texto": "E cada erro vai direto pro seu Caderno de Erros.",
+   "velocidade": 1.12,
+   "duracao": 2.691,
+   "fala_fim": 2.647,
+   "palavras": [
+    {
+     "text": "E",
+     "start": 0.0,
+     "end": 0.116
+    },
+    {
+     "text": "cada",
+     "start": 0.197,
+     "end": 0.43
+    },
+    {
+     "text": "erro",
+     "start": 0.476,
+     "end": 0.662
+    },
+    {
+     "text": "vai",
+     "start": 0.708,
+     "end": 0.848
+    },
+    {
+     "text": "direto",
+     "start": 0.894,
+     "end": 1.161
+    },
+    {
+     "text": "pro",
+     "start": 1.184,
+     "end": 1.289
+    },
+    {
+     "text": "seu",
+     "start": 1.312,
+     "end": 1.428
+    },
+    {
+     "text": "Caderno",
+     "start": 1.463,
+     "end": 1.788
+    },
+    {
+     "text": "de",
+     "start": 1.823,
+     "end": 1.904
+    },
+    {
+     "text": "Erros.",
+     "start": 1.939,
+     "end": 2.647
+    }
+   ]
+  },
+  "c9": {
+   "arquivo": "voz-correcao/c9.mp3",
+   "texto": "Tá quase saindo. Comenta SIMULADO que eu te coloco no grupo de espera, com desconto de lançamento.",
+   "velocidade": 1.12,
+   "duracao": 4.911,
+   "fala_fim": 4.876,
+   "palavras": [
+    {
+     "text": "Tá",
+     "start": 0.0,
+     "end": 0.128
+    },
+    {
+     "text": "quase",
+     "start": 0.174,
+     "end": 0.36
+    },
+    {
+     "text": "saindo.",
+     "start": 0.395,
+     "end": 0.836
+    },
+    {
+     "text": "Comenta",
+     "start": 0.94,
+     "end": 1.254
+    },
+    {
+     "text": "SIMULADO",
+     "start": 1.3,
+     "end": 1.776
+    },
+    {
+     "text": "que",
+     "start": 1.846,
+     "end": 1.95
+    },
+    {
+     "text": "eu",
+     "start": 1.985,
+     "end": 2.043
+    },
+    {
+     "text": "te",
+     "start": 2.078,
+     "end": 2.136
+    },
+    {
+     "text": "coloco",
+     "start": 2.171,
+     "end": 2.415
+    },
+    {
+     "text": "no",
+     "start": 2.45,
+     "end": 2.496
+    },
+    {
+     "text": "grupo",
+     "start": 2.519,
+     "end": 2.717
+    },
+    {
+     "text": "de",
+     "start": 2.752,
+     "end": 2.81
+    },
+    {
+     "text": "espera,",
+     "start": 2.833,
+     "end": 3.274
+    },
+    {
+     "text": "com",
+     "start": 3.425,
+     "end": 3.564
+    },
+    {
+     "text": "desconto",
+     "start": 3.611,
+     "end": 3.982
+    },
+    {
+     "text": "de",
+     "start": 4.017,
+     "end": 4.063
+    },
+    {
+     "text": "lançamento.",
+     "start": 4.11,
+     "end": 4.876
+    }
+   ]
+  }
+ },
+ "voz": "4J31DrhygVjvFsoj7BsM"
+}

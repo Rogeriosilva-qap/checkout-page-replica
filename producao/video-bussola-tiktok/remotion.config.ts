@@ -1,0 +1,10 @@
+import { Config } from "@remotion/cli/config";
+
+Config.setVideoImageFormat("jpeg");
+Config.setJpegQuality(95);
+Config.setCodec("h264");
+Config.setCrf(18);
+Config.setPixelFormat("yuv420p");
+Config.setOverwriteOutput(true);
+// Chromium headless já instalado no ambiente (evita download do navegador).
+if (process.env.REMOTION_BROWSER) Config.setBrowserExecutable(process.env.REMOTION_BROWSER);

@@ -1,0 +1,470 @@
+{
+ "voz": "4J31DrhygVjvFsoj7BsM",
+ "cenas": {
+  "j1": {
+   "arquivo": "voz-jornal/final/j1.wav",
+   "duracao": 5.413,
+   "texto": "No Jornal do Concurseiro de hoje: as inscrições para a PM de São Paulo terminam em vinte e dois de dezembro.",
+   "palavras": [
+    {
+     "text": "No",
+     "start": 0.0,
+     "end": 0.163
+    },
+    {
+     "text": "Jornal",
+     "start": 0.197,
+     "end": 0.488
+    },
+    {
+     "text": "do",
+     "start": 0.522,
+     "end": 0.58
+    },
+    {
+     "text": "Concurseiro",
+     "start": 0.615,
+     "end": 1.091
+    },
+    {
+     "text": "de",
+     "start": 1.126,
+     "end": 1.184
+    },
+    {
+     "text": "hoje:",
+     "start": 1.219,
+     "end": 1.533
+    },
+    {
+     "text": "as",
+     "start": 1.637,
+     "end": 1.753
+    },
+    {
+     "text": "inscrições",
+     "start": 1.811,
+     "end": 2.299
+    },
+    {
+     "text": "para",
+     "start": 2.345,
+     "end": 2.485
+    },
+    {
+     "text": "a",
+     "start": 2.508,
+     "end": 2.531
+    },
+    {
+     "text": "PM",
+     "start": 2.601,
+     "end": 2.844
+    },
+    {
+     "text": "de",
+     "start": 2.902,
+     "end": 2.949
+    },
+    {
+     "text": "São",
+     "start": 2.984,
+     "end": 3.158
+    },
+    {
+     "text": "Paulo",
+     "start": 3.193,
+     "end": 3.506
+    },
+    {
+     "text": "terminam",
+     "start": 3.586,
+     "end": 4.027
+    },
+    {
+     "text": "em",
+     "start": 4.051,
+     "end": 4.132
+    },
+    {
+     "text": "vinte",
+     "start": 4.236,
+     "end": 4.515
+    },
+    {
+     "text": "e",
+     "start": 4.538,
+     "end": 4.561
+    },
+    {
+     "text": "dois",
+     "start": 4.608,
+     "end": 4.817
+    },
+    {
+     "text": "de",
+     "start": 4.84,
+     "end": 4.898
+    },
+    {
+     "text": "dezembro.",
+     "start": 4.956,
+     "end": 5.414
+    }
+   ]
+  },
+  "j2": {
+   "arquivo": "voz-jornal/final/j2.wav",
+   "duracao": 4.805,
+   "texto": "São duas mil vagas para aluno-soldado, com nível médio. A banca é a Vunesp.",
+   "palavras": [
+    {
+     "text": "São",
+     "start": 0.0,
+     "end": 0.255
+    },
+    {
+     "text": "duas",
+     "start": 0.302,
+     "end": 0.534
+    },
+    {
+     "text": "mil",
+     "start": 0.604,
+     "end": 0.731
+    },
+    {
+     "text": "vagas",
+     "start": 0.789,
+     "end": 1.103
+    },
+    {
+     "text": "para",
+     "start": 1.149,
+     "end": 1.312
+    },
+    {
+     "text": "aluno-soldado,",
+     "start": 1.335,
+     "end": 2.207
+    },
+    {
+     "text": "com",
+     "start": 2.251,
+     "end": 2.449
+    },
+    {
+     "text": "nível",
+     "start": 2.542,
+     "end": 2.832
+    },
+    {
+     "text": "médio.",
+     "start": 2.89,
+     "end": 3.296
+    },
+    {
+     "text": "A",
+     "start": 3.736,
+     "end": 3.817
+    },
+    {
+     "text": "banca",
+     "start": 3.898,
+     "end": 4.131
+    },
+    {
+     "text": "é",
+     "start": 4.154,
+     "end": 4.177
+    },
+    {
+     "text": "a",
+     "start": 4.212,
+     "end": 4.235
+    },
+    {
+     "text": "Vunesp.",
+     "start": 4.282,
+     "end": 4.805
+    }
+   ]
+  },
+  "j3": {
+   "arquivo": "voz-jornal/final/j3.wav",
+   "duracao": 4.854,
+   "texto": "E um dado chama atenção: Português e Matemática somam trinta e cinco das sessenta questões da prova.",
+   "palavras": [
+    {
+     "text": "E",
+     "start": 0.0,
+     "end": 0.128
+    },
+    {
+     "text": "um",
+     "start": 0.232,
+     "end": 0.29
+    },
+    {
+     "text": "dado",
+     "start": 0.348,
+     "end": 0.569
+    },
+    {
+     "text": "chama",
+     "start": 0.604,
+     "end": 0.813
+    },
+    {
+     "text": "atenção:",
+     "start": 0.836,
+     "end": 1.381
+    },
+    {
+     "text": "Português",
+     "start": 1.433,
+     "end": 1.897
+    },
+    {
+     "text": "e",
+     "start": 1.932,
+     "end": 1.955
+    },
+    {
+     "text": "Matemática",
+     "start": 1.99,
+     "end": 2.513
+    },
+    {
+     "text": "somam",
+     "start": 2.559,
+     "end": 2.826
+    },
+    {
+     "text": "trinta",
+     "start": 2.896,
+     "end": 3.163
+    },
+    {
+     "text": "e",
+     "start": 3.186,
+     "end": 3.209
+    },
+    {
+     "text": "cinco",
+     "start": 3.244,
+     "end": 3.511
+    },
+    {
+     "text": "das",
+     "start": 3.558,
+     "end": 3.662
+    },
+    {
+     "text": "sessenta",
+     "start": 3.685,
+     "end": 4.034
+    },
+    {
+     "text": "questões",
+     "start": 4.068,
+     "end": 4.417
+    },
+    {
+     "text": "da",
+     "start": 4.44,
+     "end": 4.51
+    },
+    {
+     "text": "prova.",
+     "start": 4.556,
+     "end": 4.854
+    }
+   ]
+  },
+  "j4": {
+   "arquivo": "voz-jornal/final/j4.wav",
+   "duracao": 6.998,
+   "texto": "Para treinar no formato da prova, a Operação Aprovação tem simulados no padrão Vunesp, com correção na hora e nota por matéria.",
+   "palavras": [
+    {
+     "text": "Para",
+     "start": 0.0,
+     "end": 0.221
+    },
+    {
+     "text": "treinar",
+     "start": 0.267,
+     "end": 0.592
+    },
+    {
+     "text": "no",
+     "start": 0.662,
+     "end": 0.731
+    },
+    {
+     "text": "formato",
+     "start": 0.778,
+     "end": 1.115
+    },
+    {
+     "text": "da",
+     "start": 1.138,
+     "end": 1.207
+    },
+    {
+     "text": "prova,",
+     "start": 1.254,
+     "end": 1.718
+    },
+    {
+     "text": "a",
+     "start": 1.813,
+     "end": 1.848
+    },
+    {
+     "text": "Operação",
+     "start": 1.894,
+     "end": 2.347
+    },
+    {
+     "text": "Aprovação",
+     "start": 2.37,
+     "end": 2.904
+    },
+    {
+     "text": "tem",
+     "start": 2.939,
+     "end": 3.078
+    },
+    {
+     "text": "simulados",
+     "start": 3.125,
+     "end": 3.554
+    },
+    {
+     "text": "no",
+     "start": 3.577,
+     "end": 3.647
+    },
+    {
+     "text": "padrão",
+     "start": 3.694,
+     "end": 4.03
+    },
+    {
+     "text": "Vunesp,",
+     "start": 4.077,
+     "end": 4.611
+    },
+    {
+     "text": "com",
+     "start": 4.662,
+     "end": 4.801
+    },
+    {
+     "text": "correção",
+     "start": 4.859,
+     "end": 5.301
+    },
+    {
+     "text": "na",
+     "start": 5.347,
+     "end": 5.417
+    },
+    {
+     "text": "hora",
+     "start": 5.486,
+     "end": 5.718
+    },
+    {
+     "text": "e",
+     "start": 5.788,
+     "end": 5.893
+    },
+    {
+     "text": "nota",
+     "start": 5.962,
+     "end": 6.194
+    },
+    {
+     "text": "por",
+     "start": 6.241,
+     "end": 6.334
+    },
+    {
+     "text": "matéria.",
+     "start": 6.38,
+     "end": 6.998
+    }
+   ]
+  },
+  "j5": {
+   "arquivo": "voz-jornal/final/j5.wav",
+   "duracao": 3.452,
+   "texto": "O primeiro simulado é gratuito, sem cartão de crédito. Faça o seu.",
+   "palavras": [
+    {
+     "text": "O",
+     "start": 0.0,
+     "end": 0.081
+    },
+    {
+     "text": "primeiro",
+     "start": 0.151,
+     "end": 0.441
+    },
+    {
+     "text": "simulado",
+     "start": 0.476,
+     "end": 1.01
+    },
+    {
+     "text": "é",
+     "start": 1.115,
+     "end": 1.173
+    },
+    {
+     "text": "gratuito,",
+     "start": 1.254,
+     "end": 1.765
+    },
+    {
+     "text": "sem",
+     "start": 1.788,
+     "end": 1.916
+    },
+    {
+     "text": "cartão",
+     "start": 1.95,
+     "end": 2.218
+    },
+    {
+     "text": "de",
+     "start": 2.241,
+     "end": 2.299
+    },
+    {
+     "text": "crédito.",
+     "start": 2.334,
+     "end": 2.803
+    },
+    {
+     "text": "Faça",
+     "start": 2.873,
+     "end": 3.105
+    },
+    {
+     "text": "o",
+     "start": 3.128,
+     "end": 3.151
+    },
+    {
+     "text": "seu.",
+     "start": 3.209,
+     "end": 3.452
+    }
+   ]
+  }
+ }
+}
