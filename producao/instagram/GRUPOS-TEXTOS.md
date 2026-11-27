@@ -360,3 +360,54 @@ Te vejo lá! 👊
   ```
   A previsão é Delegado, Oficial Investigador e Perito Oficial, todos de nível superior. A confirmação vem no edital.
   ```
+
+## Vídeo PC TO: "Acertou 70 e tirou nota 20?" (regra do Cebraspe)
+
+**Arquivos:**
+- `video-bussola-tiktok/out/cebraspe-pcto-instagram.mp4` (9:16) e `cebraspe-pcto-instagram-4x5.mp4` (feed). A chamada é **"comenta TOCANTINS"**, para o ManyChat.
+- `video-bussola-tiktok/out/cebraspe-pcto-tiktok.mp4` (9:16). A chamada é **"link na bio"**.
+- Capa: `video-bussola-tiktok/out/frames/capa-cebraspe-pcto.png`
+
+**A conta mostrada no vídeo:** no Certo ou Errado do Cebraspe, a nota líquida é o número de certas menos o de erradas, e item em branco não conta.
+- 70 certas e 50 erradas → nota 20.
+- 70 certas e 50 em branco → nota 70.
+- O chute é 50/50 entre +1 e −1, então na média não soma: só aumenta o risco.
+
+O exemplo é ilustrativo. O vídeo avisa que o edital ainda não foi publicado.
+
+**Legenda (Instagram):**
+
+```
+Acertou 70 e tirou nota 20? 😳
+
+Na prova do Cebraspe, cada item errado anula um certo:
+❌ 70 certas + 50 erradas = nota 20
+✅ 70 certas + 50 em branco = nota 70
+
+No Certo ou Errado, o chute na média não soma ponto. Só aumenta o risco.
+
+E a Polícia Civil do Tocantins já contratou o Cebraspe: 452 vagas previstas e edital anunciado.
+
+💬 Comenta TOCANTINS que eu te mando o link do grupo de estudos gratuito.
+Salva e manda pra quem vai fazer Cebraspe 👊
+
+#PCTO #concursoPCTO #policiacivil #cebraspe #concursopublico #concurseiro #tocantins #palmas #operacaoaprovacao
+```
+
+**Legenda (TikTok):**
+
+```
+Acertou 70 e tirou nota 20? 😳 Na prova do Cebraspe, 1 errada anula 1 certa. A PC TO já contratou o Cebraspe: 452 vagas previstas. Grupo de estudos gratuito no link da bio 👆 #PCTO #cebraspe #policiacivil #concurseiro #tocantins
+```
+
+**Comentário fixado:**
+
+```
+📌 Regra do Certo/Errado do Cebraspe: nota = certas − erradas (branco não conta). Edital da PC TO ainda não publicado: aviso no grupo assim que sair 👊
+```
+
+**Resposta para "então nunca devo chutar?":**
+
+```
+Depende! Se você tem uma boa noção do assunto, marcar costuma valer a pena. O chute "no escuro" é que, na média, não soma nada e ainda arrisca. Treinar com essa regra ajuda a saber quando marcar 😉
+```

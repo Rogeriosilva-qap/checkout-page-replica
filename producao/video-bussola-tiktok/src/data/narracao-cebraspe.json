@@ -1,0 +1,576 @@
+{
+ "voz": "4J31DrhygVjvFsoj7BsM",
+ "cenas": {
+  "c1": {
+   "arquivo": "voz-cebraspe/final/c1.wav",
+   "duracao": 3.397,
+   "texto": "Você acertou setenta questões e tirou nota vinte. Sabe por quê?",
+   "palavras": [
+    {
+     "text": "Você",
+     "start": 0.0,
+     "end": 0.255
+    },
+    {
+     "text": "acertou",
+     "start": 0.29,
+     "end": 0.673
+    },
+    {
+     "text": "setenta",
+     "start": 0.731,
+     "end": 1.196
+    },
+    {
+     "text": "questões",
+     "start": 1.231,
+     "end": 1.625
+    },
+    {
+     "text": "e",
+     "start": 1.672,
+     "end": 1.695
+    },
+    {
+     "text": "tirou",
+     "start": 1.73,
+     "end": 1.974
+    },
+    {
+     "text": "nota",
+     "start": 2.02,
+     "end": 2.229
+    },
+    {
+     "text": "vinte.",
+     "start": 2.276,
+     "end": 2.635
+    },
+    {
+     "text": "Sabe",
+     "start": 2.777,
+     "end": 2.986
+    },
+    {
+     "text": "por",
+     "start": 3.01,
+     "end": 3.114
+    },
+    {
+     "text": "quê?",
+     "start": 3.161,
+     "end": 3.397
+    }
+   ]
+  },
+  "c2": {
+   "arquivo": "voz-cebraspe/final/c2.wav",
+   "duracao": 3.272,
+   "texto": "Na prova do Cebraspe, cada item errado anula um item certo.",
+   "palavras": [
+    {
+     "text": "Na",
+     "start": 0.0,
+     "end": 0.163
+    },
+    {
+     "text": "prova",
+     "start": 0.209,
+     "end": 0.395
+    },
+    {
+     "text": "do",
+     "start": 0.43,
+     "end": 0.499
+    },
+    {
+     "text": "Cebraspe,",
+     "start": 0.534,
+     "end": 1.08
+    },
+    {
+     "text": "cada",
+     "start": 1.103,
+     "end": 1.347
+    },
+    {
+     "text": "item",
+     "start": 1.405,
+     "end": 1.625
+    },
+    {
+     "text": "errado",
+     "start": 1.683,
+     "end": 2.067
+    },
+    {
+     "text": "anula",
+     "start": 2.171,
+     "end": 2.531
+    },
+    {
+     "text": "um",
+     "start": 2.554,
+     "end": 2.612
+    },
+    {
+     "text": "item",
+     "start": 2.67,
+     "end": 2.879
+    },
+    {
+     "text": "certo.",
+     "start": 2.914,
+     "end": 3.272
+    }
+   ]
+  },
+  "c3": {
+   "arquivo": "voz-cebraspe/final/c3.wav",
+   "duracao": 3.229,
+   "texto": "Setenta certas e cinquenta erradas dão nota vinte.",
+   "palavras": [
+    {
+     "text": "Setenta",
+     "start": 0.0,
+     "end": 0.43
+    },
+    {
+     "text": "certas",
+     "start": 0.476,
+     "end": 0.975
+    },
+    {
+     "text": "e",
+     "start": 1.115,
+     "end": 1.219
+    },
+    {
+     "text": "cinquenta",
+     "start": 1.265,
+     "end": 1.718
+    },
+    {
+     "text": "erradas",
+     "start": 1.741,
+     "end": 2.148
+    },
+    {
+     "text": "dão",
+     "start": 2.194,
+     "end": 2.334
+    },
+    {
+     "text": "nota",
+     "start": 2.38,
+     "end": 2.624
+    },
+    {
+     "text": "vinte.",
+     "start": 2.682,
+     "end": 3.229
+    }
+   ]
+  },
+  "c4": {
+   "arquivo": "voz-cebraspe/final/c4.wav",
+   "duracao": 3.687,
+   "texto": "Agora, setenta certas e cinquenta em branco dão nota setenta.",
+   "palavras": [
+    {
+     "text": "Agora,",
+     "start": 0.0,
+     "end": 0.527
+    },
+    {
+     "text": "setenta",
+     "start": 0.614,
+     "end": 1.079
+    },
+    {
+     "text": "certas",
+     "start": 1.137,
+     "end": 1.566
+    },
+    {
+     "text": "e",
+     "start": 1.671,
+     "end": 1.752
+    },
+    {
+     "text": "cinquenta",
+     "start": 1.775,
+     "end": 2.159
+    },
+    {
+     "text": "em",
+     "start": 2.182,
+     "end": 2.228
+    },
+    {
+     "text": "branco",
+     "start": 2.275,
+     "end": 2.577
+    },
+    {
+     "text": "dão",
+     "start": 2.623,
+     "end": 2.739
+    },
+    {
+     "text": "nota",
+     "start": 2.774,
+     "end": 2.96
+    },
+    {
+     "text": "setenta.",
+     "start": 3.006,
+     "end": 3.687
+    }
+   ]
+  },
+  "c5": {
+   "arquivo": "voz-cebraspe/final/c5.wav",
+   "duracao": 4.218,
+   "texto": "No Certo ou Errado, o chute, na média, não soma ponto. Só aumenta o risco.",
+   "palavras": [
+    {
+     "text": "No",
+     "start": 0.0,
+     "end": 0.163
+    },
+    {
+     "text": "Certo",
+     "start": 0.209,
+     "end": 0.488
+    },
+    {
+     "text": "ou",
+     "start": 0.511,
+     "end": 0.569
+    },
+    {
+     "text": "Errado,",
+     "start": 0.639,
+     "end": 1.045
+    },
+    {
+     "text": "o",
+     "start": 1.103,
+     "end": 1.207
+    },
+    {
+     "text": "chute,",
+     "start": 1.254,
+     "end": 1.66
+    },
+    {
+     "text": "na",
+     "start": 1.73,
+     "end": 1.846
+    },
+    {
+     "text": "média,",
+     "start": 1.916,
+     "end": 2.334
+    },
+    {
+     "text": "não",
+     "start": 2.422,
+     "end": 2.573
+    },
+    {
+     "text": "soma",
+     "start": 2.608,
+     "end": 2.805
+    },
+    {
+     "text": "ponto.",
+     "start": 2.852,
+     "end": 3.177
+    },
+    {
+     "text": "Só",
+     "start": 3.315,
+     "end": 3.466
+    },
+    {
+     "text": "aumenta",
+     "start": 3.489,
+     "end": 3.791
+    },
+    {
+     "text": "o",
+     "start": 3.814,
+     "end": 3.837
+    },
+    {
+     "text": "risco.",
+     "start": 3.884,
+     "end": 4.218
+    }
+   ]
+  },
+  "c6": {
+   "arquivo": "voz-cebraspe/final/c6.wav",
+   "duracao": 6.48,
+   "texto": "E a Polícia Civil do Tocantins já contratou o Cebraspe. São quatrocentas e cinquenta e duas vagas previstas, e o edital deve sair em breve.",
+   "palavras": [
+    {
+     "text": "E",
+     "start": 0.0,
+     "end": 0.013
+    },
+    {
+     "text": "a",
+     "start": 0.06,
+     "end": 0.083
+    },
+    {
+     "text": "Polícia",
+     "start": 0.129,
+     "end": 0.396
+    },
+    {
+     "text": "Civil",
+     "start": 0.431,
+     "end": 0.686
+    },
+    {
+     "text": "do",
+     "start": 0.721,
+     "end": 0.779
+    },
+    {
+     "text": "Tocantins",
+     "start": 0.826,
+     "end": 1.313
+    },
+    {
+     "text": "já",
+     "start": 1.36,
+     "end": 1.464
+    },
+    {
+     "text": "contratou",
+     "start": 1.511,
+     "end": 1.917
+    },
+    {
+     "text": "o",
+     "start": 1.94,
+     "end": 1.964
+    },
+    {
+     "text": "Cebraspe.",
+     "start": 1.987,
+     "end": 2.556
+    },
+    {
+     "text": "São",
+     "start": 2.684,
+     "end": 2.893
+    },
+    {
+     "text": "quatrocentas",
+     "start": 2.928,
+     "end": 3.485
+    },
+    {
+     "text": "e",
+     "start": 3.508,
+     "end": 3.532
+    },
+    {
+     "text": "cinquenta",
+     "start": 3.555,
+     "end": 3.926
+    },
+    {
+     "text": "e",
+     "start": 3.95,
+     "end": 3.973
+    },
+    {
+     "text": "duas",
+     "start": 4.008,
+     "end": 4.228
+    },
+    {
+     "text": "vagas",
+     "start": 4.275,
+     "end": 4.507
+    },
+    {
+     "text": "previstas,",
+     "start": 4.542,
+     "end": 5.204
+    },
+    {
+     "text": "e",
+     "start": 5.221,
+     "end": 5.302
+    },
+    {
+     "text": "o",
+     "start": 5.325,
+     "end": 5.36
+    },
+    {
+     "text": "edital",
+     "start": 5.395,
+     "end": 5.674
+    },
+    {
+     "text": "deve",
+     "start": 5.72,
+     "end": 5.871
+    },
+    {
+     "text": "sair",
+     "start": 5.894,
+     "end": 6.092
+    },
+    {
+     "text": "em",
+     "start": 6.126,
+     "end": 6.173
+    },
+    {
+     "text": "breve.",
+     "start": 6.196,
+     "end": 6.48
+    }
+   ]
+  },
+  "c7": {
+   "arquivo": "voz-cebraspe/final/c7.wav",
+   "duracao": 3.311,
+   "texto": "Comenta TOCANTINS que eu te mando o link do grupo de estudos gratuito.",
+   "palavras": [
+    {
+     "text": "Comenta",
+     "start": 0.0,
+     "end": 0.325
+    },
+    {
+     "text": "TOCANTINS",
+     "start": 0.372,
+     "end": 0.975
+    },
+    {
+     "text": "que",
+     "start": 1.171,
+     "end": 1.275
+    },
+    {
+     "text": "eu",
+     "start": 1.298,
+     "end": 1.356
+    },
+    {
+     "text": "te",
+     "start": 1.391,
+     "end": 1.449
+    },
+    {
+     "text": "mando",
+     "start": 1.507,
+     "end": 1.681
+    },
+    {
+     "text": "o",
+     "start": 1.705,
+     "end": 1.739
+    },
+    {
+     "text": "link",
+     "start": 1.774,
+     "end": 1.995
+    },
+    {
+     "text": "do",
+     "start": 2.065,
+     "end": 2.134
+    },
+    {
+     "text": "grupo",
+     "start": 2.192,
+     "end": 2.413
+    },
+    {
+     "text": "de",
+     "start": 2.436,
+     "end": 2.494
+    },
+    {
+     "text": "estudos",
+     "start": 2.517,
+     "end": 2.796
+    },
+    {
+     "text": "gratuito.",
+     "start": 2.842,
+     "end": 3.311
+    }
+   ]
+  },
+  "c7b": {
+   "arquivo": "voz-cebraspe/final/c7b.wav",
+   "duracao": 2.332,
+   "texto": "O grupo de estudos gratuito está no link da bio.",
+   "palavras": [
+    {
+     "text": "O",
+     "start": 0.0,
+     "end": 0.104
+    },
+    {
+     "text": "grupo",
+     "start": 0.163,
+     "end": 0.36
+    },
+    {
+     "text": "de",
+     "start": 0.383,
+     "end": 0.441
+    },
+    {
+     "text": "estudos",
+     "start": 0.464,
+     "end": 0.824
+    },
+    {
+     "text": "gratuito",
+     "start": 0.871,
+     "end": 1.347
+    },
+    {
+     "text": "está",
+     "start": 1.382,
+     "end": 1.567
+    },
+    {
+     "text": "no",
+     "start": 1.637,
+     "end": 1.707
+    },
+    {
+     "text": "link",
+     "start": 1.753,
+     "end": 1.939
+    },
+    {
+     "text": "da",
+     "start": 1.997,
+     "end": 2.067
+    },
+    {
+     "text": "bio.",
+     "start": 2.125,
+     "end": 2.332
+    }
+   ]
+  }
+ }
+}

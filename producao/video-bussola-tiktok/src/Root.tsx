@@ -14,6 +14,7 @@ import { GoiasVideo, TOTAL_GOIAS } from "./goias/Goias";
 import { PmspVideo, TOTAL_PMSP } from "./pmsp/Pmsp";
 import { JornalVideo, TOTAL_JORNAL } from "./jornal/Jornal";
 import { PmgoMilitarVideo, TOTAL_PMGO_MILITAR } from "./pmgo/PmgoMilitar";
+import { CebraspeIg, CebraspeTiktok, totalCebraspe } from "./cebraspe/Cebraspe";
 import { GabaritoPortVideo, QuestaoPortVideo, TOTAL_GABARITO_PORT, TOTAL_QUESTAO_PORT } from "./patentes/QuestaoPort";
 
 export const RemotionRoot: React.FC = () => (
@@ -37,6 +38,8 @@ export const RemotionRoot: React.FC = () => (
   <Composition id="QuestaoPort" component={QuestaoPortVideo} durationInFrames={TOTAL_QUESTAO_PORT} fps={FPS} width={WIDTH} height={HEIGHT} />
   <Composition id="GabaritoPort" component={GabaritoPortVideo} durationInFrames={TOTAL_GABARITO_PORT} fps={FPS} width={WIDTH} height={HEIGHT} />
   <Composition id="PlataformaBussola" component={PlataformaVideo} durationInFrames={TOTAL_PLATAFORMA} fps={FPS} width={WIDTH} height={HEIGHT} />
+  <Composition id="CebraspeIg" component={CebraspeIg} durationInFrames={totalCebraspe("ig")} fps={FPS} width={WIDTH} height={HEIGHT} />
+  <Composition id="CebraspeTiktok" component={CebraspeTiktok} durationInFrames={totalCebraspe("tiktok")} fps={FPS} width={WIDTH} height={HEIGHT} />
   <Composition id="PmgoMilitar" component={PmgoMilitarVideo} durationInFrames={TOTAL_PMGO_MILITAR} fps={FPS} width={WIDTH} height={HEIGHT} />
   <Composition id="JornalPmsp" component={JornalVideo} durationInFrames={TOTAL_JORNAL} fps={FPS} width={WIDTH} height={HEIGHT} />
   <Composition id="PmspDireito" component={PmspVideo} durationInFrames={TOTAL_PMSP} fps={FPS} width={WIDTH} height={HEIGHT} />
