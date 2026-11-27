@@ -279,3 +279,84 @@ E se quiser estudar junto com a galera da PM SP, entra na comunidade Missão PM 
   ```
   Não! Para Aluno-Soldado PM SP o edital pede nível médio. Confere os outros requisitos no edital DP-4/321/26.
   ```
+
+---
+
+# 4. Missão Polícia Civil Tocantins (PC TO): grupo aberto
+
+**Base factual (27/11/2026):**
+- O **Cebraspe foi contratado**: contrato nº 2555/2026, assinado em 16/11, com extrato no Diário Oficial do Tocantins.
+- O governador anunciou o edital "em até 18 dias", previsto para o início de dezembro. **Até agora, não foi publicado.**
+- São **452 vagas** para Delegado, Oficial Investigador e Perito Oficial, todos de nível superior. Os salários definitivos dependem do edital.
+- O último edital da PC TO foi publicado em 2014.
+
+**Imagens:** `grupos/pcto/`. Para um grupo aberto único, use `icone-comunidade.png` e `banner-boas-vindas.png`.
+
+**Nome do grupo:** `Missão PC TO · Operação Aprovação`
+
+**Descrição:**
+
+```
+Grupo de estudos GRATUITO e aberto para quem mira a Polícia Civil do Tocantins (Delegado, Oficial Investigador e Perito).
+
+✅ Itens Certo/Errado no estilo Cebraspe + gabarito comentado
+✅ Notícias do edital só com fonte oficial
+✅ Troca de ideia entre concurseiros
+
+⚠️ Banca contratada: Cebraspe. Edital ainda não publicado. Conteúdo educativo, sem vínculo com a PC TO, o Governo do Tocantins ou o Cebraspe.
+```
+
+**Boas-vindas:**
+
+```
+Bem-vindo(a) à Missão PC TO! 🎯
+
+O que se sabe: o Cebraspe já foi contratado e o governo anunciou o edital para os próximos dias. A previsão é de 452 vagas para Delegado, Oficial Investigador e Perito Oficial. Assim que o edital sair, aviso aqui com o link oficial.
+
+⚠️ Atenção ao estilo Cebraspe: itens de Certo ou Errado em que UMA ERRADA ANULA UMA CERTA. Chutar pode tirar ponto. Treinar com essa regra faz diferença.
+
+🗓️ Rotina:
+• Seg a sex 12h: Item do Dia (Certo ou Errado)
+• 19h: gabarito comentado + pegadinha da banca
+• Domingo: desafio da semana (10 itens, com nota líquida)
+
+Apresente-se: nome, cidade e cargo que mira 👇
+```
+
+**Rotina semanal:**
+
+| Dia | 12h | 19h |
+|---|---|---|
+| Seg | Direito Penal | Gabarito |
+| Ter | Processo Penal | Gabarito |
+| Qua | Constitucional | Gabarito |
+| Qui | Legislação Especial | Gabarito |
+| Sex | Português | Gabarito + notícias da semana |
+| Dom | Desafio: 10 itens, com nota líquida | Ranking |
+
+Quando o edital sair, ajuste as matérias pela grade oficial.
+
+**ManyChat, palavra-chave `TOCANTINS`** (variações: "PCTO", "PC TO", "TO"):
+
+```
+Fala, futuro policial civil do Tocantins! 🕵️
+
+Aqui está o link do grupo Missão PC TO, gratuito e aberto:
+👉 [LINK]
+
+✅ Itens Certo/Errado no estilo Cebraspe + gabarito comentado
+✅ Aviso do edital assim que for publicado
+✅ Galera trocando ideia
+
+Te vejo lá! 👊
+```
+
+**Respostas prontas:**
+- "Já saiu o edital?"
+  ```
+  Ainda não! O Cebraspe já foi contratado e o edital foi anunciado para os próximos dias. Assim que sair, aviso no grupo com o link oficial 👊
+  ```
+- "Quais cargos?"
+  ```
+  A previsão é Delegado, Oficial Investigador e Perito Oficial, todos de nível superior. A confirmação vem no edital.
+  ```

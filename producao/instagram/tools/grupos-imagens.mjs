@@ -16,6 +16,8 @@ const GRUPOS = [
     rodape: "Ainda não há edital publicado. Conteúdo educativo, sem vínculo com a PCMG, o Governo de Minas ou bancas." },
   { pasta: "pmsp", l1: "PM", l2: "São Paulo", sub: "ALUNO-SOLDADO", tags: ["PM SP", "ALUNO-SOLDADO", "VUNESP"], papo: "PAPO PM SP",
     rodape: "Edital DP-4/321/26: confira prazos no site da Vunesp. Sem vínculo com a PM SP ou a Vunesp." },
+  { pasta: "pcto", l1: "Polícia Civil", l2: "Tocantins", sub: "PC TO · CEBRASPE", tags: ["PC TO", "CEBRASPE", "TOCANTINS"], papo: "PAPO PC TO",
+    rodape: "Banca contratada: Cebraspe. Edital ainda não publicado: acompanhe o site do Cebraspe. Sem vínculo com a PC TO, o Governo do Tocantins ou a banca." },
 ];
 
 const BG = `radial-gradient(ellipse 60% 55% at 50% 50%,rgba(227,25,43,.22),rgba(227,25,43,0) 70%),
@@ -50,7 +52,8 @@ const banner = (g) => base(1080, 1350, `
   <div class="mono gray" style="position:absolute;left:80px;right:80px;top:1215px;text-align:center;font-size:20px;line-height:1.5;letter-spacing:0">${g.rodape}</div>`);
 
 const browser = await chromium.launch();
-for (const g of GRUPOS) {
+const SO = process.argv.slice(2);
+for (const g of GRUPOS.filter((x) => !SO.length || SO.includes(x.pasta))) {
   const out = path.join(ROOT, "grupos", g.pasta);
   fs.mkdirSync(out, { recursive: true });
   const jobs = [["icone-comunidade", icone(g), 1080, 1080], ["icone-avisos", icone(g, "📢 AVISOS"), 1080, 1080], ["icone-papo", icone(g, `💬 ${g.papo}`), 1080, 1080], ["banner-boas-vindas", banner(g), 1080, 1350]];
