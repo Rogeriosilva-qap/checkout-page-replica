@@ -33,6 +33,7 @@ use the editor.
 - The sales page lives in `src/routes/index.tsx`; its CSS is the original page CSS kept unlayered in `src/styles.css` (overrides Tailwind preflight) — keep page styles there, not as utility classes.
 - Page visual overrides ("Tático & Premium") are appended at the end of `src/styles.css` after the original CSS so they win the cascade.
 - Editable business settings (checkout link, optional FAQ/footer texts) live only in `src/config.ts`; empty values hide the related item.
+- Platform calls to action use `getSimuladosHref` from the shared configuration, keeping empty-link behavior consistent across sales pages.
 - Purchase FAQ entries are filtered through `getPurchaseFaq` in the business configuration; this keeps unconfirmed delivery, access support and refund information out of the public page.
 - Visitor comments and newsletter opt-ins use public write-only server functions with shared Zod validation, same-origin checks and honeypots; private tables have no visitor read grants to protect submitted data.
 - Newsletter forms store explicit consent only; marketing delivery requires a dedicated marketing email service rather than Lovable app emails.
@@ -46,3 +47,5 @@ use the editor.
 - The cyber guide page (/concurseiro-cibernetico) uses its own route-scoped `.cyber` styles and its checkout comes only from CONFIG.cyberCheckoutUrl via getCyberCheckoutHref, so an empty link never navigates.
 - The cyber guide's page menu uses route-local state and `.cyber`-scoped styles to preserve navigation and appearance on other pages.
 - The Instagram bio page (/links) lists destinations from getBioLinks in src/lib/bio-links.ts (reading CONFIG), hides unconfigured items, uses route-scoped `.links` styles and stays out of the sitemap with noindex.
+- The e-book kit page (/kit-concurseiro-policial) uses route-scoped `.kit` styles; its checkout comes only from CONFIG.kitCheckoutUrl via getKitCheckoutHref, so an empty link never navigates, and /links shows the kit in place of the two separate e-books only once that link is set.
+- While CONFIG.kitCheckoutUrl is set, both e-book pages show the KitNotice component (src/components/kit-notice.tsx) next to their buy buttons, because their checkouts deliver the two-e-book kit.

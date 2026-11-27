@@ -1,9 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode, type RefObject } from "react";
 
-import { CONFIG, getPurchaseFaq } from "@/config";
+import { CONFIG, getPriceAnchor, getPurchaseFaq } from "@/config";
 import { Button } from "@/components/ui/button";
 import { VisitorForms, SimuladosSignup } from "@/components/visitor-forms";
+import { KitNotice } from "@/components/kit-notice";
 import logo from "@/assets/logo-operacao-aprovacao.png.asset.json";
 import capa from "@/assets/capa-ebook.jpg.asset.json";
 import pag14 from "@/assets/pagina-14.jpg.asset.json";
@@ -269,17 +270,18 @@ function Index() {
                 {" "}Use a IA como um “professor” de apoio sempre que desejar: para explicar um trecho, tirar dúvidas e treinar — sem deixar de conferir as respostas.
               </p>
               <p className="price">
-                <span className="label">Preço de lançamento · pagamento único</span>
-                {CONFIG.listPriceText && (
+                <span className="label">{getPriceAnchor().label}</span>
+                {getPriceAnchor().price && (
                   <span className="was">
-                    De <s>{CONFIG.listPriceText}</s>
+                    {getPriceAnchor().prefix} <s>{getPriceAnchor().price}</s>
                   </span>
                 )}
                 <span className="value">{CONFIG.launchPriceText}</span>
               </p>
               <CheckoutButton cta="hero" id="cta-hero" className="btn btn-block" linkRef={heroRef}>
-                Quero o e-book por {CONFIG.launchPriceText}
+                {getPriceAnchor().cta} {CONFIG.launchPriceText}
               </CheckoutButton>
+              <KitNotice />
               <Button asChild variant="link" className="sample-link"><a href="#modelo-p35">Ver um prompt na prática</a></Button>
               <ul className="badges" aria-label="Resumo da oferta">
                 <li>Acesso pela plataforma, no celular e no PC</li>
@@ -817,17 +819,18 @@ function Index() {
                 <li><strong>Bônus exclusivo:</strong> Configurar NotebookLM.</li>
               </ul>
               <p className="price">
-                <span className="label">Preço de lançamento · pagamento único</span>
-                {CONFIG.listPriceText && (
+                <span className="label">{getPriceAnchor().label}</span>
+                {getPriceAnchor().price && (
                   <span className="was">
-                    De <s>{CONFIG.listPriceText}</s>
+                    {getPriceAnchor().prefix} <s>{getPriceAnchor().price}</s>
                   </span>
                 )}
                 <span className="value">{CONFIG.launchPriceText}</span>
               </p>
               <CheckoutButton cta="oferta" id="cta-offer" className="btn btn-block">
-                Quero o e-book por {CONFIG.launchPriceText}
+                {getPriceAnchor().cta} {CONFIG.launchPriceText}
               </CheckoutButton>
+              <KitNotice />
               {CONFIG.guaranteeDays > 0 && (
                 <div className="guarantee">
                   <span className="shield" aria-hidden="true">{CONFIG.guaranteeDays}</span>
@@ -929,16 +932,16 @@ function Index() {
               modelos, os exemplos e o passo a passo. Sem pressa: veja as amostras desta página e decida com calma. Se fizer sentido para você, estaremos juntos nessa missão.
             </p>
             <p className="price">
-              <span className="label">Preço de lançamento · pagamento único</span>
-              {CONFIG.listPriceText && (
+              <span className="label">{getPriceAnchor().label}</span>
+              {getPriceAnchor().price && (
                 <span className="was">
-                  De <s>{CONFIG.listPriceText}</s>
+                  {getPriceAnchor().prefix} <s>{getPriceAnchor().price}</s>
                 </span>
               )}
               <span className="value">{CONFIG.launchPriceText}</span>
             </p>
             <CheckoutButton cta="final" id="cta-final" linkRef={finalRef}>
-              Quero o e-book por {CONFIG.launchPriceText}
+              {getPriceAnchor().cta} {CONFIG.launchPriceText}
             </CheckoutButton>
           </div>
         </section>
@@ -1003,16 +1006,16 @@ function Index() {
         <span className="p">
           {CONFIG.launchPriceText}
           <small>
-            {CONFIG.listPriceText && (
+            {getPriceAnchor().price && (
               <>
-                <s>{CONFIG.listPriceText}</s> ·{" "}
+                <s>{getPriceAnchor().price}</s> ·{" "}
               </>
             )}
-            E-book em PDF
+            {getPriceAnchor().product}
           </small>
         </span>
         <CheckoutButton cta="barra" tabIndex={barOn ? 0 : -1} withMessage={false}>
-          Quero o e-book
+          {getPriceAnchor().short}
         </CheckoutButton>
       </div>
     </>

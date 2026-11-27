@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { Star, Mail, Camera, Target, ChevronLeft, ChevronRight, BadgeCheck, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { getSimuladosHref } from "@/config";
 import { commentSchema, newsletterSchema } from "@/lib/visitor-forms.schemas";
 import { listTestimonials, submitComment, subscribeNewsletter } from "@/lib/visitor-forms.functions";
 
@@ -138,6 +139,7 @@ async function shrinkPhoto(file: File): Promise<string> {
 }
 
 export function SimuladosSignup() {
+  const simuladosHref = getSimuladosHref();
   const subscribe = useServerFn(subscribeNewsletter);
   const [status, setStatus] = useState("");
   const [done, setDone] = useState(false);
@@ -153,7 +155,7 @@ export function SimuladosSignup() {
     try {
       const r = await subscribe({ data: parsed.data });
       setDone(r.ok);
-      setStatus(r.ok ? "Cadastro confirmado! Você será avisado em primeira mão quando a plataforma abrir." : "Não foi possível cadastrar. Tente novamente.");
+      setStatus(r.ok ? "Cadastro confirmado! Você receberá novidades da Operação Aprovação por e-mail." : "Não foi possível cadastrar. Tente novamente.");
       if (r.ok) form.reset();
     } catch { setStatus("Não foi possível cadastrar. Tente novamente."); }
     finally { setBusy(false); }
@@ -162,17 +164,18 @@ export function SimuladosSignup() {
     <section className="simulados" aria-labelledby="t-sim">
       <div className="wrap sim-grid">
         <div>
-          <span className="sim-tag"><Target aria-hidden="true" />Em breve · Lista de espera</span>
-          <h2 id="t-sim">Vem aí a plataforma de simulados da Operação Aprovação</h2>
-          <p>Uma plataforma exclusiva de simulados para concursos de segurança pública: PM, PC, Polícia Penal, GCM e outras carreiras. Treine no estilo da banca, veja seus erros na hora e saiba onde focar.</p>
-          <p className="sim-note">Deixe seu e-mail e seja avisado antes de todo mundo no lançamento.</p>
+          <span className="sim-tag"><Target aria-hidden="true" />Plataforma no ar</span>
+          <h2 id="t-sim">Simulados Operação Aprovação já está no ar</h2>
+          <p>Simulados no padrão da sua banca. Crie sua conta e faça o 1º simulado grátis.</p>
+          {simuladosHref && <a className="btn" href={simuladosHref} target="_blank" rel="noopener noreferrer">Criar conta e fazer o 1º simulado grátis</a>}
+          <p className="sim-note">Deixe seu e-mail para receber novidades da Operação Aprovação.</p>
         </div>
         <form className="visitor-form sim-form" aria-labelledby="t-sim" onSubmit={send}>
           <label htmlFor="sim-email">Seu melhor e-mail</label>
           <input id="sim-email" name="email" type="email" autoComplete="email" maxLength={255} required />
-          <label className="consent-label"><input name="consent" type="checkbox" required />Quero receber por e-mail o aviso de lançamento da plataforma de simulados e novidades da Operação Aprovação.</label>
+          <label className="consent-label"><input name="consent" type="checkbox" required />Quero receber por e-mail novidades da plataforma de simulados e da Operação Aprovação.</label>
           <div className="form-trap" aria-hidden="true"><label>Website<input name="website" tabIndex={-1} autoComplete="off" /></label></div>
-          <Button className="btn" type="submit" disabled={busy}>{busy ? "Cadastrando…" : "Quero ser avisado"}</Button>
+          <Button className="btn" type="submit" disabled={busy}>{busy ? "Cadastrando…" : "Quero receber novidades"}</Button>
           <p className={done ? "form-status form-status-ok" : "form-status"} role="status" aria-live="polite">{done && <CheckCircle2 aria-hidden="true" />}{status}</p>
         </form>
       </div>

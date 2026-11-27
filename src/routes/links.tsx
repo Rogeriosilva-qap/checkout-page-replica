@@ -15,6 +15,8 @@ export const Route = createFileRoute("/links")({
       { name: "robots", content: "noindex" },
       { property: "og:title", content: "Operação Aprovação" },
       { property: "og:description", content: DESC },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: LinksPage,

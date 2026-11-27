@@ -1,15 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode, type RefObject } from "react";
-import { CONFIG, getCyberCheckoutHref, getCyberWaitlistHref } from "@/config";
+import { CONFIG, getCyberCheckoutHref, getSimuladosHref } from "@/config";
 import { copyAdvertorialPrompt } from "@/lib/copy-advertorial-prompt";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo-operacao-aprovacao.png.asset.json";
+import { KitNotice } from "@/components/kit-notice";
 
 const URL_PAGE = "https://operacaoaprovacaoebooks.com.br/concurseiro-cibernetico";
 const TITLE = "O Guia Definitivo do Concurseiro Policial Cibernético | Operação Aprovação";
 const DESC = "Como usar inteligência artificial para dominar editais, criar simulados e acelerar sua posse.";
-const PRICE = "R$ 37,00";
+const PRICE = "R$ 47,00";
 const CTA = `Quero o guia por ${PRICE}`;
 
 export const Route = createFileRoute("/concurseiro-cibernetico")({
@@ -64,6 +65,7 @@ const FAQ: [string, string][] = [
 ];
 
 function CyberPage() {
+  const simuladosHref = getSimuladosHref();
   const heroRef = useRef<HTMLAnchorElement>(null);
   const offerRef = useRef<HTMLAnchorElement>(null);
   const finalRef = useRef<HTMLAnchorElement>(null);
@@ -136,18 +138,22 @@ function CyberPage() {
               <h1 id="cy-h1">Pare de gastar horas organizando. Use a IA para mapear o edital, treinar e revisar.</h1>
               <p className="mu">22 comandos prontos, o Método Bússola para fatiar editais e um caderno de erros automatizado, para quem estuda para Polícia Penal, PM, PC, PF, PRF ou Guarda Municipal.</p>
               <p className="price">{PRICE}</p>
+              <p className="micro">Pagamento único. Sai por menos de R$ 0,13 por dia em um ano de estudo.</p>
               <BuyButton linkRef={heroRef} />
+              <KitNotice />
               <p className="micro">E-book em PDF com 38 páginas, sumário e links clicáveis para consultar no celular.</p>
             </div>
             {/* CAPA: componente em HTML/CSS provisório. Quando houver a capa real, troque este bloco
                 por <img src={capaReal.url} alt="Capa do e-book ..." /> (asset em src/assets). */}
-            <div className="cyber-cover grid-bg" role="img" aria-label="Capa do e-book O Guia Definitivo do Concurseiro Policial Cibernético">
+            <div className="cyber-book3d"><div className="cyber-cover grid-bg" role="img" aria-label="Capa do e-book O Guia Definitivo do Concurseiro Policial Cibernético">
               <img src={logo.url} alt="" />
               <span className="c1">O GUIA DEFINITIVO DO</span>
               <span className="c2">CONCURSEIRO</span>
               <span className="c2">POLICIAL</span>
               <span className="c3">CIBERNÉTICO</span>
-            </div>
+              <span className="c4" aria-hidden="true">// 22 COMANDOS · MÉTODO BÚSSOLA</span>
+              <span className="c5" aria-hidden="true">OPERAÇÃO APROVAÇÃO</span>
+            </div></div>
           </div>
         </section>
 
@@ -222,18 +228,19 @@ function CyberPage() {
             <ul className="dots">{OPS.map(([t]) => <li key={t}>{t}</li>)}</ul>
             <p className="price">{PRICE}</p>
             <BuyButton linkRef={offerRef} />
+            <KitNotice />
           </div>
         </div></section>
 
         <section className="sec" aria-labelledby="cy-waitlist"><div className="cw">
           <div className="waitlist">
-            <span className="label">// PRÓXIMA MISSÃO</span>
-            <h2 id="cy-waitlist">Plataforma de simulados Operação Aprovação: entre no grupo de espera</h2>
-            <p>Estamos finalizando uma plataforma de simulados no formato da sua banca, com cartão-resposta corrigido pelo celular, caderno de erros automático e correção de redação por foto. Quem entrar no grupo de espera do WhatsApp será avisado primeiro do lançamento e terá um desconto exclusivo.</p>
-            {getCyberWaitlistHref() && (
-              <a className="btn-w" href={getCyberWaitlistHref()!} target="_blank" rel="noopener noreferrer">Entrar no grupo de espera</a>
+            <span className="label">// PLATAFORMA NO AR</span>
+            <h2 id="cy-waitlist">Plataforma de simulados Operação Aprovação: já está no ar</h2>
+            <p>Simulados no padrão da sua banca. Crie sua conta e faça o 1º simulado grátis.</p>
+            {simuladosHref && (
+              <a className="btn-w" href={simuladosHref} target="_blank" rel="noopener noreferrer">Criar conta e fazer o 1º simulado grátis</a>
             )}
-            <p className="micro">Grupo gratuito no WhatsApp. A plataforma ainda não foi lançada; os recursos podem mudar até o lançamento.</p>
+            <p className="micro">Acesse a plataforma para criar sua conta e começar a treinar.</p>
           </div>
         </div></section>
 
