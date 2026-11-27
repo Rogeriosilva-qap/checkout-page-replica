@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ConcurseiroCiberneticoRouteImport } from './routes/concurseiro-cibernetico'
 import { Route as ExplicarQuestaoRouteImport } from './routes/explicar-questao'
+import { Route as GruposRouteImport } from './routes/grupos'
 import { Route as IaParaConcursosRouteImport } from './routes/ia-para-concursos'
 import { Route as KitConcurseiroPolicialRouteImport } from './routes/kit-concurseiro-policial'
 import { Route as LinksRouteImport } from './routes/links'
@@ -32,6 +33,11 @@ const ConcurseiroCiberneticoRoute = ConcurseiroCiberneticoRouteImport.update({
 const ExplicarQuestaoRoute = ExplicarQuestaoRouteImport.update({
   id: '/explicar-questao',
   path: '/explicar-questao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GruposRoute = GruposRouteImport.update({
+  id: '/grupos',
+  path: '/grupos',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IaParaConcursosRoute = IaParaConcursosRouteImport.update({
@@ -69,6 +75,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/concurseiro-cibernetico': typeof ConcurseiroCiberneticoRoute
   '/explicar-questao': typeof ExplicarQuestaoRoute
+  '/grupos': typeof GruposRoute
   '/ia-para-concursos': typeof IaParaConcursosRoute
   '/kit-concurseiro-policial': typeof KitConcurseiroPolicialRoute
   '/links': typeof LinksRoute
@@ -80,6 +87,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/concurseiro-cibernetico': typeof ConcurseiroCiberneticoRoute
   '/explicar-questao': typeof ExplicarQuestaoRoute
+  '/grupos': typeof GruposRoute
   '/ia-para-concursos': typeof IaParaConcursosRoute
   '/kit-concurseiro-policial': typeof KitConcurseiroPolicialRoute
   '/links': typeof LinksRoute
@@ -92,6 +100,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/concurseiro-cibernetico': typeof ConcurseiroCiberneticoRoute
   '/explicar-questao': typeof ExplicarQuestaoRoute
+  '/grupos': typeof GruposRoute
   '/ia-para-concursos': typeof IaParaConcursosRoute
   '/kit-concurseiro-policial': typeof KitConcurseiroPolicialRoute
   '/links': typeof LinksRoute
@@ -105,6 +114,7 @@ export interface FileRouteTypes {
     | '/'
     | '/concurseiro-cibernetico'
     | '/explicar-questao'
+    | '/grupos'
     | '/ia-para-concursos'
     | '/kit-concurseiro-policial'
     | '/links'
@@ -116,6 +126,7 @@ export interface FileRouteTypes {
     | '/'
     | '/concurseiro-cibernetico'
     | '/explicar-questao'
+    | '/grupos'
     | '/ia-para-concursos'
     | '/kit-concurseiro-policial'
     | '/links'
@@ -127,6 +138,7 @@ export interface FileRouteTypes {
     | '/'
     | '/concurseiro-cibernetico'
     | '/explicar-questao'
+    | '/grupos'
     | '/ia-para-concursos'
     | '/kit-concurseiro-policial'
     | '/links'
@@ -139,6 +151,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ConcurseiroCiberneticoRoute: typeof ConcurseiroCiberneticoRoute
   ExplicarQuestaoRoute: typeof ExplicarQuestaoRoute
+  GruposRoute: typeof GruposRoute
   IaParaConcursosRoute: typeof IaParaConcursosRoute
   KitConcurseiroPolicialRoute: typeof KitConcurseiroPolicialRoute
   LinksRoute: typeof LinksRoute
@@ -168,6 +181,13 @@ declare module '@tanstack/react-router' {
       path: '/explicar-questao'
       fullPath: '/explicar-questao'
       preLoaderRoute: typeof ExplicarQuestaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/grupos': {
+      id: '/grupos'
+      path: '/grupos'
+      fullPath: '/grupos'
+      preLoaderRoute: typeof GruposRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/ia-para-concursos': {
@@ -219,6 +239,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ConcurseiroCiberneticoRoute: ConcurseiroCiberneticoRoute,
   ExplicarQuestaoRoute: ExplicarQuestaoRoute,
+  GruposRoute: GruposRoute,
   IaParaConcursosRoute: IaParaConcursosRoute,
   KitConcurseiroPolicialRoute: KitConcurseiroPolicialRoute,
   LinksRoute: LinksRoute,
